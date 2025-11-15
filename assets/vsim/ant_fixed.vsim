@@ -1,0 +1,232 @@
+<robot name="torso">
+    <link name="torso">
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rot="0.0 0.0 0.0 1.0"/>
+            <mass value="-1.0"/>
+            <density value="5.0"/>
+            <inertia ixx="-1.0" iyy="-1.0" izz="-1.0" ixy="-1.0" ixz="-1.0" iyz="-1.0"/>
+        </inertial>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rot="0.0 0.0 0.0 1.0"/>
+            <geometry>
+                <sphere radius="0.25"/>
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="0.1 -0.1 0.0" rot="0.0 0.0 -0.382683432365089782 0.923880"/>
+            <geometry>
+                <cylinder length="0.141421356237309531" radius="0.08"/>
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="-0.1 -0.1 0.0" rot="0.0 0.0 -0.923879532511286738 0.382683"/>
+            <geometry>
+                <cylinder length="0.141421356237309531" radius="0.08"/>
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="-0.1 0.1 0.0" rot="0.0 0.0 0.923879532511286738 0.382683"/>
+            <geometry>
+                <cylinder length="0.141421356237309531" radius="0.08"/>
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="0.1 0.1 0.0" rot="0.0 0.0 0.382683432365089782 0.923880"/>
+            <geometry>
+                <cylinder length="0.141421356237309531" radius="0.08"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="front_left_leg">
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rot="0.0 0.0 0.0 1.0"/>
+            <mass value="-1.0"/>
+            <density value="5.0"/>
+            <inertia ixx="-1.0" iyy="-1.0" izz="-1.0" ixy="-1.0" ixz="-1.0" iyz="-1.0"/>
+        </inertial>
+        <collision>
+            <origin xyz="0.2 0.2 0.0" rot="0.0 0.0 0.382683432365089782 0.923880"/>
+            <geometry>
+                <cylinder length="0.282842712474619062" radius="0.08"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="front_right_leg">
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rot="0.0 0.0 0.0 1.0"/>
+            <mass value="-1.0"/>
+            <density value="5.0"/>
+            <inertia ixx="-1.0" iyy="-1.0" izz="-1.0" ixy="-1.0" ixz="-1.0" iyz="-1.0"/>
+        </inertial>
+        <collision>
+            <origin xyz="-0.2 0.2 0.0" rot="0.0 0.0 0.923879532511286738 0.382683"/>
+            <geometry>
+                <cylinder length="0.282842712474619062" radius="0.08"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="left_back_leg">
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rot="0.0 0.0 0.0 1.0"/>
+            <mass value="-1.0"/>
+            <density value="5.0"/>
+            <inertia ixx="-1.0" iyy="-1.0" izz="-1.0" ixy="-1.0" ixz="-1.0" iyz="-1.0"/>
+        </inertial>
+        <collision>
+            <origin xyz="-0.2 -0.2 0.0" rot="0.0 0.0 -0.923879532511286738 0.382683"/>
+            <geometry>
+                <cylinder length="0.282842712474619062" radius="0.08"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="right_back_leg">
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rot="0.0 0.0 0.0 1.0"/>
+            <mass value="-1.0"/>
+            <density value="5.0"/>
+            <inertia ixx="-1.0" iyy="-1.0" izz="-1.0" ixy="-1.0" ixz="-1.0" iyz="-1.0"/>
+        </inertial>
+        <collision>
+            <origin xyz="0.2 -0.2 0.0" rot="0.0 0.0 -0.382683432365089782 0.923880"/>
+            <geometry>
+                <cylinder length="0.282842712474619062" radius="0.08"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="aux_1">
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rot="0.0 0.0 0.0 1.0"/>
+            <mass value="-1.0"/>
+            <density value="5.0"/>
+            <inertia ixx="-1.0" iyy="-1.0" izz="-1.0" ixy="-1.0" ixz="-1.0" iyz="-1.0"/>
+        </inertial>
+        <collision>
+            <origin xyz="0.1 0.1 0.0" rot="0.0 0.0 0.382683432365089782 0.923880"/>
+            <geometry>
+                <cylinder length="0.141421356237309531" radius="0.08"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="aux_2">
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rot="0.0 0.0 0.0 1.0"/>
+            <mass value="-1.0"/>
+            <density value="5.0"/>
+            <inertia ixx="-1.0" iyy="-1.0" izz="-1.0" ixy="-1.0" ixz="-1.0" iyz="-1.0"/>
+        </inertial>
+        <collision>
+            <origin xyz="-0.1 0.1 0.0" rot="0.0 0.0 0.923879532511286738 0.382683"/>
+            <geometry>
+                <cylinder length="0.141421356237309531" radius="0.08"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="aux_3">
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rot="0.0 0.0 0.0 1.0"/>
+            <mass value="-1.0"/>
+            <density value="5.0"/>
+            <inertia ixx="-1.0" iyy="-1.0" izz="-1.0" ixy="-1.0" ixz="-1.0" iyz="-1.0"/>
+        </inertial>
+        <collision>
+            <origin xyz="-0.1 -0.1 0.0" rot="0.0 0.0 -0.923879532511286738 0.382683"/>
+            <geometry>
+                <cylinder length="0.141421356237309531" radius="0.08"/>
+            </geometry>
+        </collision>
+    </link>
+        <link name="aux_4">
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rot="0.0 0.0 0.0 1.0"/>
+            <mass value="-1.0"/>
+            <density value="5.0"/>
+            <inertia ixx="-1.0" iyy="-1.0" izz="-1.0" ixy="-1.0" ixz="-1.0" iyz="-1.0"/>
+        </inertial>
+        <collision>
+            <origin xyz="0.1 -0.1 0.0" rot="0.0 0.0 -0.382683432365089782 0.923880"/>
+            <geometry>
+                <cylinder length="0.141421356237309531" radius="0.08"/>
+            </geometry>
+        </collision>
+    </link>
+
+
+    <joint name="hip_4" type="fixed">
+        <child link="aux_4"/>
+        <parent link="torso"/>
+        <origin xyz="0.2 -0.2 0.0" rot="0.0 0.0 0.0 1.0"/>
+        <linkTransform xyz="0.2 -0.2 0.0" rot="0.0 0.0 0.0 1.0"/>
+        <axis xyz="0.0 0.0 1.0"/>
+        <limit lower="-0.698131720225016239" upper="0.698131720225016239" effort="179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368.000000000000000000" velocity="30.0"/>
+        <dynamics damping="1.0" stiffness="100" friction="0.0" armature="1.0"/>
+    </joint>
+    <joint name="ankle_4" type="fixed">
+        <child link="right_back_leg"/>
+        <parent link="aux_4"/>
+        <origin xyz="0.2 -0.2 0.0" rot="0.0 0.0 0.0 1.0"/>
+        <linkTransform xyz="0.2 -0.2 0.0" rot="0.0 0.0 0.0 1.0"/>
+        <axis xyz="1.0 1.0 0.0"/>
+        <limit lower="0.523598790168762207" upper="1.745329300562540764" effort="179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368.000000000000000000" velocity="30.0"/>
+        <dynamics damping="1.0" stiffness="100" friction="0.0" armature="1.0"/>
+    </joint>
+    <joint name="hip_3" type="fixed">
+        <child link="aux_3"/>
+        <parent link="torso"/>
+        <origin xyz="-0.2 -0.2 0.0" rot="0.0 0.0 0.0 1.0"/>
+        <linkTransform xyz="-0.2 -0.2 0.0" rot="0.0 0.0 0.0 1.0"/>
+        <axis xyz="0.0 0.0 1.0"/>
+        <limit lower="-0.698131720225016239" upper="0.698131720225016239" effort="179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368.000000000000000000" velocity="30.0"/>
+        <dynamics damping="1.0" stiffness="100" friction="0.0" armature="1.0"/>
+    </joint>
+    <joint name="ankle_3" type="fixed">
+        <child link="left_back_leg"/>
+        <parent link="aux_3"/>
+        <origin xyz="-0.2 -0.2 0.0" rot="0.0 0.0 0.0 1.0"/>
+        <linkTransform xyz="-0.2 -0.2 0.0" rot="0.0 0.0 0.0 1.0"/>
+        <axis xyz="-1.0 1.0 0.0"/>
+        <limit lower="-1.745329300562540764" upper="-0.523598790168762207" effort="179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368.000000000000000000" velocity="30.0"/>
+        <dynamics damping="1.0" stiffness="100" friction="0.0" armature="1.0"/>
+    </joint>
+    <joint name="hip_2" type="fixed">
+        <child link="aux_2"/>
+        <parent link="torso"/>
+        <origin xyz="-0.2 0.2 0.0" rot="0.0 0.0 0.0 1.0"/>
+        <linkTransform xyz="-0.2 0.2 0.0" rot="0.0 0.0 0.0 1.0"/>
+        <axis xyz="0.0 0.0 1.0"/>
+        <limit lower="-0.698131720225016239" upper="0.698131720225016239" effort="179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368.000000000000000000" velocity="30.0"/>
+        <dynamics damping="1.0" stiffness="100" friction="0.0" armature="1.0"/>
+    </joint>
+    <joint name="ankle_2" type="fixed">
+        <child link="front_right_leg"/>
+        <parent link="aux_2"/>
+        <origin xyz="-0.2 0.2 0.0" rot="0.0 0.0 0.0 1.0"/>
+        <linkTransform xyz="-0.2 0.2 0.0" rot="0.0 0.0 0.0 1.0"/>
+        <axis xyz="1.0 1.0 0.0"/>
+        <limit lower="-1.745329300562540764" upper="-0.523598790168762207" effort="179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368.000000000000000000" velocity="30.0"/>
+        <dynamics damping="1.0" stiffness="100" friction="0.0" armature="1.0"/>
+    </joint>
+    <joint name="hip_1" type="fixed">
+        <child link="aux_1"/>
+        <parent link="torso"/>
+        <origin xyz="0.2 0.2 0.0" rot="0.0 0.0 0.0 1.0"/>
+        <linkTransform xyz="0.2 0.2 0.0" rot="0.0 0.0 0.0 1.0"/>
+        <axis xyz="0.0 0.0 1.0"/>
+        <limit lower="-0.698131720225016239" upper="0.698131720225016239" effort="179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368.000000000000000000" velocity="30.0"/>
+        <dynamics damping="1.0" stiffness="100" friction="0.0" armature="1.0"/>
+    </joint>
+    <joint name="ankle_1" type="fixed">
+        <child link="front_left_leg"/>
+        <parent link="aux_1"/>
+        <origin xyz="0.2 0.2 0.0" rot="0.0 0.0 0.0 1.0"/>
+        <linkTransform xyz="0.2 0.2 0.0" rot="0.0 0.0 0.0 1.0"/>
+        <axis xyz="-1.0 1.0 0.0"/>
+        <limit lower="0.523598790168762207" upper="1.745329300562540764" effort="179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368.000000000000000000" velocity="30.0"/>
+        <dynamics damping="1.0" stiffness="100" friction="0.0" armature="1.0"/>
+    </joint>
+    <forceSensor>
+        <sensor name="front_left_leg_sensor" link="front_left_leg" offset="0.447486996650695801 0.447486996650695801 0.0" flags="contact "/>
+        <sensor name="front_right_leg_sensor" link="front_right_leg" offset="-0.447486996650695801 0.447486996650695801 0.0" flags="contact "/>
+        <sensor name="left_back_leg_sensor" link="left_back_leg" offset="-0.447486996650695801 -0.447486996650695801 0.0" flags="contact "/>
+        <sensor name="right_back_leg_sensor" link="right_back_leg" offset="0.447486996650695801 -0.447486996650695801 0.0" flags="contact "/>
+    </forceSensor>
+</robot>

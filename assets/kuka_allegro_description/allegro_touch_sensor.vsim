@@ -1,0 +1,694 @@
+<robot name="kuka_allegro">
+    <!--Materials-->
+    <material name="Grey">
+        <color rgba="0.2 0.2 0.2 1"/>
+        <luminescence value="0"/>
+        <specular value="40"/>
+        <specularIntesity value="0.25"/>
+    </material>
+    <material name="Green">
+        <color rgba="0 0.5 0 1"/>
+        <luminescence value="0"/>
+        <specular value="40"/>
+        <specularIntesity value="0.25"/>
+    </material>
+    <!--Links-->
+    <robotProperties maxDepenetrationVelocity="10"/>
+    <link name="allegro_mount">
+        <inertial>
+            <origin xyz="-0.007336 -0.01841 0.07217" rot="0 0 0 1"/>
+            <mass value="0.4654"/>
+            <density value="-1"/>
+            <inertia ixx="0.003093" iyy="0.002944" izz="0.0004049" ixy="-7.043e-05" ixz="0.0002761" iyz="0.0006929"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="kuka_allegro_description/meshes/mounts/allegro_mount.obj" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <rgbMaterialRef name="color_j7"/>
+        </visual>
+        <visual>
+            <origin xyz="-0.008219 -0.02063 0.08086" rot="0.2706 -0.6533 0.2706 0.6533"/>
+            <geometry>
+                <mesh filename="kuka_allegro_description/meshes/allegro/base_link.obj" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <rgbMaterialRef name="Grey"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="kuka_allegro_description/meshes/mounts/allegro_mount.obj" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="-0.008219 -0.02063 0.08086" rot="0.2706 -0.6533 0.2706 0.6533"/>
+            <geometry>
+                <mesh filename="kuka_allegro_description/meshes/allegro/base_link.obj" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <miscellaneous contactOffset="0.005" restOffset="0"/>
+    </link>
+    <link name="thumb_link_0">
+        <inertial>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <mass value="0.0176"/>
+            <density value="-1"/>
+            <inertia ixx="1.893e-05" iyy="1.43e-05" izz="1.893e-05" ixy="7.167e-06" ixz="5.356e-06" iyz="6.807e-06"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="kuka_allegro_description/meshes/allegro/thumb_base.obj" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <rgbMaterialRef name="Grey"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="kuka_allegro_description/meshes/allegro/thumb_base.obj" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <miscellaneous contactOffset="0.005" restOffset="0"/>
+    </link>
+    <link name="index_link_0">
+        <inertial>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <mass value="0.0119"/>
+            <density value="-1"/>
+            <inertia ixx="1.017e-06" iyy="6.477e-07" izz="1.017e-06" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="kuka_allegro_description/meshes/allegro/primary_base.obj" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <rgbMaterialRef name="Grey"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="kuka_allegro_description/meshes/allegro/primary_base.obj" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <miscellaneous contactOffset="0.005" restOffset="0"/>
+    </link>
+    <link name="index_link_1">
+        <inertial>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <mass value="0.065"/>
+            <density value="-1"/>
+            <inertia ixx="7.957e-05" iyy="2.471e-05" izz="7.957e-05" ixy="1.72e-05" ixz="8.759e-06" iyz="2.413e-05"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="kuka_allegro_description/meshes/allegro/primary_proximal.obj" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <rgbMaterialRef name="Grey"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="kuka_allegro_description/meshes/allegro/primary_proximal.obj" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <miscellaneous contactOffset="0.005" restOffset="0"/>
+    </link>
+    <link name="index_link_2">
+        <inertial>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <mass value="0.0355"/>
+            <density value="-1"/>
+            <inertia ixx="2.64e-05" iyy="1.349e-05" izz="2.64e-05" ixy="6.68e-06" ixz="4.784e-06" iyz="9.372e-06"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="kuka_allegro_description/meshes/allegro/primary_medial.obj" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <rgbMaterialRef name="Grey"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="kuka_allegro_description/meshes/allegro/primary_medial.obj" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <miscellaneous contactOffset="0.005" restOffset="0"/>
+    </link>
+    <link name="index_link_3">
+        <inertial>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <mass value="0.0306"/>
+            <density value="-1"/>
+            <inertia ixx="5.669e-06" iyy="4.617e-06" izz="5.669e-06" ixy="1.256e-06" ixz="1.294e-06" iyz="1.762e-06"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="meshes/touchsensor/visual/touch_sensor_base.obj" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <rgbMaterialRef name="Green"/>
+        </visual>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="meshes/touchsensor/visual/touch_sensor_tip.obj" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <rgbMaterialRef name="Green"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="meshes/touchsensor/collision/touch_sensor_base.obj" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="meshes/touchsensor/collision/touch_sensor_tip.obj" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <miscellaneous contactOffset="0.005" restOffset="0"/>
+    </link>
+    <link name="thumb_link_1">
+        <inertial>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <mass value="0.0119"/>
+            <density value="-1"/>
+            <inertia ixx="4.243e-06" iyy="4.524e-06" izz="4.243e-06" ixy="1.032e-06" ixz="1.604e-06" iyz="1.448e-06"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="kuka_allegro_description/meshes/allegro/thumb_proximal.obj" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <rgbMaterialRef name="Grey"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="kuka_allegro_description/meshes/allegro/thumb_proximal.obj" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <miscellaneous contactOffset="0.005" restOffset="0"/>
+    </link>
+    <link name="middle_link_0">
+        <inertial>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <mass value="0.0119"/>
+            <density value="-1"/>
+            <inertia ixx="1.017e-06" iyy="6.477e-07" izz="1.017e-06" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="kuka_allegro_description/meshes/allegro/primary_base.obj" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <rgbMaterialRef name="Grey"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="kuka_allegro_description/meshes/allegro/primary_base.obj" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <miscellaneous contactOffset="0.005" restOffset="0"/>
+    </link>
+    <link name="middle_link_1">
+        <inertial>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <mass value="0.065"/>
+            <density value="-1"/>
+            <inertia ixx="7.957e-05" iyy="2.471e-05" izz="7.957e-05" ixy="1.72e-05" ixz="8.759e-06" iyz="2.413e-05"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="kuka_allegro_description/meshes/allegro/primary_proximal.obj" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <rgbMaterialRef name="Grey"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="kuka_allegro_description/meshes/allegro/primary_proximal.obj" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <miscellaneous contactOffset="0.005" restOffset="0"/>
+    </link>
+    <link name="middle_link_2">
+        <inertial>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <mass value="0.0355"/>
+            <density value="-1"/>
+            <inertia ixx="2.64e-05" iyy="1.349e-05" izz="2.64e-05" ixy="6.68e-06" ixz="4.784e-06" iyz="9.372e-06"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="kuka_allegro_description/meshes/allegro/primary_medial.obj" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <rgbMaterialRef name="Grey"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="kuka_allegro_description/meshes/allegro/primary_medial.obj" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <miscellaneous contactOffset="0.005" restOffset="0"/>
+    </link>
+    <link name="middle_link_3">
+        <inertial>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <mass value="0.0306"/>
+            <density value="-1"/>
+            <inertia ixx="5.669e-06" iyy="4.617e-06" izz="5.669e-06" ixy="1.256e-06" ixz="1.294e-06" iyz="1.762e-06"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="meshes/touchsensor/visual/touch_sensor_base.obj" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <rgbMaterialRef name="Green"/>
+        </visual>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="meshes/touchsensor/visual/touch_sensor_tip.obj" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <rgbMaterialRef name="Green"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="meshes/touchsensor/collision/touch_sensor_base.obj" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="meshes/touchsensor/collision/touch_sensor_tip.obj" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <miscellaneous contactOffset="0.005" restOffset="0"/>
+    </link>
+    <link name="thumb_link_2">
+        <inertial>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <mass value="0.038"/>
+            <density value="-1"/>
+            <inertia ixx="4.304e-05" iyy="1.445e-05" izz="4.304e-05" ixy="9.571e-06" ixz="5.121e-06" iyz="1.343e-05"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="kuka_allegro_description/meshes/allegro/thumb_medial.obj" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <rgbMaterialRef name="Grey"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="kuka_allegro_description/meshes/allegro/thumb_medial.obj" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <miscellaneous contactOffset="0.005" restOffset="0"/>
+    </link>
+    <link name="ring_link_0">
+        <inertial>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <mass value="0.0119"/>
+            <density value="-1"/>
+            <inertia ixx="1.017e-06" iyy="6.477e-07" izz="1.017e-06" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="kuka_allegro_description/meshes/allegro/primary_base.obj" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <rgbMaterialRef name="Grey"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="kuka_allegro_description/meshes/allegro/primary_base.obj" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <miscellaneous contactOffset="0.005" restOffset="0"/>
+    </link>
+    <link name="ring_link_1">
+        <inertial>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <mass value="0.065"/>
+            <density value="-1"/>
+            <inertia ixx="7.957e-05" iyy="2.471e-05" izz="7.957e-05" ixy="1.72e-05" ixz="8.759e-06" iyz="2.413e-05"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="kuka_allegro_description/meshes/allegro/primary_proximal.obj" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <rgbMaterialRef name="Grey"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="kuka_allegro_description/meshes/allegro/primary_proximal.obj" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <miscellaneous contactOffset="0.005" restOffset="0"/>
+    </link>
+    <link name="ring_link_2">
+        <inertial>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <mass value="0.0355"/>
+            <density value="-1"/>
+            <inertia ixx="2.64e-05" iyy="1.349e-05" izz="2.64e-05" ixy="6.68e-06" ixz="4.784e-06" iyz="9.372e-06"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="kuka_allegro_description/meshes/allegro/primary_medial.obj" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <rgbMaterialRef name="Grey"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="kuka_allegro_description/meshes/allegro/primary_medial.obj" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <miscellaneous contactOffset="0.005" restOffset="0"/>
+    </link>
+    <link name="ring_link_3">
+        <inertial>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <mass value="0.0306"/>
+            <density value="-1"/>
+            <inertia ixx="5.669e-06" iyy="4.617e-06" izz="5.669e-06" ixy="1.256e-06" ixz="1.294e-06" iyz="1.762e-06"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="meshes/touchsensor/visual/touch_sensor_base.obj" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <rgbMaterialRef name="Green"/>
+        </visual>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="meshes/touchsensor/visual/touch_sensor_tip.obj" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <rgbMaterialRef name="Green"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="meshes/touchsensor/collision/touch_sensor_base.obj" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="meshes/touchsensor/collision/touch_sensor_tip.obj" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <miscellaneous contactOffset="0.005" restOffset="0"/>
+    </link>
+    <link name="thumb_link_3">
+        <inertial>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <mass value="0.0598"/>
+            <density value="-1"/>
+            <inertia ixx="3.389e-05" iyy="1.572e-05" izz="3.389e-05" ixy="8.042e-06" ixz="5.228e-06" iyz="1.128e-05"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="meshes/touchsensor/visual/touch_sensor_thumb_base.obj" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <rgbMaterialRef name="Green"/>
+        </visual>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="meshes/touchsensor/visual/touch_sensor_thumb_tip.obj" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <rgbMaterialRef name="Green"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="meshes/touchsensor/collision/touch_sensor_thumb_base.obj" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="meshes/touchsensor/collision/touch_sensor_thumb_tip.obj" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <miscellaneous contactOffset="0.005" restOffset="0"/>
+    </link>
+    <joint name="thumb_joint_0" type="revolute">
+        <child link="thumb_link_0"/>
+        <parent link="allegro_mount"/>
+        <origin xyz="0.01839 -0.005518 0.04411" rot="0.3823 -0.923 -0.0403 0.01669"/>
+        <linkTransform xyz="0.01839 -0.005518 0.04411" rot="0.3823 -0.923 -0.0403 0.01669"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="0.2792" upper="1.571" effort="0.35" velocity="6.283"/>
+        <dynamics damping="0" stiffness="0" friction="0.035" armature="0"/>
+    </joint>
+    <joint name="index_joint_0" type="revolute">
+        <child link="index_link_0"/>
+        <parent link="allegro_mount"/>
+        <origin xyz="0.02545 -0.03832 0.1323" rot="0.01673 -0.04033 0.923 -0.3823"/>
+        <linkTransform xyz="0.02545 -0.03832 0.1323" rot="0.01673 -0.04033 0.923 -0.3823"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-0.5585" upper="0.5585" effort="0.35" velocity="6.283"/>
+        <dynamics damping="0.0414" stiffness="0" friction="0.0524" armature="0"/>
+    </joint>
+    <joint name="index_joint_1" type="revolute">
+        <child link="index_link_1"/>
+        <parent link="index_link_0"/>
+        <origin xyz="0 0 0" rot="0.5 0.5 0.5 -0.5"/>
+        <linkTransform xyz="0 0 0" rot="0.5 0.5 0.5 -0.5"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-0.2792" upper="1.728" effort="0.35" velocity="6.283"/>
+        <dynamics damping="0.005875" stiffness="0" friction="0.01503" armature="0"/>
+    </joint>
+    <joint name="index_joint_2" type="revolute">
+        <child link="index_link_2"/>
+        <parent link="index_link_1"/>
+        <origin xyz="0.054 0 0" rot="0 0 0 1"/>
+        <linkTransform xyz="0.054 0 0" rot="0 0 0 1"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-0.2792" upper="1.728" effort="0.35" velocity="6.283"/>
+        <dynamics damping="0.01064" stiffness="0" friction="0.006164" armature="0"/>
+    </joint>
+    <joint name="index_joint_3" type="revolute">
+        <child link="index_link_3"/>
+        <parent link="index_link_2"/>
+        <origin xyz="0.0384 0 0" rot="0 0 0 1"/>
+        <linkTransform xyz="0.0384 0 0" rot="0 0 0 1"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-0.2792" upper="1.728" effort="0.35" velocity="6.283"/>
+        <dynamics damping="0.02269" stiffness="0" friction="0.0227" armature="0"/>
+    </joint>
+    <joint name="thumb_joint_1" type="revolute">
+        <child link="thumb_link_1"/>
+        <parent link="thumb_link_0"/>
+        <origin xyz="0.005 0 0" rot="0.7071 0 0 0.7071"/>
+        <linkTransform xyz="0.005 0 0" rot="0.7071 0 0 0.7071"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-0.3316" upper="1.152" effort="0.35" velocity="6.283"/>
+        <dynamics damping="0" stiffness="0" friction="0.035" armature="0"/>
+    </joint>
+    <joint name="middle_joint_0" type="revolute">
+        <child link="middle_link_0"/>
+        <parent link="allegro_mount"/>
+        <origin xyz="-0.006435 -0.006433 0.1346" rot="3.743e-05 -3.464e-05 0.9239 -0.3827"/>
+        <linkTransform xyz="-0.006435 -0.006433 0.1346" rot="3.743e-05 -3.464e-05 0.9239 -0.3827"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-0.5585" upper="0.5585" effort="0.35" velocity="6.283"/>
+        <dynamics damping="0.0414" stiffness="0" friction="0.0524" armature="0"/>
+    </joint>
+    <joint name="middle_joint_1" type="revolute">
+        <child link="middle_link_1"/>
+        <parent link="middle_link_0"/>
+        <origin xyz="0 0 0" rot="0.5 0.5 0.5 -0.5"/>
+        <linkTransform xyz="0 0 0" rot="0.5 0.5 0.5 -0.5"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-0.2792" upper="1.728" effort="0.35" velocity="6.283"/>
+        <dynamics damping="0.005875" stiffness="0" friction="0.01503" armature="0"/>
+    </joint>
+    <joint name="middle_joint_2" type="revolute">
+        <child link="middle_link_2"/>
+        <parent link="middle_link_1"/>
+        <origin xyz="0.054 0 0" rot="0 0 0 1"/>
+        <linkTransform xyz="0.054 0 0" rot="0 0 0 1"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-0.2792" upper="1.728" effort="0.35" velocity="6.283"/>
+        <dynamics damping="0.01064" stiffness="0" friction="0.006164" armature="0"/>
+    </joint>
+    <joint name="middle_joint_3" type="revolute">
+        <child link="middle_link_3"/>
+        <parent link="middle_link_2"/>
+        <origin xyz="0.0384 0 0" rot="0 0 0 1"/>
+        <linkTransform xyz="0.0384 0 0" rot="0 0 0 1"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-0.2792" upper="1.728" effort="0.35" velocity="6.283"/>
+        <dynamics damping="0.02269" stiffness="0" friction="0.0227" armature="0"/>
+    </joint>
+    <joint name="thumb_joint_2" type="revolute">
+        <child link="thumb_link_2"/>
+        <parent link="thumb_link_1"/>
+        <origin xyz="0 0 0.0554" rot="0.7071 -3.276e-05 0.7071 3.276e-05"/>
+        <linkTransform xyz="0 0 0.0554" rot="0.7071 -3.276e-05 0.7071 3.276e-05"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-0.2792" upper="1.728" effort="0.35" velocity="6.283"/>
+        <dynamics damping="0" stiffness="0" friction="0.035" armature="0"/>
+    </joint>
+    <joint name="ring_joint_0" type="revolute">
+        <child link="ring_link_0"/>
+        <parent link="allegro_mount"/>
+        <origin xyz="-0.03832 0.02546 0.1323" rot="-0.01665 0.04026 0.923 -0.3823"/>
+        <linkTransform xyz="-0.03832 0.02546 0.1323" rot="-0.01665 0.04026 0.923 -0.3823"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-0.5585" upper="0.5585" effort="0.35" velocity="6.283"/>
+        <dynamics damping="0.0414" stiffness="0" friction="0.0524" armature="0"/>
+    </joint>
+    <joint name="ring_joint_1" type="revolute">
+        <child link="ring_link_1"/>
+        <parent link="ring_link_0"/>
+        <origin xyz="0 0 0" rot="0.5 0.5 0.5 -0.5"/>
+        <linkTransform xyz="0 0 0" rot="0.5 0.5 0.5 -0.5"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-0.2792" upper="1.728" effort="0.35" velocity="6.283"/>
+        <dynamics damping="0.005875" stiffness="0" friction="0.01503" armature="0"/>
+    </joint>
+    <joint name="ring_joint_2" type="revolute">
+        <child link="ring_link_2"/>
+        <parent link="ring_link_1"/>
+        <origin xyz="0.054 0 0" rot="0 0 0 1"/>
+        <linkTransform xyz="0.054 0 0" rot="0 0 0 1"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-0.2792" upper="1.728" effort="0.35" velocity="6.283"/>
+        <dynamics damping="0.01064" stiffness="0" friction="0.006164" armature="0"/>
+    </joint>
+    <joint name="ring_joint_3" type="revolute">
+        <child link="ring_link_3"/>
+        <parent link="ring_link_2"/>
+        <origin xyz="0.0384 0 0" rot="0 0 0 1"/>
+        <linkTransform xyz="0.0384 0 0" rot="0 0 0 1"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-0.2792" upper="1.728" effort="0.35" velocity="6.283"/>
+        <dynamics damping="0.02269" stiffness="0" friction="0.0227" armature="0"/>
+    </joint>
+    <joint name="thumb_joint_3" type="revolute">
+        <child link="thumb_link_3"/>
+        <parent link="thumb_link_2"/>
+        <origin xyz="0.0514 0 0" rot="0 0 0 1"/>
+        <linkTransform xyz="0.0514 0 0" rot="0 0 0 1"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-0.2792" upper="1.763" effort="0.35" velocity="6.283"/>
+        <dynamics damping="0" stiffness="0" friction="0.035" armature="0"/>
+    </joint>
+    <filter>
+        <pair link0="allegro_mount" link1="thumb_link_1"/>
+        <pair link0="allegro_mount" link1="index_link_1"/>
+        <pair link0="allegro_mount" link1="middle_link_1"/>
+        <pair link0="allegro_mount" link1="ring_link_1"/>
+    </filter>
+</robot>

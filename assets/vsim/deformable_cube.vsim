@@ -1,0 +1,26 @@
+<robot name="" version="0">
+    <!--Materials-->
+    <deformableMaterial name="Soft" youngsModulus="100000" poissonRatio="0.35" damping="600" friction="2.0"/>
+    <!--Links-->
+    <robotProperties maxDepenetrationVelocity="10"/>
+    <deformables>
+        <deformable name="cube" density="1000" voxelSize="0.015" xyz="1 2 3" rpy="0 -0 0">
+            <visual name="Visual 0">
+                <origin xyz="0 0 0" rpy="0 -0 0"/>
+                <geometry>
+                    <triangle_mesh filename="package://cube.obj" scale="1 1 1"/>
+                    <queryProperties useQueries="false"/>
+                </geometry>
+            </visual>
+            <collision name="Visual 0">
+                <origin xyz="0 0 0" rpy="0 -0 0"/>
+                <geometry>
+                    <mesh_sdf filename="package://cube.obj" scale="1 1 1"/>
+                    <settings maxResPerAxis="256" targetSamples="1024"/>
+                    <queryProperties useQueries="false"/>
+                </geometry>
+            </collision>
+            <deformableMaterialRef name="Soft"/>
+        </deformable>
+    </deformables>
+</robot>

@@ -1,0 +1,24 @@
+<robot name="" version="0">
+    <!--Materials-->
+    <!--Links-->
+    <robotProperties maxDepenetrationVelocity="10"/>
+    <link name="link1_0">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <collision name="aux_1_geom">
+            <origin xyz="0 0 0" rpy="0 -1.57079632679 0"/>
+            <geometry>
+                <capsule length="0.2" radius="0.05"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+    </link>
+    <kinematicSensor>
+        <sensor name="capsule_sensor" link="link1_0" offset="0.0222200006247 3.00034880638e-05 -0.068349994719"
+        flags="transform velocity"/>
+    </kinematicSensor>
+</robot>

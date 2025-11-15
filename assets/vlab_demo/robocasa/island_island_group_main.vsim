@@ -1,0 +1,174 @@
+<robot name="island_island_group_main" version="0">
+    <!--Materials-->
+    <!--Links-->
+    <robotProperties maxDepenetrationVelocity="10"/>
+    <link name="island_island_group_main">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual name="island_island_group_base_right">
+            <origin xyz="1.025 0 -0.015" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.2 1 0.89"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="island_island_group_base_left">
+            <origin xyz="-1.025 0 -0.015" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.2 1 0.89"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="island_island_group_base_back">
+            <origin xyz="0 0 -0.015" rpy="0 -0 0"/>
+            <geometry>
+                <box size="1.85 0.03 0.89"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="island_island_group_base_front">
+            <origin xyz="0 -0.485 -0.015" rpy="0 -0 0"/>
+            <geometry>
+                <box size="1.85 0.03 0.89"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="island_island_group_base_right_visual">
+            <origin xyz="1.025 0 -0.015" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.2 1 0.89"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="island_island_group_base_left_visual">
+            <origin xyz="-1.025 0 -0.015" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.2 1 0.89"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="island_island_group_base_back_visual">
+            <origin xyz="0 0 -0.015" rpy="0 -0 0"/>
+            <geometry>
+                <box size="1.85 0.03 0.89"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="island_island_group_base_front_visual">
+            <origin xyz="0 -0.485 -0.015" rpy="0 -0 0"/>
+            <geometry>
+                <box size="1.85 0.03 0.89"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="island_island_group_top_visual">
+            <origin xyz="0 0 0.445" rpy="0 -0 0"/>
+            <geometry>
+                <box size="2.25 1 0.03"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="island_island_group_top_0">
+            <origin xyz="-0.875 0 0.445" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.5 1 0.03"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="island_island_group_top_1">
+            <origin xyz="-0.375 0 0.445" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.5 1 0.03"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="island_island_group_top_2">
+            <origin xyz="0.125 0 0.445" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.5 1 0.03"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="island_island_group_top_3">
+            <origin xyz="0.625 0 0.445" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.5 1 0.03"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="island_island_group_top_4">
+            <origin xyz="1 0 0.445" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.25 1 0.03"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <collision name="island_island_group_base_right">
+            <origin xyz="1.025 0 -0.015" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.2 1 0.89"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="island_island_group_base_left">
+            <origin xyz="-1.025 0 -0.015" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.2 1 0.89"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="island_island_group_base_back">
+            <origin xyz="0 0 -0.015" rpy="0 -0 0"/>
+            <geometry>
+                <box size="1.85 0.03 0.89"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="island_island_group_base_front">
+            <origin xyz="0 -0.485 -0.015" rpy="0 -0 0"/>
+            <geometry>
+                <box size="1.85 0.03 0.89"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="island_island_group_top_0">
+            <origin xyz="-0.875 0 0.445" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.5 1 0.03"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="island_island_group_top_1">
+            <origin xyz="-0.375 0 0.445" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.5 1 0.03"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="island_island_group_top_2">
+            <origin xyz="0.125 0 0.445" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.5 1 0.03"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="island_island_group_top_3">
+            <origin xyz="0.625 0 0.445" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.5 1 0.03"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="island_island_group_top_4">
+            <origin xyz="1 0 0.445" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.25 1 0.03"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+    </link>
+</robot>

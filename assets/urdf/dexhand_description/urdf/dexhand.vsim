@@ -1,0 +1,950 @@
+<robot name="dexhand">
+    <material name="silver">
+        <color rgba="0.7 0.7 0.7 1"/>
+    </material>
+    <link name="base_link">
+        <inertial>
+            <origin xyz="-0.003918 -0.002137 0.07918" rot="0 0 0 1"/>
+            <mass value="2.65"/>
+            <density value="-1"/>
+            <inertia ixx="0.02839" iyy="0.02821" izz="0.002764" ixy="-5.784e-05" ixz="0.001784" iyz="0.0005205"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://dexhand_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <material name="silver"/>
+        </visual>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://dexhand_description/meshes/forearm_1.stl" scale="0.001 0.001 0.001"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <material name="silver"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://dexhand_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://dexhand_description/meshes/forearm_1.stl" scale="0.001 0.001 0.001"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collisionMaterial mRestitution="0" mDynamicFriction="0" mStaticFriction="0" mDamping="0"/>
+        <miscellaneous maxDepenetrationVelocity="10" contactOffset="0.005" restOffset="0"/>
+    </link>
+    <link name="thumb-cmc-b_1">
+        <inertial>
+            <origin xyz="0.003351 0.005811 -0.008142" rot="0 0 0 1"/>
+            <mass value="0.008494"/>
+            <density value="-1"/>
+            <inertia ixx="0" iyy="0" izz="0" ixy="-0" ixz="0" iyz="0"/>
+        </inertial>
+        <visual>
+            <origin xyz="-0.01494 -0.01879 -0.268" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://dexhand_description/meshes/thumb_cmc_b_1.stl" scale="0.001 0.001 0.001"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <material name="silver"/>
+        </visual>
+        <collision>
+            <origin xyz="-0.01494 -0.01879 -0.268" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://dexhand_description/meshes/thumb_cmc_b_1.stl" scale="0.001 0.001 0.001"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collisionMaterial mRestitution="0" mDynamicFriction="0" mStaticFriction="0" mDamping="0"/>
+        <miscellaneous maxDepenetrationVelocity="10" contactOffset="0.005" restOffset="0"/>
+    </link>
+    <link name="wrist-lower_1">
+        <inertial>
+            <origin xyz="-3.068e-05 0.02099 0.02164" rot="0 0 0 1"/>
+            <mass value="0.3236"/>
+            <density value="-1"/>
+            <inertia ixx="0.000132" iyy="0.000118" izz="0.000139" ixy="-0" ixz="-0" iyz="-0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0.012 0.0217 -0.203" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://dexhand_description/meshes/wrist_lower_1.stl" scale="0.001 0.001 0.001"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <material name="silver"/>
+        </visual>
+        <collision>
+            <origin xyz="0.012 0.0217 -0.203" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://dexhand_description/meshes/wrist_lower_1.stl" scale="0.001 0.001 0.001"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collisionMaterial mRestitution="0" mDynamicFriction="0" mStaticFriction="0" mDamping="0"/>
+        <miscellaneous maxDepenetrationVelocity="10" contactOffset="0.005" restOffset="0"/>
+    </link>
+    <link name="wrist-upper_1">
+        <inertial>
+            <origin xyz="0.01694 0.001194 0.05157" rot="0 0 0 1"/>
+            <mass value="0.6691"/>
+            <density value="-1"/>
+            <inertia ixx="0.002913" iyy="0.002879" izz="0.0005321" ixy="-4.135e-05" ixz="-0.000578" iyz="2.449e-05"/>
+        </inertial>
+        <visual>
+            <origin xyz="0.02398 0.0007 -0.232" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://dexhand_description/meshes/wrist_upper_1.stl" scale="0.001 0.001 0.001"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <material name="silver"/>
+        </visual>
+        <visual>
+            <origin xyz="0.02398 0.0007 -0.232" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://dexhand_description/meshes/pinky_bulk_1.stl" scale="0.001 0.001 0.001"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <material name="silver"/>
+        </visual>
+        <visual>
+            <origin xyz="0.02398 0.0007 -0.232" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://dexhand_description/meshes/index_bulk_1.stl" scale="0.001 0.001 0.001"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <material name="silver"/>
+        </visual>
+        <visual>
+            <origin xyz="0.02398 0.0007 -0.232" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://dexhand_description/meshes/middle_bulk_1.stl" scale="0.001 0.001 0.001"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <material name="silver"/>
+        </visual>
+        <visual>
+            <origin xyz="0.02398 0.0007 -0.232" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://dexhand_description/meshes/ring_bulk_1.stl" scale="0.001 0.001 0.001"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <material name="silver"/>
+        </visual>
+        <collision>
+            <origin xyz="0.02398 0.0007 -0.232" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://dexhand_description/meshes/wrist_upper_1.stl" scale="0.001 0.001 0.001"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="0.02398 0.0007 -0.232" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://dexhand_description/meshes/pinky_bulk_1.stl" scale="0.001 0.001 0.001"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="0.02398 0.0007 -0.232" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://dexhand_description/meshes/index_bulk_1.stl" scale="0.001 0.001 0.001"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="0.02398 0.0007 -0.232" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://dexhand_description/meshes/middle_bulk_1.stl" scale="0.001 0.001 0.001"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="0.02398 0.0007 -0.232" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://dexhand_description/meshes/ring_bulk_1.stl" scale="0.001 0.001 0.001"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collisionMaterial mRestitution="0" mDynamicFriction="0" mStaticFriction="0" mDamping="0"/>
+        <miscellaneous maxDepenetrationVelocity="10" contactOffset="0.005" restOffset="0"/>
+    </link>
+    <link name="thumb-cmc-a_1">
+        <inertial>
+            <origin xyz="0.002947 0.005054 0.005851" rot="0 0 0 1"/>
+            <mass value="0.01504"/>
+            <density value="-1"/>
+            <inertia ixx="0" iyy="0" izz="0" ixy="0" ixz="-0" iyz="-0"/>
+        </inertial>
+        <visual>
+            <origin xyz="-0.01776 -0.02369 -0.2588" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://dexhand_description/meshes/thumb_cmc_a_1.stl" scale="0.001 0.001 0.001"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <material name="silver"/>
+        </visual>
+        <collision>
+            <origin xyz="-0.01776 -0.02369 -0.2588" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://dexhand_description/meshes/thumb_cmc_a_1.stl" scale="0.001 0.001 0.001"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collisionMaterial mRestitution="0" mDynamicFriction="0" mStaticFriction="0" mDamping="0"/>
+        <miscellaneous maxDepenetrationVelocity="10" contactOffset="0.005" restOffset="0"/>
+    </link>
+    <link name="thumb-plp_1">
+        <inertial>
+            <origin xyz="0.005434 0.02564 0.01661" rot="0 0 0 1"/>
+            <mass value="0.06711"/>
+            <density value="-1"/>
+            <inertia ixx="2e-05" iyy="1.5e-05" izz="1.3e-05" ixy="-5e-06" ixz="-5e-06" iyz="-9e-06"/>
+        </inertial>
+        <visual>
+            <origin xyz="-0.02868 -0.02635 -0.2666" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://dexhand_description/meshes/thumb_plp_1.stl" scale="0.001 0.001 0.001"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <material name="silver"/>
+        </visual>
+        <collision>
+            <origin xyz="-0.02868 -0.02635 -0.2666" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://dexhand_description/meshes/thumb_plp_1.stl" scale="0.001 0.001 0.001"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collisionMaterial mRestitution="0" mDynamicFriction="0" mStaticFriction="0" mDamping="0"/>
+        <miscellaneous maxDepenetrationVelocity="10" contactOffset="0.005" restOffset="0"/>
+    </link>
+    <link name="thumb-mlp_1">
+        <inertial>
+            <origin xyz="0.002152 0.01561 0.01274" rot="0 0 0 1"/>
+            <mass value="0.02519"/>
+            <density value="-1"/>
+            <inertia ixx="2e-06" iyy="2e-06" izz="2e-06" ixy="-0" ixz="-0" iyz="-1e-06"/>
+        </inertial>
+        <visual>
+            <origin xyz="-0.04947 -0.0666 -0.3062" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://dexhand_description/meshes/thumb_mlp_1.stl" scale="0.001 0.001 0.001"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <material name="silver"/>
+        </visual>
+        <collision>
+            <origin xyz="-0.04947 -0.0666 -0.3062" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://dexhand_description/meshes/thumb_mlp_1.stl" scale="0.001 0.001 0.001"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collisionMaterial mRestitution="0" mDynamicFriction="0" mStaticFriction="0" mDamping="0"/>
+        <miscellaneous maxDepenetrationVelocity="10" contactOffset="0.005" restOffset="0"/>
+    </link>
+    <link name="index-knuckle_1">
+        <inertial>
+            <origin xyz="0.007135 -0.0005541 0.001101" rot="0 0 0 1"/>
+            <mass value="0.01677"/>
+            <density value="-1"/>
+            <inertia ixx="1e-06" iyy="1e-06" izz="1e-06" ixy="0" ixz="-0" iyz="0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0.01588 -0.03014 -0.3402" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://dexhand_description/meshes/index_knuckle_1.stl" scale="0.001 0.001 0.001"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <material name="silver"/>
+        </visual>
+        <collision>
+            <origin xyz="0.01588 -0.03014 -0.3402" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://dexhand_description/meshes/index_knuckle_1.stl" scale="0.001 0.001 0.001"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collisionMaterial mRestitution="0" mDynamicFriction="0" mStaticFriction="0" mDamping="0"/>
+        <miscellaneous maxDepenetrationVelocity="10" contactOffset="0.005" restOffset="0"/>
+    </link>
+    <link name="middle-knuckle_1">
+        <inertial>
+            <origin xyz="0.006935 3.095e-08 0.0009795" rot="0 0 0 1"/>
+            <mass value="0.01677"/>
+            <density value="-1"/>
+            <inertia ixx="1e-06" iyy="1e-06" izz="1e-06" ixy="0" ixz="-0" iyz="0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0.01485 -0.0063 -0.3463" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://dexhand_description/meshes/middle_knuckle_1.stl" scale="0.001 0.001 0.001"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <material name="silver"/>
+        </visual>
+        <collision>
+            <origin xyz="0.01485 -0.0063 -0.3463" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://dexhand_description/meshes/middle_knuckle_1.stl" scale="0.001 0.001 0.001"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collisionMaterial mRestitution="0" mDynamicFriction="0" mStaticFriction="0" mDamping="0"/>
+        <miscellaneous maxDepenetrationVelocity="10" contactOffset="0.005" restOffset="0"/>
+    </link>
+    <link name="ring-knuckle_1">
+        <inertial>
+            <origin xyz="0.006918 0.0004875 0.0009797" rot="0 0 0 1"/>
+            <mass value="0.01677"/>
+            <density value="-1"/>
+            <inertia ixx="1e-06" iyy="1e-06" izz="1e-06" ixy="-0" ixz="-0" iyz="-0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0.01398 0.01834 -0.3423" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://dexhand_description/meshes/ring_knuckle_1.stl" scale="0.001 0.001 0.001"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <material name="silver"/>
+        </visual>
+        <collision>
+            <origin xyz="0.01398 0.01834 -0.3423" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://dexhand_description/meshes/ring_knuckle_1.stl" scale="0.001 0.001 0.001"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collisionMaterial mRestitution="0" mDynamicFriction="0" mStaticFriction="0" mDamping="0"/>
+        <miscellaneous maxDepenetrationVelocity="10" contactOffset="0.005" restOffset="0"/>
+    </link>
+    <link name="pinky-knuckle_1">
+        <inertial>
+            <origin xyz="0.006819 0.001182 0.00108" rot="0 0 0 1"/>
+            <mass value="0.01677"/>
+            <density value="-1"/>
+            <inertia ixx="1e-06" iyy="1e-06" izz="1e-06" ixy="-0" ixz="-0" iyz="-0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0.01342 0.03895 -0.334" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://dexhand_description/meshes/pinky_knuckle_1.stl" scale="0.001 0.001 0.001"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <material name="silver"/>
+        </visual>
+        <collision>
+            <origin xyz="0.01342 0.03895 -0.334" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://dexhand_description/meshes/pinky_knuckle_1.stl" scale="0.001 0.001 0.001"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collisionMaterial mRestitution="0" mDynamicFriction="0" mStaticFriction="0" mDamping="0"/>
+        <miscellaneous maxDepenetrationVelocity="10" contactOffset="0.005" restOffset="0"/>
+    </link>
+    <link name="index-plp_1">
+        <inertial>
+            <origin xyz="-0.006869 -0.006034 0.02294" rot="0 0 0 1"/>
+            <mass value="0.05157"/>
+            <density value="-1"/>
+            <inertia ixx="1.1e-05" iyy="1.1e-05" izz="2e-06" ixy="-0" ixz="0" iyz="-1e-06"/>
+        </inertial>
+        <visual>
+            <origin xyz="0.007269 -0.03768 -0.3437" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://dexhand_description/meshes/index_plp_1.stl" scale="0.001 0.001 0.001"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <material name="silver"/>
+        </visual>
+        <collision>
+            <origin xyz="0.007269 -0.03768 -0.3437" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://dexhand_description/meshes/index_plp_1.stl" scale="0.001 0.001 0.001"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collisionMaterial mRestitution="0" mDynamicFriction="0" mStaticFriction="0" mDamping="0"/>
+        <miscellaneous maxDepenetrationVelocity="10" contactOffset="0.005" restOffset="0"/>
+    </link>
+    <link name="index-mlp_1">
+        <inertial>
+            <origin xyz="-0.001467 -0.004862 0.0149" rot="0 0 0 1"/>
+            <mass value="0.01729"/>
+            <density value="-1"/>
+            <inertia ixx="1e-06" iyy="1e-06" izz="0" ixy="-0" ixz="-0" iyz="-0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0.01196 -0.03893 -0.3887" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://dexhand_description/meshes/index_mlp_1.stl" scale="0.001 0.001 0.001"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <material name="silver"/>
+        </visual>
+        <collision>
+            <origin xyz="0.01196 -0.03893 -0.3887" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://dexhand_description/meshes/index_mlp_1.stl" scale="0.001 0.001 0.001"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collisionMaterial mRestitution="0" mDynamicFriction="0" mStaticFriction="0" mDamping="0"/>
+        <miscellaneous maxDepenetrationVelocity="10" contactOffset="0.005" restOffset="0"/>
+    </link>
+    <link name="index-tip_1">
+        <inertial>
+            <origin xyz="-0.0008642 -0.005386 0.00677" rot="0 0 0 1"/>
+            <mass value="0.01608"/>
+            <density value="-1"/>
+            <inertia ixx="1e-06" iyy="1e-06" izz="0" ixy="-0" ixz="0" iyz="-0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0.01333 -0.04115 -0.4186" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://dexhand_description/meshes/index_tip_1.stl" scale="0.001 0.001 0.001"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <material name="silver"/>
+        </visual>
+        <collision>
+            <origin xyz="0.01333 -0.04115 -0.4186" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://dexhand_description/meshes/index_tip_1.stl" scale="0.001 0.001 0.001"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collisionMaterial mRestitution="0" mDynamicFriction="0" mStaticFriction="0" mDamping="0"/>
+        <miscellaneous maxDepenetrationVelocity="10" contactOffset="0.005" restOffset="0"/>
+    </link>
+    <link name="thumb-tip_1">
+        <inertial>
+            <origin xyz="-0.0009246 0.01013 0.007474" rot="0 0 0 1"/>
+            <mass value="0.02317"/>
+            <density value="-1"/>
+            <inertia ixx="2e-06" iyy="2e-06" izz="2e-06" ixy="-0" ixz="-0" iyz="-1e-06"/>
+        </inertial>
+        <visual>
+            <origin xyz="-0.06431 -0.09206 -0.3332" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://dexhand_description/meshes/thumb_tip_1.stl" scale="0.001 0.001 0.001"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <material name="silver"/>
+        </visual>
+        <collision>
+            <origin xyz="-0.06431 -0.09206 -0.3332" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://dexhand_description/meshes/thumb_tip_1.stl" scale="0.001 0.001 0.001"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collisionMaterial mRestitution="0" mDynamicFriction="0" mStaticFriction="0" mDamping="0"/>
+        <miscellaneous maxDepenetrationVelocity="10" contactOffset="0.005" restOffset="0"/>
+    </link>
+    <link name="middle-plp_1">
+        <inertial>
+            <origin xyz="-0.005944 -0.0082 0.02373" rot="0 0 0 1"/>
+            <mass value="0.05601"/>
+            <density value="-1"/>
+            <inertia ixx="1.3e-05" iyy="1.3e-05" izz="2e-06" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0.007096 -0.0143 -0.3503" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://dexhand_description/meshes/middle_plp_1.stl" scale="0.001 0.001 0.001"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <material name="silver"/>
+        </visual>
+        <collision>
+            <origin xyz="0.007096 -0.0143 -0.3503" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://dexhand_description/meshes/middle_plp_1.stl" scale="0.001 0.001 0.001"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collisionMaterial mRestitution="0" mDynamicFriction="0" mStaticFriction="0" mDamping="0"/>
+        <miscellaneous maxDepenetrationVelocity="10" contactOffset="0.005" restOffset="0"/>
+    </link>
+    <link name="middle-mlp_1">
+        <inertial>
+            <origin xyz="-0.0002943 -0.0063 0.01529" rot="0 0 0 1"/>
+            <mass value="0.01966"/>
+            <density value="-1"/>
+            <inertia ixx="1e-06" iyy="1e-06" izz="1e-06" ixy="0" ixz="-0" iyz="0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0.0111 -0.0123 -0.3975" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://dexhand_description/meshes/middle_mlp_1.stl" scale="0.001 0.001 0.001"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <material name="silver"/>
+        </visual>
+        <collision>
+            <origin xyz="0.0111 -0.0123 -0.3975" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://dexhand_description/meshes/middle_mlp_1.stl" scale="0.001 0.001 0.001"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collisionMaterial mRestitution="0" mDynamicFriction="0" mStaticFriction="0" mDamping="0"/>
+        <miscellaneous maxDepenetrationVelocity="10" contactOffset="0.005" restOffset="0"/>
+    </link>
+    <link name="middle-tip_1">
+        <inertial>
+            <origin xyz="-0.0006362 -0.0062 0.006855" rot="0 0 0 1"/>
+            <mass value="0.01772"/>
+            <density value="-1"/>
+            <inertia ixx="1e-06" iyy="1e-06" izz="0" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0.0111 -0.0123 -0.429" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://dexhand_description/meshes/middle_tip_1.stl" scale="0.001 0.001 0.001"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <material name="silver"/>
+        </visual>
+        <collision>
+            <origin xyz="0.0111 -0.0123 -0.429" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://dexhand_description/meshes/middle_tip_1.stl" scale="0.001 0.001 0.001"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collisionMaterial mRestitution="0" mDynamicFriction="0" mStaticFriction="0" mDamping="0"/>
+        <miscellaneous maxDepenetrationVelocity="10" contactOffset="0.005" restOffset="0"/>
+    </link>
+    <link name="ring-plp_1">
+        <inertial>
+            <origin xyz="-0.004989 -0.01124 0.02143" rot="0 0 0 1"/>
+            <mass value="0.05161"/>
+            <density value="-1"/>
+            <inertia ixx="1.1e-05" iyy="1.1e-05" izz="2e-06" ixy="0" ixz="-0" iyz="1e-06"/>
+        </inertial>
+        <visual>
+            <origin xyz="0.006914 0.01021 -0.3473" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://dexhand_description/meshes/ring_plp_1.stl" scale="0.001 0.001 0.001"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <material name="silver"/>
+        </visual>
+        <collision>
+            <origin xyz="0.006914 0.01021 -0.3473" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://dexhand_description/meshes/ring_plp_1.stl" scale="0.001 0.001 0.001"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collisionMaterial mRestitution="0" mDynamicFriction="0" mStaticFriction="0" mDamping="0"/>
+        <miscellaneous maxDepenetrationVelocity="10" contactOffset="0.005" restOffset="0"/>
+    </link>
+    <link name="ring-mlp_1">
+        <inertial>
+            <origin xyz="0.0003732 -0.007645 0.01376" rot="0 0 0 1"/>
+            <mass value="0.01729"/>
+            <density value="-1"/>
+            <inertia ixx="1e-06" iyy="1e-06" izz="0" ixy="0" ixz="-0" iyz="0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0.01029 0.01804 -0.3917" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://dexhand_description/meshes/ring_mlp_1.stl" scale="0.001 0.001 0.001"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <material name="silver"/>
+        </visual>
+        <collision>
+            <origin xyz="0.01029 0.01804 -0.3917" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://dexhand_description/meshes/ring_mlp_1.stl" scale="0.001 0.001 0.001"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collisionMaterial mRestitution="0" mDynamicFriction="0" mStaticFriction="0" mDamping="0"/>
+        <miscellaneous maxDepenetrationVelocity="10" contactOffset="0.005" restOffset="0"/>
+    </link>
+    <link name="ring-tip_1">
+        <inertial>
+            <origin xyz="-2.475e-05 -0.006623 0.005616" rot="0 0 0 1"/>
+            <mass value="0.01604"/>
+            <density value="-1"/>
+            <inertia ixx="1e-06" iyy="1e-06" izz="0" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0.01002 0.02151 -0.4215" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://dexhand_description/meshes/ring_tip_1.stl" scale="0.001 0.001 0.001"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <material name="silver"/>
+        </visual>
+        <collision>
+            <origin xyz="0.01002 0.02151 -0.4215" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://dexhand_description/meshes/ring_tip_1.stl" scale="0.001 0.001 0.001"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collisionMaterial mRestitution="0" mDynamicFriction="0" mStaticFriction="0" mDamping="0"/>
+        <miscellaneous maxDepenetrationVelocity="10" contactOffset="0.005" restOffset="0"/>
+    </link>
+    <link name="pinky-plp_1">
+        <inertial>
+            <origin xyz="-0.003811 -0.01255 0.01824" rot="0 0 0 1"/>
+            <mass value="0.04273"/>
+            <density value="-1"/>
+            <inertia ixx="8e-06" iyy="8e-06" izz="1e-06" ixy="0" ixz="-0" iyz="1e-06"/>
+        </inertial>
+        <visual>
+            <origin xyz="0.007304 0.03041 -0.3395" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://dexhand_description/meshes/pinky_plp_1.stl" scale="0.001 0.001 0.001"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <material name="silver"/>
+        </visual>
+        <collision>
+            <origin xyz="0.007304 0.03041 -0.3395" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://dexhand_description/meshes/pinky_plp_1.stl" scale="0.001 0.001 0.001"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collisionMaterial mRestitution="0" mDynamicFriction="0" mStaticFriction="0" mDamping="0"/>
+        <miscellaneous maxDepenetrationVelocity="10" contactOffset="0.005" restOffset="0"/>
+    </link>
+    <link name="pinky-mlp_1">
+        <inertial>
+            <origin xyz="0.001048 -0.007531 0.01194" rot="0 0 0 1"/>
+            <mass value="0.01298"/>
+            <density value="-1"/>
+            <inertia ixx="1e-06" iyy="1e-06" izz="0" ixy="0" ixz="-0" iyz="0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0.009816 0.04099 -0.3788" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://dexhand_description/meshes/pinky_mlp_1.stl" scale="0.001 0.001 0.001"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <material name="silver"/>
+        </visual>
+        <collision>
+            <origin xyz="0.009816 0.04099 -0.3788" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://dexhand_description/meshes/pinky_mlp_1.stl" scale="0.001 0.001 0.001"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collisionMaterial mRestitution="0" mDynamicFriction="0" mStaticFriction="0" mDamping="0"/>
+        <miscellaneous maxDepenetrationVelocity="10" contactOffset="0.005" restOffset="0"/>
+    </link>
+    <link name="pinky-tip_1">
+        <inertial>
+            <origin xyz="0.0005692 -0.00614 0.004252" rot="0 0 0 1"/>
+            <mass value="0.01288"/>
+            <density value="-1"/>
+            <inertia ixx="1e-06" iyy="1e-06" izz="0" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0.009341 0.04568 -0.4054" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://dexhand_description/meshes/pinky_tip_1.stl" scale="0.001 0.001 0.001"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <material name="silver"/>
+        </visual>
+        <collision>
+            <origin xyz="0.009341 0.04568 -0.4054" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://dexhand_description/meshes/pinky_tip_1.stl" scale="0.001 0.001 0.001"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collisionMaterial mRestitution="0" mDynamicFriction="0" mStaticFriction="0" mDamping="0"/>
+        <miscellaneous maxDepenetrationVelocity="10" contactOffset="0.005" restOffset="0"/>
+    </link>
+    <joint name="thumb-yaw" type="revolute">
+        <child link="thumb-cmc-b_1"/>
+        <parent link="wrist-upper_1"/>
+        <origin xyz="0.03892 0.01949 0.036" rot="0 0 0 1"/>
+        <linkTransform xyz="0.03892 0.01949 0.036" rot="0 0 0 1"/>
+        <axis xyz="0.3536 0.6124 -0.7071"/>
+        <limit lower="0" upper="0.8727" effort="100" velocity="100"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="wrist_pitch" type="revolute">
+        <child link="wrist-lower_1"/>
+        <parent link="base_link"/>
+        <origin xyz="-0.012 -0.0217 0.203" rot="0 0 0 1"/>
+        <linkTransform xyz="-0.012 -0.0217 0.203" rot="0 0 0 1"/>
+        <axis xyz="0 -1 0"/>
+        <limit lower="-0.5236" upper="0.5236" effort="100" velocity="100"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="wrist_yaw" type="revolute">
+        <child link="wrist-upper_1"/>
+        <parent link="wrist-lower_1"/>
+        <origin xyz="-0.01198 0.021 0.029" rot="0 0 0 1"/>
+        <linkTransform xyz="-0.01198 0.021 0.029" rot="0 0 0 1"/>
+        <axis xyz="-1 0 0"/>
+        <limit lower="-0.4363" upper="0.4363" effort="100" velocity="100"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="thumb-roll" type="revolute">
+        <child link="thumb-cmc-a_1"/>
+        <parent link="thumb-cmc-b_1"/>
+        <origin xyz="0.002822 0.004903 -0.009193" rot="0 0 0 1"/>
+        <linkTransform xyz="0.002822 0.004903 -0.009193" rot="0 0 0 1"/>
+        <axis xyz="-0.3561 -0.6109 -0.7071"/>
+        <limit lower="0" upper="0.3491" effort="100" velocity="100"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="thumb-pitch" type="revolute">
+        <child link="thumb-plp_1"/>
+        <parent link="thumb-cmc-a_1"/>
+        <origin xyz="0.01092 0.002655 0.007762" rot="0 0 0 1"/>
+        <linkTransform xyz="0.01092 0.002655 0.007762" rot="0 0 0 1"/>
+        <axis xyz="0.865 -0.5018 -0.002105"/>
+        <limit lower="0" upper="1.047" effort="100" velocity="100"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="thumb-knuckle" type="revolute">
+        <child link="thumb-mlp_1"/>
+        <parent link="thumb-plp_1"/>
+        <origin xyz="0.02079 0.04026 0.0396" rot="0 0 0 1"/>
+        <linkTransform xyz="0.02079 0.04026 0.0396" rot="0 0 0 1"/>
+        <axis xyz="0.865 -0.5018 -0.002105"/>
+        <limit lower="0" upper="0.7854" effort="100" velocity="100"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="index-yaw" type="revolute">
+        <child link="index-knuckle_1"/>
+        <parent link="wrist-upper_1"/>
+        <origin xyz="0.008095 0.03084 0.1082" rot="0 0 0 1"/>
+        <linkTransform xyz="0.008095 0.03084 0.1082" rot="0 0 0 1"/>
+        <axis xyz="-0.9961 0.08697 -0.01736"/>
+        <limit lower="-0.3491" upper="0.3491" effort="100" velocity="100"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="middle-yaw" type="revolute">
+        <child link="middle-knuckle_1"/>
+        <parent link="wrist-upper_1"/>
+        <origin xyz="0.009134 0.007 0.1143" rot="0 0 0 1"/>
+        <linkTransform xyz="0.009134 0.007 0.1143" rot="0 0 0 1"/>
+        <axis xyz="-1 -0 0"/>
+        <limit lower="-0.3491" upper="0.3491" effort="100" velocity="100"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="ring-yaw" type="revolute">
+        <child link="ring-knuckle_1"/>
+        <parent link="wrist-upper_1"/>
+        <origin xyz="0.009999 -0.01764 0.1103" rot="0 0 0 1"/>
+        <linkTransform xyz="0.009999 -0.01764 0.1103" rot="0 0 0 1"/>
+        <axis xyz="-0.9962 -0.08669 -0.001008"/>
+        <limit lower="-0.3491" upper="0.3491" effort="100" velocity="100"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="pinky-yaw" type="revolute">
+        <child link="pinky-knuckle_1"/>
+        <parent link="wrist-upper_1"/>
+        <origin xyz="0.01056 -0.03825 0.102" rot="0 0 0 1"/>
+        <linkTransform xyz="0.01056 -0.03825 0.102" rot="0 0 0 1"/>
+        <axis xyz="-0.9807 -0.1949 -0.01682"/>
+        <limit lower="-0.3491" upper="0.3491" effort="100" velocity="100"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="index-pitch" type="revolute">
+        <child link="index-plp_1"/>
+        <parent link="index-knuckle_1"/>
+        <origin xyz="0.008616 0.007539 0.003571" rot="0 0 0 1"/>
+        <linkTransform xyz="0.008616 0.007539 0.003571" rot="0 0 0 1"/>
+        <axis xyz="0.08798 0.9937 -0.06975"/>
+        <limit lower="0" upper="0.7854" effort="100" velocity="100"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="index-knuckle" type="revolute">
+        <child link="index-mlp_1"/>
+        <parent link="index-plp_1"/>
+        <origin xyz="-0.00469 0.001257 0.04497" rot="0 0 0 1"/>
+        <linkTransform xyz="-0.00469 0.001257 0.04497" rot="0 0 0 1"/>
+        <axis xyz="0.08798 0.9937 -0.06975"/>
+        <limit lower="0" upper="0.7854" effort="100" velocity="100"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="index-tip" type="revolute">
+        <child link="index-tip_1"/>
+        <parent link="index-mlp_1"/>
+        <origin xyz="-0.001368 0.002219 0.02989" rot="0 0 0 1"/>
+        <linkTransform xyz="-0.001368 0.002219 0.02989" rot="0 0 0 1"/>
+        <axis xyz="0.08798 0.9937 -0.06975"/>
+        <limit lower="0" upper="0.7854" effort="100" velocity="100"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="thumb-tip" type="revolute">
+        <child link="thumb-tip_1"/>
+        <parent link="thumb-mlp_1"/>
+        <origin xyz="0.01484 0.02546 0.02705" rot="0 0 0 1"/>
+        <linkTransform xyz="0.01484 0.02546 0.02705" rot="0 0 0 1"/>
+        <axis xyz="0.865 -0.5018 -0.002105"/>
+        <limit lower="0" upper="0.7854" effort="100" velocity="100"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="middle-pitch" type="revolute">
+        <child link="middle-plp_1"/>
+        <parent link="middle-knuckle_1"/>
+        <origin xyz="0.00775 0.008 0.004" rot="0 0 0 1"/>
+        <linkTransform xyz="0.00775 0.008 0.004" rot="0 0 0 1"/>
+        <axis xyz="0 1 0"/>
+        <limit lower="0" upper="0.7854" effort="100" velocity="100"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="middle-knuckle" type="revolute">
+        <child link="middle-mlp_1"/>
+        <parent link="middle-plp_1"/>
+        <origin xyz="-0.004 -0.002 0.04725" rot="0 0 0 1"/>
+        <linkTransform xyz="-0.004 -0.002 0.04725" rot="0 0 0 1"/>
+        <axis xyz="-0 1 0"/>
+        <limit lower="0" upper="0.7854" effort="100" velocity="100"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="middle-tip" type="revolute">
+        <child link="middle-tip_1"/>
+        <parent link="middle-mlp_1"/>
+        <origin xyz="0 0 0.0315" rot="0 0 0 1"/>
+        <linkTransform xyz="0 0 0.0315" rot="0 0 0 1"/>
+        <axis xyz="-0 1 0"/>
+        <limit lower="0" upper="0.7854" effort="100" velocity="100"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="ring-pitch" type="revolute">
+        <child link="ring-plp_1"/>
+        <parent link="ring-knuckle_1"/>
+        <origin xyz="0.007067 0.008125 0.004909" rot="0 0 0 1"/>
+        <linkTransform xyz="0.007067 0.008125 0.004909" rot="0 0 0 1"/>
+        <axis xyz="-0.08622 0.9895 0.116"/>
+        <limit lower="0" upper="0.7854" effort="100" velocity="100"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="ring-knuckle" type="revolute">
+        <child link="ring-mlp_1"/>
+        <parent link="ring-plp_1"/>
+        <origin xyz="-0.003379 -0.007829 0.04443" rot="0 0 0 1"/>
+        <linkTransform xyz="-0.003379 -0.007829 0.04443" rot="0 0 0 1"/>
+        <axis xyz="-0.08622 0.9895 0.116"/>
+        <limit lower="0" upper="0.7854" effort="100" velocity="100"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="ring-tip" type="revolute">
+        <child link="ring-tip_1"/>
+        <parent link="ring-mlp_1"/>
+        <origin xyz="0.000272 -0.003471 0.0298" rot="0 0 0 1"/>
+        <linkTransform xyz="0.000272 -0.003471 0.0298" rot="0 0 0 1"/>
+        <axis xyz="-0.08622 0.9895 0.116"/>
+        <limit lower="0" upper="0.7854" effort="100" velocity="100"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="pinky-pitch" type="revolute">
+        <child link="pinky-plp_1"/>
+        <parent link="pinky-knuckle_1"/>
+        <origin xyz="0.006112 0.00854 0.005458" rot="0 0 0 1"/>
+        <linkTransform xyz="0.006112 0.00854 0.005458" rot="0 0 0 1"/>
+        <axis xyz="-0.1949 0.9653 0.1736"/>
+        <limit lower="0" upper="0.7854" effort="100" velocity="100"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="pinky-knuckle" type="revolute">
+        <child link="pinky-mlp_1"/>
+        <parent link="pinky-plp_1"/>
+        <origin xyz="-0.002512 -0.01058 0.03932" rot="0 0 0 1"/>
+        <linkTransform xyz="-0.002512 -0.01058 0.03932" rot="0 0 0 1"/>
+        <axis xyz="-0.1949 0.9653 0.1736"/>
+        <limit lower="0" upper="0.7854" effort="100" velocity="100"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="pinky-tip" type="revolute">
+        <child link="pinky-tip_1"/>
+        <parent link="pinky-mlp_1"/>
+        <origin xyz="0.000475 -0.004686 0.02659" rot="0 0 0 1"/>
+        <linkTransform xyz="0.000475 -0.004686 0.02659" rot="0 0 0 1"/>
+        <axis xyz="-0.1949 0.9653 0.1736"/>
+        <limit lower="0" upper="0.7854" effort="100" velocity="100"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <filter>
+        <pair link0="base_link" link1="wrist-upper_1"/>
+        <pair link0="wrist-upper_1" link1="thumb-cmc-a_1"/>
+        <pair link0="wrist-upper_1" link1="thumb-plp_1"/>
+    </filter>
+</robot>

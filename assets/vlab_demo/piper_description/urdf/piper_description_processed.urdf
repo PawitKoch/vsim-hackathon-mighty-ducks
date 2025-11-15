@@ -1,0 +1,449 @@
+<robot name="piper" version="0">
+    <!--Materials-->
+    <material name="DefaultMaterial">
+        <color rgba="1 1 1 1"/>
+        <luminescence value="0"/>
+        <specularExponent value="40"/>
+        <specularIntensity value="0.25"/>
+    </material>
+    <material name="DefaultMaterial 2">
+        <color rgba="1 1 1 1"/>
+        <luminescence value="0"/>
+        <specularExponent value="40"/>
+        <specularIntensity value="0.25"/>
+    </material>
+    <material name="DefaultMaterial 3">
+        <color rgba="1 1 1 1"/>
+        <luminescence value="0"/>
+        <specularExponent value="40"/>
+        <specularIntensity value="0.25"/>
+    </material>
+    <material name="DefaultMaterial 4">
+        <color rgba="1 1 1 1"/>
+        <luminescence value="0"/>
+        <specularExponent value="40"/>
+        <specularIntensity value="0.25"/>
+    </material>
+    <material name="DefaultMaterial 5">
+        <color rgba="1 1 1 1"/>
+        <luminescence value="0"/>
+        <specularExponent value="40"/>
+        <specularIntensity value="0.25"/>
+    </material>
+    <material name="DefaultMaterial 6">
+        <color rgba="1 1 1 1"/>
+        <luminescence value="0"/>
+        <specularExponent value="40"/>
+        <specularIntensity value="0.25"/>
+    </material>
+    <material name="DefaultMaterial 7">
+        <color rgba="1 1 1 1"/>
+        <luminescence value="0"/>
+        <specularExponent value="40"/>
+        <specularIntensity value="0.25"/>
+    </material>
+    <material name="DefaultMaterial 8">
+        <color rgba="1 1 1 1"/>
+        <luminescence value="0"/>
+        <specularExponent value="40"/>
+        <specularIntensity value="0.25"/>
+    </material>
+    <material name="DefaultMaterial 9">
+        <color rgba="1 1 1 1"/>
+        <luminescence value="0"/>
+        <specularExponent value="40"/>
+        <specularIntensity value="0.25"/>
+    </material>
+    <material name="DefaultMaterial 10">
+        <color rgba="1 1 1 1"/>
+        <luminescence value="0"/>
+        <specularExponent value="40"/>
+        <specularIntensity value="0.25"/>
+    </material>
+    <rigidMaterial name="RigidPhysicsMaterial" staticFriction="0.5" dynamicFriction="0.5" restitution="0.10000000149"/>
+    <rigidMaterial name="RigidPhysicsMaterial 2" staticFriction="0.5" dynamicFriction="0.5" restitution="0.10000000149"/>
+    <rigidMaterial name="RigidPhysicsMaterial 3" staticFriction="0.5" dynamicFriction="0.5" restitution="0.10000000149"/>
+    <rigidMaterial name="RigidPhysicsMaterial 4" staticFriction="0.5" dynamicFriction="0.5" restitution="0.10000000149"/>
+    <rigidMaterial name="RigidPhysicsMaterial 5" staticFriction="0.5" dynamicFriction="0.5" restitution="0.10000000149"/>
+    <rigidMaterial name="RigidPhysicsMaterial 6" staticFriction="0.5" dynamicFriction="0.5" restitution="0.10000000149"/>
+    <rigidMaterial name="RigidPhysicsMaterial 7" staticFriction="0.5" dynamicFriction="0.5" restitution="0.10000000149"/>
+    <rigidMaterial name="RigidPhysicsMaterial 8" staticFriction="0.5" dynamicFriction="0.5" restitution="0.10000000149"/>
+    <rigidMaterial name="RigidPhysicsMaterial 9" staticFriction="0.5" dynamicFriction="0.5" restitution="0.10000000149"/>
+    <rigidMaterial name="RigidPhysicsMaterial 10" staticFriction="0.5" dynamicFriction="0.5" restitution="0.10000000149"/>
+    <rigidMaterial name="RigidPhysicsMaterial 11" staticFriction="0.5" dynamicFriction="0.5" restitution="0.10000000149"/>
+    <!--Links-->
+    <robotProperties maxDepenetrationVelocity="10"/>
+    <link name="dummy_link">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="800"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <rigidMaterialRef name="RigidPhysicsMaterial"/>
+        <miscellaneous contactOffset="0.00999999977648"/>
+    </link>
+    <link name="base_link">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="1.01999998093"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual name="Visual 0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <mesh filename="package://piper_description/meshes/base_link.STL" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <rgbMaterialRef name="DefaultMaterial"/>
+        </visual>
+        <collision name="Collision 0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <mesh filename="package://piper_description/meshes/base_link.STL" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <rigidMaterialRef name="RigidPhysicsMaterial 2"/>
+        <miscellaneous contactOffset="0.00999999977648"/>
+    </link>
+    <link name="link1">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="0.709999978542"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual name="Visual 0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <mesh filename="package://piper_description/meshes/link1.STL" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <rgbMaterialRef name="DefaultMaterial 2"/>
+        </visual>
+        <collision name="Collision 0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <mesh filename="package://piper_description/meshes/link1.STL" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <rigidMaterialRef name="RigidPhysicsMaterial 3"/>
+        <miscellaneous contactOffset="0.00999999977648"/>
+    </link>
+    <link name="link2">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="1.16999995708"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual name="Visual 0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <mesh filename="package://piper_description/meshes/link2.STL" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <rgbMaterialRef name="DefaultMaterial 3"/>
+        </visual>
+        <collision name="Collision 0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <mesh filename="package://piper_description/meshes/link2.STL" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <rigidMaterialRef name="RigidPhysicsMaterial 4"/>
+        <miscellaneous contactOffset="0.00999999977648"/>
+    </link>
+    <link name="link3">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="0.5"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual name="Visual 0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <mesh filename="package://piper_description/meshes/link3.STL" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <rgbMaterialRef name="DefaultMaterial 4"/>
+        </visual>
+        <collision name="Collision 0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <mesh filename="package://piper_description/meshes/link3.STL" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <rigidMaterialRef name="RigidPhysicsMaterial 5"/>
+        <miscellaneous contactOffset="0.00999999977648"/>
+    </link>
+    <link name="link4">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="0.379999995232"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual name="Visual 0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <mesh filename="package://piper_description/meshes/link4.STL" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <rgbMaterialRef name="DefaultMaterial 5"/>
+        </visual>
+        <collision name="Collision 0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <mesh filename="package://piper_description/meshes/link4.STL" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <rigidMaterialRef name="RigidPhysicsMaterial 6"/>
+        <miscellaneous contactOffset="0.00999999977648"/>
+    </link>
+    <link name="link5">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="0.38299998641"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual name="Visual 0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <mesh filename="package://piper_description/meshes/link5.STL" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <rgbMaterialRef name="DefaultMaterial 6"/>
+        </visual>
+        <collision name="Collision 0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <mesh filename="package://piper_description/meshes/link5.STL" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <rigidMaterialRef name="RigidPhysicsMaterial 7"/>
+        <miscellaneous contactOffset="0.00999999977648"/>
+    </link>
+    <link name="link6">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="0.00700000021607"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual name="Visual 0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <mesh filename="package://piper_description/meshes/link6.STL" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <rgbMaterialRef name="DefaultMaterial 7"/>
+        </visual>
+        <collision name="Collision 0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <mesh filename="package://piper_description/meshes/link6.STL" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <rigidMaterialRef name="RigidPhysicsMaterial 8"/>
+        <miscellaneous contactOffset="0.00999999977648"/>
+    </link>
+    <link name="gripper_base">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="0.449999988079"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual name="Visual 0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <mesh filename="package://piper_description/meshes/gripper_base.STL" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <rgbMaterialRef name="DefaultMaterial 8"/>
+        </visual>
+        <collision name="Collision 0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <mesh filename="package://piper_description/meshes/gripper_base.STL" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <rigidMaterialRef name="RigidPhysicsMaterial 9"/>
+        <miscellaneous contactOffset="0.00999999977648"/>
+    </link>
+    <link name="link7">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="0.0250000003725"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual name="Visual 0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <mesh filename="package://piper_description/meshes/link7.STL" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <rgbMaterialRef name="DefaultMaterial 9"/>
+        </visual>
+        <collision name="Collision 0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <mesh filename="package://piper_description/meshes/link7.STL" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <rigidMaterialRef name="RigidPhysicsMaterial 10"/>
+        <miscellaneous contactOffset="0.00999999977648"/>
+    </link>
+    <link name="link8">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="0.0250000003725"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual name="Visual 0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <mesh filename="package://piper_description/meshes/link8.STL" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <rgbMaterialRef name="DefaultMaterial 10"/>
+        </visual>
+        <collision name="Collision 0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <mesh filename="package://piper_description/meshes/link8.STL" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <rigidMaterialRef name="RigidPhysicsMaterial 11"/>
+        <miscellaneous contactOffset="0.00999999977648"/>
+    </link>
+    <joint name="base_to_dummy" type="fixed">
+        <child link="base_link"/>
+        <parent link="dummy_link"/>
+        <origin xyz="0 0 0" rpy="0 -0 0"/>
+        <linkTransform xyz="0 -0 0" rpy="0 -0 0"/>
+        <limit lower="1" upper="-1" effort="0" velocity="10"/>
+        <dynamics damping="0" stiffness="0" integral="0" friction="0" frictionLoss="0" armature="0"/>
+    </joint>
+    <joint name="joint1" type="revolute">
+        <child link="link1"/>
+        <parent link="base_link"/>
+        <origin xyz="0 -1.46627421316e-08 0.122999995947" rpy="0 -0 0"/>
+        <linkTransform xyz="0 -8.42022128249e-09 0.122999991737" rpy="0 -0 0"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-2.61800003052" upper="2.61800003052" effort="100" velocity="5"/>
+        <dynamics damping="20" stiffness="100" integral="0" friction="0" frictionLoss="0" armature="0"/>
+    </joint>
+    <joint name="joint2" type="revolute">
+        <child link="link2"/>
+        <parent link="link1"/>
+        <origin xyz="0 0 0" rpy="1.57079632679 -0.13589992258 3.14159265359"/>
+        <linkTransform xyz="0 -0 0" rpy="1.57079628308 -0.135899925402 3.14159265359"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="0" upper="3.1400001049" effort="100" velocity="5"/>
+        <dynamics damping="20" stiffness="100" integral="0" friction="0" frictionLoss="0" armature="0"/>
+    </joint>
+    <joint name="joint3" type="revolute">
+        <child link="link3"/>
+        <parent link="link2"/>
+        <origin xyz="0.285030007362 4.81092610194e-10 -2.91312630011e-17" rpy="6.14423953932e-15 -3.58435723609e-15 -1.79390006553"/>
+        <linkTransform xyz="0.285030010128 -4.81092388149e-10 -8.18910451483e-17" rpy="5.15060684518e-15 -5.7436527613e-15 -1.79389999825"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-2.96700000763" upper="0" effort="100" velocity="5"/>
+        <dynamics damping="20" stiffness="100" integral="0" friction="0" frictionLoss="0" armature="0"/>
+    </joint>
+    <joint name="joint4" type="revolute">
+        <child link="link4"/>
+        <parent link="link3"/>
+        <origin xyz="-0.0219840537757 -0.25075006485 7.67562283264e-13" rpy="1.57079632679 4.16656789452e-08 -2.30528345012e-07"/>
+        <linkTransform xyz="-0.0219840542275 -0.250750058552 7.66352401946e-13" rpy="1.5707963456 7.37010465817e-08 -5.34257517585e-08"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-1.74500000477" upper="1.74500000477" effort="100" velocity="5"/>
+        <dynamics damping="20" stiffness="100" integral="0" friction="0" frictionLoss="0" armature="0"/>
+    </joint>
+    <joint name="joint5" type="revolute">
+        <child link="link5"/>
+        <parent link="link4"/>
+        <origin xyz="0 0 0" rpy="-1.57079632679 1.81613692865e-07 6.28661963646e-09"/>
+        <linkTransform xyz="0 0 0" rpy="-1.5707963456 5.3425752123e-08 3.10730194827e-08"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-1.22000002861" upper="1.22000002861" effort="100" velocity="5"/>
+        <dynamics damping="20" stiffness="100" integral="0" friction="0" frictionLoss="0" armature="0"/>
+    </joint>
+    <joint name="joint6" type="revolute">
+        <child link="link6"/>
+        <parent link="link5"/>
+        <origin xyz="8.824809629e-05 -0.091000020504 3.2272173215e-12" rpy="1.57079641109 4.16656904173e-08 -2.30528352972e-07"/>
+        <linkTransform xyz="8.82500053177e-05 -0.0910000244387 3.2275052905e-12" rpy="1.57079637407 6.21460450653e-08 -8.4498774062e-08"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-2.09439992905" upper="2.09439992905" effort="100" velocity="3"/>
+        <dynamics damping="20" stiffness="100" integral="0" friction="0" frictionLoss="0" armature="0"/>
+    </joint>
+    <joint name="joint6_to_gripper_base" type="fixed">
+        <child link="gripper_base"/>
+        <parent link="link6"/>
+        <origin xyz="0 0 0" rpy="0 -0 0"/>
+        <linkTransform xyz="0 0 0" rpy="0 -0 0"/>
+        <limit lower="1" upper="-1" effort="0" velocity="10"/>
+        <dynamics damping="0" stiffness="0" integral="0" friction="0" frictionLoss="0" armature="0"/>
+    </joint>
+    <joint name="joint7" type="prismatic">
+        <child link="link7"/>
+        <parent link="gripper_base"/>
+        <origin xyz="-2.81325576168e-08 -8.72710081978e-09 0.135800018907" rpy="1.57079607391 1.8838151726e-07 -4.81220719457e-10"/>
+        <linkTransform xyz="-7.08753400414e-09 -5.2904242237e-09 0.135800023784" rpy="1.57079636694 8.44987766461e-08 1.95180179763e-08"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="0" upper="0.035000000149" effort="10" velocity="1"/>
+        <dynamics damping="20" stiffness="50" integral="0" friction="0" frictionLoss="0" armature="0"/>
+    </joint>
+    <joint name="joint8" type="prismatic">
+        <child link="link8"/>
+        <parent link="gripper_base"/>
+        <origin xyz="-2.81325576168e-08 -8.72710170796e-09 0.135800018907" rpy="1.57079649538 -2.58497120897e-08 -3.14159264785"/>
+        <linkTransform xyz="-7.08753400414e-09 -5.2904242237e-09 0.135800023784" rpy="1.57079628665 8.39283852832e-08 -3.14159263407"/>
+        <axis xyz="0 0 -1"/>
+        <limit lower="-0.035000000149" upper="0" effort="10" velocity="1"/>
+        <dynamics damping="20" stiffness="50" integral="0" friction="0" frictionLoss="0" armature="0"/>
+    </joint>
+    <filter>
+        <pair link0="base_link" link1="link2"/>
+        <pair link0="link5" link1="gripper_base"/>
+        <pair link0="link7" link1="link8"/>
+    </filter>
+</robot>

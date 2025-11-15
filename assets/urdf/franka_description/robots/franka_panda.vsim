@@ -1,0 +1,386 @@
+<robot name="panda">
+    <link name="panda_link0">
+        <inertial>
+            <origin xyz="-0.03252 -0.002597 0.0523" rot="0 0 0 1"/>
+            <mass value="2.885"/>
+            <density value="-1"/>
+            <inertia ixx="0.01014" iyy="0.0125" izz="0.01285" ixy="7.593e-05" ixz="-0.001561" iyz="0.0003018"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://franka_description/meshes/visual/link0.dae" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name=""/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://franka_description/meshes/collision/link0.obj" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="panda_link1">
+        <inertial>
+            <origin xyz="-0.0007836 -0.03095 -0.06715" rot="0 0 0 1"/>
+            <mass value="2.563"/>
+            <density value="-1"/>
+            <inertia ixx="0.01557" iyy="0.01365" izz="0.006338" ixy="2.909e-05" ixz="5.428e-05" iyz="0.002804"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://franka_description/meshes/visual/link1.dae" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name=""/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://franka_description/meshes/collision/link1.obj" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="panda_link2">
+        <inertial>
+            <origin xyz="-0.001523 -0.06806 0.03044" rot="0 0 0 1"/>
+            <mass value="2.6"/>
+            <density value="-1"/>
+            <inertia ixx="0.01581" iyy="0.006484" izz="0.01393" ixy="4.344e-05" ixz="-4.487e-06" iyz="-0.002759"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://franka_description/meshes/visual/link2.dae" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name=""/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://franka_description/meshes/collision/link2.obj" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="panda_link3">
+        <inertial>
+            <origin xyz="0.0451 0.02455 -0.03783" rot="0 0 0 1"/>
+            <mass value="2"/>
+            <density value="-1"/>
+            <inertia ixx="0.006471" iyy="0.007863" izz="0.006675" ixy="-0.001202" ixz="-0.002096" iyz="-0.001089"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://franka_description/meshes/visual/link3.dae" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name=""/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://franka_description/meshes/collision/link3.obj" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="panda_link4">
+        <inertial>
+            <origin xyz="-0.03877 0.03913 0.02415" rot="0 0 0 1"/>
+            <mass value="2.018"/>
+            <density value="-1"/>
+            <inertia ixx="0.006703" iyy="0.006791" izz="0.008028" ixy="0.002191" ixz="-0.001252" iyz="0.001181"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://franka_description/meshes/visual/link4.dae" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name=""/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://franka_description/meshes/collision/link4.obj" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="panda_link5">
+        <inertial>
+            <origin xyz="0.003928 0.03123 -0.1058" rot="0 0 0 1"/>
+            <mass value="3.4"/>
+            <density value="-1"/>
+            <inertia ixx="0.03097" iyy="0.02745" izz="0.008953" ixy="0.0004658" ixz="-0.000371" iyz="-0.004206"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://franka_description/meshes/visual/link5.dae" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name=""/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://franka_description/meshes/collision/link5.obj" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="panda_link6">
+        <inertial>
+            <origin xyz="0.05042 0.008162 0.006221" rot="0 0 0 1"/>
+            <mass value="1.301"/>
+            <density value="-1"/>
+            <inertia ixx="0.002291" iyy="0.003342" izz="0.004013" ixy="-6.407e-05" ixz="0.0002358" iyz="2.607e-05"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://franka_description/meshes/visual/link6.dae" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name=""/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://franka_description/meshes/collision/link6.obj" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="panda_link7">
+        <inertial>
+            <origin xyz="0.002832 0.005302 0.1121" rot="0 0 0 1"/>
+            <mass value="1.163"/>
+            <density value="-1"/>
+            <inertia ixx="0.002763" iyy="0.002658" izz="0.003155" ixy="-0.001144" ixz="0.0001672" iyz="3.929e-05"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://franka_description/meshes/visual/link7.dae" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name=""/>
+        </visual>
+        <visual>
+            <origin xyz="0 0 0.107" rot="0 0 -0.3827 0.9239"/>
+            <geometry>
+                <mesh filename="package://franka_description/meshes/visual/hand.dae" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name=""/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://franka_description/meshes/collision/link7.obj" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="0 0 0.107" rot="0 0 -0.3827 0.9239"/>
+            <geometry>
+                <mesh filename="package://franka_description/meshes/collision/hand.obj" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="panda_rightfinger">
+        <inertial>
+            <origin xyz="7.78e-06 -0.01161 0.02367" rot="0 0 0 1"/>
+            <mass value="0.01963"/>
+            <density value="-1"/>
+            <inertia ixx="5.21e-06" iyy="4.937e-06" izz="1.632e-06" ixy="-5.314e-09" ixz="-8.479e-08" iyz="-4.487e-07"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="-0 0 1 -1.034e-13"/>
+            <geometry>
+                <mesh filename="package://franka_description/meshes/visual/finger.dae" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name=""/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="-0 0 1 -1.034e-13"/>
+            <geometry>
+                <mesh filename="package://franka_description/meshes/collision/finger.obj" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="panda_leftfinger">
+        <inertial>
+            <origin xyz="-7.78e-06 0.01161 0.02367" rot="0 0 0 1"/>
+            <mass value="0.01963"/>
+            <density value="-1"/>
+            <inertia ixx="5.21e-06" iyy="4.937e-06" izz="1.632e-06" ixy="-5.314e-09" ixz="8.479e-08" iyz="4.487e-07"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://franka_description/meshes/visual/finger.dae" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name=""/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://franka_description/meshes/collision/finger.obj" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <joint name="panda_joint1" type="revolute">
+        <child link="panda_link1"/>
+        <parent link="panda_link0"/>
+        <origin xyz="0 0 0.333" rot="0 0 0 1"/>
+        <linkTransform xyz="0 0 0.333" rot="0 0 0 1"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-2.897" upper="2.897" effort="87" velocity="2.175"/>
+        <dynamics damping="10" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="panda_joint2" type="revolute">
+        <child link="panda_link2"/>
+        <parent link="panda_link1"/>
+        <origin xyz="0 0 0" rot="-0.7071 0 0 0.7071"/>
+        <linkTransform xyz="0 0 0" rot="-0.7071 0 0 0.7071"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-1.763" upper="1.763" effort="87" velocity="2.175"/>
+        <dynamics damping="10" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="panda_joint3" type="revolute">
+        <child link="panda_link3"/>
+        <parent link="panda_link2"/>
+        <origin xyz="0 -0.316 0" rot="0.7071 0 0 0.7071"/>
+        <linkTransform xyz="0 -0.316 0" rot="0.7071 0 0 0.7071"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-2.897" upper="2.897" effort="87" velocity="2.175"/>
+        <dynamics damping="10" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="panda_joint4" type="revolute">
+        <child link="panda_link4"/>
+        <parent link="panda_link3"/>
+        <origin xyz="0.0825 0 0" rot="0.7071 0 0 0.7071"/>
+        <linkTransform xyz="0.0825 0 0" rot="0.7071 0 0 0.7071"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-3.072" upper="-0.0698" effort="87" velocity="2.175"/>
+        <dynamics damping="10" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="panda_joint5" type="revolute">
+        <child link="panda_link5"/>
+        <parent link="panda_link4"/>
+        <origin xyz="-0.0825 0.384 0" rot="-0.7071 0 0 0.7071"/>
+        <linkTransform xyz="-0.0825 0.384 0" rot="-0.7071 0 0 0.7071"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-2.897" upper="2.897" effort="12" velocity="2.61"/>
+        <dynamics damping="10" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="panda_joint6" type="revolute">
+        <child link="panda_link6"/>
+        <parent link="panda_link5"/>
+        <origin xyz="0 0 0" rot="0.7071 0 0 0.7071"/>
+        <linkTransform xyz="0 0 0" rot="0.7071 0 0 0.7071"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-0.0175" upper="3.753" effort="12" velocity="2.61"/>
+        <dynamics damping="10" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="panda_joint7" type="revolute">
+        <child link="panda_link7"/>
+        <parent link="panda_link6"/>
+        <origin xyz="0.088 0 0" rot="0.7071 0 0 0.7071"/>
+        <linkTransform xyz="0.088 0 0" rot="0.7071 0 0 0.7071"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-2.897" upper="2.897" effort="12" velocity="2.61"/>
+        <dynamics damping="10" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="panda_finger_joint2" type="prismatic">
+        <child link="panda_rightfinger"/>
+        <parent link="panda_link7"/>
+        <origin xyz="0 0 0.1654" rot="0 0 -0.3827 0.9239"/>
+        <linkTransform xyz="0 0 0.1654" rot="0 0 -0.3827 0.9239"/>
+        <axis xyz="0 -1 0"/>
+        <limit lower="0" upper="0.04" effort="20" velocity="0.2"/>
+        <dynamics damping="10" stiffness="0" friction="0" armature="0"/>
+        <mimic joint="panda_finger_joint1" multiplier="1" offset="0"/>
+    </joint>
+    <joint name="panda_finger_joint1" type="prismatic">
+        <child link="panda_leftfinger"/>
+        <parent link="panda_link7"/>
+        <origin xyz="0 0 0.1654" rot="0 0 -0.3827 0.9239"/>
+        <linkTransform xyz="0 0 0.1654" rot="0 0 -0.3827 0.9239"/>
+        <axis xyz="0 1 0"/>
+        <limit lower="0" upper="0.04" effort="20" velocity="0.2"/>
+        <dynamics damping="10" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <Lights>
+        <light name="point_light" type="pointLight" color="1 1 1 0.35"/>
+    </Lights>
+    <LightInstances>
+        <lightInstance name="panda_link7_light" light="point_light" link="panda_link7" xyz="0.025 -0.045 0.18" rot="0.9894 0 0 0.1452"/>
+    </LightInstances>
+    <!--
+    <rgbCamera>
+        <camera name="rgb_camera" type="rgb" farClip="1" fovX="1.4012984643248171e" fovY="1.5707963705062866" resX="128" resY="128"/>
+    </rgbCamera>
+    <rgbCameraInstance>
+        <cameraInstance name="panda_link7_camera" camera="rgb_camera" link="panda_link7" xyz="0.025 -0.045 0.18" rot="0.9894 0 0 0.1452">
+            <LightInstance>
+                <instance name="panda_link7_light"/>
+            </LightInstance>
+        </cameraInstance>
+    </rgbCameraInstance>
+    -->
+    <depthCamera>
+        <camera name="depth_camera" type="depth" farClip="1" fovX="1.4012984643248171e" fovY="1.5707963705062866" resX="128" resY="128"/>
+    </depthCamera>
+    <depthCameraInstance>
+        <cameraInstance name="panda_link7_camera" camera="depth_camera" link="panda_link7" xyz="0.025 -0.045 0.18" rot="0.9894 0 0 0.1452">
+            <LightInstance>
+                <instance name="panda_link7_light"/>
+            </LightInstance>
+        </cameraInstance>
+        <cameraInstance name="panda_link6_camera" camera="depth_camera" link="panda_link6" xyz="0.025 -0.045 0.18" rot="0.9894 0 0 0.1452">
+            <LightInstance>
+                <instance name="panda_link7_light"/>
+            </LightInstance>
+        </cameraInstance>
+    </depthCameraInstance>
+    <filter>
+        <pair link0="panda_link5" link1="panda_link7"/>
+        <pair link0="panda_leftfinger" link1="panda_rightfinger"/>
+    </filter>
+    <forceSensor>
+        <sensor name="leftfinger_force_sensor" link="panda_leftfinger" offset="0 0 0"
+        flags="contact "/>
+        <sensor name="rightfinger_force_sensor" link="panda_rightfinger" offset="0 0 0"
+        flags="contact "/>
+    </forceSensor>
+    <kinematicSensor>
+        <sensor name="end_effector_offset_sensor" link="panda_link7" offset="0.0 0.0 0.21" flags="transform velocity"/>
+    </kinematicSensor>
+    <articulationPose name="TestPose">
+        <linkPose linkName="panda_link1" jointPosition="-0.7"/>
+        <linkPose linkName="panda_link2" jointPosition="-1.02300596237"/>
+        <linkPose linkName="panda_link3" jointPosition="1.41153645515"/>
+        <linkPose linkName="panda_link4" jointPosition="-1.77885067463"/>
+        <linkPose linkName="panda_link5" jointPosition="-1.36162757874"/>
+        <linkPose linkName="panda_link6" jointPosition="0"/>
+        <linkPose linkName="panda_link7" jointPosition="0"/>
+        <linkPose linkName="panda_leftfinger" jointPosition="0"/>
+        <linkPose linkName="panda_rightfinger" jointPosition="0"/>
+    </articulationPose>
+</robot>

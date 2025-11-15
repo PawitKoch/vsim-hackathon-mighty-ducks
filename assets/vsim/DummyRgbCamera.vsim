@@ -1,0 +1,50 @@
+<robot name="DummyRgbCamera">
+    <!--Materials-->
+    <rigidMaterial name="DefaultRigidMaterial" staticFriction="0.5" dynamicFriction="0.5" restitution="0.1"/>
+    <!--Links-->
+    <robotProperties maxDepenetrationVelocity="10"/>
+    <link name="VlabArticulation">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="800"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <rigidMaterialRef name="DefaultRigidMaterial"/>
+        <miscellaneous contactOffset="0.005" restOffset="0"/>
+    </link>
+    <link name="VlabArticulation1">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="800"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <rigidMaterialRef name="DefaultRigidMaterial"/>
+        <miscellaneous contactOffset="0.005" restOffset="0"/>
+    </link>
+    <joint name="VlabArticulation_to_VlabArticulation1" type="fixed">
+        <child link="VlabArticulation1"/>
+        <parent link="VlabArticulation"/>
+        <origin xyz="0 -0 0" rpy="-0 -0 -0"/>
+        <linkTransform xyz="0 -0 0" rpy="-0 -0 -0"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <Lights>
+        <light name="VlabPointLight" type="pointLight" color="1 1 1 1" castShadow="true" ambient="0" constant_atten="1" linear_atten="0" quadratic_atten="0"/>
+    </Lights>
+    <LightInstances>
+        <lightInstance name="VlabPointLight" light="VlabPointLight" link="VlabArticulation" xyz="0 -0 0" rpy="-0 -0 -0"/>
+    </LightInstances>
+    <rgbCamera>
+        <camera name="VlabRgbCamera" type="rgb" postFilter="ambient_occlusion" farClip="100" fovX="1.5707963267948966" fovY="1.5707963267948966" resX="128" resY="128"/>
+    </rgbCamera>
+    <rgbCameraInstance>
+        <cameraInstance name="VlabRgbCamera_instance" camera="VlabRgbCamera" link="VlabArticulation" xyz="0 -0 0" rpy="1.571 0 0">
+            <LightInstance>
+                <instance name="VlabPointLight"/>
+            </LightInstance>
+        </cameraInstance>
+    </rgbCameraInstance>
+</robot>

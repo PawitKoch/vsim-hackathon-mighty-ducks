@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<robot name="table">
+
+    <link name="table">
+    <visual>
+      <geometry>
+        <box size="1 0.5 1"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="1 0.5 1"/>
+      </geometry>
+    </collision>
+  </link>
+  
+</robot>

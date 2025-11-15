@@ -1,0 +1,398 @@
+<robot name="piper">
+    <!--Materials-->
+    <material name="VlabPiperRGB">
+        <color rgba="0.416 0.537 0.655 1"/>
+        <luminescence value="0"/>
+        <specularExponent value="0.01"/>
+        <specularIntensity value="0.01"/>
+    </material>
+    <material name="PiperRGB">
+        <color rgba="0.416 0.537 0.655 1"/>
+        <luminescence value="0"/>
+        <specularExponent value="0.01"/>
+        <specularIntensity value="0.01"/>
+    </material>
+    <rigidMaterial name="HighFrictionRigid" staticFriction="1" dynamicFriction="0.9" restitution="0"/>
+    <!--Links-->
+    <robotProperties maxDepenetrationVelocity="2.5"/>
+    <link name="base_link">
+        <inertial>
+            <origin xyz="-0.004736 2.568e-05 0.04145" rpy="0.0007177 0.09657 0.005697"/>
+            <mass value="1.02"/>
+            <density value="-1"/>
+            <inertia ixx="0.002674" iyy="0.002826" izz="0.0008962" ixy="-7.3e-07" ixz="-0.0001739" iyz="4e-07"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 -0 0" rpy="-0 -0 -0"/>
+            <geometry>
+                <mesh filename="package://meshes/base_link.fbx" scale="0.01 0.01 0.01"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <rgbMaterialRef name="PiperRGB"/>
+        </visual>
+        <collision>
+            <origin xyz="0 -0 0" rpy="-0 -0 -0"/>
+            <geometry>
+                <mesh filename="package://meshes/base_link.fbx" scale="0.01 0.01 0.01"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <rgbMaterialRef name="VlabPiperRGB"/>
+        </collision>
+        <rigidMaterialRef name="HighFrictionRigid"/>
+        <miscellaneous contactOffset="0.005" restOffset="0"/>
+    </link>
+    <link name="link1">
+        <inertial>
+            <origin xyz="0.0001215 0.0001046 -0.004386" rpy="0.06896 0.04513 -0.002966"/>
+            <mass value="0.71"/>
+            <density value="-1"/>
+            <inertia ixx="0.0004892" iyy="0.0004047" izz="0.0004398" ixy="-3.6e-07" ixz="-2.24e-06" iyz="-2.42e-06"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 -0 0" rpy="-0 -0 -0"/>
+            <geometry>
+                <mesh filename="package://meshes/link1.fbx" scale="0.01 0.01 0.01"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <rgbMaterialRef name="PiperRGB"/>
+        </visual>
+        <collision>
+            <origin xyz="0 -0 0" rpy="-0 -0 -0"/>
+            <geometry>
+                <mesh filename="package://meshes/link1.fbx" scale="0.01 0.01 0.01"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <rgbMaterialRef name="VlabPiperRGB"/>
+        </collision>
+        <rigidMaterialRef name="HighFrictionRigid"/>
+        <miscellaneous contactOffset="0.005" restOffset="0"/>
+    </link>
+    <link name="link2">
+        <inertial>
+            <origin xyz="0.1987 -0.01093 0.001421" rpy="-0.07186 0.003771 0.02697"/>
+            <mass value="1.17"/>
+            <density value="-1"/>
+            <inertia ixx="0.001169" iyy="0.06785" izz="0.06774" ixy="-0.0018" ixz="0.0002515" iyz="-4.55e-06"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 -0 0" rpy="-0 -0 -0"/>
+            <geometry>
+                <mesh filename="package://meshes/link2.fbx" scale="0.01 0.01 0.01"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <rgbMaterialRef name="PiperRGB"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="-0 -0 -0"/>
+            <geometry>
+                <mesh filename="package://meshes/link2.fbx" scale="0.01 0.01 0.01"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <rgbMaterialRef name="VlabPiperRGB"/>
+        </collision>
+        <rigidMaterialRef name="HighFrictionRigid"/>
+        <miscellaneous contactOffset="0.005" restOffset="0"/>
+    </link>
+    <link name="link3">
+        <inertial>
+            <origin xyz="-0.02027 -0.1339 -0.0004587" rpy="2.859e-05 0.02732 0.1234"/>
+            <mass value="0.5"/>
+            <density value="-1"/>
+            <inertia ixx="0.01362" iyy="0.0004502" izz="0.0138" ixy="0.001658" ixz="-4.8e-07" iyz="-4.5e-07"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 -0 0" rpy="-0 -0 -0"/>
+            <geometry>
+                <mesh filename="package://meshes/link3.fbx" scale="0.01 0.01 0.01"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <rgbMaterialRef name="PiperRGB"/>
+        </visual>
+        <collision>
+            <origin xyz="-0 -0 0" rpy="-0 -0 -0"/>
+            <geometry>
+                <mesh filename="package://meshes/link3.fbx" scale="0.01 0.01 0.01"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <rgbMaterialRef name="VlabPiperRGB"/>
+        </collision>
+        <rigidMaterialRef name="HighFrictionRigid"/>
+        <miscellaneous contactOffset="0.005" restOffset="0"/>
+    </link>
+    <link name="link4">
+        <inertial>
+            <origin xyz="-9.666e-05 0.0008761 -0.004969" rpy="-0.2238 -0.04792 -0.02967"/>
+            <mass value="0.38"/>
+            <density value="-1"/>
+            <inertia ixx="0.000185" iyy="0.0001897" izz="0.0001548" ixy="5.4e-07" ixz="1.2e-06" iyz="-8.41e-06"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 -0 0" rpy="-0 -0 -0"/>
+            <geometry>
+                <mesh filename="package://meshes/link4.fbx" scale="0.01 0.01 0.01"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <rgbMaterialRef name="PiperRGB"/>
+        </visual>
+        <collision>
+            <origin xyz="0 -0 0" rpy="-0 -0 -0"/>
+            <geometry>
+                <mesh filename="package://meshes/link4.fbx" scale="0.01 0.01 0.01"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <rgbMaterialRef name="VlabPiperRGB"/>
+        </collision>
+        <rigidMaterialRef name="HighFrictionRigid"/>
+        <miscellaneous contactOffset="0.005" restOffset="0"/>
+    </link>
+    <link name="link5">
+        <inertial>
+            <origin xyz="-4.106e-05 -0.05665 -0.003721" rpy="-0.007036 0.00378 1.437e-05"/>
+            <mass value="0.383"/>
+            <density value="-1"/>
+            <inertia ixx="0.001662" iyy="0.0001851" izz="0.001643" ixy="6e-08" ixz="-7e-08" iyz="1.026e-05"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 -0 0" rpy="-0 -0 -0"/>
+            <geometry>
+                <mesh filename="package://meshes/link5.fbx" scale="0.01 0.01 0.01"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <rgbMaterialRef name="PiperRGB"/>
+        </visual>
+        <collision>
+            <origin xyz="-0 -0 0" rpy="-0 -0 -0"/>
+            <geometry>
+                <mesh filename="package://meshes/link5.fbx" scale="0.01 0.01 0.01"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <rgbMaterialRef name="VlabPiperRGB"/>
+        </collision>
+        <rigidMaterialRef name="HighFrictionRigid"/>
+        <miscellaneous contactOffset="0.005" restOffset="0"/>
+    </link>
+    <link name="link6">
+        <inertial>
+            <origin xyz="-8.826e-05 9.06e-06 -0.002" rpy="0 -0 0"/>
+            <mass value="0.006991"/>
+            <density value="-1"/>
+            <inertia ixx="5.73e-07" iyy="5.73e-07" izz="1.067e-06" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 -0 0" rpy="-0 -0 -0"/>
+            <geometry>
+                <mesh filename="package://meshes/link6.fbx" scale="0.01 0.01 0.01"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <rgbMaterialRef name="PiperRGB"/>
+        </visual>
+        <collision>
+            <origin xyz="0 -0 0" rpy="-0 -0 -0"/>
+            <geometry>
+                <mesh filename="package://meshes/link6.fbx" scale="0.01 0.01 0.01"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <rgbMaterialRef name="VlabPiperRGB"/>
+        </collision>
+        <rigidMaterialRef name="HighFrictionRigid"/>
+        <miscellaneous contactOffset="0.005" restOffset="0"/>
+    </link>
+    <link name="gripper_base">
+        <inertial>
+            <origin xyz="-0.0001838 8.05e-05 0.03214" rpy="0.0001926 0.01379 0.001578"/>
+            <mass value="0.45"/>
+            <density value="-1"/>
+            <inertia ixx="0.0009293" iyy="0.0007145" izz="0.0003944" ixy="3.4e-07" ixz="-7.38e-06" iyz="5e-08"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 -0 0" rpy="-0 2.776e-17 -0"/>
+            <geometry>
+                <mesh filename="package://meshes/gripper_base.fbx" scale="0.01 0.01 0.01"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <rgbMaterialRef name="PiperRGB"/>
+        </visual>
+        <collision>
+            <origin xyz="0 -0 0" rpy="-0 -0 -0"/>
+            <geometry>
+                <mesh filename="package://meshes/gripper_base.fbx" scale="0.01 0.01 0.01"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <rgbMaterialRef name="VlabPiperRGB"/>
+        </collision>
+        <rigidMaterialRef name="HighFrictionRigid"/>
+        <miscellaneous contactOffset="0.005" restOffset="0"/>
+    </link>
+    <link name="link7">
+        <visual>
+            <origin xyz="0 0 0.006" rot="-0 0 -0 1"/>
+            <geometry>
+                <mesh_sdf filename="package://meshes/link7.STL" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <rgbMaterialRef name="PiperRGB"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0.006" rot="-0 0 -0 1"/>
+            <geometry>
+                <mesh_sdf filename="package://meshes/link7.STL" scale="1 1 1"/>
+                <!--<settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>-->
+                <settings maxResPerAxis="1536" targetSamples="2048"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <rgbMaterialRef name="VlabPiperRGB"/>
+        </collision>
+        <rigidMaterialRef name="HighFrictionRigid"/>
+        <miscellaneous contactOffset="0.005" restOffset="0"/>
+    </link>
+    <link name="link8">
+        <visual>
+            <origin xyz="0 0 0.006" rot="-0 0 -0 1"/>
+            <geometry>
+                <mesh_sdf filename="package://meshes/link8.STL" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <rgbMaterialRef name="PiperRGB"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0.006" rot="-0 0 -0 1"/>
+            <geometry>
+                <mesh_sdf filename="package://meshes/link8.STL" scale="1 1 1"/>
+                <!--<settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>-->
+                <settings maxResPerAxis="1536" targetSamples="2048"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <rgbMaterialRef name="VlabPiperRGB"/>
+        </collision>
+        <rigidMaterialRef name="HighFrictionRigid"/>
+        <miscellaneous contactOffset="0.005" restOffset="0"/>
+    </link>
+    <joint name="gripper_base_to_link7" type="prismatic">
+        <child link="link7"/>
+        <parent link="gripper_base"/>
+        <origin xyz="1.467e-17 8.327e-17 0.1358" rpy="1.571 -3.854e-17 -3.854e-17"/>
+        <linkTransform xyz="1.467e-17 -6.353e-22 0.1358" rpy="1.571 -3.854e-17 -3.854e-17"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="0" upper="0.035" effort="10" velocity="1"/>
+        <dynamics damping="100" stiffness="1000" friction="0" armature="0.1"/>
+    </joint>
+    <joint name="gripper_base_to_link8" type="prismatic">
+        <child link="link8"/>
+        <parent link="gripper_base"/>
+        <origin xyz="1.467e-17 2.775e-17 0.1358" rpy="1.571 1.697e-17 3.142"/>
+        <linkTransform xyz="1.467e-17 -6.353e-22 0.1358" rpy="1.571 1.697e-17 3.142"/>
+        <axis xyz="0 0 -1"/>
+        <limit lower="-0.035" upper="0" effort="10" velocity="1"/>
+        <dynamics damping="100" stiffness="1000" friction="0" armature="0.1"/>
+		<mimic joint="gripper_base_to_link7" multiplier="-1" offset="0"/>
+    </joint>
+    <joint name="link6_to_gripper_base" type="fixed">
+        <child link="gripper_base"/>
+        <parent link="link6"/>
+        <origin xyz="0 -0 0" rpy="-0 -0 -0"/>
+        <linkTransform xyz="0 -0 0" rpy="-0 -0 -0"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="link5_to_link6" type="revolute">
+        <child link="link6"/>
+        <parent link="link5"/>
+        <origin xyz="8.826e-05 -0.091 -2.082e-17" rpy="1.571 1.14e-17 -1.063e-16"/>
+        <linkTransform xyz="8.826e-05 -0.091 -6.245e-17" rpy="1.571 1.14e-17 -1.063e-16"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-2.094" upper="2.094" effort="20" velocity="3"/>
+        <dynamics damping="20" stiffness="200" integral="20" friction="0" armature="0"/>
+    </joint>
+    <joint name="link4_to_link5" type="revolute">
+        <child link="link5"/>
+        <parent link="link4"/>
+        <origin xyz="0 -0 0" rpy="-1.571 0.05236 -4.169e-17"/>
+        <linkTransform xyz="0 -0 0" rpy="-1.571 0.05236 -4.169e-17"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-1.22" upper="1.22" effort="20" velocity="5"/>
+        <dynamics damping="20" stiffness="200" integral="20" friction="0" armature="0"/>
+    </joint>
+    <joint name="link3_to_link4" type="revolute">
+        <child link="link4"/>
+        <parent link="link3"/>
+        <origin xyz="-0.02198 -0.2508 1.804e-16" rpy="1.571 -1.599e-16 -2.746e-17"/>
+        <linkTransform xyz="-0.02198 -0.2508 1.388e-17" rpy="1.571 -1.599e-16 -2.746e-17"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-1.745" upper="1.745" effort="20" velocity="5"/>
+        <dynamics damping="50" stiffness="500" integral="50" friction="0" armature="0"/>
+    </joint>
+    <joint name="link2_to_link3" type="revolute">
+        <child link="link3"/>
+        <parent link="link2"/>
+        <origin xyz="0.285 -1.535e-18 -7.525e-35" rpy="-1.084e-17 8.66e-18 -1.794"/>
+        <linkTransform xyz="0.285 -0 0" rpy="-1.084e-17 8.66e-18 -1.794"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-2.967" upper="0" effort="20" velocity="5"/>
+        <dynamics damping="100" stiffness="2000" integral="200" friction="0" armature="0"/>
+    </joint>
+    <joint name="link1_to_link2" type="revolute">
+        <child link="link2"/>
+        <parent link="link1"/>
+        <origin xyz="0 -0 0" rpy="1.571 -0.1359 3.142"/>
+        <linkTransform xyz="0 -0 0" rpy="1.571 -0.1359 3.142"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="0" upper="3.14" effort="20" velocity="5"/>
+        <dynamics damping="100" stiffness="2000" integral="200" friction="0" armature="0"/>
+    </joint>
+    <joint name="base_link_to_link1" type="revolute">
+        <child link="link1"/>
+        <parent link="base_link"/>
+        <origin xyz="0 -0 0.123" rpy="-0 -0 -0"/>
+        <linkTransform xyz="0 -0 0.123" rpy="-0 -0 -0"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-2.618" upper="2.168" effort="20" velocity="5"/>
+        <dynamics damping="400" stiffness="5000" integral="500" friction="0" armature="0"/>
+    </joint>
+
+    <Lights>
+        <light name="VlabPointLight" type="pointLight" color="0.8 0.8 0.8 1" castShadow="false" ambient="0" constant_atten="1" linear_atten="0" quadratic_atten="0"/>
+    </Lights>
+    <LightInstances>
+        <lightInstance name="VlabPointLight" light="VlabPointLight" link="base_link" xyz="0.2 0 0" rpy="-0 -0 -0"/>
+        <lightInstance name="VlabPointLight2" light="VlabPointLight" link="base_link" xyz="0.2 0 0.5" rpy="-0 -0 -0"/>
+    </LightInstances>
+    <rgbCamera>
+        <camera name="VlabRgbCamera_2" type="rgb" farClip="3" fovX="1.5184364492350666" fovY="1.0122909661567112" resX="60" resY="40"/>
+    </rgbCamera>
+    <rgbCameraInstance>
+        <cameraInstance name="VlabRgbCamera_2_instance" camera="VlabRgbCamera_2" link="link6" xyz="-0.061 -0.01 0.052" rpy="2.70526 -1.074e-13 -1.571">
+        </cameraInstance>
+    </rgbCameraInstance>
+
+    <kinematicSensor>
+        <sensor name="end_effector_offset_sensor" link="gripper_base" offset="0.0 0.0 0.12" flags="transform velocity"/>
+    </kinematicSensor>
+
+    <forceSensor>
+        <sensor name="fs_link4" link="link4" offset="0 0 0" flags="contact"/>
+        <sensor name="fs_link5" link="link5" offset="0 0 0" flags="contact"/>
+        <sensor name="fs_link6" link="link6" offset="0 0 0" flags="contact"/>
+        <sensor name="fs_gripper_base" link="gripper_base" offset="0 0 0" flags="contact"/>
+        <sensor name="fs_link7" link="link7" offset="0 0 0" flags="contact"/>
+        <sensor name="fs_link8" link="link8" offset="0 0 0" flags="contact"/>
+    </forceSensor>
+
+</robot>

@@ -1,0 +1,9 @@
+<assembly>
+    <elements>
+        <actor name="ant" xyz="0 1.5 0" rot="-0.7071 0 0 0.7071" isStatic="false" enableSelfCollisions="true" file="assets/vsim/ant.vsim"/>
+        <actor name="table" xyz="0 0.5 0" rot="0 0 0 1" isStatic="true" file="assets/vsim/demo/demo_table.vsim"/>
+        <linkFilters name="filter">
+            <pair link0="ant/front_left_leg" link1="table/table"/>
+        </linkFilters>
+    </elements>
+</assembly>

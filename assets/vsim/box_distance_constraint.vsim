@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<robot name="box">
+
+    <link name="box">
+    <visual>
+      <geometry>
+        <box size="1 1 1"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="1 1 1"/>
+      </geometry>
+    </collision>
+  </link>
+
+   <distanceJoint name="distanceJoint" body1="box" body2="">
+       <anchor1 pos="0 1 0"/>
+       <anchor2 pos="0 5 0"/>
+       <limit stiffness="10000" damping="100" lowLimit="-0.01" highLimit="0.5"/>
+       <drive stiffness="0" damping="1" forceLimit="0"/>
+   </distanceJoint>
+</robot>

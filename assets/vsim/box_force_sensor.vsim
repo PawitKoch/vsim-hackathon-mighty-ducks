@@ -1,0 +1,51 @@
+<robot name="box_force_sensor">
+    <link name="box">
+        <inertial>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <mass value="-1"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <box size="1 0.005 0.75"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <material name="slider_mat">
+                <color rgba="0.9 0.6 0.2 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <box size="1 0.005 0.75"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collisionMaterial mRestitution="0" mDynamicFriction="0" mStaticFriction="0" mDamping="0"/>
+        <miscellaneous maxDepenetrationVelocity="10" contactOffset="0.005" restOffset="0"/>
+    </link>
+    <link name="dummy">
+        <inertial>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <mass value="1"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <collisionMaterial mRestitution="0" mDynamicFriction="0" mStaticFriction="0" mDamping="0"/>
+        <miscellaneous maxDepenetrationVelocity="10" contactOffset="0.005" restOffset="0"/>
+    </link>
+    <joint name="box_to_dummy" type="fixed">
+        <child link="dummy"/>
+        <parent link="box"/>
+        <origin xyz="0 0 0" rot="0 0 0 1"/>
+        <linkTransform xyz="0 0 0" rot="0 0 0 1"/>
+        <axis xyz="0 1 0"/>
+        <limit lower="-4" upper="4" effort="1000" velocity="100"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <forceSensor>
+        <sensor name="force_sensor" link="box" offset="0 0 0" flags="contact"/>
+    </forceSensor>
+</robot>

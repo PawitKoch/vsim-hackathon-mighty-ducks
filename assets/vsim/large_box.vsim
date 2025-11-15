@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<robot name="large_box">
+
+    <link name="box">
+    <visual>
+      <geometry>
+        <box size="1.6 1.6 1.6"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="1.6 1.6 1.6"/>
+      </geometry>
+    </collision>
+  </link>
+  
+</robot>

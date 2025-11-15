@@ -1,0 +1,21 @@
+<robot name="light_switch_2_room_main" version="0">
+    <!--Materials-->
+    <!--Links-->
+    <robotProperties maxDepenetrationVelocity="10"/>
+    <link name="light_switch_2_room_main">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual name="light_switch_2_room_g0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <mesh filename="/home/vsim_remote/Documents/robocasa/robocasa/models/assets/fixtures/accessories/light_switches/white_wide_switch/visuals/light_switch_0.obj" scale="0.15 0.15 0.15"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+    </link>
+</robot>

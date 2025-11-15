@@ -1,0 +1,8 @@
+<environmentDefinition name="duck_env">
+    <elements>
+        <actor name="duck" xyz="0 0 0" rot="0 0 0 1" isStatic="false" file="duck.vsim"/>
+        <actor name="CubeLarge" xyz="1.0 0 0.1" rot="0 0 0 1" isStatic="true" file="CubeLarge.vsim"/>
+        <actor name="CubeGoal" xyz="2.0 0 0.05" rot="0 0 0 1" isStatic="true" file="CubeGoal.vsim"/>
+        <actor name="dummy_camera" xyz="1 -1 1" rot="0 0 0 1" isStatic="true" file="DummyDepthCamera.vsim"/>
+    </elements>
+</environmentDefinition>

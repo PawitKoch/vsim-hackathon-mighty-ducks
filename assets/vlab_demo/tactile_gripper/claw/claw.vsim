@@ -1,0 +1,192 @@
+<robot name="finger" version="0">
+    <!--Materials-->
+    <material name="VisualMaterial">
+        <color rgba="1 1 1 1"/>
+        <luminescence value="0"/>
+        <specularExponent value="40"/>
+        <specularIntensity value="0.25"/>
+    </material>
+    <material name="VisualMaterial 2">
+        <color rgba="1 1 1 1"/>
+        <luminescence value="0"/>
+        <specularExponent value="40"/>
+        <specularIntensity value="0.25"/>
+    </material>
+    <material name="VisualMaterial 3">
+        <color rgba="1 1 1 1"/>
+        <luminescence value="0"/>
+        <specularExponent value="40"/>
+        <specularIntensity value="0.25"/>
+    </material>
+    <material name="VisualMaterial 4">
+        <color rgba="1 1 1 1"/>
+        <luminescence value="0"/>
+        <specularExponent value="40"/>
+        <specularIntensity value="0.25"/>
+    </material>
+    <material name="DefaultMaterial">
+        <color rgba="1 1 1 1"/>
+        <luminescence value="0"/>
+        <specularExponent value="40"/>
+        <specularIntensity value="0.25"/>
+    </material>
+    <material name="VisualMaterial 5">
+        <color rgba="1 1 1 1"/>
+        <luminescence value="0"/>
+        <specularExponent value="40"/>
+        <specularIntensity value="0.25"/>
+    </material>
+    <material name="VisualMaterial 6">
+        <color rgba="1 1 1 1"/>
+        <luminescence value="0"/>
+        <specularExponent value="40"/>
+        <specularIntensity value="0.25"/>
+    </material>
+    <material name="DefaultMaterial 2">
+        <color rgba="1 1 1 1"/>
+        <luminescence value="0"/>
+        <specularExponent value="40"/>
+        <specularIntensity value="0.25"/>
+    </material>
+    <material name="VisualMaterial 7">
+        <color rgba="1 1 1 1"/>
+        <luminescence value="0"/>
+        <specularExponent value="40"/>
+        <specularIntensity value="0.25"/>
+    </material>
+    <rigidMaterial name="RigidPhysicsMaterial" staticFriction="0.5" dynamicFriction="0.5" restitution="0.10000000149"/>
+    <rigidMaterial name="RigidPhysicsMaterial 2" staticFriction="0.5" dynamicFriction="0.5" restitution="0.10000000149"/>
+    <rigidMaterial name="RigidPhysicsMaterial 3" staticFriction="0.5" dynamicFriction="0.5" restitution="0.10000000149"/>
+    <rigidMaterial name="RigidPhysicsMaterial 4" staticFriction="0.5" dynamicFriction="0.5" restitution="0.10000000149"/>
+    <rigidMaterial name="RigidPhysicsMaterial 5" staticFriction="0.5" dynamicFriction="0.5" restitution="0.10000000149"/>
+    <!--Links-->
+    <robotProperties maxDepenetrationVelocity="10"/>
+    <link name="root">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="1"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <rigidMaterialRef name="RigidPhysicsMaterial"/>
+        <rgbMaterialRef name="VisualMaterial"/>
+        <miscellaneous contactOffset="0.00999999977648"/>
+    </link>
+    <link name="vertical">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="1"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <rigidMaterialRef name="RigidPhysicsMaterial 2"/>
+        <rgbMaterialRef name="VisualMaterial 2"/>
+        <miscellaneous contactOffset="0.00999999977648"/>
+    </link>
+    <link name="horizontal">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="1"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <rigidMaterialRef name="RigidPhysicsMaterial 3"/>
+        <rgbMaterialRef name="VisualMaterial 3"/>
+        <miscellaneous contactOffset="0.00999999977648"/>
+    </link>
+    <link name="finger1">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="800"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual name="VisualMeshInstance">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <mesh filename="package://tactile_gripper/finger_no_gripper.stl" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <rgbMaterialRef name="DefaultMaterial"/>
+        </visual>
+        <collision name="Collision">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <mesh_sdf filename="package://tactile_gripper/finger_no_gripper.stl" scale="1 1 1"/>
+                <settings maxResPerAxis="128" targetSamples="1024"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <rgbMaterialRef name="VisualMaterial 5"/>
+        </collision>
+        <rigidMaterialRef name="RigidPhysicsMaterial 4"/>
+        <rgbMaterialRef name="VisualMaterial 4"/>
+        <miscellaneous contactOffset="0.00999999977648"/>
+    </link>
+    <link name="finger2">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="800"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual name="VisualMeshInstance">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <mesh filename="package://tactile_gripper/finger_no_gripper.stl" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <rgbMaterialRef name="DefaultMaterial 2"/>
+        </visual>
+        <collision name="Collision">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <mesh_sdf filename="package://tactile_gripper/finger_no_gripper.stl" scale="1 1 1"/>
+                <settings maxResPerAxis="128" targetSamples="1024"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <rgbMaterialRef name="VisualMaterial 7"/>
+        </collision>
+        <rigidMaterialRef name="RigidPhysicsMaterial 5"/>
+        <rgbMaterialRef name="VisualMaterial 6"/>
+        <miscellaneous contactOffset="0.00999999977648"/>
+    </link>
+    <joint name="root_to_vertical" type="prismatic">
+        <child link="vertical"/>
+        <parent link="root"/>
+        <origin xyz="0 0 0" rpy="0 -0 0"/>
+        <linkTransform xyz="0 -0 0" rpy="0 -0 0"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-0.0500000007451" upper="0.10000000149" effort="100" velocity="10"/>
+        <dynamics damping="100" stiffness="1000" integral="0" friction="0" frictionLoss="0" armature="0" restOffset="-0.5"/>
+    </joint>
+    <joint name="vertical_to_horizontal" type="prismatic">
+        <child link="horizontal"/>
+        <parent link="vertical"/>
+        <origin xyz="0 0 0" rpy="0 -0 0"/>
+        <linkTransform xyz="0 -0 0" rpy="0 -0 0"/>
+        <axis xyz="0 1 0"/>
+        <limit lower="-0.0500000007451" upper="0.0500000007451" effort="100" velocity="10"/>
+        <dynamics damping="100" stiffness="1000" integral="0" friction="0" frictionLoss="0" armature="0"/>
+    </joint>
+    <joint name="root_to_slide" type="prismatic">
+        <child link="finger1"/>
+        <parent link="horizontal"/>
+        <origin xyz="0 0 0" rpy="0 -0 0"/>
+        <linkTransform xyz="0 -0 0" rpy="0 -0 0"/>
+        <axis xyz="0 1 0"/>
+        <limit lower="-0.00999999977648" upper="0.0500000007451" effort="1" velocity="10"/>
+        <dynamics damping="100" stiffness="1000" integral="0" friction="0" frictionLoss="0" armature="0"/>
+    </joint>
+    <joint name="vertical_to_finger2" type="prismatic">
+        <child link="finger2"/>
+        <parent link="horizontal"/>
+        <origin xyz="0 0 0" rpy="0 -0 -3.14159250259"/>
+        <linkTransform xyz="0 -0 0" rpy="0 -0 -3.14159250259"/>
+        <axis xyz="0 1 0"/>
+        <limit lower="-0.00999999977648" upper="0.0500000007451" effort="0" velocity="10"/>
+        <dynamics damping="0" stiffness="0" integral="0" friction="0" frictionLoss="0" armature="0"/>
+        <mimic joint="root_to_slide" multiplier="1" offset="0"/>
+    </joint>
+</robot>

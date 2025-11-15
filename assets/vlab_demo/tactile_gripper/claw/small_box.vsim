@@ -1,0 +1,52 @@
+<robot name="ModelRoot" version="0">
+    <!--Materials-->
+    <material name="VisualMaterial">
+        <color rgba="1 1 1 1"/>
+        <luminescence value="0"/>
+        <specularExponent value="40"/>
+        <specularIntensity value="0.25"/>
+    </material>
+    <material name="DefaultMaterial">
+        <color rgba="1 1 1 1"/>
+        <luminescence value="0"/>
+        <specularExponent value="40"/>
+        <specularIntensity value="0.25"/>
+    </material>
+    <material name="VisualMaterial 2">
+        <color rgba="1 1 1 1"/>
+        <luminescence value="0"/>
+        <specularExponent value="40"/>
+        <specularIntensity value="0.25"/>
+    </material>
+    <rigidMaterial name="RigidPhysicsMaterial" staticFriction="1" dynamicFriction="1" restitution="0.10000000149"/>
+    <!--Links-->
+    <robotProperties maxDepenetrationVelocity="10"/>
+    <link name="RigidBody">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="800"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual name="VisualMeshInstance">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <mesh filename="package://tactile_gripper/small_box.stl" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <rgbMaterialRef name="DefaultMaterial"/>
+        </visual>
+        <collision name="Collision">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.019999999553 0.019999999553 0.019999999553"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <rgbMaterialRef name="VisualMaterial 2"/>
+        </collision>
+        <rigidMaterialRef name="RigidPhysicsMaterial"/>
+        <rgbMaterialRef name="VisualMaterial"/>
+        <miscellaneous contactOffset="0.00999999977648"/>
+    </link>
+</robot>

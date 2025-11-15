@@ -1,0 +1,44 @@
+<robot name="obstacle2" version="0">
+    <!--Materials-->
+    <material name="VlabBoxRGB">
+        <color rgba="0 0.411060988903 0.0920519903302 1"/>
+        <luminescence value="0"/>
+        <specularExponent value="0.00999999977648"/>
+        <specularIntensity value="0.00999999977648"/>
+    </material>
+    <material name="VlabBoxRGB 2">
+        <color rgba="0 0 1 1"/>
+        <luminescence value="0"/>
+        <specularExponent value="0.00999999977648"/>
+        <specularIntensity value="0.00999999977648"/>
+    </material>
+    <rigidMaterial name="HighFrictionRigid" staticFriction="1" dynamicFriction="0.899999976158" restitution="0"/>
+    <!--Links-->
+    <robotProperties maxDepenetrationVelocity="50"/>
+    <link name="VlabRigidBody_0">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="0.10000000149"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual name="Visual 0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.03 0.03 0.03"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <rgbMaterialRef name="VlabBoxRGB"/>
+        </visual>
+        <collision name="Collision 0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.03 0.03 0.03"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <rgbMaterialRef name="VlabBoxRGB 2"/>
+        </collision>
+        <rigidMaterialRef name="HighFrictionRigid"/>
+        <miscellaneous contactOffset="0.00499999988824"/>
+    </link>
+</robot>

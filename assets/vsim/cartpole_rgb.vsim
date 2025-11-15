@@ -1,0 +1,122 @@
+<robot name="cartpole">
+    <link name="slider">
+        <inertial>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <mass value="-1"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <box size="0.015 4 0.015"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <material name="slider_mat">
+                <color rgba="0.9 0.6 0.2 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <box size="0.015 4 0.015"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collisionMaterial mRestitution="0" mDynamicFriction="0" mStaticFriction="0" mDamping="0"/>
+        <miscellaneous maxDepenetrationVelocity="10" contactOffset="0.005" restOffset="0"/>
+    </link>
+    <link name="cart">
+        <inertial>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <mass value="1"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <box size="0.1 0.125 0.1"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <material name="cart_mat">
+                <color rgba="0.3 0.5 0.7 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <box size="0.1 0.125 0.1"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collisionMaterial mRestitution="0" mDynamicFriction="0" mStaticFriction="0" mDamping="0"/>
+        <miscellaneous maxDepenetrationVelocity="10" contactOffset="0.005" restOffset="0"/>
+    </link>
+    <link name="pole">
+        <inertial>
+            <origin xyz="0 0 0.47" rot="0 0 0 1"/>
+            <mass value="1"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0.47" rot="0 0 0 1"/>
+            <geometry>
+                <box size="0.02 0.03 0.5"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <material name="pole_mat">
+                <color rgba="0.1 0.1 0.3 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0.47" rot="0 0 0 1"/>
+            <geometry>
+                <box size="0.02 0.03 0.5"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collisionMaterial mRestitution="0" mDynamicFriction="0" mStaticFriction="0" mDamping="0"/>
+        <miscellaneous maxDepenetrationVelocity="10" contactOffset="0.005" restOffset="0"/>
+    </link>
+    <joint name="slider_to_cart" type="prismatic">
+        <child link="cart"/>
+        <parent link="slider"/>
+        <origin xyz="0 0 0" rot="0 0 0 1"/>
+        <linkTransform xyz="0 0 0" rot="0 0 0 1"/>
+        <axis xyz="0 1 0"/>
+        <limit lower="-4" upper="4" effort="1000" velocity="100"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="cart_to_pole" type="continuous">
+        <child link="pole"/>
+        <parent link="cart"/>
+        <origin xyz="0.12 0 0" rot="0 0 0 1"/>
+        <linkTransform xyz="0.12 0 0" rot="0 0 0 1"/>
+        <axis xyz="1 0 0"/>
+        <limit lower="1" upper="-1" effort="1000" velocity="8"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+
+    <Lights>
+        <light name="point_light" type="pointLight" color="1 1 1 0.75" ambient="0.2"/>
+    </Lights>
+    <LightInstances>
+        <lightInstance name="point_light_inst" light="point_light" link="torso" xyz="5 0 1"
+        rot="0 0 0 1"/>
+    </LightInstances>
+
+    <rgbCamera>
+        <camera name="rgb_camera" type="rgb" farClip="10" fovX="0.8"
+        fovY="0.8" resX="80" resY="80"/>
+    </rgbCamera>
+    <rgbCameraInstance>
+        <cameraInstance name="slider_camera" camera="rgb_camera" link="slider" xyz="5 0 1"
+        rot="0.5 0.5 0.5 0.5">
+            <LightInstance>
+                <instance name="point_light_inst"/>
+            </LightInstance>
+        </cameraInstance>
+    </rgbCameraInstance>
+</robot>

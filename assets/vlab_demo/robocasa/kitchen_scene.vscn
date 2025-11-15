@@ -1,0 +1,27 @@
+<environment name="EnvironmentRoot" version="0">
+    <elements>
+        <plane name="GroundPlane" xyz="0 0 0" rot="0 0 0.707106769085 0.707106769085" file="" scale="1 1 1">
+            <rigidMaterial name="" staticFriction="0.5" dynamicFriction="0.5" restitution="0.10000000149"/>
+            <material name="">
+                <texture filename="package://robocasa/vsim_tile.png"/>
+                <color rgba="1 1 1 1"/>
+                <luminescence value="0"/>
+                <specularExponent value="40"/>
+                <specularIntensity value="0.25"/>
+            </material>
+        </plane>
+        <renderingContext name="RenderingContext">
+            <skybox positiveX="package://robocasa/daylight_box_right.png" negativeX="package://robocasa/daylight_box_left.png" positiveY="package://robocasa/daylight_box_top.png" negativeY="package://robocasa/daylight_box_bottom.png" positiveZ="package://robocasa/daylight_box_back.png" negativeZ="package://robocasa/daylight_box_front.png"/>
+        </renderingContext>
+        <light name="PointLight_def" type="pointLight" color="1 1 1 1" castShadow="true" ambient="0" constant_atten="1" linear_atten="0" quadratic_atten="0"/>
+        <lightInstance name="PointLight" light="PointLight_def" link="" xyz="3.73837280273 2.6542468071 2.42591333389" rpy="0 -0 0"/>
+        <rgbCamera name="RGBCamera_def" type="pinhole" postFilter="anti_aliasing ambient_occlusion" farClip="100" fovX="1.3089969158172607" fovY="1.3089969158172607" resX="1080" resY="1080"/>
+        <cameraInstance name="RGBCamera" camera="RGBCamera_def" xyz="4.70634841919 2.13034367561 5.57121753693" rpy="0 0.20856691106 0">
+            <LightInstance>
+                <instance name="PointLight"/>
+            </LightInstance>
+        </cameraInstance>
+        <assembly name="base" xyz="0 0.244195342064 0" rot="-0.707106769085 0 0 0.707106769085" file="package://robocasa/my_kitchen_scene.vasm"/>
+    </elements>
+    <settings/>
+</environment>

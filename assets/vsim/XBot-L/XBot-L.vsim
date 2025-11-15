@@ -1,0 +1,2579 @@
+<robot name="XBot-L">
+    <material name="XBot-L_DefaultMaterial">
+        <color rgba="1 1 1 1"/>
+    </material>
+    <link name="base_link">
+        <inertial>
+            <origin xyz="-0.00336 -0.0008466 0.1336" rot="-0.00276 0.004017 -0.0001792 1"/>
+            <mass value="9.958"/>
+            <density value="-1"/>
+            <inertia ixx="0.08997" iyy="0.06" izz="0.05613" ixy="-1.158e-05" ixz="-0.0002718" iyz="-2.126e-05"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/base_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0.1" rot="0 0 0 1"/>
+            <geometry>
+                <box size="0.2 0.2 0.2"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="neck_base_link">
+        <inertial>
+            <origin xyz="3.564e-05 4.758e-05 -0.0313" rot="-0.0009854 0.001119 -0.0153 0.9999"/>
+            <mass value="0.6196"/>
+            <density value="-1"/>
+            <inertia ixx="0.0002759" iyy="0.0002905" izz="0.0004733" ixy="4.492e-07" ixz="4.467e-07" iyz="3.528e-07"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/neck_base_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/neck_base_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="neck_yaw_link">
+        <inertial>
+            <origin xyz="0.02324 0.004247 0.03588" rot="0.001264 0.1883 -0.001514 0.9821"/>
+            <mass value="0.6498"/>
+            <density value="-1"/>
+            <inertia ixx="0.0003372" iyy="0.0005604" izz="0.0003788" ixy="7.322e-07" ixz="1.968e-05" iyz="2.793e-07"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/neck_yaw_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/neck_yaw_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="neck_pitch_link">
+        <inertial>
+            <origin xyz="-0.002182 -0.08799 0.0003571" rot="-0.0002671 0.000147 -0.2524 0.9676"/>
+            <mass value="1.322"/>
+            <density value="-1"/>
+            <inertia ixx="0.006422" iyy="0.005154" izz="0.00501" ixy="-0.001034" ixz="-1.343e-07" iyz="3.697e-07"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/neck_pitch_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+        <collision>
+            <origin xyz="0 -0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/neck_pitch_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="realsense_link">
+        <inertial>
+            <origin xyz="0.04742 0.0001429 -0.008242" rot="-0.06312 -0.0004967 -0.0005747 0.998"/>
+            <mass value="0.07691"/>
+            <density value="-1"/>
+            <inertia ixx="8.666e-06" iyy="9.43e-05" izz="9.5e-05" ixy="9.276e-08" ixz="-9.176e-08" iyz="9.02e-08"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/realsense_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+        <collision>
+            <origin xyz="-0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/realsense_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="left_arm_base_link">
+        <inertial>
+            <origin xyz="4.301e-05 -0.0002119 0.1527" rot="-0.0008437 0.001143 0.003456 1"/>
+            <mass value="0.7148"/>
+            <density value="-1"/>
+            <inertia ixx="0.0003988" iyy="0.0003983" izz="0.0005946" ixy="4.488e-09" ixz="4.464e-07" iyz="3.329e-07"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/left_arm_base_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/left_arm_base_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="left_shoulder_pitch_link">
+        <inertial>
+            <origin xyz="3.501e-05 -0.003873 -0.01187" rot="-0.003766 0.02413 -0.001096 0.9997"/>
+            <mass value="0.905"/>
+            <density value="-1"/>
+            <inertia ixx="0.0007117" iyy="0.001033" izz="0.0005196" ixy="5.749e-07" ixz="-9.309e-06" iyz="-3.873e-06"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/left_shoulder_pitch_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/left_shoulder_pitch_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="left_shoulder_roll_link">
+        <inertial>
+            <origin xyz="-5.345e-05 -0.06546 0.0004446" rot="0.000167 -0.003005 0.00071 1"/>
+            <mass value="0.728"/>
+            <density value="-1"/>
+            <inertia ixx="0.0008348" iyy="0.0004673" izz="0.0009978" ixy="5.226e-07" ixz="-9.794e-07" iyz="-1.763e-07"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/left_shoulder_roll_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/left_shoulder_roll_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="left_arm_yaw_link">
+        <inertial>
+            <origin xyz="-0.0006423 0.004268 -0.01198" rot="-0.0004887 0.01411 -0.002973 0.9999"/>
+            <mass value="0.6767"/>
+            <density value="-1"/>
+            <inertia ixx="0.0004248" iyy="0.0005533" izz="0.0002726" ixy="7.579e-07" ixz="-4.302e-06" iyz="-2.724e-07"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/left_arm_yaw_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+        <collision>
+            <origin xyz="-0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/left_arm_yaw_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="left_elbow_pitch_link">
+        <inertial>
+            <origin xyz="-4.179e-05 0.06335 0.0004857" rot="-0.003183 0.00251 -0.001274 1"/>
+            <mass value="0.6482"/>
+            <density value="-1"/>
+            <inertia ixx="0.0006684" iyy="0.0005147" izz="0.0005703" ixy="-3.923e-07" ixz="-4.907e-07" iyz="3.558e-07"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/left_elbow_pitch_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/left_elbow_pitch_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="left_elbow_yaw_link">
+        <inertial>
+            <origin xyz="-0.0001806 0.004271 -0.0077" rot="-0.001533 0.008466 -0.0006163 1"/>
+            <mass value="0.6499"/>
+            <density value="-1"/>
+            <inertia ixx="0.0003129" iyy="0.0004327" izz="0.0002536" ixy="1.414e-07" ixz="-1.006e-06" iyz="-5.497e-07"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/left_elbow_yaw_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+        <collision>
+            <origin xyz="-0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/left_elbow_yaw_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="left_wrist_roll_link">
+        <inertial>
+            <origin xyz="-5.742e-05 -0.06243 -0.0003593" rot="0.03719 0.005253 0.001479 0.9993"/>
+            <mass value="0.638"/>
+            <density value="-1"/>
+            <inertia ixx="0.000618" iyy="0.0004985" izz="0.0005284" ixy="3.767e-07" ixz="-9.233e-07" iyz="-2.246e-06"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/left_wrist_roll_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/left_wrist_roll_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="left_wrist_yaw_link">
+        <inertial>
+            <origin xyz="2.335e-07 -0.0002609 0.1162" rot="0.002031 -9.269e-05 0.04546 0.999"/>
+            <mass value="0.08327"/>
+            <density value="-1"/>
+            <inertia ixx="2.025e-05" iyy="2.002e-05" izz="3.653e-05" ixy="2.164e-08" ixz="8.013e-11" iyz="-6.715e-08"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/left_wrist_yaw_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+    </link>
+    <link name="left_hand_link">
+        <inertial>
+            <origin xyz="-0.0004447 0.002816 -0.05808" rot="0 -0 0 1"/>
+            <mass value="-1"/>
+            <density value="0"/>
+            <inertia ixx="0" iyy="0" izz="0" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/left_hand_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/left_hand_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="left_hand_thumb_bend_link">
+        <inertial>
+            <origin xyz="0.01794 -0.002931 0.00225" rot="0 -0 0 1"/>
+            <mass value="-1"/>
+            <density value="0"/>
+            <inertia ixx="0" iyy="0" izz="0" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/left_hand_thumb_bend_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/left_hand_thumb_bend_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="left_hand_thumb_rota_link1">
+        <inertial>
+            <origin xyz="0.03 -1.022e-10 0.0005239" rot="0 -0 0 1"/>
+            <mass value="-1"/>
+            <density value="0"/>
+            <inertia ixx="0" iyy="0" izz="0" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/left_hand_thumb_rota_link1.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/left_hand_thumb_rota_link1.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="left_hand_thumb_rota_link2">
+        <inertial>
+            <origin xyz="0.02124 3.767e-06 0.0008055" rot="0 -0 0 1"/>
+            <mass value="-1"/>
+            <density value="0"/>
+            <inertia ixx="0" iyy="0" izz="0" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/left_hand_thumb_rota_link2.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/left_hand_thumb_rota_link2.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="left_hand_thumb_tip">
+        <inertial>
+            <origin xyz="2.776e-17 2.189e-15 -1.176e-15" rot="0 -0 0 1"/>
+            <mass value="-1"/>
+            <density value="0"/>
+            <inertia ixx="0" iyy="0" izz="0" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/left_hand_thumb_tip.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/left_hand_thumb_tip.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="left_hand_index_rota_link1">
+        <inertial>
+            <origin xyz="3.991e-06 0.001652 -0.04183" rot="-0.0134 1.444e-05 -0.001076 0.9999"/>
+            <mass value="0.07921"/>
+            <density value="-1"/>
+            <inertia ixx="2.732e-05" iyy="2.587e-05" izz="6.133e-06" ixy="-3.121e-09" ixz="-1.14e-09" iyz="-5.293e-07"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/left_hand_index_rota_link1.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/left_hand_index_rota_link1.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="left_hand_index_rota_link2">
+        <inertial>
+            <origin xyz="1.236e-08 0.0002721 -0.02374" rot="0 -0 0 1"/>
+            <mass value="-1"/>
+            <density value="0"/>
+            <inertia ixx="0" iyy="0" izz="0" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/left_hand_index_rota_link2.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/left_hand_index_rota_link2.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="left_hand_index_tip">
+        <inertial>
+            <origin xyz="0 8.084e-16 -2.776e-17" rot="0 -0 0 1"/>
+            <mass value="-1"/>
+            <density value="0"/>
+            <inertia ixx="0" iyy="0" izz="0" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/left_hand_index_tip.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/left_hand_index_tip.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="left_hand_mid_link1">
+        <inertial>
+            <origin xyz="3.957e-06 0.001621 -0.04028" rot="0 -0 0 1"/>
+            <mass value="-1"/>
+            <density value="0"/>
+            <inertia ixx="0" iyy="0" izz="0" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/left_hand_mid_link1.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/left_hand_mid_link1.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="left_hand_mid_link2">
+        <inertial>
+            <origin xyz="1.236e-08 0.0002721 -0.02374" rot="0 -0 0 1"/>
+            <mass value="-1"/>
+            <density value="0"/>
+            <inertia ixx="0" iyy="0" izz="0" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/left_hand_mid_link2.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/left_hand_mid_link2.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="left_hand_mid_tip">
+        <inertial>
+            <origin xyz="0 0 0" rot="0 -0 0 1"/>
+            <mass value="-1"/>
+            <density value="0"/>
+            <inertia ixx="0" iyy="0" izz="0" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/left_hand_mid_tip.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/left_hand_mid_tip.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="left_hand_ring_link1">
+        <inertial>
+            <origin xyz="3.957e-06 0.001621 -0.04028" rot="0 -0 0 1"/>
+            <mass value="-1"/>
+            <density value="0"/>
+            <inertia ixx="0" iyy="0" izz="0" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/left_hand_ring_link1.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/left_hand_ring_link1.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="left_hand_ring_link2">
+        <inertial>
+            <origin xyz="1.236e-08 0.0002721 -0.02374" rot="0 -0 0 1"/>
+            <mass value="-1"/>
+            <density value="0"/>
+            <inertia ixx="0" iyy="0" izz="0" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/left_hand_ring_link2.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/left_hand_ring_link2.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="left_hand_ring_tip">
+        <inertial>
+            <origin xyz="-3.469e-18 1.735e-18 -2.776e-17" rot="0 -0 0 1"/>
+            <mass value="-1"/>
+            <density value="0"/>
+            <inertia ixx="0" iyy="0" izz="0" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/left_hand_ring_tip.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/left_hand_ring_tip.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="left_hand_pinky_link1">
+        <inertial>
+            <origin xyz="3.957e-06 0.001621 -0.04028" rot="0 -0 0 1"/>
+            <mass value="-1"/>
+            <density value="0"/>
+            <inertia ixx="0" iyy="0" izz="0" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/left_hand_pinky_link1.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/left_hand_pinky_link1.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="left_hand_pinky_link2">
+        <inertial>
+            <origin xyz="1.236e-08 0.0002721 -0.02374" rot="0 -0 0 1"/>
+            <mass value="-1"/>
+            <density value="0"/>
+            <inertia ixx="0" iyy="0" izz="0" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/left_hand_pinky_link2.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/left_hand_pinky_link2.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="left_hand_pinky_tip">
+        <inertial>
+            <origin xyz="0 1.735e-18 -2.776e-17" rot="0 -0 0 1"/>
+            <mass value="-1"/>
+            <density value="0"/>
+            <inertia ixx="0" iyy="0" izz="0" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/left_hand_pinky_tip.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/left_hand_pinky_tip.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="left_hand_ee_link">
+        <inertial>
+            <origin xyz="5.065e-19 -0.03 -1.388e-17" rot="0 -0 0 1"/>
+            <mass value="-1"/>
+            <density value="0"/>
+            <inertia ixx="0" iyy="0" izz="0" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/left_hand_ee_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/left_hand_ee_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="left_arm_flange_link">
+        <inertial>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <mass value="-1"/>
+            <density value="1000"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+    </link>
+    <link name="left_arm_vr_ee">
+        <inertial>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <mass value="-1"/>
+            <density value="1000"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+    </link>
+    <link name="right_arm_base_link">
+        <inertial>
+            <origin xyz="4.301e-05 -0.0002119 0.1527" rot="-0.0008437 0.001143 0.003456 1"/>
+            <mass value="0.7148"/>
+            <density value="-1"/>
+            <inertia ixx="0.0003988" iyy="0.0003983" izz="0.0005946" ixy="4.488e-09" ixz="4.464e-07" iyz="3.329e-07"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/right_arm_base_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+        <collision>
+            <origin xyz="0 -0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/right_arm_base_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="right_shoulder_pitch_link">
+        <inertial>
+            <origin xyz="-1.591e-05 0.003873 -0.01219" rot="0.003898 0.02297 0.00106 0.9997"/>
+            <mass value="0.905"/>
+            <density value="-1"/>
+            <inertia ixx="0.0007119" iyy="0.001033" izz="0.0005195" ixy="-5.532e-07" ixz="-8.871e-06" iyz="4.009e-06"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/right_shoulder_pitch_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+        <collision>
+            <origin xyz="0 -0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/right_shoulder_pitch_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="right_shoulder_roll_link">
+        <inertial>
+            <origin xyz="5.333e-05 -0.06546 -0.0004444" rot="-0.0001671 -0.003005 -0.0007131 1"/>
+            <mass value="0.728"/>
+            <density value="-1"/>
+            <inertia ixx="0.0008348" iyy="0.0004673" izz="0.0009978" ixy="-5.249e-07" ixz="-9.793e-07" iyz="1.764e-07"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/right_shoulder_roll_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/right_shoulder_roll_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="right_arm_yaw_link">
+        <inertial>
+            <origin xyz="-0.0008872 -0.004076 -0.01195" rot="3.811e-05 0.01604 -0.00285 0.9999"/>
+            <mass value="0.6767"/>
+            <density value="-1"/>
+            <inertia ixx="0.000423" iyy="0.0005547" izz="0.0002728" ixy="7.505e-07" ixz="-4.824e-06" iyz="2.322e-08"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/right_arm_yaw_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+        <collision>
+            <origin xyz="0 -0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/right_arm_yaw_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="right_elbow_pitch_link">
+        <inertial>
+            <origin xyz="-5.611e-05 0.06336 -0.0004607" rot="0.0022 -0.004918 -0.001471 1"/>
+            <mass value="0.6482"/>
+            <density value="-1"/>
+            <inertia ixx="0.0006673" iyy="0.0005147" izz="0.0005714" ixy="-4.5e-07" ixz="9.42e-07" iyz="-2.532e-07"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/right_elbow_pitch_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/right_elbow_pitch_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="right_elbow_yaw_link">
+        <inertial>
+            <origin xyz="9.918e-05 -0.00424 -0.007848" rot="0.001508 -0.008739 -0.0001821 1"/>
+            <mass value="0.6519"/>
+            <density value="-1"/>
+            <inertia ixx="0.0003132" iyy="0.0004327" izz="0.0002535" ixy="3.721e-08" ixz="1.044e-06" iyz="5.407e-07"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/right_elbow_yaw_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+        <collision>
+            <origin xyz="0 -0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/right_elbow_yaw_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="right_wrist_roll_link">
+        <inertial>
+            <origin xyz="5.648e-05 -0.06243 0.0003573" rot="-0.0374 0.005094 -0.001438 0.9993"/>
+            <mass value="0.638"/>
+            <density value="-1"/>
+            <inertia ixx="0.0006179" iyy="0.0004985" izz="0.0005285" ixy="-3.66e-07" ixz="-8.94e-07" iyz="2.263e-06"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/right_wrist_roll_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/right_wrist_roll_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="right_wrist_yaw_link">
+        <inertial>
+            <origin xyz="-8.168e-08 0.0002608 0.1162" rot="-0.002033 9.105e-05 0.04561 0.999"/>
+            <mass value="0.08327"/>
+            <density value="-1"/>
+            <inertia ixx="2.025e-05" iyy="2.002e-05" izz="3.653e-05" ixy="2.171e-08" ixz="-1.466e-10" iyz="6.721e-08"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/right_wrist_yaw_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+    </link>
+    <link name="right_hand_link">
+        <inertial>
+            <origin xyz="-0.0004447 -0.002816 -0.05808" rot="0 -0 0 1"/>
+            <mass value="-1"/>
+            <density value="0"/>
+            <inertia ixx="0" iyy="0" izz="0" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/right_hand_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/right_hand_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="right_hand_thumb_bend_link">
+        <inertial>
+            <origin xyz="0.01864 0.004931 0.00225" rot="0 -0 0 1"/>
+            <mass value="-1"/>
+            <density value="0"/>
+            <inertia ixx="0" iyy="0" izz="0" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/right_hand_thumb_bend_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/right_hand_thumb_bend_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="right_hand_thumb_rota_link1">
+        <inertial>
+            <origin xyz="0.03 -1.022e-10 0.0005238" rot="0 -0 0 1"/>
+            <mass value="-1"/>
+            <density value="0"/>
+            <inertia ixx="0" iyy="0" izz="0" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/right_hand_thumb_rota_link1.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/right_hand_thumb_rota_link1.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="right_hand_thumb_rota_link2">
+        <inertial>
+            <origin xyz="0.02124 3.767e-06 0.0008055" rot="0 -0 0 1"/>
+            <mass value="-1"/>
+            <density value="0"/>
+            <inertia ixx="0" iyy="0" izz="0" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/right_hand_thumb_rota_link2.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/right_hand_thumb_rota_link2.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="right_hand_thumb_rota_tip">
+        <inertial>
+            <origin xyz="2.776e-17 0 -3.469e-18" rot="0 -0 0 1"/>
+            <mass value="-1"/>
+            <density value="0"/>
+            <inertia ixx="0" iyy="0" izz="0" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/right_hand_thumb_rota_tip.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/right_hand_thumb_rota_tip.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="right_hand_mid_link1">
+        <inertial>
+            <origin xyz="-3.957e-06 -0.001621 -0.04028" rot="0 -0 0 1"/>
+            <mass value="-1"/>
+            <density value="0"/>
+            <inertia ixx="0" iyy="0" izz="0" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/right_hand_mid_link1.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/right_hand_mid_link1.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="right_hand_mid_link2">
+        <inertial>
+            <origin xyz="-1.236e-08 -0.0002721 -0.02374" rot="0 -0 0 1"/>
+            <mass value="-1"/>
+            <density value="0"/>
+            <inertia ixx="0" iyy="0" izz="0" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/right_hand_mid_link2.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/right_hand_mid_link2.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="right_hand_mid_tip">
+        <inertial>
+            <origin xyz="0 1.561e-17 2.776e-17" rot="0 -0 0 1"/>
+            <mass value="-1"/>
+            <density value="0"/>
+            <inertia ixx="0" iyy="0" izz="0" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/right_hand_mid_tip.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/right_hand_mid_tip.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="right_hand_ring_link1">
+        <inertial>
+            <origin xyz="-3.957e-06 -0.001621 -0.04028" rot="0 -0 0 1"/>
+            <mass value="-1"/>
+            <density value="0"/>
+            <inertia ixx="0" iyy="0" izz="0" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/right_hand_ring_link1.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/right_hand_ring_link1.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="right_hand_ring_link2">
+        <inertial>
+            <origin xyz="-1.236e-08 -0.0002721 -0.02374" rot="0 -0 0 1"/>
+            <mass value="-1"/>
+            <density value="0"/>
+            <inertia ixx="0" iyy="0" izz="0" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/right_hand_ring_link2.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/right_hand_ring_link2.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="right_hand_ring_tip">
+        <inertial>
+            <origin xyz="0 6.939e-18 -2.776e-17" rot="0 -0 0 1"/>
+            <mass value="-1"/>
+            <density value="0"/>
+            <inertia ixx="0" iyy="0" izz="0" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/right_hand_ring_tip.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/right_hand_ring_tip.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="right_hand_pinky_link1">
+        <inertial>
+            <origin xyz="-3.957e-06 -0.001621 -0.04028" rot="0 -0 0 1"/>
+            <mass value="-1"/>
+            <density value="0"/>
+            <inertia ixx="0" iyy="0" izz="0" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/right_hand_pinky_link1.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/right_hand_pinky_link1.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="right_hand_pinky_link2">
+        <inertial>
+            <origin xyz="-1.236e-08 -0.0002721 -0.02374" rot="0 -0 0 1"/>
+            <mass value="-1"/>
+            <density value="0"/>
+            <inertia ixx="0" iyy="0" izz="0" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/right_hand_pinky_link2.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/right_hand_pinky_link2.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="right_hand_pinky_tip">
+        <inertial>
+            <origin xyz="-6.939e-18 -1.041e-17 -2.776e-17" rot="0 -0 0 1"/>
+            <mass value="-1"/>
+            <density value="0"/>
+            <inertia ixx="0" iyy="0" izz="0" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/right_hand_pinky_tip.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/right_hand_pinky_tip.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="right_hand_ee_link">
+        <inertial>
+            <origin xyz="1.175e-34 0.03 -1.388e-17" rot="0 -0 0 1"/>
+            <mass value="-1"/>
+            <density value="0"/>
+            <inertia ixx="0" iyy="0" izz="0" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/right_hand_ee_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/right_hand_ee_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="right_hand_index_rota_link1">
+        <inertial>
+            <origin xyz="-3.991e-06 -0.001652 -0.04183" rot="0.0134 -1.444e-05 -0.001076 0.9999"/>
+            <mass value="0.07921"/>
+            <density value="-1"/>
+            <inertia ixx="2.732e-05" iyy="2.587e-05" izz="6.133e-06" ixy="-3.121e-09" ixz="1.14e-09" iyz="5.293e-07"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/right_hand_index_rota_link1.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/right_hand_index_rota_link1.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="right_hand_index_rota_link2">
+        <inertial>
+            <origin xyz="-1.236e-08 -0.0002721 -0.02374" rot="0 -0 0 1"/>
+            <mass value="-1"/>
+            <density value="0"/>
+            <inertia ixx="0" iyy="0" izz="0" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/right_hand_index_rota_link2.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/right_hand_index_rota_link2.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="right_hand_index_tip">
+        <inertial>
+            <origin xyz="-1.388e-17 8.674e-19 -2.776e-17" rot="0 -0 0 1"/>
+            <mass value="-1"/>
+            <density value="0"/>
+            <inertia ixx="0" iyy="0" izz="0" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/right_hand_index_tip.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/right_hand_index_tip.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="right_arm_flange_link">
+        <inertial>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <mass value="-1"/>
+            <density value="1000"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+    </link>
+    <link name="right_arm_vr_ee">
+        <inertial>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <mass value="-1"/>
+            <density value="1000"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+    </link>
+    <link name="waist_yaw_link">
+        <inertial>
+            <origin xyz="0.001824 3.106e-08 0.01546" rot="-7.796e-07 -0.02162 -2.591e-05 0.9998"/>
+            <mass value="1.921"/>
+            <density value="-1"/>
+            <inertia ixx="0.003267" iyy="0.002775" izz="0.004366" ixy="-2.555e-08" ixz="-4.767e-05" iyz="3.17e-09"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/waist_yaw_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+    </link>
+    <link name="waist_roll_link">
+        <inertial>
+            <origin xyz="-8.758e-07 -0.02055 -0.08825" rot="0.001895 -1.613e-05 3.941e-07 1"/>
+            <mass value="5.105"/>
+            <density value="-1"/>
+            <inertia ixx="0.006783" iyy="0.01142" izz="0.01465" ixy="-2.98e-09" ixz="-2.539e-07" iyz="-1.224e-05"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/waist_roll_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+    </link>
+    <link name="left_leg_roll_link">
+        <inertial>
+            <origin xyz="-0.004859 -0.0001259 -0.002809" rot="-3.663e-05 -0.01498 5.954e-05 0.9999"/>
+            <mass value="1.797"/>
+            <density value="-1"/>
+            <inertia ixx="0.00366" iyy="0.002695" izz="0.002501" ixy="1.164e-07" ixz="3.476e-05" iyz="-1.047e-08"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/left_leg_roll_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+    </link>
+    <link name="left_leg_yaw_link">
+        <inertial>
+            <origin xyz="-0.001354 0.01465 0.07754" rot="-0.1142 0.0126 -0.01158 0.9933"/>
+            <mass value="0.6148"/>
+            <density value="-1"/>
+            <inertia ixx="0.001224" iyy="0.001392" izz="0.0004859" ixy="-6.721e-07" ixz="-2.233e-05" iyz="-0.0002231"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/left_leg_yaw_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+    </link>
+    <link name="left_leg_pitch_link">
+        <inertial>
+            <origin xyz="-0.002761 -0.07853 -0.008303" rot="0.004466 -0.0009248 0.01061 0.9999"/>
+            <mass value="6.038"/>
+            <density value="-1"/>
+            <inertia ixx="0.02294" iyy="0.009392" izz="0.03062" ixy="0.000288" ixz="-1.089e-05" iyz="-0.0001895"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/left_leg_pitch_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 -0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/left_leg_pitch_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="left_knee_link">
+        <inertial>
+            <origin xyz="0.01571 -0.1078 6.618e-06" rot="-0.0001115 0.002356 -0.01372 0.9999"/>
+            <mass value="2.229"/>
+            <density value="-1"/>
+            <inertia ixx="0.008688" iyy="0.001576" izz="0.008833" ixy="-0.0001954" ixz="7.164e-07" iyz="2.07e-06"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/left_knee_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+        <collision>
+            <origin xyz="-0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/left_knee_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="left_ankle_pitch_link">
+        <inertial>
+            <origin xyz="-7.897e-09 3.999e-08 1.291e-15" rot="0 -3.87e-07 0 1"/>
+            <mass value="0.04346"/>
+            <density value="-1"/>
+            <inertia ixx="1.217e-06" iyy="6.491e-06" izz="6.71e-06" ixy="0" ixz="-4.252e-12" iyz="0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/left_ankle_pitch_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+    </link>
+    <link name="left_ankle_roll_link">
+        <inertial>
+            <origin xyz="-1.126e-06 -0.03353 0.02588" rot="0.007194 1.15e-05 6.368e-07 1"/>
+            <mass value="0.3425"/>
+            <density value="-1"/>
+            <inertia ixx="0.0008483" iyy="0.000936" izz="0.0001276" ixy="1.412e-10" ixz="-1.658e-08" iyz="1.164e-05"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/left_ankle_roll_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/left_ankle_roll_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="left_foot_ee_link">
+        <inertial>
+            <origin xyz="8.93e-15 -2.776e-16 0.0055" rot="0.3175 -0.09537 -0.3475 0.8771"/>
+            <mass value="0.000975"/>
+            <density value="-1"/>
+            <inertia ixx="4.063e-09" iyy="4.063e-09" izz="4.063e-09" ixy="-1.075e-23" ixz="-1.654e-23" iyz="-1.778e-23"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/left_foot_ee_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+    </link>
+    <link name="l_foot_bottom_link">
+        <inertial>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <mass value="-1"/>
+            <density value="1000"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+    </link>
+    <link name="left_ankle_pitch_motor1_link">
+        <inertial>
+            <origin xyz="3.036e-09 -0.01852 0.01167" rot="0.01916 0 0 0.9998"/>
+            <mass value="0.03145"/>
+            <density value="-1"/>
+            <inertia ixx="1.266e-05" iyy="3.809e-06" izz="1.593e-05" ixy="0" ixz="0" iyz="-4.653e-07"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/left_ankle_pitch_motor1_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+    </link>
+    <link name="left_ankle_pitch_linkage1_link">
+        <inertial>
+            <origin xyz="0.1322 0.002324 -2.775e-05" rot="-0.00592 -3.718e-05 -0.006179 1"/>
+            <mass value="0.06673"/>
+            <density value="-1"/>
+            <inertia ixx="1.417e-06" iyy="0.0004777" izz="0.0004785" ixy="5.887e-06" ixz="-7.028e-08" iyz="8.415e-09"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/left_ankle_pitch_linkage1_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+    </link>
+    <link name="left_ankle_pitch_motor2_link">
+        <inertial>
+            <origin xyz="-0.01852 1.416e-09 0.01167" rot="0 -0.01916 0 0.9998"/>
+            <mass value="0.03145"/>
+            <density value="-1"/>
+            <inertia ixx="3.809e-06" iyy="1.266e-05" izz="1.593e-05" ixy="0" ixz="-4.653e-07" iyz="0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/left_ankle_pitch_motor2_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+    </link>
+    <link name="left_ankle_pitch_linkage2_link">
+        <inertial>
+            <origin xyz="0.09747 -0.002115 -2.969e-05" rot="0.007098 -5.342e-05 0.007701 0.9999"/>
+            <mass value="0.05055"/>
+            <density value="-1"/>
+            <inertia ixx="1.146e-06" iyy="0.0002065" izz="0.0002071" ixy="-3.164e-06" ixz="-4.44e-08" iyz="-8.512e-09"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/left_ankle_pitch_linkage2_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+    </link>
+    <link name="left_knee_motor_link">
+        <inertial>
+            <origin xyz="0.005217 2.22e-16 0.0239" rot="-0 0.01421 0 0.9999"/>
+            <mass value="0.1157"/>
+            <density value="-1"/>
+            <inertia ixx="2.964e-05" iyy="4.495e-05" izz="7.129e-05" ixy="0" ixz="1.185e-06" iyz="0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/left_knee_motor_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+    </link>
+    <link name="left_knee_linkage_link">
+        <inertial>
+            <origin xyz="0.09513 -1.943e-16 0.01762" rot="-0 0.1 0 0.995"/>
+            <mass value="0.1794"/>
+            <density value="-1"/>
+            <inertia ixx="3.346e-05" iyy="0.0005293" izz="0.0005016" ixy="0" ixz="9.918e-05" iyz="0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/left_knee_linkage_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+    </link>
+    <link name="right_leg_roll_link">
+        <inertial>
+            <origin xyz="-0.004859 0.0001279 -0.002808" rot="-6.851e-05 -0.01495 -0.0001559 0.9999"/>
+            <mass value="1.797"/>
+            <density value="-1"/>
+            <inertia ixx="0.00366" iyy="0.002695" izz="0.002501" ixy="-2.982e-07" ixz="3.47e-05" iyz="-3.659e-08"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/right_leg_roll_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+    </link>
+    <link name="right_leg_yaw_link">
+        <inertial>
+            <origin xyz="-0.001354 -0.01465 0.07754" rot="0.1142 0.0126 0.01158 0.9933"/>
+            <mass value="0.6148"/>
+            <density value="-1"/>
+            <inertia ixx="0.001224" iyy="0.001392" izz="0.0004859" ixy="6.734e-07" ixz="-2.233e-05" iyz="0.0002231"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/right_leg_yaw_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+    </link>
+    <link name="right_leg_pitch_link">
+        <inertial>
+            <origin xyz="-0.002765 0.07856 -0.008291" rot="-0.00448 -0.0009217 -0.01064 0.9999"/>
+            <mass value="6.036"/>
+            <density value="-1"/>
+            <inertia ixx="0.02294" iyy="0.009389" izz="0.03061" ixy="-0.0002887" ixz="-1.082e-05" iyz="0.0001901"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/right_leg_pitch_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/right_leg_pitch_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="right_knee_link">
+        <inertial>
+            <origin xyz="0.0157 0.1078 8.556e-05" rot="-0.0001611 6.594e-05 0.01407 0.9999"/>
+            <mass value="2.23"/>
+            <density value="-1"/>
+            <inertia ixx="0.008719" iyy="0.001578" izz="0.008865" ixy="0.0002012" ixz="-4.656e-08" iyz="2.336e-06"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/right_knee_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+        <collision>
+            <origin xyz="-0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/right_knee_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="right_ankle_pitch_link">
+        <inertial>
+            <origin xyz="-1.552e-14 1.11e-16 -8.327e-17" rot="0 -0 0 1"/>
+            <mass value="0.099"/>
+            <density value="-1"/>
+            <inertia ixx="4.405e-06" iyy="1.891e-05" izz="1.891e-05" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/right_ankle_pitch_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+    </link>
+    <link name="right_ankle_roll_link">
+        <inertial>
+            <origin xyz="-1.869e-06 -0.03353 0.02588" rot="0.007194 -1.216e-05 1.686e-06 1"/>
+            <mass value="0.3425"/>
+            <density value="-1"/>
+            <inertia ixx="0.0008483" iyy="0.000936" izz="0.0001276" ixy="-5.637e-10" ixz="1.75e-08" iyz="1.164e-05"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/right_ankle_roll_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/right_ankle_roll_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="right_foot_ee_link">
+        <inertial>
+            <origin xyz="8.93e-15 0.234 0.0055" rot="0.3175 -0.09537 -0.3475 0.8771"/>
+            <mass value="0.000975"/>
+            <density value="-1"/>
+            <inertia ixx="4.063e-09" iyy="4.063e-09" izz="4.063e-09" ixy="-1.075e-23" ixz="-1.654e-23" iyz="-1.778e-23"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/right_foot_ee_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+    </link>
+    <link name="r_foot_bottom_link">
+        <inertial>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <mass value="-1"/>
+            <density value="1000"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+    </link>
+    <link name="right_ankle_pitch_motor1_link">
+        <inertial>
+            <origin xyz="0.01852 -1.414e-09 0.01167" rot="-0 0.01916 0 0.9998"/>
+            <mass value="0.03145"/>
+            <density value="-1"/>
+            <inertia ixx="3.809e-06" iyy="1.266e-05" izz="1.593e-05" ixy="0" ixz="4.653e-07" iyz="0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/right_ankle_pitch_motor1_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+    </link>
+    <link name="right_ankle_pitch_linkage1_link">
+        <inertial>
+            <origin xyz="0.1322 -0.002324 -2.775e-05" rot="0.00592 -3.718e-05 0.006179 1"/>
+            <mass value="0.06673"/>
+            <density value="-1"/>
+            <inertia ixx="1.417e-06" iyy="0.0004777" izz="0.0004785" ixy="-5.887e-06" ixz="-7.028e-08" iyz="-8.415e-09"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/right_ankle_pitch_linkage1_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+    </link>
+    <link name="right_ankle_pitch_motor2_link">
+        <inertial>
+            <origin xyz="0.01852 3.039e-09 0.01167" rot="-0 0.01916 0 0.9998"/>
+            <mass value="0.03145"/>
+            <density value="-1"/>
+            <inertia ixx="3.809e-06" iyy="1.266e-05" izz="1.593e-05" ixy="0" ixz="4.653e-07" iyz="0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/right_ankle_pitch_motor2_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+    </link>
+    <link name="right_ankle_pitch_linkage2_link">
+        <inertial>
+            <origin xyz="0.09747 0.002115 -2.969e-05" rot="-0.007098 -5.342e-05 -0.007701 0.9999"/>
+            <mass value="0.05055"/>
+            <density value="-1"/>
+            <inertia ixx="1.146e-06" iyy="0.0002065" izz="0.0002071" ixy="3.164e-06" ixz="-4.44e-08" iyz="8.512e-09"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/right_ankle_pitch_linkage2_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+    </link>
+    <link name="right_knee_motor_link">
+        <inertial>
+            <origin xyz="0.005217 -5.551e-17 0.0239" rot="-0 0.01421 0 0.9999"/>
+            <mass value="0.1157"/>
+            <density value="-1"/>
+            <inertia ixx="2.964e-05" iyy="4.495e-05" izz="7.129e-05" ixy="0" ixz="1.185e-06" iyz="0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/right_knee_motor_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+    </link>
+    <link name="right_knee_linkage_link">
+        <inertial>
+            <origin xyz="0.09513 0 0.01762" rot="-0 0.1 0 0.995"/>
+            <mass value="0.1794"/>
+            <density value="-1"/>
+            <inertia ixx="3.346e-05" iyy="0.0005293" izz="0.0005016" ixy="0" ixz="9.918e-05" iyz="0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <mesh filename="package://meshes/right_knee_linkage_link.STL" scale="1 1 1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <material name="XBot-L_DefaultMaterial"/>
+        </visual>
+    </link>
+    <joint name="neck_pitch_link_to_realsense_link" type="fixed">
+        <child link="realsense_link"/>
+        <parent link="neck_pitch_link"/>
+        <origin xyz="0.06637 -0.1254 0.0475" rot="-0.1228 -0.6964 0.1228 -0.6964"/>
+        <linkTransform xyz="0.06637 -0.1254 0.0475" rot="-0.1228 -0.6964 0.1228 -0.6964"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="neck_yaw_link_to_neck_pitch_link" type="fixed">
+        <child link="neck_pitch_link"/>
+        <parent link="neck_yaw_link"/>
+        <origin xyz="0.032 -1.388e-17 0.044" rot="-0.7071 0 0 0.7071"/>
+        <linkTransform xyz="0.032 0 0.044" rot="-0.7071 0 0 0.7071"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="neck_base_link_to_neck_yaw_link" type="fixed">
+        <child link="neck_yaw_link"/>
+        <parent link="neck_base_link"/>
+        <origin xyz="0 0 0" rot="0 0 0 1"/>
+        <linkTransform xyz="0 0 0" rot="0 0 0 1"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="base_link_to_neck_base_link" type="fixed">
+        <child link="neck_base_link"/>
+        <parent link="base_link"/>
+        <origin xyz="0 0 0.4" rot="0 0 0 1"/>
+        <linkTransform xyz="0 0 0.4" rot="0 0 0 1"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="left_hand_thumb_rota_link2_to_left_hand_thumb_tip" type="fixed">
+        <child link="left_hand_thumb_tip"/>
+        <parent link="left_hand_thumb_rota_link2"/>
+        <origin xyz="0.05146 9.252e-18 2.987e-18" rot="0 -3.157e-23 0 1"/>
+        <linkTransform xyz="0.05146 9.252e-18 2.987e-18" rot="0 -3.157e-23 0 1"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="left_hand_thumb_rota_link1_to_left_hand_thumb_rota_link2" type="fixed">
+        <child link="left_hand_thumb_rota_link2"/>
+        <parent link="left_hand_thumb_rota_link1"/>
+        <origin xyz="0.06 -1.701e-17 1.108e-17" rot="0 -3.157e-23 0 1"/>
+        <linkTransform xyz="0.06 -1.701e-17 1.108e-17" rot="0 -3.157e-23 0 1"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="left_hand_thumb_bend_link_to_left_hand_thumb_rota_link1" type="fixed">
+        <child link="left_hand_thumb_rota_link1"/>
+        <parent link="left_hand_thumb_bend_link"/>
+        <origin xyz="0.03217 -0.003504 0.00225" rot="0 -3.157e-23 0 1"/>
+        <linkTransform xyz="0.03217 -0.003504 0.00225" rot="0 -3.157e-23 0 1"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="left_hand_link_to_left_hand_thumb_bend_link" type="fixed">
+        <child link="left_hand_thumb_bend_link"/>
+        <parent link="left_hand_link"/>
+        <origin xyz="0.02503 -0.013 -0.03275" rot="0 -3.157e-23 0 1"/>
+        <linkTransform xyz="0.02503 -0.013 -0.03275" rot="0 -3.157e-23 0 1"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="left_hand_index_rota_link2_to_left_hand_index_tip" type="fixed">
+        <child link="left_hand_index_tip"/>
+        <parent link="left_hand_index_rota_link2"/>
+        <origin xyz="-2.207e-18 -9.467e-18 -0.05325" rot="0 -3.157e-23 0 1"/>
+        <linkTransform xyz="-2.207e-18 -9.467e-18 -0.05325" rot="0 -3.157e-23 0 1"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="left_hand_index_rota_link1_to_left_hand_index_rota_link2" type="fixed">
+        <child link="left_hand_index_rota_link2"/>
+        <parent link="left_hand_index_rota_link1"/>
+        <origin xyz="-6.359e-19 9.18e-18 -0.06675" rot="0 -3.157e-23 0 1"/>
+        <linkTransform xyz="-6.359e-19 9.18e-18 -0.06675" rot="0 -3.157e-23 0 1"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="left_hand_link_to_left_hand_index_rota_link1" type="fixed">
+        <child link="left_hand_index_rota_link1"/>
+        <parent link="left_hand_link"/>
+        <origin xyz="0.03583 5.793e-18 -0.1067" rot="0 -3.157e-23 0 1"/>
+        <linkTransform xyz="0.03583 5.793e-18 -0.1067" rot="0 -3.157e-23 0 1"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="left_hand_mid_link2_to_left_hand_mid_tip" type="fixed">
+        <child link="left_hand_mid_tip"/>
+        <parent link="left_hand_mid_link2"/>
+        <origin xyz="1.072e-20 -9.47e-18 -0.05325" rot="0 -3.157e-23 0 1"/>
+        <linkTransform xyz="1.072e-20 -9.47e-18 -0.05325" rot="0 -3.157e-23 0 1"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="left_hand_mid_link1_to_left_hand_mid_link2" type="fixed">
+        <child link="left_hand_mid_link2"/>
+        <parent link="left_hand_mid_link1"/>
+        <origin xyz="1.268e-19 1.616e-17 -0.06525" rot="0 -3.157e-23 0 1"/>
+        <linkTransform xyz="1.268e-19 1.616e-17 -0.06525" rot="0 -3.157e-23 0 1"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="left_hand_link_to_left_hand_mid_link1" type="fixed">
+        <child link="left_hand_mid_link1"/>
+        <parent link="left_hand_link"/>
+        <origin xyz="0.00533 -0.008 -0.1072" rot="0 -3.157e-23 0 1"/>
+        <linkTransform xyz="0.00533 -0.008 -0.1072" rot="0 -3.157e-23 0 1"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="left_hand_ring_link2_to_left_hand_ring_tip" type="fixed">
+        <child link="left_hand_ring_tip"/>
+        <parent link="left_hand_ring_link2"/>
+        <origin xyz="1.099e-20 -9.469e-18 -0.05325" rot="0 -3.157e-23 0 1"/>
+        <linkTransform xyz="1.099e-20 -9.469e-18 -0.05325" rot="0 -3.157e-23 0 1"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="left_hand_ring_link1_to_left_hand_ring_link2" type="fixed">
+        <child link="left_hand_ring_link2"/>
+        <parent link="left_hand_ring_link1"/>
+        <origin xyz="1.269e-19 1.616e-17 -0.06525" rot="0 -3.157e-23 0 1"/>
+        <linkTransform xyz="1.269e-19 1.616e-17 -0.06525" rot="0 -3.157e-23 0 1"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="left_hand_link_to_left_hand_ring_link1" type="fixed">
+        <child link="left_hand_ring_link1"/>
+        <parent link="left_hand_link"/>
+        <origin xyz="-0.01867 -0.008 -0.1032" rot="0 -3.157e-23 0 1"/>
+        <linkTransform xyz="-0.01867 -0.008 -0.1032" rot="0 -3.157e-23 0 1"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="left_hand_pinky_link2_to_left_hand_pinky_tip" type="fixed">
+        <child link="left_hand_pinky_tip"/>
+        <parent link="left_hand_pinky_link2"/>
+        <origin xyz="-2.209e-18 -9.469e-18 -0.05325" rot="0 -3.157e-23 0 1"/>
+        <linkTransform xyz="-2.209e-18 -9.469e-18 -0.05325" rot="0 -3.157e-23 0 1"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="left_hand_pinky_link1_to_left_hand_pinky_link2" type="fixed">
+        <child link="left_hand_pinky_link2"/>
+        <parent link="left_hand_pinky_link1"/>
+        <origin xyz="-4.314e-18 1.616e-17 -0.06525" rot="0 -3.157e-23 0 1"/>
+        <linkTransform xyz="-4.314e-18 1.616e-17 -0.06525" rot="0 -3.157e-23 0 1"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="left_hand_link_to_left_hand_pinky_link1" type="fixed">
+        <child link="left_hand_pinky_link1"/>
+        <parent link="left_hand_link"/>
+        <origin xyz="-0.04267 -0.008 -0.0992" rot="0 -3.157e-23 0 1"/>
+        <linkTransform xyz="-0.04267 -0.008 -0.0992" rot="0 -3.157e-23 0 1"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="left_hand_link_to_left_hand_ee_link" type="fixed">
+        <child link="left_hand_ee_link"/>
+        <parent link="left_hand_link"/>
+        <origin xyz="-3.073e-23 6.744e-18 -0.08" rot="-1 2.679e-08 2.679e-08 7.792e-16"/>
+        <linkTransform xyz="-2.825e-23 6.744e-18 -0.08" rot="-1 2.679e-08 2.679e-08 7.792e-16"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="left_wrist_yaw_link_to_left_hand_link" type="fixed">
+        <child link="left_hand_link"/>
+        <parent link="left_wrist_yaw_link"/>
+        <origin xyz="-1.219e-21 -5.771e-18 0.1135" rot="-1 2.679e-08 2.679e-08 7.792e-16"/>
+        <linkTransform xyz="-1.22e-21 -5.771e-18 0.1135" rot="-1 2.679e-08 2.679e-08 7.792e-16"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="left_arm_flange_link_to_left_arm_vr_ee" type="fixed">
+        <child link="left_arm_vr_ee"/>
+        <parent link="left_arm_flange_link"/>
+        <origin xyz="0 0 0" rot="1 -1.38e-22 4.235e-22 2.679e-08"/>
+        <linkTransform xyz="0 0 0" rot="1 -1.38e-22 4.235e-22 2.679e-08"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="left_wrist_yaw_link_to_left_arm_flange_link" type="fixed">
+        <child link="left_arm_flange_link"/>
+        <parent link="left_wrist_yaw_link"/>
+        <origin xyz="-1.22e-21 -5.771e-18 0.1135" rot="0 0 -8.869e-23 1"/>
+        <linkTransform xyz="-1.22e-21 -5.771e-18 0.1135" rot="0 0 -8.869e-23 1"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="left_wrist_roll_link_to_left_wrist_yaw_link" type="fixed">
+        <child link="left_wrist_yaw_link"/>
+        <parent link="left_wrist_roll_link"/>
+        <origin xyz="0 0 0" rot="0.7071 -1.901e-22 -3.285e-22 0.7071"/>
+        <linkTransform xyz="0 0 0" rot="0.7071 -1.901e-22 -3.285e-22 0.7071"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="left_elbow_yaw_link_to_left_wrist_roll_link" type="fixed">
+        <child link="left_wrist_roll_link"/>
+        <parent link="left_elbow_yaw_link"/>
+        <origin xyz="0 0 0" rot="-0.7071 2.118e-22 0 0.7071"/>
+        <linkTransform xyz="0 0 0" rot="-0.7071 2.118e-22 0 0.7071"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="left_elbow_pitch_link_to_left_elbow_yaw_link" type="fixed">
+        <child link="left_elbow_yaw_link"/>
+        <parent link="left_elbow_pitch_link"/>
+        <origin xyz="-2.033e-22 0.16 1.188e-16" rot="-0.7071 0 6.918e-23 0.7071"/>
+        <linkTransform xyz="-2.033e-22 0.16 3.553e-17" rot="-0.7071 0 6.918e-23 0.7071"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="left_arm_yaw_link_to_left_elbow_pitch_link" type="fixed">
+        <child link="left_elbow_pitch_link"/>
+        <parent link="left_arm_yaw_link"/>
+        <origin xyz="0 0 0" rot="0.7071 2.118e-22 0 0.7071"/>
+        <linkTransform xyz="0 0 0" rot="0.7071 2.118e-22 0 0.7071"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="left_shoulder_roll_link_to_left_arm_yaw_link" type="fixed">
+        <child link="left_arm_yaw_link"/>
+        <parent link="left_shoulder_roll_link"/>
+        <origin xyz="3.33e-18 -0.1905 8.66e-17" rot="0.5 -0.5 0.5 0.5"/>
+        <linkTransform xyz="1.421e-16 -0.1905 1.421e-16" rot="0.5 -0.5 0.5 0.5"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="left_shoulder_pitch_link_to_left_shoulder_roll_link" type="fixed">
+        <child link="left_shoulder_roll_link"/>
+        <parent link="left_shoulder_pitch_link"/>
+        <origin xyz="0 0 0" rot="-0.5 -0.5 -0.5 0.5"/>
+        <linkTransform xyz="0 0 0" rot="-0.5 -0.5 -0.5 0.5"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="left_arm_base_link_to_left_shoulder_pitch_link" type="fixed">
+        <child link="left_shoulder_pitch_link"/>
+        <parent link="left_arm_base_link"/>
+        <origin xyz="-2.665e-16 -2.487e-16 0.2635" rot="0 0 -2.776e-17 1"/>
+        <linkTransform xyz="-2.665e-16 -2.487e-16 0.2635" rot="0 0 -2.776e-17 1"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="base_link_to_left_arm_base_link" type="fixed">
+        <child link="left_arm_base_link"/>
+        <parent link="base_link"/>
+        <origin xyz="-5.551e-17 -1.11e-16 0.2885" rot="0.5 0.5 0.5 -0.5"/>
+        <linkTransform xyz="0 0 0.2885" rot="0.5 0.5 0.5 -0.5"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="right_hand_thumb_rota_link2_to_right_hand_thumb_rota_tip" type="fixed">
+        <child link="right_hand_thumb_rota_tip"/>
+        <parent link="right_hand_thumb_rota_link2"/>
+        <origin xyz="0.05146 -1.361e-18 3.716e-18" rot="0 6.92e-23 0 1"/>
+        <linkTransform xyz="0.05146 -1.361e-18 3.716e-18" rot="0 6.92e-23 0 1"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="right_hand_thumb_rota_link1_to_right_hand_thumb_rota_link2" type="fixed">
+        <child link="right_hand_thumb_rota_link2"/>
+        <parent link="right_hand_thumb_rota_link1"/>
+        <origin xyz="0.06 -1.294e-17 -1.631e-17" rot="0 6.92e-23 0 1"/>
+        <linkTransform xyz="0.06 -1.294e-17 -1.631e-17" rot="0 6.92e-23 0 1"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="right_hand_thumb_bend_link_to_right_hand_thumb_rota_link1" type="fixed">
+        <child link="right_hand_thumb_rota_link1"/>
+        <parent link="right_hand_thumb_bend_link"/>
+        <origin xyz="0.03287 0.005505 0.00225" rot="0 6.92e-23 0 1"/>
+        <linkTransform xyz="0.03287 0.005505 0.00225" rot="0 6.92e-23 0 1"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="right_hand_link_to_right_hand_thumb_bend_link" type="fixed">
+        <child link="right_hand_thumb_bend_link"/>
+        <parent link="right_hand_link"/>
+        <origin xyz="0.02433 0.011 -0.03275" rot="0 6.92e-23 0 1"/>
+        <linkTransform xyz="0.02433 0.011 -0.03275" rot="0 6.92e-23 0 1"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="right_hand_mid_link2_to_right_hand_mid_tip" type="fixed">
+        <child link="right_hand_mid_tip"/>
+        <parent link="right_hand_mid_link2"/>
+        <origin xyz="5.119e-19 1.482e-17 -0.05325" rot="0 6.92e-23 0 1"/>
+        <linkTransform xyz="5.119e-19 1.482e-17 -0.05325" rot="0 6.92e-23 0 1"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="right_hand_mid_link1_to_right_hand_mid_link2" type="fixed">
+        <child link="right_hand_mid_link2"/>
+        <parent link="right_hand_mid_link1"/>
+        <origin xyz="5.019e-19 -9.978e-18 -0.06525" rot="0 6.92e-23 0 1"/>
+        <linkTransform xyz="5.019e-19 -9.978e-18 -0.06525" rot="0 6.92e-23 0 1"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="right_hand_link_to_right_hand_mid_link1" type="fixed">
+        <child link="right_hand_mid_link1"/>
+        <parent link="right_hand_link"/>
+        <origin xyz="0.00533 0.008 -0.1072" rot="0 6.92e-23 0 1"/>
+        <linkTransform xyz="0.00533 0.008 -0.1072" rot="0 6.92e-23 0 1"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="right_hand_ring_link2_to_right_hand_ring_tip" type="fixed">
+        <child link="right_hand_ring_tip"/>
+        <parent link="right_hand_ring_link2"/>
+        <origin xyz="-8.689e-19 -1.137e-17 -0.05325" rot="0 6.92e-23 0 1"/>
+        <linkTransform xyz="-8.689e-19 -1.137e-17 -0.05325" rot="0 6.92e-23 0 1"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="right_hand_ring_link1_to_right_hand_ring_link2" type="fixed">
+        <child link="right_hand_ring_link2"/>
+        <parent link="right_hand_ring_link1"/>
+        <origin xyz="5.019e-19 -9.978e-18 -0.06525" rot="0 6.92e-23 0 1"/>
+        <linkTransform xyz="5.019e-19 -9.978e-18 -0.06525" rot="0 6.92e-23 0 1"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="right_hand_link_to_right_hand_ring_link1" type="fixed">
+        <child link="right_hand_ring_link1"/>
+        <parent link="right_hand_link"/>
+        <origin xyz="-0.01867 0.008 -0.1032" rot="0 6.92e-23 0 1"/>
+        <linkTransform xyz="-0.01867 0.008 -0.1032" rot="0 6.92e-23 0 1"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="right_hand_pinky_link2_to_right_hand_pinky_tip" type="fixed">
+        <child link="right_hand_pinky_tip"/>
+        <parent link="right_hand_pinky_link2"/>
+        <origin xyz="-3.929e-18 1.482e-17 -0.05325" rot="0 6.92e-23 0 1"/>
+        <linkTransform xyz="-3.929e-18 1.482e-17 -0.05325" rot="0 6.92e-23 0 1"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="right_hand_pinky_link1_to_right_hand_pinky_link2" type="fixed">
+        <child link="right_hand_pinky_link2"/>
+        <parent link="right_hand_pinky_link1"/>
+        <origin xyz="-3.939e-18 -9.978e-18 -0.06525" rot="0 6.92e-23 0 1"/>
+        <linkTransform xyz="-3.939e-18 -9.978e-18 -0.06525" rot="0 6.92e-23 0 1"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="right_hand_link_to_right_hand_pinky_link1" type="fixed">
+        <child link="right_hand_pinky_link1"/>
+        <parent link="right_hand_link"/>
+        <origin xyz="-0.04267 0.008 -0.0992" rot="0 6.92e-23 0 1"/>
+        <linkTransform xyz="-0.04267 0.008 -0.0992" rot="0 6.92e-23 0 1"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="right_hand_link_to_right_hand_ee_link" type="fixed">
+        <child link="right_hand_ee_link"/>
+        <parent link="right_hand_link"/>
+        <origin xyz="1.342e-23 6.143e-18 -0.08" rot="-1 2.679e-08 2.679e-08 7.792e-16"/>
+        <linkTransform xyz="1.591e-23 6.143e-18 -0.08" rot="-1 2.679e-08 2.679e-08 7.792e-16"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="right_hand_index_rota_link2_to_right_hand_index_tip" type="fixed">
+        <child link="right_hand_index_tip"/>
+        <parent link="right_hand_index_rota_link2"/>
+        <origin xyz="5.119e-19 1.482e-17 -0.05325" rot="0 6.92e-23 0 1"/>
+        <linkTransform xyz="5.119e-19 1.482e-17 -0.05325" rot="0 6.92e-23 0 1"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="right_hand_index_rota_link1_to_right_hand_index_rota_link2" type="fixed">
+        <child link="right_hand_index_rota_link2"/>
+        <parent link="right_hand_index_rota_link1"/>
+        <origin xyz="-1.63e-18 -6.532e-18 -0.06675" rot="0 6.92e-23 0 1"/>
+        <linkTransform xyz="-1.63e-18 -6.532e-18 -0.06675" rot="0 6.92e-23 0 1"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="right_hand_link_to_right_hand_index_rota_link1" type="fixed">
+        <child link="right_hand_index_rota_link1"/>
+        <parent link="right_hand_link"/>
+        <origin xyz="0.03583 0.006 -0.1067" rot="0 6.92e-23 0 1"/>
+        <linkTransform xyz="0.03583 0.006 -0.1067" rot="0 6.92e-23 0 1"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="right_wrist_yaw_link_to_right_hand_link" type="fixed">
+        <child link="right_hand_link"/>
+        <parent link="right_wrist_yaw_link"/>
+        <origin xyz="1.364e-22 7.884e-18 0.1135" rot="-1 2.679e-08 2.679e-08 7.792e-16"/>
+        <linkTransform xyz="1.355e-22 7.884e-18 0.1135" rot="-1 2.679e-08 2.679e-08 7.792e-16"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="right_arm_flange_link_to_right_arm_vr_ee" type="fixed">
+        <child link="right_arm_vr_ee"/>
+        <parent link="right_arm_flange_link"/>
+        <origin xyz="0 0 0" rot="1 3.594e-22 0 2.679e-08"/>
+        <linkTransform xyz="0 0 0" rot="1 3.594e-22 0 2.679e-08"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="right_wrist_yaw_link_to_right_arm_flange_link" type="fixed">
+        <child link="right_arm_flange_link"/>
+        <parent link="right_wrist_yaw_link"/>
+        <origin xyz="1.355e-22 7.884e-18 0.1135" rot="0 0 1.005e-22 1"/>
+        <linkTransform xyz="1.355e-22 7.884e-18 0.1135" rot="0 0 1.005e-22 1"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="right_wrist_roll_link_to_right_wrist_yaw_link" type="fixed">
+        <child link="right_wrist_yaw_link"/>
+        <parent link="right_wrist_roll_link"/>
+        <origin xyz="0 0 0" rot="0.7071 2.128e-22 7.25e-22 0.7071"/>
+        <linkTransform xyz="0 0 0" rot="0.7071 2.128e-22 7.25e-22 0.7071"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="right_elbow_yaw_link_to_right_wrist_roll_link" type="fixed">
+        <child link="right_wrist_roll_link"/>
+        <parent link="right_elbow_yaw_link"/>
+        <origin xyz="0 0 0" rot="-0.7071 -4.235e-22 2.118e-22 0.7071"/>
+        <linkTransform xyz="0 0 0" rot="-0.7071 -4.235e-22 2.118e-22 0.7071"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="right_elbow_pitch_link_to_right_elbow_yaw_link" type="fixed">
+        <child link="right_elbow_yaw_link"/>
+        <parent link="right_elbow_pitch_link"/>
+        <origin xyz="-1.355e-22 0.16 6.55e-17" rot="-0.7071 -1.271e-21 7.944e-23 0.7071"/>
+        <linkTransform xyz="-1.355e-22 0.16 -1.776e-17" rot="-0.7071 -1.271e-21 7.944e-23 0.7071"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="right_arm_yaw_link_to_right_elbow_pitch_link" type="fixed">
+        <child link="right_elbow_pitch_link"/>
+        <parent link="right_arm_yaw_link"/>
+        <origin xyz="0 0 0" rot="0.7071 8.47e-22 6.353e-22 0.7071"/>
+        <linkTransform xyz="0 0 0" rot="0.7071 8.47e-22 6.353e-22 0.7071"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="right_shoulder_roll_link_to_right_arm_yaw_link" type="fixed">
+        <child link="right_arm_yaw_link"/>
+        <parent link="right_shoulder_roll_link"/>
+        <origin xyz="-7.438e-17 -0.1905 1.577e-16" rot="0.5 0.5 -0.5 0.5"/>
+        <linkTransform xyz="-2.132e-16 -0.1905 2.132e-16" rot="0.5 0.5 -0.5 0.5"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="right_shoulder_pitch_link_to_right_shoulder_roll_link" type="fixed">
+        <child link="right_shoulder_roll_link"/>
+        <parent link="right_shoulder_pitch_link"/>
+        <origin xyz="0 0 0" rot="0.5 0.5 0.5 -0.5"/>
+        <linkTransform xyz="0 0 0" rot="0.5 0.5 0.5 -0.5"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="right_arm_base_link_to_right_shoulder_pitch_link" type="fixed">
+        <child link="right_shoulder_pitch_link"/>
+        <parent link="right_arm_base_link"/>
+        <origin xyz="-2.665e-16 2.487e-16 0.2635" rot="0 0 2.776e-17 1"/>
+        <linkTransform xyz="-2.665e-16 2.487e-16 0.2635" rot="0 0 2.776e-17 1"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="base_link_to_right_arm_base_link" type="fixed">
+        <child link="right_arm_base_link"/>
+        <parent link="base_link"/>
+        <origin xyz="-5.551e-17 1.11e-16 0.2885" rot="-0.5 0.5 -0.5 -0.5"/>
+        <linkTransform xyz="0 0 0.2885" rot="-0.5 0.5 -0.5 -0.5"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="left_foot_ee_link_to_l_foot_bottom_link" type="fixed">
+        <child link="l_foot_bottom_link"/>
+        <parent link="left_foot_ee_link"/>
+        <origin xyz="0 0 0" rot="0 1.214e-22 0 1"/>
+        <linkTransform xyz="0 0 0" rot="0 1.214e-22 0 1"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="left_ankle_roll_link_to_left_foot_ee_link" type="fixed">
+        <child link="left_foot_ee_link"/>
+        <parent link="left_ankle_roll_link"/>
+        <origin xyz="1.033e-16 -0.056 7.258e-17" rot="0.5 0.5 0.5 -0.5"/>
+        <linkTransform xyz="7.55e-17 -0.056 6.217e-17" rot="0.5 0.5 0.5 -0.5"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="left_ankle_pitch_link_to_left_ankle_roll_link" type="revolute">
+        <child link="left_ankle_roll_link"/>
+        <parent link="left_ankle_pitch_link"/>
+        <origin xyz="0 0 0" rot="0.7071 2.597e-06 0.7071 -2.597e-06"/>
+        <linkTransform xyz="0 0 0" rot="0.7071 2.597e-06 0.7071 -2.597e-06"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-0.44" upper="0.44" effort="100" velocity="12"/>
+        <dynamics damping="0" stiffness="0" friction="0.1" armature="0"/>
+    </joint>
+    <joint name="left_knee_link_to_left_ankle_pitch_link" type="revolute">
+        <child link="left_ankle_pitch_link"/>
+        <parent link="left_knee_link"/>
+        <origin xyz="-5.217e-18 -0.32 -3.553e-17" rot="-0.9659 -0.2588 9.507e-07 3.548e-06"/>
+        <linkTransform xyz="-5.329e-17 -0.32 -3.553e-17" rot="-0.9659 -0.2588 9.507e-07 3.548e-06"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-0.7" upper="0.87" effort="100" velocity="12"/>
+        <dynamics damping="0" stiffness="0" friction="0.1" armature="0"/>
+    </joint>
+    <joint name="left_ankle_pitch_motor1_link_to_left_ankle_pitch_linkage1_link" type="fixed">
+        <child link="left_ankle_pitch_linkage1_link"/>
+        <parent link="left_ankle_pitch_motor1_link"/>
+        <origin xyz="-1.038e-16 -0.045 -4.441e-17" rot="5.551e-17 5.551e-17 -0.9938 0.1115"/>
+        <linkTransform xyz="-1.021e-16 -0.045 -4.441e-17" rot="5.551e-17 5.551e-17 -0.9938 0.1115"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="left_knee_link_to_left_ankle_pitch_motor1_link" type="fixed">
+        <child link="left_ankle_pitch_motor1_link"/>
+        <parent link="left_knee_link"/>
+        <origin xyz="0.015 -0.05291 -0.023" rot="-0.6308 -0.7759 2.85e-06 2.317e-06"/>
+        <linkTransform xyz="0.015 -0.05291 -0.023" rot="-0.6308 -0.7759 2.85e-06 2.317e-06"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="left_ankle_pitch_motor2_link_to_left_ankle_pitch_linkage2_link" type="fixed">
+        <child link="left_ankle_pitch_linkage2_link"/>
+        <parent link="left_ankle_pitch_motor2_link"/>
+        <origin xyz="-0.045 -6.73e-17 2.998e-17" rot="1.388e-17 -9.021e-17 -0.7884 0.6151"/>
+        <linkTransform xyz="-0.045 -6.772e-17 2.998e-17" rot="1.388e-17 -9.021e-17 -0.7884 0.6151"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="left_knee_link_to_left_ankle_pitch_motor2_link" type="fixed">
+        <child link="left_ankle_pitch_motor2_link"/>
+        <parent link="left_knee_link"/>
+        <origin xyz="0.0175 -0.1229 0.023" rot="4.51e-17 2.776e-17 0.1042 0.9946"/>
+        <linkTransform xyz="0.0175 -0.1229 0.023" rot="4.51e-17 2.776e-17 0.1042 0.9946"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="left_leg_pitch_link_to_left_knee_link" type="revolute">
+        <child link="left_knee_link"/>
+        <parent link="left_leg_pitch_link"/>
+        <origin xyz="-2.953e-17 -0.32 3.553e-17" rot="6.245e-17 -1.388e-17 -0.5 0.866"/>
+        <linkTransform xyz="-1.599e-16 -0.32 3.553e-17" rot="6.245e-17 -1.388e-17 -0.5 0.866"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-1.05" upper="1.1" effort="250" velocity="12"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="left_knee_motor_link_to_left_knee_linkage_link" type="fixed">
+        <child link="left_knee_linkage_link"/>
+        <parent link="left_knee_motor_link"/>
+        <origin xyz="0.045 2.637e-17 8.171e-34" rot="-4.163e-17 -4.163e-17 -0.7107 0.7035"/>
+        <linkTransform xyz="0.045 3.331e-17 0" rot="-4.163e-17 -4.163e-17 -0.7107 0.7035"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="left_leg_pitch_link_to_left_knee_motor_link" type="fixed">
+        <child link="left_knee_motor_link"/>
+        <parent link="left_leg_pitch_link"/>
+        <origin xyz="-0.006 -0.1401 8.747e-33" rot="7.633e-17 -4.163e-17 0.02181 0.9998"/>
+        <linkTransform xyz="-0.006 -0.1401 0" rot="7.633e-17 -4.163e-17 0.02181 0.9998"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="left_leg_yaw_link_to_left_leg_pitch_link" type="revolute">
+        <child link="left_leg_pitch_link"/>
+        <parent link="left_leg_yaw_link"/>
+        <origin xyz="2.033e-22 -3.355e-18 0.1455" rot="-0.683 0.183 0.183 0.683"/>
+        <linkTransform xyz="2.033e-22 -3.355e-18 0.1455" rot="-0.683 0.183 0.183 0.683"/>
+        <axis xyz="0 0 -1"/>
+        <limit lower="-1.57" upper="1.31" effort="250" velocity="12"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="left_leg_roll_link_to_left_leg_yaw_link" type="revolute">
+        <child link="left_leg_yaw_link"/>
+        <parent link="left_leg_roll_link"/>
+        <origin xyz="0 0 0" rot="0.7071 2.597e-06 0.7071 -2.597e-06"/>
+        <linkTransform xyz="0 0 0" rot="0.7071 2.597e-06 0.7071 -2.597e-06"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-1.05" upper="1.05" effort="100" velocity="12"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="waist_roll_link_to_left_leg_roll_link" type="revolute">
+        <child link="left_leg_roll_link"/>
+        <parent link="waist_roll_link"/>
+        <origin xyz="0.117 -0.032 -1.776e-17" rot="0 -9.856e-18 -0.7071 0.7071"/>
+        <linkTransform xyz="0.117 -0.032 -1.776e-17" rot="0 -9.856e-18 -0.7071 0.7071"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-0.44" upper="1.57" effort="100" velocity="12"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="right_foot_ee_link_to_r_foot_bottom_link" type="fixed">
+        <child link="r_foot_bottom_link"/>
+        <parent link="right_foot_ee_link"/>
+        <origin xyz="0 0 0" rot="0 -3.702e-23 0 1"/>
+        <linkTransform xyz="0 0 0" rot="0 -3.702e-23 0 1"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="right_ankle_roll_link_to_right_foot_ee_link" type="fixed">
+        <child link="right_foot_ee_link"/>
+        <parent link="right_ankle_roll_link"/>
+        <origin xyz="3.22e-17 -0.056 2.817e-17" rot="0.5 0.5 0.5 -0.5"/>
+        <linkTransform xyz="4.441e-18 -0.056 1.776e-17" rot="0.5 0.5 0.5 -0.5"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="right_ankle_pitch_link_to_right_ankle_roll_link" type="revolute">
+        <child link="right_ankle_roll_link"/>
+        <parent link="right_ankle_pitch_link"/>
+        <origin xyz="0 0 0" rot="7.881e-17 0.7071 -2.33e-17 0.7071"/>
+        <linkTransform xyz="0 0 0" rot="7.881e-17 0.7071 -2.33e-17 0.7071"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-0.44" upper="0.44" effort="100" velocity="12"/>
+        <dynamics damping="0" stiffness="0" friction="0.1" armature="0"/>
+    </joint>
+    <joint name="right_knee_link_to_right_ankle_pitch_link" type="revolute">
+        <child link="right_ankle_pitch_link"/>
+        <parent link="right_knee_link"/>
+        <origin xyz="-7.627e-17 0.32 -4.5e-22" rot="-0.9659 0.2588 -9.507e-07 3.548e-06"/>
+        <linkTransform xyz="-1.243e-16 0.32 0" rot="-0.9659 0.2588 -9.507e-07 3.548e-06"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-0.87" upper="0.7" effort="100" velocity="12"/>
+        <dynamics damping="0" stiffness="0" friction="0.1" armature="0"/>
+    </joint>
+    <joint name="right_ankle_pitch_motor1_link_to_right_ankle_pitch_linkage1_link" type="fixed">
+        <child link="right_ankle_pitch_linkage1_link"/>
+        <parent link="right_ankle_pitch_motor1_link"/>
+        <origin xyz="0.045 -6.832e-17 2.665e-17" rot="0 0 0.6239 0.7815"/>
+        <linkTransform xyz="0.045 -5.44e-17 2.665e-17" rot="0 0 0.6239 0.7815"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="right_knee_link_to_right_ankle_pitch_motor1_link" type="fixed">
+        <child link="right_ankle_pitch_motor1_link"/>
+        <parent link="right_knee_link"/>
+        <origin xyz="0.015 0.05291 -0.023" rot="-0.1026 -0.9947 3.654e-06 3.769e-07"/>
+        <linkTransform xyz="0.015 0.05291 -0.023" rot="-0.1026 -0.9947 3.654e-06 3.769e-07"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="right_ankle_pitch_motor2_link_to_right_ankle_pitch_linkage2_link" type="fixed">
+        <child link="right_ankle_pitch_linkage2_link"/>
+        <parent link="right_ankle_pitch_motor2_link"/>
+        <origin xyz="0.045 2.721e-17 3.997e-17" rot="1.11e-16 0 -0.6151 0.7884"/>
+        <linkTransform xyz="0.045 1.332e-17 3.997e-17" rot="1.11e-16 0 -0.6151 0.7884"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="right_knee_link_to_right_ankle_pitch_motor2_link" type="fixed">
+        <child link="right_ankle_pitch_motor2_link"/>
+        <parent link="right_knee_link"/>
+        <origin xyz="0.0175 0.1229 0.023" rot="0 3.469e-18 0.9946 0.1042"/>
+        <linkTransform xyz="0.0175 0.1229 0.023" rot="0 3.469e-18 0.9946 0.1042"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="right_leg_pitch_link_to_right_knee_link" type="revolute">
+        <child link="right_knee_link"/>
+        <parent link="right_leg_pitch_link"/>
+        <origin xyz="5.929e-17 0.32 -3.553e-17" rot="6.245e-17 2.776e-17 0.5 0.866"/>
+        <linkTransform xyz="-7.105e-17 0.32 -3.553e-17" rot="6.245e-17 2.776e-17 0.5 0.866"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-1.1" upper="1.05" effort="250" velocity="12"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="right_knee_motor_link_to_right_knee_linkage_link" type="fixed">
+        <child link="right_knee_linkage_link"/>
+        <parent link="right_knee_motor_link"/>
+        <origin xyz="0.045 -1.749e-17 -2.22e-17" rot="-4.163e-17 -1.388e-17 0.7107 0.7035"/>
+        <linkTransform xyz="0.045 -2.442e-17 -2.22e-17" rot="-4.163e-17 -1.388e-17 0.7107 0.7035"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="right_leg_pitch_link_to_right_knee_motor_link" type="fixed">
+        <child link="right_knee_motor_link"/>
+        <parent link="right_leg_pitch_link"/>
+        <origin xyz="-0.006 0.1401 1.629e-32" rot="-1.457e-16 -1.388e-17 -0.02181 0.9998"/>
+        <linkTransform xyz="-0.006 0.1401 0" rot="-1.457e-16 -1.388e-17 -0.02181 0.9998"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="right_leg_yaw_link_to_right_leg_pitch_link" type="revolute">
+        <child link="right_leg_pitch_link"/>
+        <parent link="right_leg_yaw_link"/>
+        <origin xyz="2.711e-22 -3.355e-18 0.1455" rot="0.683 0.183 -0.183 0.683"/>
+        <linkTransform xyz="2.711e-22 -3.355e-18 0.1455" rot="0.683 0.183 -0.183 0.683"/>
+        <axis xyz="0 0 -1"/>
+        <limit lower="-1.31" upper="1.57" effort="250" velocity="12"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="right_leg_roll_link_to_right_leg_yaw_link" type="revolute">
+        <child link="right_leg_yaw_link"/>
+        <parent link="right_leg_roll_link"/>
+        <origin xyz="0 0 0" rot="0.7071 2.597e-06 0.7071 -2.597e-06"/>
+        <linkTransform xyz="0 0 0" rot="0.7071 2.597e-06 0.7071 -2.597e-06"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-1.05" upper="1.05" effort="100" velocity="12"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="waist_roll_link_to_right_leg_roll_link" type="revolute">
+        <child link="right_leg_roll_link"/>
+        <parent link="waist_roll_link"/>
+        <origin xyz="-0.117 -0.032 2.665e-17" rot="0 -9.856e-18 -0.7071 0.7071"/>
+        <linkTransform xyz="-0.117 -0.032 2.665e-17" rot="0 -9.856e-18 -0.7071 0.7071"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-1.57" upper="0.44" effort="100" velocity="12"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="waist_yaw_link_to_waist_roll_link" type="fixed">
+        <child link="waist_roll_link"/>
+        <parent link="waist_yaw_link"/>
+        <origin xyz="0 0 0" rot="0.5 0.5 0.5 0.5"/>
+        <linkTransform xyz="0 0 0" rot="0.5 0.5 0.5 0.5"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="base_link_to_waist_yaw_link" type="fixed">
+        <child link="waist_yaw_link"/>
+        <parent link="base_link"/>
+        <origin xyz="0 0 -0.0975" rot="0 0 0 1"/>
+        <linkTransform xyz="0 0 -0.0975" rot="0 0 0 1"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <forceSensor>
+        <sensor name="left_ankle_sensor" link="left_ankle_roll_link" offset="0 0 0"
+        flags="contact"/>
+        <sensor name="right_ankle_sensor" link="right_ankle_roll_link" offset="0 0 0"
+        flags="contact"/>
+        <sensor name="base_sensor" link="base_link" offset="0 0 0" flags="contact"/>
+    </forceSensor>
+</robot>

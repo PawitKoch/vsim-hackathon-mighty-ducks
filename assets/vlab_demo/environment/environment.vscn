@@ -1,0 +1,137 @@
+<environment name="Environment" version="0">
+    <elements>
+        <plane name="GroundPlane" xyz="0 0 0" rot="0 0 0.707106769085 0.707106769085" file="" scale="1 1 1">
+            <rigidMaterial name="" staticFriction="0.5" dynamicFriction="0.5" restitution="0.10000000149"/>
+            <material name="">
+                <texture filename="package://environment/vsim_tile.png"/>
+                <color rgba="1 1 1 1"/>
+                <luminescence value="0"/>
+                <specularExponent value="40"/>
+                <specularIntensity value="0.25"/>
+            </material>
+        </plane>
+        <renderingContext name="RenderingContext">
+            <skybox positiveX="package://environment/daylight_box_right.png" negativeX="package://environment/daylight_box_left.png" positiveY="package://environment/daylight_box_top.png" negativeY="package://environment/daylight_box_bottom.png" positiveZ="package://environment/daylight_box_back.png" negativeZ="package://environment/daylight_box_front.png"/>
+        </renderingContext>
+        <light name="PointLight_def" type="pointLight" color="1 1 1 1" castShadow="true" ambient="0" constant_atten="1" linear_atten="0" quadratic_atten="0"/>
+        <lightInstance name="PointLight" light="PointLight_def" link="" xyz="0.644089460373 0.708015441895 0" rpy="0 -0 0"/>
+        <actor name="piper main" xyz="1 0 0" rot="0.5 0.5 0.5 -0.5" file="package://vlab_demo/piper_description/urdf/piper_description_processed.urdf" isStatic="true" enableSelfCollisions="true" queryMode="useVisuals"/>
+        <actor name="piper twin" xyz="0 0 0" rot="0.5 0.5 0.5 -0.5" file="package://vlab_demo/piper_description/urdf/piper_description_processed.urdf" isStatic="true" enableSelfCollisions="true" queryMode="useVisuals"/>
+        <rgbCamera name="RGBCamera_def" type="pinhole" postFilter="anti_aliasing ambient_occlusion" farClip="100" fovX="1.3089969158172607" fovY="1.3089969158172607" resX="1080" resY="1080"/>
+        <cameraInstance name="RGBCamera" camera="RGBCamera_def" xyz="0.5 0.25 1" rpy="0 -0 0">
+            <LightInstance>
+                <instance name="PointLight"/>
+            </LightInstance>
+        </cameraInstance>
+        <vlab:customElement>
+            <name>piper main joint state</name>
+            <type>EndpointJointState</type>
+            <parent>.</parent>
+            <owner>.</owner>
+            <is_publisher>true</is_publisher>
+            <publish_topic>"04_demo/main"</publish_topic>
+            <num_joints>8</num_joints>
+            <joints>
+                <_0_>
+                    <joint_child>NodePath("../piper main/dummy_link/base_link/link1")</joint_child>
+                    <override_name>""</override_name>
+                    <multiplier>1.0</multiplier>
+                </_0_>
+                <_1_>
+                    <joint_child>NodePath("../piper main/dummy_link/base_link/link1/link2")</joint_child>
+                    <override_name>""</override_name>
+                    <multiplier>1.0</multiplier>
+                </_1_>
+                <_2_>
+                    <joint_child>NodePath("../piper main/dummy_link/base_link/link1/link2/link3")</joint_child>
+                    <override_name>""</override_name>
+                    <multiplier>1.0</multiplier>
+                </_2_>
+                <_3_>
+                    <joint_child>NodePath("../piper main/dummy_link/base_link/link1/link2/link3/link4")</joint_child>
+                    <override_name>""</override_name>
+                    <multiplier>1.0</multiplier>
+                </_3_>
+                <_4_>
+                    <joint_child>NodePath("../piper main/dummy_link/base_link/link1/link2/link3/link4/link5")</joint_child>
+                    <override_name>""</override_name>
+                    <multiplier>1.0</multiplier>
+                </_4_>
+                <_5_>
+                    <joint_child>NodePath("../piper main/dummy_link/base_link/link1/link2/link3/link4/link5/link6")</joint_child>
+                    <override_name>""</override_name>
+                    <multiplier>1.0</multiplier>
+                </_5_>
+                <_6_>
+                    <joint_child>NodePath("../piper main/dummy_link/base_link/link1/link2/link3/link4/link5/link6/gripper_base/link7")</joint_child>
+                    <override_name>""</override_name>
+                    <multiplier>1.0</multiplier>
+                </_6_>
+                <_7_>
+                    <joint_child>NodePath("../piper main/dummy_link/base_link/link1/link2/link3/link4/link5/link6/gripper_base/link8")</joint_child>
+                    <override_name>""</override_name>
+                    <multiplier>1.0</multiplier>
+                </_7_>
+            </joints>
+        </vlab:customElement>
+        <vlab:customElement>
+            <name>piper twin joint state</name>
+            <type>EndpointJointState</type>
+            <parent>.</parent>
+            <owner>.</owner>
+            <is_subscriber>true</is_subscriber>
+            <subscribe_topic>"04_demo/twin"</subscribe_topic>
+            <num_joints>8</num_joints>
+            <joints>
+                <_0_>
+                    <joint_child>NodePath("../piper twin/dummy_link/base_link/link1")</joint_child>
+                    <override_name>""</override_name>
+                    <multiplier>1.0</multiplier>
+                </_0_>
+                <_1_>
+                    <joint_child>NodePath("../piper twin/dummy_link/base_link/link1/link2")</joint_child>
+                    <override_name>""</override_name>
+                    <multiplier>1.0</multiplier>
+                </_1_>
+                <_2_>
+                    <joint_child>NodePath("../piper twin/dummy_link/base_link/link1/link2/link3")</joint_child>
+                    <override_name>""</override_name>
+                    <multiplier>1.0</multiplier>
+                </_2_>
+                <_3_>
+                    <joint_child>NodePath("../piper twin/dummy_link/base_link/link1/link2/link3/link4")</joint_child>
+                    <override_name>""</override_name>
+                    <multiplier>1.0</multiplier>
+                </_3_>
+                <_4_>
+                    <joint_child>NodePath("../piper twin/dummy_link/base_link/link1/link2/link3/link4/link5")</joint_child>
+                    <override_name>""</override_name>
+                    <multiplier>1.0</multiplier>
+                </_4_>
+                <_5_>
+                    <joint_child>NodePath("../piper twin/dummy_link/base_link/link1/link2/link3/link4/link5/link6")</joint_child>
+                    <override_name>""</override_name>
+                    <multiplier>1.0</multiplier>
+                </_5_>
+                <_6_>
+                    <joint_child>NodePath("../piper twin/dummy_link/base_link/link1/link2/link3/link4/link5/link6/gripper_base/link7")</joint_child>
+                    <override_name>""</override_name>
+                    <multiplier>1.0</multiplier>
+                </_6_>
+                <_7_>
+                    <joint_child>NodePath("../piper twin/dummy_link/base_link/link1/link2/link3/link4/link5/link6/gripper_base/link8")</joint_child>
+                    <override_name>""</override_name>
+                    <multiplier>1.0</multiplier>
+                </_7_>
+            </joints>
+        </vlab:customElement>
+        <vlab:customElement>
+            <name>joint monkey</name>
+            <type>JointMonkey</type>
+            <parent>.</parent>
+            <owner>.</owner>
+            <articulation>NodePath("../piper main/dummy_link/base_link")</articulation>
+        </vlab:customElement>
+    </elements>
+    <settings/>
+</environment>

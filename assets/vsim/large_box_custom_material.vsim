@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<robot name="large_box_custom">
+    <!--Materials-->
+    <rigidMaterial name="CustomRigidMaterial" staticFriction="1" dynamicFriction="1" restitution="0"/>
+    <!--Links-->
+    <link name="box">
+        <visual>
+            <geometry>
+                <box size="1.6 1.6 1.6"/>
+            </geometry>
+        </visual>
+        <collision>
+            <geometry>
+                <box size="1.6 1.6 1.6"/>
+            </geometry>
+        </collision>
+        <rigidMaterialRef name="CustomRigidMaterial"/>
+    </link>
+</robot>

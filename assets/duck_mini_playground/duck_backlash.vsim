@@ -1,0 +1,752 @@
+<robot name="duck" version="0">
+    <!--Materials-->
+    <rigidMaterial name="RigidPhysicsMaterial" staticFriction="0.899999976158" dynamicFriction="0.699999988079" restitution="0.10000000149"/>
+    <!--Links-->
+    <robotProperties maxDepenetrationVelocity="10"/>
+    <link name="base">
+        <inertial>
+            <origin xyz="0 0 0" rpy="-0.00369621231937 -0.0259966537363 0.00747545461906"/>
+            <mass value="0.698526024818"/>
+            <density value="-1"/>
+            <inertia ixx="0.00167700995388" iyy="0.00344479002208" izz="0.0029263500138" ixy="-1.31661982777e-05" ixz="-3.24953010832e-05" iyz="-2.15586549497e-06"/>
+        </inertial>
+        <collision name="Collision 0">
+            <origin xyz="-0.0189999993891 0 0.0648908987641" rpy="0 -0 0"/>
+            <geometry>
+                <mesh filename="package://duck_mini_playground/assets/body_front.stl" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="Collision 1">
+            <origin xyz="-0.0189999993891 3.46944984709e-18 0.0648908987641" rpy="0 -0 0"/>
+            <geometry>
+                <mesh filename="package://duck_mini_playground/assets/body_back.stl" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="Collision 2">
+            <origin xyz="-0.0189999993891 -3.46944984709e-18 0.0648908987641" rpy="0 -0 0"/>
+            <geometry>
+                <mesh filename="package://duck_mini_playground/assets/body_middle_bottom.stl" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="Collision 3">
+            <origin xyz="-0.0189999993891 0 0.0648908987641" rpy="0 -0 0"/>
+            <geometry>
+                <mesh filename="package://duck_mini_playground/assets/body_middle_top.stl" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <rigidMaterialRef name="RigidPhysicsMaterial"/>
+        <miscellaneous contactOffset="0.00999999977648"/>
+    </link>
+    <link name="Dummy5">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="800"/>
+            <inertia ixx="0" iyy="0" izz="0" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+        <rigidMaterialRef name="RigidPhysicsMaterial"/>
+        <miscellaneous contactOffset="0.00999999977648"/>
+    </link>
+    <link name="hip_roll_assembly_2">
+        <inertial>
+            <origin xyz="0.000795081024989 -5.46541014046e-06 -0.0330599993467" rpy="-0.000558457687186 0.0373897119541 -0.000707686137479"/>
+            <mass value="0.0664800032973"/>
+            <density value="-1"/>
+            <inertia ixx="2.44410994398e-05" iyy="2.81818007504e-05" izz="1.42686998118e-05" ixy="2.35650052211e-09" ixz="-3.81059003945e-07" iyz="-7.50273856358e-09"/>
+        </inertial>
+        <collision name="Collision 0">
+            <origin xyz="-3.64292009364e-16 -0.035000000149 0.0190500002354" rpy="0 -0 -3.05311993516e-16"/>
+            <geometry>
+                <mesh filename="package://duck_mini_playground/assets/roll_motor_bottom.stl" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="Collision 1">
+            <origin xyz="3.46944984709e-18 -0.035000000149 0.0190500002354" rpy="-4.93037595563e-32 4.44090003943e-16 -2.2204399612e-16"/>
+            <geometry>
+                <mesh filename="package://duck_mini_playground/assets/roll_motor_top.stl" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <rigidMaterialRef name="RigidPhysicsMaterial"/>
+        <miscellaneous contactOffset="0.00999999977648"/>
+    </link>
+    <link name="Dummy6">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="800"/>
+            <inertia ixx="0" iyy="0" izz="0" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+        <rigidMaterialRef name="RigidPhysicsMaterial"/>
+        <miscellaneous contactOffset="0.00999999977648"/>
+    </link>
+    <link name="right_roll_to_pitch_assembly">
+        <inertial>
+            <origin xyz="-0.0508042015135 -0.000420741998823 0.0204703994095" rpy="-0.0073974505208 0.19350465545 0.00692267865152"/>
+            <mass value="0.075159996748"/>
+            <density value="-1"/>
+            <inertia ixx="2.52329003845e-05" iyy="4.13854988204e-05" izz="2.81263995516e-05" ixy="-1.3052798878e-07" ixz="5.90498838348e-07" iyz="-9.13426955512e-08"/>
+        </inertial>
+        <collision name="Collision 0">
+            <origin xyz="0.035000000149 -0.0649999976158 0.0190500002354" rpy="1.57079632679 1.57079632679 0"/>
+            <geometry>
+                <mesh filename="package://duck_mini_playground/assets/right_roll_to_pitch.stl" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <rigidMaterialRef name="RigidPhysicsMaterial"/>
+        <miscellaneous contactOffset="0.00999999977648"/>
+    </link>
+    <link name="Dummy7">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="800"/>
+            <inertia ixx="0" iyy="0" izz="0" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+        <rigidMaterialRef name="RigidPhysicsMaterial"/>
+        <miscellaneous contactOffset="0.00999999977648"/>
+    </link>
+    <link name="knee_and_ankle_assembly_3">
+        <inertial>
+            <origin xyz="0.0025336900726 0.0390635989606 0.0108089996502" rpy="0.141949189964 -0.0222901793756 0.18853091934"/>
+            <mass value="0.124070003629"/>
+            <density value="-1"/>
+            <inertia ixx="0.00021236299929" iyy="7.93323516313e-05" izz="0.000225619050987" ixy="2.68706070187e-05" ixz="3.9655658884e-06" iyz="-2.17405284646e-05"/>
+        </inertial>
+        <collision name="Collision 0">
+            <origin xyz="0.0160600002855 -0.0649999976158 0.109200000763" rpy="1.57079632679 8.40834765333e-17 -1.02613956681e-15"/>
+            <geometry>
+                <mesh filename="package://duck_mini_playground/assets/right_cache.stl" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="Collision 3">
+            <origin xyz="0.0160600002855 -0.143649995327 -0.0720499977469" rpy="1.57079632679 4.61967155143e-25 -4.61967155143e-25"/>
+            <geometry>
+                <mesh filename="package://duck_mini_playground/assets/left_knee_to_ankle_left_sheet.stl" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <rigidMaterialRef name="RigidPhysicsMaterial"/>
+        <miscellaneous contactOffset="0.00999999977648"/>
+    </link>
+    <link name="Dummy8">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="800"/>
+            <inertia ixx="0" iyy="0" izz="0" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+        <rigidMaterialRef name="RigidPhysicsMaterial"/>
+        <miscellaneous contactOffset="0.00999999977648"/>
+    </link>
+    <link name="knee_and_ankle_assembly_4">
+        <inertial>
+            <origin xyz="5.01858994539e-06 -0.0577464997768 0.0181136000901" rpy="-0.00372324581226 -0.000301563032052 0.000333276056903"/>
+            <mass value="0.0725900009274"/>
+            <density value="-1"/>
+            <inertia ixx="4.99574993674e-05" iyy="1.87273003755e-05" izz="4.23931997205e-05" ixy="1.03817073144e-08" ixz="2.251747644e-09" iyz="8.81163561388e-08"/>
+        </inertial>
+        <collision name="Collision 1">
+            <origin xyz="0.0160600002855 0.143649995327 0.109149999917" rpy="-1.57079632679 -3.5525315857e-22 -3.5525315857e-22"/>
+            <geometry>
+                <mesh filename="package://duck_mini_playground/assets/left_knee_to_ankle_right_sheet.stl" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="Collision 2">
+            <origin xyz="0.0160600002855 0.143649995327 0.109149999917" rpy="-1.57079632679 7.65942512425e-30 7.65942512425e-30"/>
+            <geometry>
+                <mesh filename="package://duck_mini_playground/assets/left_knee_to_ankle_left_sheet.stl" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <rigidMaterialRef name="RigidPhysicsMaterial"/>
+        <miscellaneous contactOffset="0.00999999977648"/>
+    </link>
+    <link name="Dummy9">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="800"/>
+            <inertia ixx="0" iyy="0" izz="0" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+        <rigidMaterialRef name="RigidPhysicsMaterial"/>
+        <miscellaneous contactOffset="0.00999999977648"/>
+    </link>
+    <link name="foot_assembly_2">
+        <inertial>
+            <origin xyz="0.0110718002543 -0.0246607996523 0.0190625991672" rpy="0.00820565538222 -0.000199647759775 -0.0325735654974"/>
+            <mass value="0.0752400010824"/>
+            <density value="-1"/>
+            <inertia ixx="1.87481998835e-05" iyy="6.74426977033e-05" izz="6.06100001264e-05" ixy="1.58838993438e-06" ixz="-6.52354124992e-09" iyz="5.67390805948e-08"/>
+        </inertial>
+        <collision name="Collision 0">
+            <origin xyz="0.0160600002855 0.222299993038 0.109049998224" rpy="-1.57079632679 -1.21878875302e-29 -1.21878875302e-29"/>
+            <geometry>
+                <mesh filename="package://duck_mini_playground/assets/foot_side.stl" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="Collision 3">
+            <origin xyz="0.0160600002855 0.222299993038 0.109049998224" rpy="-1.57079632679 -1.21878875302e-29 -1.21878875302e-29"/>
+            <geometry>
+                <mesh filename="package://duck_mini_playground/assets/foot_top.stl" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="Collision 1">
+            <origin xyz="0.0140000004321 0.221000000834 0.107500001788" rpy="-1.57079632679 -0 4.89088752025e-16"/>
+            <geometry>
+                <mesh filename="package://duck_mini_playground/assets/foot_bottom_tpu.stl" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <rigidMaterialRef name="RigidPhysicsMaterial"/>
+        <miscellaneous contactOffset="0.00999999977648"/>
+    </link>
+    <link name="Dummy0">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="800"/>
+            <inertia ixx="0" iyy="0" izz="0" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+        <rigidMaterialRef name="RigidPhysicsMaterial"/>
+        <miscellaneous contactOffset="0.00999999977648"/>
+    </link>
+    <link name="hip_roll_assembly">
+        <inertial>
+            <origin xyz="0.000795081024989 -5.46541014046e-06 -0.0330599993467" rpy="-0.000558457687186 0.0373897119541 -0.000707686137479"/>
+            <mass value="0.0664800032973"/>
+            <density value="-1"/>
+            <inertia ixx="2.44410994398e-05" iyy="2.81818007504e-05" izz="1.42686998118e-05" ixy="2.35650052211e-09" ixz="-3.81059003945e-07" iyz="-7.50273856358e-09"/>
+        </inertial>
+        <collision name="Collision 0">
+            <origin xyz="-3.33066986797e-16 -0.035000000149 0.0190500002354" rpy="-8.76998008313e-16 4.44090003943e-16 -6.69604002881e-16"/>
+            <geometry>
+                <mesh filename="package://duck_mini_playground/assets/roll_motor_bottom.stl" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="Collision 1">
+            <origin xyz="0 -0.035000000149 0.0190500002354" rpy="1.50222468622e-32 -3.60822006547e-16 -8.32667996388e-17"/>
+            <geometry>
+                <mesh filename="package://duck_mini_playground/assets/roll_motor_top.stl" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <rigidMaterialRef name="RigidPhysicsMaterial"/>
+        <miscellaneous contactOffset="0.00999999977648"/>
+    </link>
+    <link name="Dummy1">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="800"/>
+            <inertia ixx="0" iyy="0" izz="0" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+        <rigidMaterialRef name="RigidPhysicsMaterial"/>
+        <miscellaneous contactOffset="0.00999999977648"/>
+    </link>
+    <link name="left_roll_to_pitch_assembly">
+        <inertial>
+            <origin xyz="0.0508042015135 -0.000411049986724 0.0204703994095" rpy="-0.00862107368603 -0.193503273274 -0.00621186125337"/>
+            <mass value="0.075159996748"/>
+            <density value="-1"/>
+            <inertia ixx="2.52334998831e-05" iyy="4.13855002489e-05" izz="2.81269992183e-05" ixy="1.22133003255e-07" ixz="-5.90498854673e-07" iyz="-1.07544012005e-07"/>
+        </inertial>
+        <collision name="Collision 0">
+            <origin xyz="-0.035000000149 -0.0649999976158 0.0190500002354" rpy="1.57079632679 1.57079632679 0"/>
+            <geometry>
+                <mesh filename="package://duck_mini_playground/assets/left_roll_to_pitch.stl" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <rigidMaterialRef name="RigidPhysicsMaterial"/>
+        <miscellaneous contactOffset="0.00999999977648"/>
+    </link>
+    <link name="Dummy2">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="800"/>
+            <inertia ixx="0" iyy="0" izz="0" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+        <rigidMaterialRef name="RigidPhysicsMaterial"/>
+        <miscellaneous contactOffset="0.00999999977648"/>
+    </link>
+    <link name="knee_and_ankle_assembly">
+        <inertial>
+            <origin xyz="0.0025336900726 -0.0390635989606 0.0102776000276" rpy="-0.135322764113 -0.0181348383406 -0.189292035222"/>
+            <mass value="0.124070003629"/>
+            <density value="-1"/>
+            <inertia ixx="0.000211406003" iyy="7.83758670686e-05" izz="0.000225619027839" ixy="-2.68706054386e-05" ixz="3.81903698107e-06" iyz="2.08007867971e-05"/>
+        </inertial>
+        <collision name="Collision 0">
+            <origin xyz="0.0160600002855 0.0649999976158 0.109149999917" rpy="-1.57079632679 1.28669145524e-15 3.44635290098e-16"/>
+            <geometry>
+                <mesh filename="package://duck_mini_playground/assets/left_cache.stl" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="Collision 2">
+            <origin xyz="0.0160600002855 0.143649995327 0.109149999917" rpy="-1.57079632679 -8.39763010407e-24 -8.39763010407e-24"/>
+            <geometry>
+                <mesh filename="package://duck_mini_playground/assets/left_knee_to_ankle_right_sheet.stl" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <rigidMaterialRef name="RigidPhysicsMaterial"/>
+        <miscellaneous contactOffset="0.00999999977648"/>
+    </link>
+    <link name="Dummy3">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="800"/>
+            <inertia ixx="0" iyy="0" izz="0" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+        <rigidMaterialRef name="RigidPhysicsMaterial"/>
+        <miscellaneous contactOffset="0.00999999977648"/>
+    </link>
+    <link name="knee_and_ankle_assembly_2">
+        <inertial>
+            <origin xyz="5.01858994539e-06 -0.0577464997768 0.0181136000901" rpy="-0.00372324581226 -0.000301563032052 0.000333276056903"/>
+            <mass value="0.0725900009274"/>
+            <density value="-1"/>
+            <inertia ixx="4.99574993674e-05" iyy="1.87273003755e-05" izz="4.23931997205e-05" ixy="1.03817073144e-08" ixz="2.251747644e-09" iyz="8.81163561388e-08"/>
+        </inertial>
+        <collision name="Collision 1">
+            <origin xyz="0.0160600002855 0.143649995327 0.109149999917" rpy="-1.57079632679 1.88258734408e-24 1.88258734408e-24"/>
+            <geometry>
+                <mesh filename="package://duck_mini_playground/assets/left_knee_to_ankle_right_sheet.stl" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="Collision 2">
+            <origin xyz="0.0160600002855 0.143649995327 0.109149999917" rpy="-1.57079632679 -7.59069379133e-30 -7.59069379133e-30"/>
+            <geometry>
+                <mesh filename="package://duck_mini_playground/assets/left_knee_to_ankle_left_sheet.stl" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <rigidMaterialRef name="RigidPhysicsMaterial"/>
+        <miscellaneous contactOffset="0.00999999977648"/>
+    </link>
+    <link name="Dummy4">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="800"/>
+            <inertia ixx="0" iyy="0" izz="0" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+        <rigidMaterialRef name="RigidPhysicsMaterial"/>
+        <miscellaneous contactOffset="0.00999999977648"/>
+    </link>
+    <link name="foot_assembly">
+        <inertial>
+            <origin xyz="0.0110718002543 -0.0246607996523 0.0190625991672" rpy="0.00820565538222 -0.000199647759775 -0.0325735654974"/>
+            <mass value="0.0752400010824"/>
+            <density value="-1"/>
+            <inertia ixx="1.87481998835e-05" iyy="6.74426977033e-05" izz="6.06100001264e-05" ixy="1.58838993438e-06" ixz="-6.52354124992e-09" iyz="5.67390805948e-08"/>
+        </inertial>
+        <collision name="Collision 0">
+            <origin xyz="0.0160600002855 0.222299993038 0.109049998224" rpy="-1.57079632679 -6.53259023637e-30 -6.53259023637e-30"/>
+            <geometry>
+                <mesh filename="package://duck_mini_playground/assets/foot_side.stl" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="Collision 1">
+            <origin xyz="0.0140000004321 0.221000000834 0.108000002801" rpy="-1.57079632679 2.43946209431e-18 2.43946209431e-18"/>
+            <geometry>
+                <mesh filename="package://duck_mini_playground/assets/foot_bottom_tpu.stl" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="Collision 3">
+            <origin xyz="0.0160600002855 0.222299993038 0.109049998224" rpy="-1.57079632679 -6.53259023637e-30 -6.53259023637e-30"/>
+            <geometry>
+                <mesh filename="package://duck_mini_playground/assets/foot_top.stl" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <rigidMaterialRef name="RigidPhysicsMaterial"/>
+        <miscellaneous contactOffset="0.00999999977648"/>
+    </link>
+    <link name="neck_pitch_assembly">
+        <inertial>
+            <origin xyz="-5.63137018617e-06 0.0492968000472 0.0181786008179" rpy="0.00168681884191 0.000311897331516 0.000488889148921"/>
+            <mass value="0.066179998219"/>
+            <density value="-1"/>
+            <inertia ixx="3.49456009224e-05" iyy="1.70231006074e-05" izz="2.80043008275e-05" ixy="8.75634098302e-09" ixz="-2.1559183737e-09" iyz="-1.85244263825e-08"/>
+        </inertial>
+        <collision name="Collision 0">
+            <origin xyz="-0.019999999553 -0.0251100007445 0.0190500002354" rpy="-1.57079632679 -7.27230879978e-31 -7.27230879978e-31"/>
+            <geometry>
+                <mesh filename="package://duck_mini_playground/assets/neck_left_sheet.stl" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="Collision 1">
+            <origin xyz="-0.019999999553 -0.0251100007445 0.0190500002354" rpy="-1.57079632679 4.33445136182e-17 4.33445136182e-17"/>
+            <geometry>
+                <mesh filename="package://duck_mini_playground/assets/neck_right_sheet.stl" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <rigidMaterialRef name="RigidPhysicsMaterial"/>
+        <miscellaneous contactOffset="0.00999999977648"/>
+    </link>
+    <link name="head_pitch_to_yaw">
+        <inertial>
+            <origin xyz="-0.00766246998683 0.0260150004178 0.0186681002378" rpy="0.0238741702666 -0.00463648877633 0.257199263953"/>
+            <mass value="0.0169377997518"/>
+            <density value="-1"/>
+            <inertia ixx="9.4303598879e-06" iyy="4.64763021153e-06" izz="8.02915039786e-06" ixy="1.35195002837e-06" ixz="3.05909392909e-08" iyz="-8.42799477253e-08"/>
+        </inertial>
+        <collision name="Collision 0">
+            <origin xyz="-0.019999999553 -0.0911099985242 0.0190500002354" rpy="-1.57079632679 0 0"/>
+            <geometry>
+                <mesh filename="package://duck_mini_playground/assets/head_pitch_to_yaw.stl" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <rigidMaterialRef name="RigidPhysicsMaterial"/>
+        <miscellaneous contactOffset="0.00999999977648"/>
+    </link>
+    <link name="neck_yaw_assembly">
+        <inertial>
+            <origin xyz="0.0041290698573 3.95745018977e-06 -0.0222827997059" rpy="0.00306371381837 -0.11063103757 -9.97064703153e-05"/>
+            <mass value="0.0918098986149"/>
+            <density value="-1"/>
+            <inertia ixx="3.11705981881e-05" iyy="6.94934987381e-05" izz="7.04024995332e-05" ixy="4.29431352978e-09" ixz="-4.4125099052e-06" iyz="-3.82052419773e-09"/>
+        </inertial>
+        <collision name="Collision 0">
+            <origin xyz="-0.019999999553 1.49850001597e-16 -0.148210003972" rpy="1.38777803632e-17 -1.11022395107e-16 1.40922803729e-16"/>
+            <geometry>
+                <mesh filename="package://duck_mini_playground/assets/head_yaw_to_roll.stl" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <rigidMaterialRef name="RigidPhysicsMaterial"/>
+        <miscellaneous contactOffset="0.00999999977648"/>
+    </link>
+    <link name="head_assembly">
+        <inertial>
+            <origin xyz="0.00815416034311 -0.00390753988177 0.0227726008743" rpy="-0.0295781934672 -0.067265443116 -0.00426871349967"/>
+            <mass value="0.40660700202"/>
+            <density value="-1"/>
+            <inertia ixx="0.0024462700556" iyy="0.00168640003806" izz="0.00108002000466" ixy="-2.02436414388e-06" ixz="9.2382009074e-05" iyz="-1.84944198506e-05"/>
+        </inertial>
+        <collision name="Collision 5">
+            <origin xyz="-0.129060000181 1.92717002334e-17 0.0609499998391" rpy="-4.2771321662e-16 1.57079632679 0"/>
+            <geometry>
+                <mesh filename="package://duck_mini_playground/assets/head.stl" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <rigidMaterialRef name="RigidPhysicsMaterial"/>
+        <miscellaneous contactOffset="0.00999999977648"/>
+    </link>
+    <joint name="right_hip_yaw" type="revolute">
+        <child link="Dummy5"/>
+        <parent link="base"/>
+        <origin xyz="-0.0189999863505 -0.0350000187755 0.0459408685565" rpy="-5.94727413303e-31 -2.14273988261e-14 5.55109295468e-17"/>
+        <linkTransform xyz="-0.0189999906378 -0.0350000005235 0.0459408806872" rpy="-5.94730431887e-31 -2.14273985309e-14 5.55112120614e-17"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-0.523598790169" upper="0.523598790169" effort="3.23" velocity="5.23999977112"/>
+        <dynamics damping="0.43" stiffness="17.11" integral="0" friction="0" frictionLoss="0" armature="0.0270000007004"/>
+    </joint>
+    <joint name="right_hip_yaw_backlash" type="revolute">
+        <child link="hip_roll_assembly_2"/>
+        <parent link="Dummy5"/>
+        <origin xyz="0 0 0" rpy="0 -0 0"/>
+        <linkTransform xyz="0 0 0" rpy="0 -0 0"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-0.00872664619237" upper="0.00872664619237" effort="3.24"  velocity="5.23999977112"/>
+        <dynamics damping="0.0" stiffness="0" integral="0" friction="0" frictionLoss="0" armature="0.00999999977648"/>
+    </joint>
+    <joint name="right_hip_roll" type="revolute">
+        <child link="Dummy6"/>
+        <parent link="hip_roll_assembly_2"/>
+        <origin xyz="0.0190499890596 7.41343209043e-09 -0.0460150018334" rpy="-1.57079626719 -5.96046483281e-08 1.57079632679"/>
+        <linkTransform xyz="0.0190499914807 1.57502641165e-09 -0.0460150002584" rpy="-1.5707962513 -7.54979052608e-08 1.57079632679"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-0.436332315207" upper="0.436332315207" effort="3.23" velocity="5.23999977112"/>
+        <dynamics damping="0.43" stiffness="17.11" integral="0" friction="0" frictionLoss="0" armature="0.0270000007004"/>
+    </joint>
+    <joint name="right_hip_roll_backlash" type="revolute">
+        <child link="right_roll_to_pitch_assembly"/>
+        <parent link="Dummy6"/>
+        <origin xyz="0 0 0" rpy="0 -0 0"/>
+        <linkTransform xyz="0 0 0" rpy="0 -0 0"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-0.00872664619237" upper="0.00872664619237" effort="3.24"  velocity="5.23999977112"/>
+        <dynamics damping="0.0" stiffness="0" integral="0" friction="0" frictionLoss="0" armature="0.00999999977648"/>
+    </joint>
+    <joint name="right_hip_pitch" type="revolute">
+        <child link="Dummy7"/>
+        <parent link="right_roll_to_pitch_assembly"/>
+        <origin xyz="-0.0741500258446 -6.78629407443e-13 0.0351099818945" rpy="-5.91606391225e-15 1.57079632679 0"/>
+        <linkTransform xyz="-0.0741500034783 -6.77667867235e-13 0.03510998188" rpy="-2.39979158736e-15 1.57079628308 0"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-0.523598790169" upper="1.22173047066" effort="3.23" velocity="5.23999977112"/>
+        <dynamics damping="0.43" stiffness="17.11" integral="0" friction="0" frictionLoss="0" armature="0.0270000007004"/>
+    </joint>
+    <joint name="right_hip_pitch_backlash" type="revolute">
+        <child link="knee_and_ankle_assembly_3"/>
+        <parent link="Dummy7"/>
+        <origin xyz="0 0 0" rpy="0 -0 0"/>
+        <linkTransform xyz="-0 0 0" rpy="0 -0 0"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-0.00872664619237" upper="0.00872664619237" effort="3.24"  velocity="5.23999977112"/>
+        <dynamics damping="0.0" stiffness="0" integral="0" friction="0" frictionLoss="0" armature="0.00999999977648"/>
+    </joint>
+    <joint name="right_knee" type="revolute">
+        <child link="Dummy8"/>
+        <parent link="knee_and_ankle_assembly_3"/>
+        <origin xyz="-3.12999670626e-09 0.0786499977112 0.0370000079274" rpy="-3.14159265359 1.50995802528e-07 1.50995745685e-07"/>
+        <linkTransform xyz="-3.12999440643e-09 0.0786499975578 0.0370000094401" rpy="-3.14159265359 1.50995804675e-07 1.50995796828e-07"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-1.57079637051" upper="1.57079637051" effort="3.23" velocity="5.23999977112"/>
+        <dynamics damping="0.43" stiffness="17.11" integral="0" friction="0" frictionLoss="0" armature="0.0270000007004"/>
+    </joint>
+    <joint name="right_knee_backlash" type="revolute">
+        <child link="knee_and_ankle_assembly_4"/>
+        <parent link="Dummy8"/>
+        <origin xyz="0 0 0" rpy="0 -0 0"/>
+        <linkTransform xyz="0 0 0" rpy="0 -0 0"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-0.00872664619237" upper="0.00872664619237" effort="3.24"  velocity="5.23999977112"/>
+        <dynamics damping="0.0" stiffness="0" integral="0" friction="0" frictionLoss="0" armature="0.00999999977648"/>
+    </joint>
+    <joint name="right_ankle" type="revolute">
+        <child link="Dummy9"/>
+        <parent link="knee_and_ankle_assembly_4"/>
+        <origin xyz="-7.93257348697e-10 -0.0786499977112 0.000100000179373" rpy="0 -0 0"/>
+        <linkTransform xyz="-7.93253709479e-10 -0.0786499977036 0.000100000180118" rpy="0 -0 0"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-1.57079637051" upper="1.57079637051" effort="3.23" velocity="5.23999977112"/>
+        <dynamics damping="0.43" stiffness="17.11" integral="0" friction="0" frictionLoss="0" armature="0.0270000007004"/>
+    </joint>
+    <joint name="right_ankle_backlash" type="revolute">
+        <child link="foot_assembly_2"/>
+        <parent link="Dummy9"/>
+        <origin xyz="0 0 0" rpy="0 -0 0"/>
+        <linkTransform xyz="0 0 0" rpy="0 -0 0"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-0.00872664619237" upper="0.00872664619237" effort="3.24"  velocity="5.23999977112"/>
+        <dynamics damping="0.0" stiffness="0" integral="0" friction="0" frictionLoss="0" armature="0.00999999977648"/>
+    </joint>
+    <joint name="left_hip_yaw" type="revolute">
+        <child link="Dummy0"/>
+        <parent link="base"/>
+        <origin xyz="-0.0189999863505 0.0349999777973 0.0459408983588" rpy="-6.07050871439e-31 -2.1871399971e-14 5.55109295468e-17"/>
+        <linkTransform xyz="-0.0189999906378 0.0349999824774 0.0459408979843" rpy="-6.07053950191e-31 -2.18713995839e-14 5.55112120614e-17"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-0.523598790169" upper="0.523598790169" effort="3.23" velocity="5.23999977112"/>
+        <dynamics damping="0.43" stiffness="17.11" integral="0" friction="0" frictionLoss="0" armature="0.0270000007004"/>
+    </joint>
+    <joint name="left_hip_yaw_backlash" type="revolute">
+        <child link="hip_roll_assembly"/>
+        <parent link="Dummy0"/>
+        <origin xyz="0 0 0" rpy="0 -0 0"/>
+        <linkTransform xyz="0 0 0" rpy="0 -0 0"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-0.00872664619237" upper="0.00872664619237" effort="3.24"  velocity="5.23999977112"/>
+        <dynamics damping="0.0" stiffness="0" integral="0" friction="0" frictionLoss="0" armature="0.00999999977648"/>
+    </joint>
+    <joint name="left_hip_roll" type="revolute">
+        <child link="Dummy1"/>
+        <parent link="hip_roll_assembly"/>
+        <origin xyz="0.0190499890596 7.41343209043e-09 -0.0460150018334" rpy="-1.57079626719 -5.96046483281e-08 1.57079632679"/>
+        <linkTransform xyz="0.0190499914807 1.57502641165e-09 -0.0460150002584" rpy="-1.5707962513 -7.54979052608e-08 1.57079632679"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-0.436332315207" upper="0.436332315207" effort="3.23" velocity="5.23999977112"/>
+        <dynamics damping="0.43" stiffness="17.11" integral="0" friction="0" frictionLoss="0" armature="0.0270000007004"/>
+    </joint>
+    <joint name="left_hip_roll_backlash" type="revolute">
+        <child link="left_roll_to_pitch_assembly"/>
+        <parent link="Dummy1"/>
+        <origin xyz="0 0 0" rpy="0 -0 0"/>
+        <linkTransform xyz="0 0 0" rpy="0 -0 0"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-0.00872664619237" upper="0.00872664619237" effort="3.24"  velocity="5.23999977112"/>
+        <dynamics damping="0.0" stiffness="0" integral="0" friction="0" frictionLoss="0" armature="0.00999999977648"/>
+    </joint>
+    <joint name="left_hip_pitch" type="revolute">
+        <child link="Dummy2"/>
+        <parent link="left_roll_to_pitch_assembly"/>
+        <origin xyz="0.0741500034928 -2.03626698836e-12 0.0351100116968" rpy="-3.14159265359 1.57079623937 0"/>
+        <linkTransform xyz="0.0741499909807 -2.03637137352e-12 0.0351100018572" rpy="-3.14159265359 1.57079622905 0"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-1.22173047066" upper="0.523598790169" effort="3.23" velocity="5.23999977112"/>
+        <dynamics damping="0.43" stiffness="17.11" integral="0" friction="0" frictionLoss="0" armature="0.0270000007004"/>
+    </joint>
+    <joint name="left_hip_pitch_backlash" type="revolute">
+        <child link="knee_and_ankle_assembly"/>
+        <parent link="Dummy2"/>
+        <origin xyz="0 0 0" rpy="0 -0 0"/>
+        <linkTransform xyz="0 0 0" rpy="0 -0 0"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-0.00872664619237" upper="0.00872664619237" effort="3.24"  velocity="5.23999977112"/>
+        <dynamics damping="0.0" stiffness="0" integral="0" friction="0" frictionLoss="0" armature="0.00999999977648"/>
+    </joint>
+    <joint name="left_knee" type="revolute">
+        <child link="Dummy3"/>
+        <parent link="knee_and_ankle_assembly"/>
+        <origin xyz="-9.42264266612e-10 -0.0786499977112 0.000100000179373" rpy="0 -0 0"/>
+        <linkTransform xyz="-9.42263979032e-10 -0.078649998504 0.000100000180118" rpy="0 -0 0"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-1.57079637051" upper="1.57079637051" effort="3.23" velocity="5.23999977112"/>
+        <dynamics damping="0.43" stiffness="17.11" integral="0" friction="0" frictionLoss="0" armature="0.0270000007004"/>
+    </joint>
+    <joint name="left_knee_backlash" type="revolute">
+        <child link="knee_and_ankle_assembly_2"/>
+        <parent link="Dummy3"/>
+        <origin xyz="0 0 0" rpy="0 -0 0"/>
+        <linkTransform xyz="0 0 0" rpy="0 -0 0"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-0.00872664619237" upper="0.00872664619237" effort="3.24"  velocity="5.23999977112"/>
+        <dynamics damping="0.0" stiffness="0" integral="0" friction="0" frictionLoss="0" armature="0.00999999977648"/>
+    </joint>
+    <joint name="left_ankle" type="revolute">
+        <child link="Dummy4"/>
+        <parent link="knee_and_ankle_assembly_2"/>
+        <origin xyz="-9.42264599679e-10 -0.0786500051618 0.000100000179373" rpy="0 -0 0"/>
+        <linkTransform xyz="-9.42264058335e-10 -0.0786500051542 0.000100000180118" rpy="0 -0 0"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-1.57079637051" upper="1.57079637051" effort="3.23" velocity="5.23999977112"/>
+        <dynamics damping="0.43" stiffness="17.11" integral="0" friction="0" frictionLoss="0" armature="0.0270000007004"/>
+    </joint>
+    <joint name="left_ankle_backlash" type="revolute">
+        <child link="foot_assembly"/>
+        <parent link="Dummy4"/>
+        <origin xyz="0 0 0" rpy="0 -0 0"/>
+        <linkTransform xyz="0 0 0" rpy="0 -0 0"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-0.00872664619237" upper="0.00872664619237" effort="3.24"  velocity="5.23999977112"/>
+        <dynamics damping="0.0" stiffness="0" integral="0" friction="0" frictionLoss="0" armature="0.00999999977648"/>
+    </joint>
+    <joint name="neck_pitch" type="revolute">
+        <child link="neck_pitch_assembly"/>
+        <parent link="base"/>
+        <origin xyz="0.000999999349006 0.0191499702632 0.090000897646" rpy="1.57079632679 -2.21774605276e-14 0"/>
+        <linkTransform xyz="0.000999999513379 0.0191499814283 0.0900008952208" rpy="1.57079637051 -2.21774604703e-14 1.26217744835e-29"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-0.349065840244" upper="1.1344640255" effort="3.23" velocity="5.23999977112"/>
+        <dynamics damping="0.43" stiffness="17.11" integral="0" friction="0" frictionLoss="0" armature="0.0270000007004"/>
+    </joint>
+    <joint name="head_pitch" type="revolute">
+        <child link="head_pitch_to_yaw"/>
+        <parent link="neck_pitch_assembly"/>
+        <origin xyz="1.46371242577e-15 0.0659999996424 8.40338687524e-10" rpy="-5.68695180025e-46 -5.14401443671e-29 2.21109480551e-17"/>
+        <linkTransform xyz="1.46371238311e-15 0.0659999996424 8.4033868717e-10" rpy="-1.07179583944e-38 -6.28706108094e-29 2.21109480551e-17"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-0.785398185253" upper="0.785398185253" effort="3.23" velocity="5.23999977112"/>
+        <dynamics damping="0.43" stiffness="17.11" integral="0" friction="0" frictionLoss="0" armature="0.0270000007004"/>
+    </joint>
+    <joint name="head_yaw" type="revolute">
+        <child link="neck_yaw_assembly"/>
+        <parent link="head_pitch_to_yaw"/>
+        <origin xyz="1.26537553188e-15 0.0569999963045 0.0190500002354" rpy="-1.57079632679 7.37430481231e-17 -2.3676955631e-21"/>
+        <linkTransform xyz="1.26537548883e-15 0.0569999971372 0.0190499996065" rpy="-1.57079637051 7.37418324872e-17 -3.23332912128e-22"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-2.79252672195" upper="2.79252672195" effort="3.23" velocity="5.23999977112"/>
+        <dynamics damping="0.43" stiffness="17.11" integral="0" friction="0" frictionLoss="0" armature="0.0270000007004"/>
+    </joint>
+    <joint name="head_roll" type="revolute">
+        <child link="head_assembly"/>
+        <parent link="neck_yaw_assembly"/>
+        <origin xyz="0.0409499742091 5.70458302818e-09 -0.0191500037909" rpy="2.77898990968e-14 -1.57079632679 0"/>
+        <linkTransform xyz="0.0409499813011 3.27482135325e-09 -0.0191500031354" rpy="-7.92419228044e-17 -1.57079632679 0"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-0.523598790169" upper="0.523598790169" effort="3.23" velocity="5.23999977112"/>
+        <dynamics damping="0.43" stiffness="17.11" integral="0" friction="0" frictionLoss="0" armature="0.0270000007004"/>
+    </joint>
+    <forceSensor>
+        <sensor name="fs_foot_right" link="foot_assembly_2" offset="0 0 0" flags="contact "/>
+        <sensor name="fs_knee_and_ankle_assembly_4" link="knee_and_ankle_assembly_4" offset="0 0 0" flags="contact "/>
+        <sensor name="fs_knee_and_ankle_assembly_3" link="knee_and_ankle_assembly_3" offset="-0 0 0" flags="contact "/>
+        <sensor name="fs_right_roll_to_pitch_assembly" link="right_roll_to_pitch_assembly" offset="0 0 0" flags="contact "/>
+        <sensor name="fs_hip_roll_assembly_2" link="hip_roll_assembly_2" offset="0 0 0" flags="contact "/>
+        <sensor name="fs_foot_left" link="foot_assembly" offset="0 0 0" flags="contact "/>
+        <sensor name="fs_knee_and_ankle_assembly_2" link="knee_and_ankle_assembly_2" offset="0 0 0" flags="contact "/>
+        <sensor name="fs_knee_and_ankle_assembly" link="knee_and_ankle_assembly" offset="0 0 0" flags="contact "/>
+        <sensor name="fs_left_roll_to_pitch_assembly" link="left_roll_to_pitch_assembly" offset="0 0 0" flags="contact "/>
+        <sensor name="fs_hip_roll_assembly" link="hip_roll_assembly" offset="0 0 0" flags="contact "/>
+        <sensor name="fs_head_assembly" link="head_assembly" offset="0 -0 0" flags="contact "/>
+        <sensor name="fs_neck_yaw_assembly" link="neck_yaw_assembly" offset="0 0 0" flags="contact "/>
+        <sensor name="fs_head_pitch_to_yaw" link="head_pitch_to_yaw" offset="0 0 0" flags="contact "/>
+        <sensor name="fs_neck_pitch_assembly" link="neck_pitch_assembly" offset="0 0 0" flags="contact "/>
+        <sensor name="fs_base" link="base" offset="0 -0 0" flags="contact "/>
+    </forceSensor>
+    <jointForceSensor value="true"/>
+    <filter>
+        <pair link0="base" link1="neck_pitch_assembly"/>
+        <pair link0="base" link1="hip_roll_assembly_2"/>
+        <pair link0="base" link1="right_roll_to_pitch_assembly"/>
+        <pair link0="base" link1="hip_roll_assembly"/>
+        <pair link0="base" link1="left_roll_to_pitch_assembly"/>
+        <pair link0="neck_pitch_assembly" link1="base"/>
+        <pair link0="hip_roll_assembly_2" link1="base"/>
+        <pair link0="hip_roll_assembly_2" link1="right_roll_to_pitch_assembly"/>
+        <pair link0="right_roll_to_pitch_assembly" link1="base"/>
+        <pair link0="right_roll_to_pitch_assembly" link1="hip_roll_assembly_2"/>
+        <pair link0="right_roll_to_pitch_assembly" link1="knee_and_ankle_assembly_3"/>
+        <pair link0="knee_and_ankle_assembly_3" link1="right_roll_to_pitch_assembly"/>
+        <pair link0="knee_and_ankle_assembly_3" link1="knee_and_ankle_assembly_4"/>
+        <pair link0="knee_and_ankle_assembly_4" link1="knee_and_ankle_assembly_3"/>
+        <pair link0="hip_roll_assembly" link1="base"/>
+        <pair link0="hip_roll_assembly" link1="left_roll_to_pitch_assembly"/>
+        <pair link0="left_roll_to_pitch_assembly" link1="base"/>
+        <pair link0="left_roll_to_pitch_assembly" link1="hip_roll_assembly"/>
+        <pair link0="left_roll_to_pitch_assembly" link1="knee_and_ankle_assembly"/>
+        <pair link0="knee_and_ankle_assembly" link1="left_roll_to_pitch_assembly"/>
+        <pair link0="knee_and_ankle_assembly" link1="knee_and_ankle_assembly_2"/>
+        <pair link0="knee_and_ankle_assembly_2" link1="knee_and_ankle_assembly"/>
+        <pair link0="head_pitch_to_yaw" link1="neck_yaw_assembly"/>
+        <pair link0="head_pitch_to_yaw" link1="head_assembly"/>
+        <pair link0="neck_yaw_assembly" link1="head_pitch_to_yaw"/>
+        <pair link0="neck_yaw_assembly" link1="head_assembly"/>
+        <pair link0="head_assembly" link1="head_pitch_to_yaw"/>
+        <pair link0="head_assembly" link1="neck_yaw_assembly"/>
+    </filter>
+</robot>

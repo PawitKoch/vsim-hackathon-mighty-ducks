@@ -1,0 +1,141 @@
+
+<robot name="cartpole">
+    <!--Materials-->
+    <material name="SliderRgbMaterial">
+        <color rgba="0.8941 0.1333 0.0902 0"/>
+        <luminescence value="0"/>
+        <specular value="40"/>
+        <specularIntesity value="0.25"/>
+    </material>
+    <material name="CartRgbMaterial">
+        <color rgba="0.2471 0.6078 0.04314 0"/>
+        <luminescence value="0"/>
+        <specular value="40"/>
+        <specularIntesity value="0.25"/>
+    </material>
+    <material name="PoleRgbMaterial">
+        <color rgba="0.5294 0.8078 0.9216 0"/>
+        <luminescence value="0"/>
+        <specular value="40"/>
+        <specularIntesity value="0.25"/>
+    </material>
+    <material name="cartpole_DefaultMaterial">
+        <texture filename="package://Vlab/Textures/WhiteTexture.png"/>
+        <color rgba="1 1 1 1"/>
+        <luminescence value="0"/>
+        <specular value="40"/>
+        <specularIntesity value="0.25"/>
+    </material>
+    <rigidMaterial name="DefaultRigidMaterial" staticFriction="0.5" dynamicFriction="0.5" restitution="0.1"/>
+    <!--Links-->
+    <robotProperties maxDepenetrationVelocity="10"/>
+    <link name="slider">
+        <inertial>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <mass value="-1"/>
+            <density value="1000"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 -0 0" rot="-0 0 -0 1"/>
+            <geometry>
+                <box size="0.015 4 0.015"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <rgbMaterialRef name="cartpole_DefaultMaterial"/>
+        </visual>
+        <collision>
+            <origin xyz="0 -0 0" rot="-0 0 -0 1"/>
+            <geometry>
+                <box size="0.015 4 0.015"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <rgbMaterialRef name="SliderRgbMaterial"/>
+        </collision>
+        <rigidMaterialRef name="DefaultRigidMaterial"/>
+        <miscellaneous contactOffset="0.005" restOffset="0"/>
+    </link>
+    <link name="cart">
+        <inertial>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <mass value="1"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 -0 0" rot="-0 0 -0 1"/>
+            <geometry>
+                <box size="0.1 0.125 0.1"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <rgbMaterialRef name="cartpole_DefaultMaterial"/>
+        </visual>
+        <collision>
+            <origin xyz="0 -0 0" rot="-0 0 -0 1"/>
+            <geometry>
+                <box size="0.1 0.125 0.1"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <rgbMaterialRef name="CartRgbMaterial"/>
+        </collision>
+        <rigidMaterialRef name="DefaultRigidMaterial"/>
+        <miscellaneous contactOffset="0.005" restOffset="0"/>
+    </link>
+    <link name="pole">
+        <inertial>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <mass value="1"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 -0 0.47" rot="-0 0 -0 1"/>
+            <geometry>
+                <box size="0.02 0.03 0.5"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <rgbMaterialRef name="cartpole_DefaultMaterial"/>
+        </visual>
+        <collision>
+            <origin xyz="0 -0 0.47" rot="-0 0 -0 1"/>
+            <geometry>
+                <box size="0.02 0.03 0.5"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <rgbMaterialRef name="PoleRgbMaterial"/>
+        </collision>
+        <rigidMaterialRef name="DefaultRigidMaterial"/>
+        <miscellaneous contactOffset="0.005" restOffset="0"/>
+    </link>
+    <joint name="cart_to_pole" type="continuous">
+        <child link="pole"/>
+        <parent link="cart"/>
+        <origin xyz="0.12 -0 0" rot="-0 0 -0 1"/>
+        <linkTransform xyz="0.12 -0 0" rot="-0 0 -0 1"/>
+        <axis xyz="1 0 0"/>
+        <limit lower="1" upper="-1" effort="1000" velocity="8"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <joint name="slider_to_cart" type="prismatic">
+        <child link="cart"/>
+        <parent link="slider"/>
+        <origin xyz="0 -0 0" rot="-0 0 -0 1"/>
+        <linkTransform xyz="0 -0 0" rot="-0 0 -0 1"/>
+        <axis xyz="0 1 0"/>
+        <limit lower="-4" upper="4" effort="1000" velocity="100"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+    <Lights>
+        <light name="point_light" type="pointLight" color="1 1 1 0.75" castShadow="false" ambient="0" constant_atten="1" linear_atten="0" quadratic_atten="0"/>
+    </Lights>
+    <LightInstances>
+        <lightInstance name="point_light" light="point_light" link="slider" xyz="5 0 1" rot="0 0 0 1"/>
+        <lightInstance name="point_light2" light="point_light" link="slider" xyz="5 0 1" rot="0 0 0 1"/>
+    </LightInstances>
+    <rgbCamera>
+        <camera name="slider_camera_0" type="rgb" postFilter="ambient_occlusion" farClip="10" fovX="1.3" fovY="0.3" resX="160" resY="40"/>
+    </rgbCamera>
+    <rgbCameraInstance>
+        <cameraInstance name="slider_camera_0_instance" camera="slider_camera_0" link="slider" xyz="5 0 0.5" rot="0.5 0.5 0.5 0.5"/>
+    </rgbCameraInstance>
+</robot>

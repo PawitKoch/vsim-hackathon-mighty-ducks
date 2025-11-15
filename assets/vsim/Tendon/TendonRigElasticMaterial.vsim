@@ -1,0 +1,171 @@
+<robot name="TendonRig">
+    <!--Materials-->
+    <material name="TendonRig_DefaultMaterial">
+        <color rgba="1 1 1 1"/>
+    </material>
+    <rigidMaterial name="DefaultRigidMaterial" staticFriction="0.5" dynamicFriction="0.5" restitution="0.1"/>
+    <!--<hillMaterial name="TestHillMat" lse0="0.3" a="37.24" b="0.325"/>
+	<hillMaterial name="TestHillMat" a="37.24" b="0.325"/>-->
+    <elasticMaterial name="FlexingChaingElasticMaterial" stiffness="1e+07" damping="1e+04" limitStiffness="0" limitDamping="0"/>
+    <!--Links-->
+    <robotProperties maxDepenetrationVelocity="10"/>
+    <link name="VlabArticulation">
+        <inertial>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <mass value="-1"/>
+            <density value="800"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 -0 0" rot="-0 0 -0 1"/>
+            <geometry>
+                <box size="0.25 0.5 0.25"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <material name="TendonRig_DefaultMaterial"/>
+        </visual>
+        <collision>
+            <origin xyz="0 -0 0" rot="-0 0 -0 1"/>
+            <geometry>
+                <box size="0.25 0.5 0.25"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+        <rigidMaterialRef name="DefaultRigidMaterial"/>
+        <miscellaneous contactOffset="0.005" restOffset="0"/>
+    </link>
+    <link name="VlabArticulation1">
+        <inertial>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <mass value="-1"/>
+            <density value="800"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 -0 0" rot="-0 0 -0 1"/>
+            <geometry>
+                <box size="0.25 0.5 0.25"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <material name="TendonRig_DefaultMaterial"/>
+        </visual>
+        <collision>
+            <origin xyz="0 -0 0" rot="-0 0 -0 1"/>
+            <geometry>
+                <box size="0.25 0.5 0.25"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+        <rigidMaterialRef name="DefaultRigidMaterial"/>
+        <miscellaneous contactOffset="0.005" restOffset="0"/>
+    </link>
+    <link name="VlabArticulation2">
+        <inertial>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <mass value="-1"/>
+            <density value="800"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 -0 0" rot="-0 0 -0 1"/>
+            <geometry>
+                <box size="0.25 0.5 0.25"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <material name="TendonRig_DefaultMaterial"/>
+        </visual>
+        <collision>
+            <origin xyz="0 -0 0" rot="-0 0 -0 1"/>
+            <geometry>
+                <box size="0.25 0.5 0.25"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+        <rigidMaterialRef name="DefaultRigidMaterial"/>
+        <miscellaneous contactOffset="0.005" restOffset="0"/>
+    </link>
+    <joint name="VlabArticulation1_to_VlabArticulation2" type="revolute">
+        <child link="VlabArticulation2"/>
+        <parent link="VlabArticulation1"/>
+        <origin xyz="0 -0.5 -0.25" rot="-0 0 -0 1"/>
+        <linkTransform xyz="0 -1 0" rot="-0 0 -0 1"/>
+        <axis xyz="-1 0 -0"/>
+        <limit lower="-2" upper="0" effort="1e+15" velocity="20"/>
+        <dynamics damping="0" stiffness="1e+03" friction="0.2" armature="0"/>
+    </joint>
+    <joint name="VlabArticulation_to_VlabArticulation1" type="revolute">
+        <child link="VlabArticulation1"/>
+        <parent link="VlabArticulation"/>
+        <origin xyz="0 -0.5 -0.25" rot="-0 0 -0 1"/>
+        <linkTransform xyz="0 -1 0" rot="-0 0 -0 1"/>
+        <axis xyz="-1 0 -0"/>
+        <limit lower="-2" upper="0" effort="1e+15" velocity="20"/>
+        <dynamics damping="0" stiffness="1e+03" friction="0.2" armature="0"/>
+    </joint>
+    <!--
+    <tendon name="VlabSpatialTendon" type="spatial" offset="0" lowLimit="0" highLimit="0" materialRef="TestHillMat">
+    -->
+    <tendon name="VlabSpatialTendon" type="spatial" offset="0" lowLimit="0" highLimit="0"
+    materialRef="FlexingChaingElasticMaterial">
+        <site name="VlabSpatialTendon_attachment_0" coefficient="-6.259853398707798e+18" radius="0">
+            <origin xyz="0 -0.5 -0.25" rot="0.7071 0 0 0.7071"/>
+            <host link="VlabArticulation"/>
+        </site>
+        <site name="VlabSpatialTendon_attachment_1" coefficient="-6.259853398707798e+18" radius="0">
+            <origin xyz="0 0.3 -0.25" rot="-0.7071 -0 0 0.7071"/>
+            <host link="VlabArticulation"/>
+        </site>
+        <site name="VlabSpatialTendon_attachment_2" coefficient="-6.259853398707798e+18" radius="0.10000000149011612">
+            <origin xyz="0 0.5 -0.25" rot="-0.7071 -0 0 0.7071"/>
+            <host link="VlabArticulation"/>
+        </site>
+        <site name="VlabSpatialTendon_attachment_3" coefficient="-6.259853398707798e+18" radius="0">
+            <origin xyz="0 -0.3 -0.25" rot="0.7071 0 0 0.7071"/>
+            <host link="VlabArticulation1"/>
+        </site>
+        <site name="VlabSpatialTendon_attachment_4" coefficient="-6.259853398707798e+18" radius="0">
+            <origin xyz="0 0.3 -0.25" rot="0.7071 0 0 0.7071"/>
+            <host link="VlabArticulation1"/>
+        </site>
+        <site name="VlabSpatialTendon_attachment_5" coefficient="-6.259853398707798e+18" radius="0.10000000149011612">
+            <origin xyz="0 0.5 -0.25" rot="-0.7071 -0 0 0.7071"/>
+            <host link="VlabArticulation1"/>
+        </site>
+        <site name="VlabSpatialTendon_attachment_6" coefficient="-6.259853398707798e+18" radius="0">
+            <origin xyz="0 -0.3 -0.25" rot="0.7071 0 0 0.7071"/>
+            <host link="VlabArticulation2"/>
+        </site>
+        <site name="VlabSpatialTendon_attachment_7" coefficient="-6.259853398707798e+18" radius="0">
+            <origin xyz="0 0.5 -0.25" rot="0.7071 0 0 0.7071"/>
+            <host link="VlabArticulation2"/>
+        </site>
+        <connection>
+            <parent site="VlabSpatialTendon_attachment_0"/>
+            <child site="VlabSpatialTendon_attachment_1"/>
+        </connection>
+        <connection>
+            <parent site="VlabSpatialTendon_attachment_1"/>
+            <child site="VlabSpatialTendon_attachment_2"/>
+        </connection>
+        <connection>
+            <parent site="VlabSpatialTendon_attachment_2"/>
+            <child site="VlabSpatialTendon_attachment_3"/>
+        </connection>
+        <connection>
+            <parent site="VlabSpatialTendon_attachment_3"/>
+            <child site="VlabSpatialTendon_attachment_4"/>
+        </connection>
+        <connection>
+            <parent site="VlabSpatialTendon_attachment_4"/>
+            <child site="VlabSpatialTendon_attachment_5"/>
+        </connection>
+        <connection>
+            <parent site="VlabSpatialTendon_attachment_5"/>
+            <child site="VlabSpatialTendon_attachment_6"/>
+        </connection>
+        <connection>
+            <parent site="VlabSpatialTendon_attachment_6"/>
+            <child site="VlabSpatialTendon_attachment_7"/>
+        </connection>
+    </tendon>
+</robot>

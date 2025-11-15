@@ -1,0 +1,132 @@
+<robot name="counter_corner_2_main_group_main" version="0">
+    <!--Materials-->
+    <!--Links-->
+    <robotProperties maxDepenetrationVelocity="10"/>
+    <link name="counter_corner_2_main_group_main">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual name="counter_corner_2_main_group_base_right">
+            <origin xyz="0.3499 0.025 -0.015" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.0002 0.6 0.89"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="counter_corner_2_main_group_base_left">
+            <origin xyz="-0.3499 0.025 -0.015" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.0002 0.6 0.89"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="counter_corner_2_main_group_base_back">
+            <origin xyz="0 0.31 -0.015" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.6996 0.03 0.89"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="counter_corner_2_main_group_base_front">
+            <origin xyz="0 -0.26 -0.015" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.6996 0.03 0.89"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="counter_corner_2_main_group_base_right_visual">
+            <origin xyz="0.3499 0.025 -0.015" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.0002 0.6 0.89"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="counter_corner_2_main_group_base_left_visual">
+            <origin xyz="-0.3499 0.025 -0.015" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.0002 0.6 0.89"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="counter_corner_2_main_group_base_back_visual">
+            <origin xyz="0 0.31 -0.015" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.6996 0.03 0.89"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="counter_corner_2_main_group_base_front_visual">
+            <origin xyz="0 -0.26 -0.015" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.6996 0.03 0.89"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="counter_corner_2_main_group_top_visual">
+            <origin xyz="0 0 0.445" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.7 0.65 0.03"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="counter_corner_2_main_group_top_0">
+            <origin xyz="-0.1 0 0.445" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.5 0.65 0.03"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="counter_corner_2_main_group_top_1">
+            <origin xyz="0.25 0 0.445" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.2 0.65 0.03"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <collision name="counter_corner_2_main_group_base_right">
+            <origin xyz="0.3499 0.025 -0.015" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.0002 0.6 0.89"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="counter_corner_2_main_group_base_left">
+            <origin xyz="-0.3499 0.025 -0.015" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.0002 0.6 0.89"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="counter_corner_2_main_group_base_back">
+            <origin xyz="0 0.31 -0.015" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.6996 0.03 0.89"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="counter_corner_2_main_group_base_front">
+            <origin xyz="0 -0.26 -0.015" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.6996 0.03 0.89"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="counter_corner_2_main_group_top_0">
+            <origin xyz="-0.1 0 0.445" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.5 0.65 0.03"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="counter_corner_2_main_group_top_1">
+            <origin xyz="0.25 0 0.445" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.2 0.65 0.03"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+    </link>
+</robot>

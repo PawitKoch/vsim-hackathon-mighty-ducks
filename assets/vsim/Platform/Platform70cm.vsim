@@ -1,0 +1,38 @@
+<robot name="Platform">
+    <!--Materials-->
+    <material name="VlabPlatformRGB">
+        <color rgba="0.8 0.8 0.8 1"/>
+        <luminescence value="0"/>
+        <specularExponent value="0.01"/>
+        <specularIntensity value="0.01"/>
+    </material>
+    <rigidMaterial name="PlatformFrictionRigid" staticFriction="1" dynamicFriction="0.5" restitution="0"/>
+    <!--Links-->
+    <robotProperties maxDepenetrationVelocity="2.5"/>
+    <link name="VlabRigidBody_0">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="800"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 -0 0" rpy="-0 -0 -0"/>
+            <geometry>
+                <box size="0.7 0.7 0.25"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <rgbMaterialRef name="VlabPlatformRGB"/>
+        </visual>
+        <collision>
+            <origin xyz="0 -0 0" rpy="-0 -0 -0"/>
+            <geometry>
+                <box size="0.7 0.7 0.25"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <rgbMaterialRef name="VlabPlatformRGB"/>
+        </collision>
+        <rigidMaterialRef name="PlatformFrictionRigid"/>
+        <miscellaneous contactOffset="-1" restOffset="0"/>
+    </link>
+</robot>

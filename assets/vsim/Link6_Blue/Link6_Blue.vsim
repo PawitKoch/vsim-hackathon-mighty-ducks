@@ -1,0 +1,36 @@
+<robot name="Link6_Blue">
+    <!--Materials-->
+    <material name="BlueRgbMat">
+        <texture filename="package://Vlab/Textures/VlabTile.png"/>
+        <color rgba="0 0.1016 1 1"/>
+        <luminescence value="0"/>
+        <specular value="144.4"/>
+    </material>
+    <!--Links-->
+    <robotProperties maxDepenetrationVelocity="10"/>
+    <link name="Link6_Blue">
+        <inertial>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <mass value="0"/>
+            <density value="0"/>
+            <inertia ixx="0" iyy="0" izz="0" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 -0 0" rot="-0 0 -0 1"/>
+            <geometry>
+                <mesh filename="package://FrankaBox/franka_panda/meshes/visual/link2.fbx" scale="0.05 0.05 0.05"/>
+                <settings planeNormalTolerance="0.95" inflation="0" minThickness="0.0001" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="true"/>
+            </geometry>
+			<rgbMaterialRef name="BlueRgbMat"/>
+        </visual>
+        <collision>
+            <origin xyz="0 -0 0" rot="-0 0 -0 1"/>
+            <geometry>
+                <triangle_mesh filename="package://FrankaBox/franka_panda/meshes/visual/link6.fbx" scale="0.05 0.05 0.05"/>
+                <queryProperties useQueries="false" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+        <miscellaneous contactOffset="0.005" restOffset="0"/>
+    </link>
+</robot>

@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<robot name="spring">
+
+    <link name="base">
+    <visual>
+      <geometry>
+        <box size="1 0.03 1"/>
+      </geometry>
+      <material name="slider_mat">
+        <color rgba="0.9 0.6 0.2 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="1 0.03 1"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="weight">
+    <visual>
+      <geometry>
+        <box size="0.2 0.2 0.2"/>
+      </geometry>
+      <material name="cart_mat">
+        <color rgba="0.3 0.5 0.7 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+          <box size="0.2 0.2 0.2"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1"/>
+    </inertial>
+  </link>
+
+  <joint name="spring" type="prismatic">
+    <axis xyz="0 1 0"/>
+    <origin xyz="0 0 0"/>
+    <parent link="base"/>
+    <child link="weight"/>
+      <!--<limit effort="100"/>-->
+    <dynamics stiffness="10" damping="100" friction="0" armature="1"/>
+  </joint>
+
+    <actuator>
+        <motor name="drive" joint="spring" gear="150" lowLimit="-1" highLimit="1"/>
+    </actuator>
+
+</robot>

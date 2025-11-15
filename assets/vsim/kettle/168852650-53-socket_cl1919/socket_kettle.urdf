@@ -1,0 +1,39 @@
+<robot name="kettle_socket" version="0">
+    <!--Materials-->
+    <material name="socket_cl1919_color_1">
+        <color rgba="1.92523003761e-07 0.628753066063 0.914699852467 1"/>
+        <luminescence value="0"/>
+        <specularExponent value="40"/>
+        <specularIntensity value="0.25"/>
+    </material>
+    <rigidMaterial name="CompliantMaterial" staticFriction="0.40000000596" dynamicFriction="0.20000000298" restitution="0"/>
+    <!--Links-->
+    <robotProperties maxDepenetrationVelocity="10"/>
+    <link name="kettle_link">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="67.2310028076"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual name="Visual 0">
+            <origin xyz="0 0 0.00999999977648" rpy="3.14159265359 1.36535963077e-05 -1.57159273368"/>
+            <geometry>
+                <mesh filename="package://168852650-53-socket_cl1919/socket_cl1919_with_gap.obj" scale="0.0010000000475 0.0010000000475 0.0010000000475"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <rgbMaterialRef name="socket_cl1919_color_1"/>
+        </visual>
+        <collision name="Collision 0">
+            <origin xyz="0 0 0.00999999977648" rpy="3.14159265359 1.36535963077e-05 -1.57159273368"/>
+            <geometry>
+                <mesh_sdf filename="package://168852650-53-socket_cl1919/socket_cl1919_with_gap.obj" scale="0.0010000000475 0.0010000000475 0.0010000000475"/>
+                <settings maxResPerAxis="1536" targetSamples="2048"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <rigidMaterialRef name="CompliantMaterial"/>
+        <miscellaneous contactOffset="0.001" restOffset="-0.000300000014249"/>
+    </link>
+</robot>

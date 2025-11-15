@@ -1,0 +1,54 @@
+<robot name="Box">
+    <!--Materials-->
+    <material name="VlabBoxRGB">
+        <color rgba="0 0 1 1"/>
+        <luminescence value="0"/>
+        <specularExponent value="0.01"/>
+        <specularIntensity value="0.01"/>
+    </material>
+    <rigidMaterial name="HighFrictionRigid" staticFriction="1" dynamicFriction="0.9" restitution="0"/>
+    <!--Links-->
+    <robotProperties maxDepenetrationVelocity="2.5"/>
+    <link name="VlabRigidBody_0">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="800"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 -0 0" rpy="-0 -0 -0"/>
+            <geometry>
+                <box size="0.015 0.015 0.015"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <rgbMaterialRef name="VlabBoxRGB"/>
+        </visual>
+        <collision>
+            <origin xyz="0 -0 0" rpy="-0 -0 -0"/>
+            <geometry>
+                <box size="0.015 0.015 0.015"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <rgbMaterialRef name="VlabBoxRGB"/>
+        </collision>
+        <rigidMaterialRef name="HighFrictionRigid"/>
+        <miscellaneous contactOffset="0.005" restOffset="0"/>
+    </link>
+    <depthCamera>
+        <camera name="IntelRealsenseD405" type="radial" farClip="10" fovX="1.5184364492350666" fovY="1.0122909661567112" resX="140" resY="80">
+            <stereoscopicDepthFilter spacing="0.018"/>
+        </camera>
+        <!--
+        <camera name="IntelRealsenseD405" type="depth" farClip="10" fovX="1.3"
+        fovY="0.3" resX="280" resY="80">
+            <stereoscopicDepthFilter spacing="0.001"/>
+        </camera>
+        -->
+    </depthCamera>
+
+    <depthCameraInstance>
+        <cameraInstance name="IntelRealsenseD405_instance" camera="IntelRealsenseD405" link="VlabRigidBody_0" xyz="0.0 0.0 -0.03" rpy="0.0 0.0 0.0">
+        </cameraInstance>
+    </depthCameraInstance>
+</robot>  

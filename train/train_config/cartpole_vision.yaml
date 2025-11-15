@@ -1,0 +1,24 @@
+defaults:
+  - _self_
+  - sac: cartpole_vision
+
+envs:
+  _target_: envs.cartpole_environment_vision_SAC.CartpoleEnvironmentVisionSAC
+  num_envs: 128
+  device: cuda:0
+  rendering: True
+  cartpole_asset_vision: assets/vsim/cartpole_rgb/cartpole.vsim
+  rgb_cameras: ["front_cam"]
+  depth_cameras: []
+
+agent:
+  _target_: vlearn.rl_algos.sac.sac_agent.SacAgent
+  params: ${sac}
+  device: cuda:0
+  envs: ${envs}
+  writer_dir: runs/CartpoleVision_train
+  mode: train
+  ckpt: null
+  ckpt_mode: train
+  profile: False
+

@@ -1,0 +1,11 @@
+<environmentDefinition name="so100">
+    <elements>
+        <actor name="box1" xyz="0.0 -0.433 0.265" rot="-0 0 -0 1" isStatic="false" file="/Box_3cm.vsim"/>
+        <actor name="box2" xyz="-0.085 -0.433 0.265" rot="-0 0 -0 1" isStatic="false" file="/Box_3cm_2.vsim"/>
+        <actor name="box3" xyz="0.082 -0.343 0.265" rot="-0 0 -0 1" isStatic="false" file="/Box_3cm_3.vsim"/>
+        <actor name="box4" xyz="-0.15 -0.35 0.265" rot="-0 0 -0 1" isStatic="false" file="/Box_3cm_4.vsim"/>
+        <actor name="box5" xyz="-0.15 -0.433 0.265" rot="-0 0 -0 1" isStatic="false" file="/Box_3cm_5.vsim"/>
+        <actor name="so100" xyz="0 0 0.25" rot="-0 0 -0 1" isStatic="true" file="/so100.vsim"/>
+        <actor name="Platform" xyz="0 0 0" rot="-0 0 -0 1" isStatic="true" file="/../Platform/Platform70cm.vsim"/>
+    </elements>
+</environmentDefinition>

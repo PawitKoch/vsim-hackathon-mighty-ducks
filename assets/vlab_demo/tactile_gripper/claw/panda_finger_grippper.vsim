@@ -1,0 +1,26 @@
+<robot name="gripper" version="0">
+    <!--Materials-->
+    <material name="DefaultMaterial">
+        <color rgba="1 1 1 1"/>
+        <luminescence value="0"/>
+        <specularExponent value="40"/>
+        <specularIntensity value="0.25"/>
+    </material>
+    <deformableMaterial name="DeformableMaterial" youngsModulus="100000000" poissonRatio="0.449999988079" damping="80000" friction="1"/>
+    <!--Links-->
+    <robotProperties maxDepenetrationVelocity="10"/>
+    <deformables>
+        <deformable name="Deformable" density="800" voxelSize="0.00400000018999" xyz="0 0 0" rpy="0 -0 0">
+            <collision>
+                <origin xyz="0 0 0" rpy="0 -0 0"/>
+                <geometry>
+                    <mesh_sdf filename="package://tactile_gripper/finger_gripper.stl" scale="1 1 1"/>
+                    <settings maxResPerAxis="128" targetSamples="1024"/>
+                    <queryProperties useQueries="false"/>
+                </geometry>
+                <rgbMaterialRef name="DefaultMaterial"/>
+            </collision>
+            <deformableMaterialRef name="DeformableMaterial"/>
+        </deformable>
+    </deformables>
+</robot>

@@ -1,0 +1,78 @@
+<environment name="EnvironmentRoot" version="0">
+    <elements>
+        <plane name="GroundPlane" xyz="0 0 0" rot="0 0 0.707106769085 0.707106769085" file="" scale="1 1 1">
+            <rigidMaterial name="" staticFriction="0.5" dynamicFriction="0.5" restitution="0.10000000149"/>
+            <material name="">
+                <texture filename="package://tower/vsim_tile.png"/>
+                <color rgba="1 1 1 1"/>
+                <luminescence value="0"/>
+                <specularExponent value="40"/>
+                <specularIntensity value="0.25"/>
+            </material>
+        </plane>
+        <renderingContext name="RenderingContext">
+            <skybox positiveX="package://tower/daylight_box_right.png" negativeX="package://tower/daylight_box_left.png" positiveY="package://tower/daylight_box_top.png" negativeY="package://tower/daylight_box_bottom.png" positiveZ="package://tower/daylight_box_back.png" negativeZ="package://tower/daylight_box_front.png"/>
+        </renderingContext>
+        <light name="PointLight_def" type="pointLight" color="1 1 1 1" castShadow="true" ambient="0" constant_atten="1" linear_atten="0" quadratic_atten="0"/>
+        <lightInstance name="PointLight" light="PointLight_def" link="" xyz="0 2 0" rpy="0 -0 0"/>
+        <actor name="Platform" xyz="0 -0.248999997973 0" rot="-0.707106769085 0 0 0.707106769085" file="package://SO100/Platform/Platform70cm.vsim" isStatic="true"/>
+        <actor name="so_arm100" xyz="0 0 0" rot="-0.707106769085 0 0 0.707106769085" file="package://tower/so100.vsim" isStatic="true"/>
+        <actor name="box1" xyz="-0.10371234268 0.01600000076 0.25" rot="-0.707106769085 0 0 0.707106769085" file="package://tower/Box_3cm.vsim"/>
+        <actor name="box2" xyz="0.0978694558144 0.01600000076 0.252426952124" rot="-0.707106769085 0 0 0.707106769085" file="package://tower/Box_3cm_2.vsim"/>
+        <actor name="box3" xyz="0.0986397862434 0.0759999975562 0.252426952124" rot="-0.707106769085 0 0 0.707106769085" file="package://tower/Box_3cm_3.vsim"/>
+        <actor name="box4" xyz="0.0986397862434 0.0460000000894 0.252426952124" rot="-0.707106769085 0 0 0.707106769085" file="package://tower/Box_3cm_4.vsim"/>
+        <actor name="box5" xyz="0.0986397862434 0.105999998748 0.252426952124" rot="-0.707106769085 0 0 0.707106769085" file="package://tower/Box_3cm_5.vsim"/>
+        <vlab:customElement>
+            <name>Camera3D</name>
+            <type>Camera3D</type>
+            <parent>.</parent>
+            <owner>.</owner>
+            <transform>Transform3D(0.80094, -0.276358, 0.53115, 0, 0.887107, 0.461563, -0.598744, -0.369684, 0.71052, 0.303872, 0.256214, 0.678253)</transform>
+        </vlab:customElement>
+        <vlab:customElement>
+            <name>EndpointJointState</name>
+            <type>EndpointJointState</type>
+            <parent>.</parent>
+            <owner>.</owner>
+            <is_publisher>true</is_publisher>
+            <is_subscriber>true</is_subscriber>
+            <publish_topic>"joint_states"</publish_topic>
+            <subscribe_topic>"joint_targets"</subscribe_topic>
+            <debug_print>true</debug_print>
+            <num_joints>6</num_joints>
+            <joints>
+                <_0_>
+                    <joint_child>NodePath("../so_arm100/base/shoulder")</joint_child>
+                    <override_name>""</override_name>
+                    <multiplier>1.0</multiplier>
+                </_0_>
+                <_1_>
+                    <joint_child>NodePath("../so_arm100/base/shoulder/upper_arm")</joint_child>
+                    <override_name>""</override_name>
+                    <multiplier>1.0</multiplier>
+                </_1_>
+                <_2_>
+                    <joint_child>NodePath("../so_arm100/base/shoulder/upper_arm/lower_arm")</joint_child>
+                    <override_name>""</override_name>
+                    <multiplier>1.0</multiplier>
+                </_2_>
+                <_3_>
+                    <joint_child>NodePath("../so_arm100/base/shoulder/upper_arm/lower_arm/wrist")</joint_child>
+                    <override_name>""</override_name>
+                    <multiplier>1.0</multiplier>
+                </_3_>
+                <_4_>
+                    <joint_child>NodePath("../so_arm100/base/shoulder/upper_arm/lower_arm/wrist/gripper")</joint_child>
+                    <override_name>""</override_name>
+                    <multiplier>1.0</multiplier>
+                </_4_>
+                <_5_>
+                    <joint_child>NodePath("../so_arm100/base/shoulder/upper_arm/lower_arm/wrist/gripper/jaw")</joint_child>
+                    <override_name>""</override_name>
+                    <multiplier>1.0</multiplier>
+                </_5_>
+            </joints>
+        </vlab:customElement>
+    </elements>
+    <settings numSolverIterations="128"/>
+</environment>

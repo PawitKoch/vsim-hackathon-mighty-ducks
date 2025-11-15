@@ -1,0 +1,380 @@
+<robot name="so_arm100" version="0">
+    <!--Materials-->
+    <material name="DefaultMaterial">
+        <color rgba="0.677999973297 0 0 1"/>
+        <luminescence value="0"/>
+        <specularExponent value="0.00999999977648"/>
+        <specularIntensity value="0.00999999977648"/>
+    </material>
+    <rigidMaterial name="RigidPhysicsMaterial" staticFriction="0.5" dynamicFriction="0.5" restitution="0.10000000149"/>
+    <rigidMaterial name="RigidPhysicsMaterial 2" staticFriction="0.5" dynamicFriction="0.5" restitution="0.10000000149"/>
+    <rigidMaterial name="RigidPhysicsMaterial 3" staticFriction="0.5" dynamicFriction="0.5" restitution="0.10000000149"/>
+    <rigidMaterial name="RigidPhysicsMaterial 4" staticFriction="0.5" dynamicFriction="0.5" restitution="0.10000000149"/>
+    <rigidMaterial name="RigidPhysicsMaterial 5" staticFriction="0.5" dynamicFriction="0.5" restitution="0.10000000149"/>
+    <rigidMaterial name="HighFrictionRigid" staticFriction="10" dynamicFriction="10" restitution="0"/>
+    <!--Links-->
+    <robotProperties maxDepenetrationVelocity="10"/>
+    <link name="base">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="800"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual name="Visual 0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <mesh filename="package://SO100/assets/Base.stl" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <rgbMaterialRef name="DefaultMaterial"/>
+        </visual>
+        <visual name="Visual 1">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <mesh filename="package://SO100/assets/Base_Motor.stl" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <rgbMaterialRef name="DefaultMaterial"/>
+        </visual>
+        <collision name="Collision 0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <mesh filename="package://SO100/assets/Base.stl" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <rgbMaterialRef name="DefaultMaterial"/>
+        </collision>
+        <rigidMaterialRef name="RigidPhysicsMaterial"/>
+        <miscellaneous contactOffset="0.00499999988824"/>
+    </link>
+    <link name="shoulder">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="800"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual name="Visual 0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <mesh filename="package://SO100/assets/Rotation_Pitch.stl" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <rgbMaterialRef name="DefaultMaterial"/>
+        </visual>
+        <visual name="Visual 1">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <mesh filename="package://SO100/assets/Rotation_Pitch_Motor.stl" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <rgbMaterialRef name="DefaultMaterial"/>
+        </visual>
+        <collision name="Collision 0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <mesh filename="package://SO100/assets/Rotation_Pitch.stl" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+        </collision>
+        <rigidMaterialRef name="RigidPhysicsMaterial 2"/>
+        <miscellaneous contactOffset="0.00499999988824"/>
+    </link>
+    <link name="upper_arm">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="800"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual name="Visual 0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <mesh filename="package://SO100/assets/Upper_Arm.stl" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <rgbMaterialRef name="DefaultMaterial"/>
+        </visual>
+        <visual name="Visual 1">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <mesh filename="package://SO100/assets/Upper_Arm_Motor.stl" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+            <rgbMaterialRef name="DefaultMaterial"/>
+        </visual>
+        <collision name="Collision 0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <mesh filename="package://SO100/assets/Upper_Arm.stl" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <rigidMaterialRef name="RigidPhysicsMaterial 3"/>
+        <miscellaneous contactOffset="0.00499999988824"/>
+    </link>
+    <link name="lower_arm">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="800"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual name="Visual 0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <mesh filename="package://SO100/assets/Lower_Arm.stl" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <rgbMaterialRef name="DefaultMaterial"/>
+        </visual>
+        <visual name="Visual 1">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <mesh filename="package://SO100/assets/Lower_Arm_Motor.stl" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <rgbMaterialRef name="DefaultMaterial"/>
+        </visual>
+        <collision name="Collision 0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <mesh filename="package://SO100/assets/Lower_Arm.stl" scale="1 1 1"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <rigidMaterialRef name="RigidPhysicsMaterial 4"/>
+        <miscellaneous contactOffset="0.00499999988824"/>
+    </link>
+    <link name="wrist">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="800"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual name="Visual 0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <mesh filename="package://SO100/assets/Wrist_Pitch_Roll.stl" scale="1 0.999999463558 0.999999463558"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <rgbMaterialRef name="DefaultMaterial"/>
+        </visual>
+        <visual name="Visual 1">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <mesh filename="package://SO100/assets/Wrist_Pitch_Roll_Motor.stl" scale="1 0.999999463558 0.999999463558"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <rgbMaterialRef name="DefaultMaterial"/>
+        </visual>
+        <collision name="Collision 0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <mesh filename="package://SO100/assets/Wrist_Pitch_Roll.stl" scale="1 0.999999463558 0.999999463558"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <rigidMaterialRef name="RigidPhysicsMaterial 5"/>
+        <miscellaneous contactOffset="0.00499999988824"/>
+    </link>
+    <link name="gripper">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="800"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual name="Visual 0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <mesh filename="package://SO100/assets/Fixed_Jaw.stl" scale="0.999999463558 0.999999463558 1"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <rgbMaterialRef name="DefaultMaterial"/>
+        </visual>
+        <visual name="Visual 1">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <mesh filename="package://SO100/assets/Fixed_Jaw_Motor.stl" scale="0.999999463558 0.999999463558 1"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <rgbMaterialRef name="DefaultMaterial"/>
+        </visual>
+        <collision name="Collision 0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <mesh_sdf filename="package://SO100/assets/Fixed_Jaw.stl" scale="0.999999463558 0.999999463558 1"/>
+                <settings maxResPerAxis="512" targetSamples="2048"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <rigidMaterialRef name="HighFrictionRigid"/>
+        <miscellaneous contactOffset="0.00499999988824"/>
+    </link>
+    <link name="jaw">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="800"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual name="Visual 0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <mesh filename="package://SO100/assets/Moving_Jaw.stl" scale="0.999999463558 0.999999463558 1"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="true" layer="268435454" mask="4294967295"/>
+            </geometry>
+            <rgbMaterialRef name="DefaultMaterial"/>
+        </visual>
+        <collision name="Collision 0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <mesh_sdf filename="package://SO100/assets/Moving_Jaw.stl" scale="0.999999463558 0.999999463558 1"/>
+                <settings maxResPerAxis="512" targetSamples="2048"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <rigidMaterialRef name="HighFrictionRigid"/>
+        <miscellaneous contactOffset="0.00499999988824"/>
+    </link>
+    <joint name="shoulder_pan" type="revolute">
+        <child link="shoulder"/>
+        <parent link="base"/>
+        <origin xyz="0 -0.0452000014484 0.0164998807013" rpy="1.57079632679 -0 0"/>
+        <linkTransform xyz="0 -0.045200000466 0.0164999028038" rpy="1.57079637051 -0 0"/>
+        <axis xyz="0 1 0"/>
+        <limit lower="-2" upper="2" effort="35" velocity="0.698000013828"/>
+        <dynamics damping="5" stiffness="5000" integral="0" friction="0" frictionLoss="0" armature="0"/>
+    </joint>
+    <joint name="shoulder_lift" type="revolute">
+        <child link="upper_arm"/>
+        <parent link="shoulder"/>
+        <origin xyz="0 0.10250005126 0.0305999964476" rpy="-1.79999999017 0 0"/>
+        <linkTransform xyz="0 0.102500099164 0.0305999956924" rpy="-1.80000003388 0 0"/>
+        <axis xyz="1 0 0"/>
+        <limit lower="0" upper="3.5" effort="35" velocity="0.698000013828"/>
+        <dynamics damping="5" stiffness="5000" integral="0" friction="0" frictionLoss="0" armature="0"/>
+    </joint>
+    <joint name="elbow_flex" type="revolute">
+        <child link="lower_arm"/>
+        <parent link="upper_arm"/>
+        <origin xyz="0 0.112570233643 0.0279996953905" rpy="1.57078815031 -0 0"/>
+        <linkTransform xyz="0 0.112570267386 0.0279996668489" rpy="1.57079634558 -0 0"/>
+        <axis xyz="1 0 0"/>
+        <limit lower="-3.14158010483" upper="0" effort="35" velocity="0.698000013828"/>
+        <dynamics damping="5" stiffness="5000" integral="0" friction="0" frictionLoss="0" armature="0"/>
+    </joint>
+    <joint name="wrist_flex" type="revolute">
+        <child link="wrist"/>
+        <parent link="lower_arm"/>
+        <origin xyz="0 0.00520034274086 0.134899839759" rpy="-1.00000003049 0 0"/>
+        <linkTransform xyz="0 0.00520032721403 0.134899813848" rpy="-1.00000001169 0 0"/>
+        <axis xyz="1 0 0"/>
+        <limit lower="-2.5" upper="1.20000004768" effort="35" velocity="0.698000013828"/>
+        <dynamics damping="5" stiffness="5000" integral="0" friction="0" frictionLoss="0" armature="0"/>
+    </joint>
+    <joint name="wrist_roll" type="revolute">
+        <child link="gripper"/>
+        <parent link="wrist"/>
+        <origin xyz="-8.98369920121e-14 -0.060100119561 8.54364898828e-08" rpy="-1.27415254391e-06 1.57079008906 0"/>
+        <linkTransform xyz="-4.8654583134e-17 -0.060100098982 3.00015914889e-08" rpy="-2.31283227357e-07 1.57079007623 0"/>
+        <axis xyz="0 1 0"/>
+        <limit lower="-3.14158010483" upper="3.14158010483" effort="35" velocity="0.698000013828"/>
+        <dynamics damping="5" stiffness="5000" integral="0" friction="0" frictionLoss="0" armature="0"/>
+    </joint>
+    <joint name="gripper" type="revolute">
+        <child link="jaw"/>
+        <parent link="gripper"/>
+        <origin xyz="-0.0201999153942 -0.0243999902159 2.66646260627e-08" rpy="-3.14159235669 1.41950213023e-05 -3.14159166896"/>
+        <linkTransform xyz="-0.0201999948641 -0.0243999951356 6.43971963541e-08" rpy="3.14159234244 1.25740020504e-05 -3.14159258473"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-0.20000000298" upper="2" effort="35" velocity="0.698000013828"/>
+        <dynamics damping="5" stiffness="500" integral="0" friction="0" frictionLoss="0" armature="0"/>
+    </joint>
+    <forceSensor>
+        <sensor name="jaw_sensor" link="jaw" offset="0 0 0" flags="contact"/>
+        <sensor name="gripper_sensor" link="gripper" offset="0 0 0" flags="contact"/>
+        <sensor name="wrist_sensor" link="wrist" offset="0 0 0" flags="contact"/>
+    </forceSensor>
+    <kinematicSensor>
+        <sensor name="end_effector_offset_sensor" link="gripper" offset="-4.80843944062e-05 -0.10366871847 2.35659480805e-07" flags="transform velocity"/>
+    </kinematicSensor>
+    <Lights>
+        <light name="PointLight_def" type="pointLight" color="1 1 1 1" castShadow="false" ambient="0" constant_atten="1" linear_atten="0" quadratic_atten="0"/>
+        <light name="PointLight 3_def" type="pointLight" color="1 1 1 1" castShadow="false" ambient="0" constant_atten="1" linear_atten="0" quadratic_atten="0"/>
+        <light name="PointLight 2_def" type="pointLight" color="1 1 1 1" castShadow="false" ambient="0" constant_atten="1" linear_atten="0" quadratic_atten="0"/>
+    </Lights>
+    <LightInstances>
+        <lightInstance name="PointLight" light="PointLight_def" link="gripper" xyz="-0.0374705195427 -0.105391874909 -0.118849053979" rpy="5.96046465517e-08 -5.9604642999e-08 -5.96046465517e-08"/>
+        <lightInstance name="PointLight 3" light="PointLight 3_def" link="gripper" xyz="-0.0260053612292 -0.0731449276209 -0.0285977441818" rpy="5.96046465517e-08 -5.9604642999e-08 -5.96046465517e-08"/>
+        <lightInstance name="PointLight 2" light="PointLight 2_def" link="base" xyz="0.176733672619 -0.356445074081 0.134412884712" rpy="0 -0 0"/>
+    </LightInstances>
+    <rgbCamera>
+        <camera name="RGBCamera_def" type="pinhole" postFilter="ambient_occlusion" farClip="3" fovX="1.3962633609771729" fovY="1.0471975803375244" resX="80" resY="60"/>
+    </rgbCamera>
+    <rgbCameraInstance>
+        <cameraInstance name="RGBCamera" camera="RGBCamera_def" link="gripper" xyz="-0.0022819750011 -0.0387038514018 -0.0670904293656" rpy="-2.01539444942 -0.00674657332152 -0.00640544968942">
+            <LightInstance>
+                <instance name="PointLight 3"/>
+                <instance name="PointLight 2"/>
+                <instance name="PointLight 3"/>
+            </LightInstance>
+        </cameraInstance>
+    </rgbCameraInstance>
+    <customElements>
+        <vlab:customElement>
+            <name>fake_camera</name>
+            <type>ArticulationLink</type>
+            <parent>base/shoulder/upper_arm/lower_arm/wrist/gripper/jaw</parent>
+            <owner>.</owner>
+            <enabled>false</enabled>
+            <transform>Transform3D(0.00799087, 0.0163708, -0.999834, -0.331212, 0.94347, 0.0128008, 0.943523, 0.331055, 0.0129613, -0.0195281, 0.0244644, -0.0008585)</transform>
+            <physics_material>Object(RigidPhysicsMaterial,"resource_local_to_scene":false,"resource_name":"RigidPhysicsMaterial 6","static_friction":0.5,"dynamic_friction":0.5,"is_compliant":false,"stiffness":0.0,"damping":0.0,"script":null)
+</physics_material>
+            <joint_name>"jaw_to_fake_camera"</joint_name>
+        </vlab:customElement>
+        <vlab:customElement>
+            <name>WristCamMount32x32UvcModuleSo101</name>
+            <type>VisualMeshInstance</type>
+            <parent>base/shoulder/upper_arm/lower_arm/wrist/gripper/jaw/fake_camera</parent>
+            <owner>.</owner>
+            <enabled>false</enabled>
+            <transform>Transform3D(-1.88351e-08, 0.000942222, 0.000334988, 2.08616e-10, 0.000334988, -0.000942222, -0.001, -1.77026e-08, -6.55651e-09, 0, 0, 0)</transform>
+            <visible>false</visible>
+            <material_override>Object(VisualMaterial,"resource_local_to_scene":false,"resource_name":"VisualMaterial","render_priority":0,"next_pass":null,"color":Color(0.543805, 0.325632, 0.685739, 1),"color_texture":null,"luminescence":0.0,"specular_exponent":40.0,"specular_intensity":0.25,"is_cinematic_material":false,"script":null)
+</material_override>
+            <observable>false</observable>
+            <mesh>Resource("res://Wrist_Cam_Mount_32x32_UVC_Module_SO101-a3b1417e0081fe1b6a7cf69932f8ec89.stl")</mesh>
+        </vlab:customElement>
+        <vlab:customElement>
+            <name>EndpointImage</name>
+            <type>EndpointImage</type>
+            <parent>base/shoulder/upper_arm/lower_arm/wrist/gripper/RGBCamera</parent>
+            <owner>.</owner>
+            <is_publisher>true</is_publisher>
+            <publish_topic>"Image"</publish_topic>
+            <camera>NodePath("..")</camera>
+        </vlab:customElement>
+    </customElements>
+</robot>

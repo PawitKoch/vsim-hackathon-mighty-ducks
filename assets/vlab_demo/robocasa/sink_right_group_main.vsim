@@ -1,0 +1,301 @@
+<robot name="sink_right_group_main" version="0">
+    <!--Materials-->
+    <!--Links-->
+    <robotProperties maxDepenetrationVelocity="10"/>
+    <link name="sink_right_group_main">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual name="sink_right_group_g0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <mesh filename="/home/vsim_remote/Documents/robocasa/robocasa/models/assets/fixtures/sinks/concrete_sink/visuals/model_0.obj" scale="0.916666666667 0.916666666667 0.916666666667"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="sink_right_group_bottom">
+            <origin xyz="0.22 0 -0.238333333333" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.366666666667 0.44 0.0229166666667"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="sink_right_group_g2">
+            <origin xyz="0.0229166666667 0 -0.1375" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.0229166666667 0.44 0.183333333333"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="sink_right_group_g3">
+            <origin xyz="0.430833333333 0 -0.0733333333333" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.055 0.55 0.0696666666667"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="sink_right_group_g4">
+            <origin xyz="0.430833333333 0 -0.1925" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.055 0.476666666667 0.183333333333"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="sink_right_group_g5">
+            <origin xyz="0.22 -0.23375 -0.165" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.403333333333 0.0183333333333 0.253"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="sink_right_group_g6">
+            <origin xyz="0.22 -0.252083333333 -0.0916666666667" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.403333333333 0.055 0.106333333333"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="sink_right_group_g7">
+            <origin xyz="0.22 0.249333333333 -0.165" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.366666666667 0.055 0.253"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="sink_right_group_g8">
+            <origin xyz="-0.210833333333 0 -0.1375" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.476666666667 0.55 0.198"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="sink_right_group_g9">
+            <origin xyz="-0.00916666666667 0.224583333333 0.00916666666667" rpy="0 -1.57079632679 0"/>
+            <geometry>
+                <cylinder length="0.11" radius="0.0320833333333"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <collision name="sink_right_group_bottom">
+            <origin xyz="0.22 0 -0.238333333333" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.366666666667 0.44 0.0229166666667"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="sink_right_group_g2">
+            <origin xyz="0.0229166666667 0 -0.1375" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.0229166666667 0.44 0.183333333333"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="sink_right_group_g3">
+            <origin xyz="0.430833333333 0 -0.0733333333333" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.055 0.55 0.0696666666667"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="sink_right_group_g4">
+            <origin xyz="0.430833333333 0 -0.1925" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.055 0.476666666667 0.183333333333"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="sink_right_group_g5">
+            <origin xyz="0.22 -0.23375 -0.165" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.403333333333 0.0183333333333 0.253"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="sink_right_group_g6">
+            <origin xyz="0.22 -0.252083333333 -0.0916666666667" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.403333333333 0.055 0.106333333333"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="sink_right_group_g7">
+            <origin xyz="0.22 0.249333333333 -0.165" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.366666666667 0.055 0.253"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="sink_right_group_g8">
+            <origin xyz="-0.210833333333 0 -0.1375" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.476666666667 0.55 0.198"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="sink_right_group_g9">
+            <origin xyz="-0.00916666666667 0.224583333333 0.00916666666667" rpy="0 -1.57079632679 0"/>
+            <geometry>
+                <cylinder length="0.11" radius="0.0320833333333"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="sink_right_group_spout">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual name="sink_right_group_g10">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <mesh filename="/home/vsim_remote/Documents/robocasa/robocasa/models/assets/fixtures/sinks/concrete_sink/visuals/spout_0.obj" scale="0.916666666667 0.916666666667 0.916666666667"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="sink_right_group_g11">
+            <origin xyz="-0.00825 0.2255 0.146666666667" rpy="0 -1.57079632679 0"/>
+            <geometry>
+                <cylinder length="0.146666666667" radius="0.0183333333333"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="sink_right_group_g12">
+            <origin xyz="0.00458333333333 0.210833333333 0.256666666667" rpy="1.06274414133 -0.628333903135 -0.812469472342"/>
+            <geometry>
+                <cylinder length="0.0733333333333" radius="0.0183333333333"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="sink_right_group_spout_top">
+            <origin xyz="0.0825 0.1375 0.275" rpy="1.5702334629 -0.000563312203389 -0.785796168261"/>
+            <geometry>
+                <cylinder length="0.1375" radius="0.0183333333333"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="sink_right_group_g14">
+            <origin xyz="0.1375 0.0825 0.2475" rpy="0 -1.57079632679 0"/>
+            <geometry>
+                <cylinder length="0.0733333333333" radius="0.0183333333333"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <collision name="sink_right_group_g11">
+            <origin xyz="-0.00825 0.2255 0.146666666667" rpy="0 -1.57079632679 0"/>
+            <geometry>
+                <cylinder length="0.146666666667" radius="0.0183333333333"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="sink_right_group_g12">
+            <origin xyz="0.00458333333333 0.210833333333 0.256666666667" rpy="1.06274414133 -0.628333903135 -0.812469472342"/>
+            <geometry>
+                <cylinder length="0.0733333333333" radius="0.0183333333333"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="sink_right_group_spout_top">
+            <origin xyz="0.0825 0.1375 0.275" rpy="1.5702334629 -0.000563312203389 -0.785796168261"/>
+            <geometry>
+                <cylinder length="0.1375" radius="0.0183333333333"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="sink_right_group_g14">
+            <origin xyz="0.1375 0.0825 0.2475" rpy="0 -1.57079632679 0"/>
+            <geometry>
+                <cylinder length="0.0733333333333" radius="0.0183333333333"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="sink_right_group_handle">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual name="sink_right_group_g15">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <mesh filename="/home/vsim_remote/Documents/robocasa/robocasa/models/assets/fixtures/sinks/concrete_sink/visuals/handle_0.obj" scale="0.916666666667 0.916666666667 0.916666666667"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="sink_right_group_g16">
+            <origin xyz="0.06875 0.2255 0.0155833333333" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.0275 0.055 0.055"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="sink_right_group_handle_main">
+            <origin xyz="0.0733333333333 0.2255 0.0733333333333" rpy="0 -1.57079632679 0"/>
+            <geometry>
+                <cylinder length="0.055" radius="0.00916666666667"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <collision name="sink_right_group_g16">
+            <origin xyz="0.06875 0.2255 0.0155833333333" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.0275 0.055 0.055"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="sink_right_group_handle_main">
+            <origin xyz="0.0733333333333 0.2255 0.0733333333333" rpy="0 -1.57079632679 0"/>
+            <geometry>
+                <cylinder length="0.055" radius="0.00916666666667"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="Dummy0">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="0"/>
+            <density value="-1"/>
+            <inertia ixx="0" iyy="0" izz="0" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+    </link>
+    <joint name="sink_right_group_spout_joint" type="continuous">
+        <child link="sink_right_group_spout"/>
+        <parent link="sink_right_group_main"/>
+        <origin xyz="-0.00825 0.2255 0.146666666667" rpy="0 -0 0"/>
+        <linkTransform xyz="0 0 0" rpy="0 -0 0"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="1" upper="0" effort="1.79769313486e+308" velocity="30"/>
+        <dynamics damping="10" stiffness="0" integral="0" friction="0" frictionLoss="0" armature="0"/>
+    </joint>
+    <joint name="sink_right_group_handle_joint" type="revolute">
+        <child link="Dummy0"/>
+        <parent link="sink_right_group_main"/>
+        <origin xyz="0.055 0.2255 0.0366666666667" rpy="0 -0 0"/>
+        <linkTransform xyz="0 0 0" rpy="0 -0 0"/>
+        <axis xyz="0 1 0"/>
+        <limit lower="0" upper="0.52" effort="1.79769313486e+308" velocity="30"/>
+        <dynamics damping="10" stiffness="0" integral="0" friction="0" frictionLoss="0" armature="0"/>
+    </joint>
+    <joint name="sink_right_group_handle_temp_joint" type="revolute">
+        <child link="sink_right_group_handle"/>
+        <parent link="Dummy0"/>
+        <origin xyz="0 0 0" rpy="0 -0 0"/>
+        <linkTransform xyz="0 0 0" rpy="0 -0 0"/>
+        <axis xyz="1 0 0"/>
+        <limit lower="-0.785" upper="0.785" effort="1.79769313486e+308" velocity="30"/>
+        <dynamics damping="50" stiffness="0" integral="0" friction="0" frictionLoss="0" armature="0"/>
+    </joint>
+    <filter>
+        <pair link0="sink_right_group_main" link1="sink_right_group_handle"/>
+    </filter>
+</robot>

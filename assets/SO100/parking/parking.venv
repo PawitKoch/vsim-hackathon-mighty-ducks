@@ -1,0 +1,9 @@
+<environmentDefinition name="so100">
+    <elements>
+        <actor name="car" xyz="0.0 -0.378 0.265" rot="-0 0 -0 1" isStatic="false" file="/Box_3cm.vsim"/>
+        <actor name="obstacle1" xyz="-0.04 -0.48 0.265" rot="-0 0 -0 1" isStatic="false" file="/Box_3cm_2.vsim"/>
+        <actor name="obstacle2" xyz="0.04 -0.48 0.265" rot="-0 0 -0 1" isStatic="false" file="/Box_3cm_3.vsim"/>
+        <actor name="so100" xyz="0 0 0.25" rot="-0 0 -0 1" isStatic="true" file="/so100.vsim"/>
+        <actor name="Platform" xyz="0 0 0" rot="-0 0 -0 1" isStatic="true" file="/../Platform/Platform70cm.vsim"/>
+    </elements>
+</environmentDefinition>

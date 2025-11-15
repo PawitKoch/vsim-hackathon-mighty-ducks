@@ -1,0 +1,514 @@
+<robot name="torso">
+    <link name="torso">
+        <inertial>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <mass value="-1"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0.7071 0.7071"/>
+            <geometry>
+                <capsule length="0.07" radius="0.07"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="0 0 0.19" rot="0 0 0 1"/>
+            <geometry>
+                <sphere radius="0.09"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="-0.01 0 -0.12" rot="0 0 0.7071 0.7071"/>
+            <geometry>
+                <capsule length="0.06" radius="0.06"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="lwaist">
+        <inertial>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <mass value="-1"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0.7071 0.7071"/>
+            <geometry>
+                <capsule length="0.06" radius="0.06"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="pelvis">
+        <inertial>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <mass value="-1"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <collision>
+            <origin xyz="-0.02 0 0" rot="0 0 0.7071 0.7071"/>
+            <geometry>
+                <capsule length="0.07" radius="0.09"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="right_thigh">
+        <inertial>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <mass value="-1"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <collision>
+            <origin xyz="0 0.005 -0.17" rot="0 0.7068 0.02079 0.7071"/>
+            <geometry>
+                <capsule length="0.1701" radius="0.06"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="right_shin">
+        <inertial>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <mass value="-1"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <collision>
+            <origin xyz="0 0 -0.15" rot="0 0.7071 0 0.7071"/>
+            <geometry>
+                <capsule length="0.15" radius="0.049"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="right_foot">
+        <inertial>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <mass value="-1"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <collision>
+            <origin xyz="0.035 -0.03 0" rot="0 0 -0.04746 0.9989"/>
+            <geometry>
+                <capsule length="0.1055" radius="0.027"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="0.035 0.01 0" rot="0 0 0.04746 0.9989"/>
+            <geometry>
+                <capsule length="0.1055" radius="0.027"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="left_thigh">
+        <inertial>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <mass value="-1"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <collision>
+            <origin xyz="0 -0.005 -0.17" rot="0 0.7068 -0.02079 0.7071"/>
+            <geometry>
+                <capsule length="0.1701" radius="0.06"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="left_shin">
+        <inertial>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <mass value="-1"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <collision>
+            <origin xyz="0 0 -0.15" rot="0 0.7071 0 0.7071"/>
+            <geometry>
+                <capsule length="0.15" radius="0.049"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="left_foot">
+        <inertial>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <mass value="-1"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <collision>
+            <origin xyz="0.035 0.03 0" rot="0 0 0.04746 0.9989"/>
+            <geometry>
+                <capsule length="0.1055" radius="0.027"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="0.035 -0.01 0" rot="0 0 -0.04746 0.9989"/>
+            <geometry>
+                <capsule length="0.1055" radius="0.027"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="right_upper_arm">
+        <inertial>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <mass value="-1"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <collision>
+            <origin xyz="0.08 -0.08 -0.08" rot="0 0.3251 -0.3251 0.8881"/>
+            <geometry>
+                <capsule length="0.1386" radius="0.04"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="right_lower_arm">
+        <inertial>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <mass value="-1"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <collision>
+            <origin xyz="0.09 0.09 0.09" rot="0 -0.3251 0.3251 0.8881"/>
+            <geometry>
+                <capsule length="0.1386" radius="0.031"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="0.18 0.18 0.18" rot="0 0 0 1"/>
+            <geometry>
+                <sphere radius="0.04"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="left_upper_arm">
+        <inertial>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <mass value="-1"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <collision>
+            <origin xyz="0.08 0.08 -0.08" rot="0 0.3251 0.3251 0.8881"/>
+            <geometry>
+                <capsule length="0.1386" radius="0.04"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="left_lower_arm">
+        <inertial>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <mass value="-1"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <collision>
+            <origin xyz="0.09 -0.09 0.09" rot="0 -0.3251 -0.3251 0.8881"/>
+            <geometry>
+                <capsule length="0.1386" radius="0.031"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="0.18 -0.18 0.18" rot="0 0 0 1"/>
+            <geometry>
+                <sphere radius="0.04"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="Dummy0">
+        <inertial>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <mass value="0"/>
+            <density value="-1"/>
+            <inertia ixx="0" iyy="0" izz="0" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+    </link>
+    <link name="Dummy1">
+        <inertial>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <mass value="0"/>
+            <density value="-1"/>
+            <inertia ixx="0" iyy="0" izz="0" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+    </link>
+    <link name="Dummy2">
+        <inertial>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <mass value="0"/>
+            <density value="-1"/>
+            <inertia ixx="0" iyy="0" izz="0" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+    </link>
+    <link name="Dummy3">
+        <inertial>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <mass value="0"/>
+            <density value="-1"/>
+            <inertia ixx="0" iyy="0" izz="0" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+    </link>
+    <link name="Dummy4">
+        <inertial>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <mass value="0"/>
+            <density value="-1"/>
+            <inertia ixx="0" iyy="0" izz="0" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+    </link>
+    <link name="Dummy5">
+        <inertial>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <mass value="0"/>
+            <density value="-1"/>
+            <inertia ixx="0" iyy="0" izz="0" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+    </link>
+    <link name="Dummy6">
+        <inertial>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <mass value="0"/>
+            <density value="-1"/>
+            <inertia ixx="0" iyy="0" izz="0" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+    </link>
+    <link name="Dummy7">
+        <inertial>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <mass value="0"/>
+            <density value="-1"/>
+            <inertia ixx="0" iyy="0" izz="0" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+    </link>
+    <link name="Dummy8">
+        <inertial>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <mass value="0"/>
+            <density value="-1"/>
+            <inertia ixx="0" iyy="0" izz="0" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+    </link>
+    <joint name="abdomen_z" type="fixed">
+        <child link="Dummy2"/>
+        <parent link="torso"/>
+        <origin xyz="-0.01026 0 -0.195" rot="0 -0.002 0 1"/>
+        <linkTransform xyz="-0.01 0 -0.26" rot="0 -0.002 0 1"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-0.7854" upper="0.7854" effort="1.798e+308" velocity="30"/>
+        <dynamics damping="5" stiffness="20" friction="0" armature="0.02"/>
+    </joint>
+    <joint name="abdomen_y" type="fixed">
+        <child link="lwaist"/>
+        <parent link="Dummy2"/>
+        <origin xyz="0 0 0" rot="0 0 0 1"/>
+        <linkTransform xyz="0 0 0" rot="0 0 0 1"/>
+        <axis xyz="0 1 0"/>
+        <limit lower="-1.309" upper="0.5236" effort="1.798e+308" velocity="30"/>
+        <dynamics damping="5" stiffness="10" friction="0" armature="0.02"/>
+    </joint>
+    <joint name="abdomen_x" type="fixed">
+        <child link="pelvis"/>
+        <parent link="lwaist"/>
+        <origin xyz="-0.0004 0 -0.065" rot="0 -0.002 0 1"/>
+        <linkTransform xyz="0 0 -0.165" rot="0 -0.002 0 1"/>
+        <axis xyz="1 0 0"/>
+        <limit lower="-0.6109" upper="0.6109" effort="1.798e+308" velocity="30"/>
+        <dynamics damping="5" stiffness="10" friction="0" armature="0.02"/>
+    </joint>
+    <joint name="right_hip_x" type="fixed">
+        <child link="Dummy6"/>
+        <parent link="pelvis"/>
+        <origin xyz="0 -0.1 -0.04" rot="0 0 0 1"/>
+        <linkTransform xyz="0 -0.1 -0.04" rot="0 0 0 1"/>
+        <axis xyz="1 0 0"/>
+        <limit lower="-0.4363" upper="0.08727" effort="1.798e+308" velocity="30"/>
+        <dynamics damping="5" stiffness="10" friction="0" armature="0.01"/>
+    </joint>
+    <joint name="right_hip_z" type="fixed">
+        <child link="Dummy7"/>
+        <parent link="Dummy6"/>
+        <origin xyz="0 0 0" rot="0 0 0 1"/>
+        <linkTransform xyz="0 0 0" rot="0 0 0 1"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-1.047" upper="0.6109" effort="1.798e+308" velocity="30"/>
+        <dynamics damping="5" stiffness="10" friction="0" armature="0.01"/>
+    </joint>
+    <joint name="right_hip_y" type="fixed">
+        <child link="right_thigh"/>
+        <parent link="Dummy7"/>
+        <origin xyz="0 0 0" rot="0 0 0 1"/>
+        <linkTransform xyz="0 0 0" rot="0 0 0 1"/>
+        <axis xyz="0 1 0"/>
+        <limit lower="-1.92" upper="0.3491" effort="1.798e+308" velocity="30"/>
+        <dynamics damping="5" stiffness="20" friction="0" armature="0.008"/>
+    </joint>
+    <joint name="right_knee" type="fixed">
+        <child link="right_shin"/>
+        <parent link="right_thigh"/>
+        <origin xyz="0 0.01 -0.383" rot="0 0 0 1"/>
+        <linkTransform xyz="0 0.01 -0.403" rot="0 0 0 1"/>
+        <axis xyz="0 -1 0"/>
+        <limit lower="-2.793" upper="-0.03491" effort="1.798e+308" velocity="30"/>
+        <dynamics damping="1" stiffness="1" friction="0" armature="0.006"/>
+    </joint>
+    <joint name="right_ankle_y" type="fixed">
+        <child link="Dummy8"/>
+        <parent link="right_shin"/>
+        <origin xyz="0 0 -0.31" rot="0 0 0 1"/>
+        <linkTransform xyz="0 0 -0.39" rot="0 0 0 1"/>
+        <axis xyz="0 1 0"/>
+        <limit lower="-0.8727" upper="0.8727" effort="1.798e+308" velocity="30"/>
+        <dynamics damping="1" stiffness="4" friction="0" armature="0.0008"/>
+    </joint>
+    <joint name="right_ankle_x" type="fixed">
+        <child link="right_foot"/>
+        <parent link="Dummy8"/>
+        <origin xyz="0 0 0" rot="0 0 0 1"/>
+        <linkTransform xyz="0 0 0" rot="0 0 0 1"/>
+        <axis xyz="1 0 0.5"/>
+        <limit lower="-0.8727" upper="0.8727" effort="1.798e+308" velocity="30"/>
+        <dynamics damping="1" stiffness="1" friction="0" armature="0.0006"/>
+    </joint>
+    <joint name="left_hip_x" type="fixed">
+        <child link="Dummy3"/>
+        <parent link="pelvis"/>
+        <origin xyz="0 0.1 -0.04" rot="0 0 0 1"/>
+        <linkTransform xyz="0 0.1 -0.04" rot="0 0 0 1"/>
+        <axis xyz="-1 0 0"/>
+        <limit lower="-0.4363" upper="0.08727" effort="1.798e+308" velocity="30"/>
+        <dynamics damping="5" stiffness="10" friction="0" armature="0.01"/>
+    </joint>
+    <joint name="left_hip_z" type="fixed">
+        <child link="Dummy4"/>
+        <parent link="Dummy3"/>
+        <origin xyz="0 0 0" rot="0 0 0 1"/>
+        <linkTransform xyz="0 0 0" rot="0 0 0 1"/>
+        <axis xyz="0 0 -1"/>
+        <limit lower="-1.047" upper="0.6109" effort="1.798e+308" velocity="30"/>
+        <dynamics damping="5" stiffness="10" friction="0" armature="0.01"/>
+    </joint>
+    <joint name="left_hip_y" type="fixed">
+        <child link="left_thigh"/>
+        <parent link="Dummy4"/>
+        <origin xyz="0 0 0" rot="0 0 0 1"/>
+        <linkTransform xyz="0 0 0" rot="0 0 0 1"/>
+        <axis xyz="0 1 0"/>
+        <limit lower="-2.094" upper="0.3491" effort="1.798e+308" velocity="30"/>
+        <dynamics damping="5" stiffness="20" friction="0" armature="0.01"/>
+    </joint>
+    <joint name="left_knee" type="fixed">
+        <child link="left_shin"/>
+        <parent link="left_thigh"/>
+        <origin xyz="0 -0.01 -0.383" rot="0 0 0 1"/>
+        <linkTransform xyz="0 -0.01 -0.403" rot="0 0 0 1"/>
+        <axis xyz="0 -1 0"/>
+        <limit lower="-2.793" upper="-0.03491" effort="1.798e+308" velocity="30"/>
+        <dynamics damping="1" stiffness="1" friction="0" armature="0.006"/>
+    </joint>
+    <joint name="left_ankle_y" type="fixed">
+        <child link="Dummy5"/>
+        <parent link="left_shin"/>
+        <origin xyz="0 0 -0.31" rot="0 0 0 1"/>
+        <linkTransform xyz="0 0 -0.39" rot="0 0 0 1"/>
+        <axis xyz="0 1 0"/>
+        <limit lower="-0.8727" upper="0.8727" effort="1.798e+308" velocity="30"/>
+        <dynamics damping="1" stiffness="4" friction="0" armature="0.0008"/>
+    </joint>
+    <joint name="left_ankle_x" type="fixed">
+        <child link="left_foot"/>
+        <parent link="Dummy5"/>
+        <origin xyz="0 0 0" rot="0 0 0 1"/>
+        <linkTransform xyz="0 0 0" rot="0 0 0 1"/>
+        <axis xyz="1 0 0.5"/>
+        <limit lower="-0.8727" upper="0.8727" effort="1.798e+308" velocity="30"/>
+        <dynamics damping="1" stiffness="1" friction="0" armature="0.0006"/>
+    </joint>
+    <joint name="right_shoulder1" type="fixed">
+        <child link="Dummy1"/>
+        <parent link="torso"/>
+        <origin xyz="0 -0.17 0.06" rot="0 0 0 1"/>
+        <linkTransform xyz="0 -0.17 0.06" rot="0 0 0 1"/>
+        <axis xyz="2 1 1"/>
+        <limit lower="-1.484" upper="1.047" effort="1.798e+308" velocity="30"/>
+        <dynamics damping="1" stiffness="1" friction="0" armature="0.0068"/>
+    </joint>
+    <joint name="right_shoulder2" type="fixed">
+        <child link="right_upper_arm"/>
+        <parent link="Dummy1"/>
+        <origin xyz="0 0 0" rot="0 0 0 1"/>
+        <linkTransform xyz="0 0 0" rot="0 0 0 1"/>
+        <axis xyz="0 -1 1"/>
+        <limit lower="-1.484" upper="1.047" effort="1.798e+308" velocity="30"/>
+        <dynamics damping="1" stiffness="1" friction="0" armature="0.0051"/>
+    </joint>
+    <joint name="right_elbow" type="fixed">
+        <child link="right_lower_arm"/>
+        <parent link="right_upper_arm"/>
+        <origin xyz="0.18 -0.18 -0.18" rot="0 0 0 1"/>
+        <linkTransform xyz="0.18 -0.18 -0.18" rot="0 0 0 1"/>
+        <axis xyz="0 -1 1"/>
+        <limit lower="-1.571" upper="0.8727" effort="1.798e+308" velocity="30"/>
+        <dynamics damping="1" stiffness="0" friction="0" armature="0.0028"/>
+    </joint>
+    <joint name="left_shoulder1" type="fixed">
+        <child link="Dummy0"/>
+        <parent link="torso"/>
+        <origin xyz="0 0.17 0.06" rot="0 0 0 1"/>
+        <linkTransform xyz="0 0.17 0.06" rot="0 0 0 1"/>
+        <axis xyz="2 -1 1"/>
+        <limit lower="-1.047" upper="1.484" effort="1.798e+308" velocity="30"/>
+        <dynamics damping="1" stiffness="1" friction="0" armature="0.0068"/>
+    </joint>
+    <joint name="left_shoulder2" type="fixed">
+        <child link="left_upper_arm"/>
+        <parent link="Dummy0"/>
+        <origin xyz="0 0 0" rot="0 0 0 1"/>
+        <linkTransform xyz="0 0 0" rot="0 0 0 1"/>
+        <axis xyz="0 1 1"/>
+        <limit lower="-1.047" upper="1.484" effort="1.798e+308" velocity="30"/>
+        <dynamics damping="1" stiffness="1" friction="0" armature="0.0051"/>
+    </joint>
+    <joint name="left_elbow" type="fixed">
+        <child link="left_lower_arm"/>
+        <parent link="left_upper_arm"/>
+        <origin xyz="0.18 0.18 -0.18" rot="0 0 0 1"/>
+        <linkTransform xyz="0.18 0.18 -0.18" rot="0 0 0 1"/>
+        <axis xyz="0 -1 -1"/>
+        <limit lower="-1.571" upper="0.8727" effort="1.798e+308" velocity="30"/>
+        <dynamics damping="1" stiffness="0" friction="0" armature="0.0028"/>
+    </joint>
+    <forceSensor>
+        <sensor name="left_foot_sensor" link="left_foot" offset="0.035 0.01 -0.03" flags="contact"/>
+        <sensor name="right_foot_sensor" link="right_foot" offset="0.035 -0.01 -0.03" flags="contact"/>
+    </forceSensor>
+    <jointForceSensor value="true"/>
+    <filter>
+        <pair link0="torso" link1="left_upper_arm"/>
+        <pair link0="torso" link1="right_upper_arm"/>
+        <pair link0="torso" link1="lwaist"/>
+        <pair link0="pelvis" link1="left_thigh"/>
+        <pair link0="left_shin" link1="left_foot"/>
+        <pair link0="pelvis" link1="right_thigh"/>
+        <pair link0="right_shin" link1="right_foot"/>
+    </filter>
+</robot>

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<robot name="box_sphere">
+
+    <link name="box">
+    <visual>
+      <geometry>
+        <box size="0.1 0.1 0.1"/>
+      </geometry>
+    <visual>
+    </visual>
+      <geometry>
+        <sphere radius="3"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.7 0.7 0.7"/>
+      </geometry>
+    </collision>
+    <collision>
+      <geometry>
+        <sphere radius="1"/>
+      </geometry>
+    </collision>
+  </link>
+
+</robot>

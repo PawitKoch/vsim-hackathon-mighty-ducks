@@ -1,0 +1,864 @@
+<robot name="window_group_right_group_root" version="0">
+    <!--Materials-->
+    <!--Links-->
+    <robotProperties maxDepenetrationVelocity="10"/>
+    <link name="window_group_right_group_root">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+    </link>
+    <link name="window_group_right_group_trim_left_0_main">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual name="window_group_right_group_trim_left_0_g0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.03 0.04 1.2"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="window_group_right_group_trim_left_0_g0_vis">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.03 0.04 1.2"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <collision name="window_group_right_group_trim_left_0_g0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.03 0.04 1.2"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="window_group_right_group_trim_right_0_main">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual name="window_group_right_group_trim_right_0_g0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.03 0.04 1.2"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="window_group_right_group_trim_right_0_g0_vis">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.03 0.04 1.2"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <collision name="window_group_right_group_trim_right_0_g0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.03 0.04 1.2"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="window_group_right_group_trim_top_0_main">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual name="window_group_right_group_trim_top_0_g0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.54 0.04 0.03"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="window_group_right_group_trim_top_0_g0_vis">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.54 0.04 0.03"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <collision name="window_group_right_group_trim_top_0_g0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.54 0.04 0.03"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="window_group_right_group_trim_bottom_0_main">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual name="window_group_right_group_trim_bottom_0_g0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.54 0.04 0.03"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="window_group_right_group_trim_bottom_0_g0_vis">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.54 0.04 0.03"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <collision name="window_group_right_group_trim_bottom_0_g0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.54 0.04 0.03"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="window_group_right_group_vert_trim_0_main">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual name="window_group_right_group_vert_trim_0_g0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.015 0.04 1.2"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="window_group_right_group_vert_trim_0_g0_vis">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.015 0.04 1.2"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <collision name="window_group_right_group_vert_trim_0_g0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.015 0.04 1.2"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="window_group_right_group_horiz_trim_0_main">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual name="window_group_right_group_horiz_trim_0_g0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.54 0.04 0.015"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="window_group_right_group_horiz_trim_0_g0_vis">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.54 0.04 0.015"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <collision name="window_group_right_group_horiz_trim_0_g0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.54 0.04 0.015"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="window_group_right_group_trim_left_1_main">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual name="window_group_right_group_trim_left_1_g0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.03 0.04 1.2"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="window_group_right_group_trim_left_1_g0_vis">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.03 0.04 1.2"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <collision name="window_group_right_group_trim_left_1_g0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.03 0.04 1.2"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="window_group_right_group_trim_right_1_main">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual name="window_group_right_group_trim_right_1_g0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.03 0.04 1.2"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="window_group_right_group_trim_right_1_g0_vis">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.03 0.04 1.2"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <collision name="window_group_right_group_trim_right_1_g0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.03 0.04 1.2"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="window_group_right_group_trim_top_1_main">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual name="window_group_right_group_trim_top_1_g0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.54 0.04 0.03"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="window_group_right_group_trim_top_1_g0_vis">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.54 0.04 0.03"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <collision name="window_group_right_group_trim_top_1_g0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.54 0.04 0.03"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="window_group_right_group_trim_bottom_1_main">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual name="window_group_right_group_trim_bottom_1_g0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.54 0.04 0.03"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="window_group_right_group_trim_bottom_1_g0_vis">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.54 0.04 0.03"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <collision name="window_group_right_group_trim_bottom_1_g0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.54 0.04 0.03"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="window_group_right_group_vert_trim_1_main">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual name="window_group_right_group_vert_trim_1_g0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.015 0.04 1.2"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="window_group_right_group_vert_trim_1_g0_vis">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.015 0.04 1.2"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <collision name="window_group_right_group_vert_trim_1_g0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.015 0.04 1.2"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="window_group_right_group_horiz_trim_1_main">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual name="window_group_right_group_horiz_trim_1_g0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.54 0.04 0.015"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="window_group_right_group_horiz_trim_1_g0_vis">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.54 0.04 0.015"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <collision name="window_group_right_group_horiz_trim_1_g0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.54 0.04 0.015"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="window_group_right_group_trim_left_2_main">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual name="window_group_right_group_trim_left_2_g0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.03 0.04 1.2"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="window_group_right_group_trim_left_2_g0_vis">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.03 0.04 1.2"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <collision name="window_group_right_group_trim_left_2_g0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.03 0.04 1.2"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="window_group_right_group_trim_right_2_main">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual name="window_group_right_group_trim_right_2_g0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.03 0.04 1.2"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="window_group_right_group_trim_right_2_g0_vis">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.03 0.04 1.2"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <collision name="window_group_right_group_trim_right_2_g0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.03 0.04 1.2"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="window_group_right_group_trim_top_2_main">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual name="window_group_right_group_trim_top_2_g0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.54 0.04 0.03"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="window_group_right_group_trim_top_2_g0_vis">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.54 0.04 0.03"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <collision name="window_group_right_group_trim_top_2_g0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.54 0.04 0.03"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="window_group_right_group_trim_bottom_2_main">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual name="window_group_right_group_trim_bottom_2_g0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.54 0.04 0.03"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="window_group_right_group_trim_bottom_2_g0_vis">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.54 0.04 0.03"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <collision name="window_group_right_group_trim_bottom_2_g0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.54 0.04 0.03"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="window_group_right_group_vert_trim_2_main">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual name="window_group_right_group_vert_trim_2_g0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.015 0.04 1.2"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="window_group_right_group_vert_trim_2_g0_vis">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.015 0.04 1.2"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <collision name="window_group_right_group_vert_trim_2_g0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.015 0.04 1.2"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="window_group_right_group_horiz_trim_2_main">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual name="window_group_right_group_horiz_trim_2_g0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.54 0.04 0.015"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="window_group_right_group_horiz_trim_2_g0_vis">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.54 0.04 0.015"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <collision name="window_group_right_group_horiz_trim_2_g0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.54 0.04 0.015"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="window_group_right_group_door_main">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual name="window_group_right_group_door_g0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="1.8 1.2 0.01"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="window_group_right_group_door_g0_vis">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="1.8 1.2 0.01"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <collision name="window_group_right_group_door_g0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="1.8 1.2 0.01"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="window_group_right_group_frame_top_main">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual name="window_group_right_group_frame_top_g0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="1.85 0.05 0.025"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="window_group_right_group_frame_top_g0_vis">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="1.85 0.05 0.025"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <collision name="window_group_right_group_frame_top_g0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="1.85 0.05 0.025"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="window_group_right_group_frame_bot_main">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual name="window_group_right_group_frame_bot_g0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="1.85 0.05 0.025"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="window_group_right_group_frame_bot_g0_vis">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="1.85 0.05 0.025"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <collision name="window_group_right_group_frame_bot_g0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="1.85 0.05 0.025"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="window_group_right_group_frame_right_main">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual name="window_group_right_group_frame_right_g0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.025 0.05 1.2"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="window_group_right_group_frame_right_g0_vis">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.025 0.05 1.2"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <collision name="window_group_right_group_frame_right_g0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.025 0.05 1.2"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="window_group_right_group_frame_left_main">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual name="window_group_right_group_frame_left_g0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.025 0.05 1.2"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="window_group_right_group_frame_left_g0_vis">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.025 0.05 1.2"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <collision name="window_group_right_group_frame_left_g0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.025 0.05 1.2"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+    </link>
+    <joint name="joint273_1_0" type="fixed">
+        <child link="window_group_right_group_trim_left_0_main"/>
+        <parent link="window_group_right_group_root"/>
+        <origin xyz="0 0 0" rpy="0 -0 0"/>
+        <linkTransform xyz="-0.885 0.1955 -0.1" rpy="0 -0 0"/>
+        <limit lower="3.40282346639e+38" upper="-3.40282346639e+38" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" integral="0" friction="0" frictionLoss="0" armature="0"/>
+    </joint>
+    <joint name="joint274_2_1" type="fixed">
+        <child link="window_group_right_group_trim_right_0_main"/>
+        <parent link="window_group_right_group_root"/>
+        <origin xyz="0 0 0" rpy="0 -0 0"/>
+        <linkTransform xyz="-0.315 0.1955 -0.1" rpy="0 -0 0"/>
+        <limit lower="3.40282346639e+38" upper="-3.40282346639e+38" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" integral="0" friction="0" frictionLoss="0" armature="0"/>
+    </joint>
+    <joint name="joint275_3_2" type="fixed">
+        <child link="window_group_right_group_trim_top_0_main"/>
+        <parent link="window_group_right_group_root"/>
+        <origin xyz="0 0 0" rpy="0 -0 0"/>
+        <linkTransform xyz="-0.6 0.1955 0.485" rpy="0 -0 0"/>
+        <limit lower="3.40282346639e+38" upper="-3.40282346639e+38" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" integral="0" friction="0" frictionLoss="0" armature="0"/>
+    </joint>
+    <joint name="joint276_4_3" type="fixed">
+        <child link="window_group_right_group_trim_bottom_0_main"/>
+        <parent link="window_group_right_group_root"/>
+        <origin xyz="0 0 0" rpy="0 -0 0"/>
+        <linkTransform xyz="-0.6 0.1955 -0.685" rpy="0 -0 0"/>
+        <limit lower="3.40282346639e+38" upper="-3.40282346639e+38" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" integral="0" friction="0" frictionLoss="0" armature="0"/>
+    </joint>
+    <joint name="joint277_5_4" type="fixed">
+        <child link="window_group_right_group_vert_trim_0_main"/>
+        <parent link="window_group_right_group_root"/>
+        <origin xyz="0 0 0" rpy="0 -0 0"/>
+        <linkTransform xyz="-0.6 0.1955 -0.1" rpy="0 -0 0"/>
+        <limit lower="3.40282346639e+38" upper="-3.40282346639e+38" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" integral="0" friction="0" frictionLoss="0" armature="0"/>
+    </joint>
+    <joint name="joint278_6_5" type="fixed">
+        <child link="window_group_right_group_horiz_trim_0_main"/>
+        <parent link="window_group_right_group_root"/>
+        <origin xyz="0 0 0" rpy="0 -0 0"/>
+        <linkTransform xyz="-0.6 0.1955 -0.1" rpy="0 -0 0"/>
+        <limit lower="3.40282346639e+38" upper="-3.40282346639e+38" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" integral="0" friction="0" frictionLoss="0" armature="0"/>
+    </joint>
+    <joint name="joint279_7_6" type="fixed">
+        <child link="window_group_right_group_trim_left_1_main"/>
+        <parent link="window_group_right_group_root"/>
+        <origin xyz="0 0 0" rpy="0 -0 0"/>
+        <linkTransform xyz="-0.285 0.1955 -0.1" rpy="0 -0 0"/>
+        <limit lower="3.40282346639e+38" upper="-3.40282346639e+38" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" integral="0" friction="0" frictionLoss="0" armature="0"/>
+    </joint>
+    <joint name="joint280_8_7" type="fixed">
+        <child link="window_group_right_group_trim_right_1_main"/>
+        <parent link="window_group_right_group_root"/>
+        <origin xyz="0 0 0" rpy="0 -0 0"/>
+        <linkTransform xyz="0.285 0.1955 -0.1" rpy="0 -0 0"/>
+        <limit lower="3.40282346639e+38" upper="-3.40282346639e+38" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" integral="0" friction="0" frictionLoss="0" armature="0"/>
+    </joint>
+    <joint name="joint281_9_8" type="fixed">
+        <child link="window_group_right_group_trim_top_1_main"/>
+        <parent link="window_group_right_group_root"/>
+        <origin xyz="0 0 0" rpy="0 -0 0"/>
+        <linkTransform xyz="0 0.1955 0.485" rpy="0 -0 0"/>
+        <limit lower="3.40282346639e+38" upper="-3.40282346639e+38" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" integral="0" friction="0" frictionLoss="0" armature="0"/>
+    </joint>
+    <joint name="joint282_10_9" type="fixed">
+        <child link="window_group_right_group_trim_bottom_1_main"/>
+        <parent link="window_group_right_group_root"/>
+        <origin xyz="0 0 0" rpy="0 -0 0"/>
+        <linkTransform xyz="0 0.1955 -0.685" rpy="0 -0 0"/>
+        <limit lower="3.40282346639e+38" upper="-3.40282346639e+38" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" integral="0" friction="0" frictionLoss="0" armature="0"/>
+    </joint>
+    <joint name="joint283_11_10" type="fixed">
+        <child link="window_group_right_group_vert_trim_1_main"/>
+        <parent link="window_group_right_group_root"/>
+        <origin xyz="0 0 0" rpy="0 -0 0"/>
+        <linkTransform xyz="0 0.1955 -0.1" rpy="0 -0 0"/>
+        <limit lower="3.40282346639e+38" upper="-3.40282346639e+38" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" integral="0" friction="0" frictionLoss="0" armature="0"/>
+    </joint>
+    <joint name="joint284_12_11" type="fixed">
+        <child link="window_group_right_group_horiz_trim_1_main"/>
+        <parent link="window_group_right_group_root"/>
+        <origin xyz="0 0 0" rpy="0 -0 0"/>
+        <linkTransform xyz="0 0.1955 -0.1" rpy="0 -0 0"/>
+        <limit lower="3.40282346639e+38" upper="-3.40282346639e+38" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" integral="0" friction="0" frictionLoss="0" armature="0"/>
+    </joint>
+    <joint name="joint285_13_12" type="fixed">
+        <child link="window_group_right_group_trim_left_2_main"/>
+        <parent link="window_group_right_group_root"/>
+        <origin xyz="0 0 0" rpy="0 -0 0"/>
+        <linkTransform xyz="0.315 0.1955 -0.1" rpy="0 -0 0"/>
+        <limit lower="3.40282346639e+38" upper="-3.40282346639e+38" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" integral="0" friction="0" frictionLoss="0" armature="0"/>
+    </joint>
+    <joint name="joint286_14_13" type="fixed">
+        <child link="window_group_right_group_trim_right_2_main"/>
+        <parent link="window_group_right_group_root"/>
+        <origin xyz="0 0 0" rpy="0 -0 0"/>
+        <linkTransform xyz="0.885 0.1955 -0.1" rpy="0 -0 0"/>
+        <limit lower="3.40282346639e+38" upper="-3.40282346639e+38" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" integral="0" friction="0" frictionLoss="0" armature="0"/>
+    </joint>
+    <joint name="joint287_15_14" type="fixed">
+        <child link="window_group_right_group_trim_top_2_main"/>
+        <parent link="window_group_right_group_root"/>
+        <origin xyz="0 0 0" rpy="0 -0 0"/>
+        <linkTransform xyz="0.6 0.1955 0.485" rpy="0 -0 0"/>
+        <limit lower="3.40282346639e+38" upper="-3.40282346639e+38" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" integral="0" friction="0" frictionLoss="0" armature="0"/>
+    </joint>
+    <joint name="joint288_16_15" type="fixed">
+        <child link="window_group_right_group_trim_bottom_2_main"/>
+        <parent link="window_group_right_group_root"/>
+        <origin xyz="0 0 0" rpy="0 -0 0"/>
+        <linkTransform xyz="0.6 0.1955 -0.685" rpy="0 -0 0"/>
+        <limit lower="3.40282346639e+38" upper="-3.40282346639e+38" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" integral="0" friction="0" frictionLoss="0" armature="0"/>
+    </joint>
+    <joint name="joint289_17_16" type="fixed">
+        <child link="window_group_right_group_vert_trim_2_main"/>
+        <parent link="window_group_right_group_root"/>
+        <origin xyz="0 0 0" rpy="0 -0 0"/>
+        <linkTransform xyz="0.6 0.1955 -0.1" rpy="0 -0 0"/>
+        <limit lower="3.40282346639e+38" upper="-3.40282346639e+38" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" integral="0" friction="0" frictionLoss="0" armature="0"/>
+    </joint>
+    <joint name="joint290_18_17" type="fixed">
+        <child link="window_group_right_group_horiz_trim_2_main"/>
+        <parent link="window_group_right_group_root"/>
+        <origin xyz="0 0 0" rpy="0 -0 0"/>
+        <linkTransform xyz="0.6 0.1955 -0.1" rpy="0 -0 0"/>
+        <limit lower="3.40282346639e+38" upper="-3.40282346639e+38" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" integral="0" friction="0" frictionLoss="0" armature="0"/>
+    </joint>
+    <joint name="joint291_19_18" type="fixed">
+        <child link="window_group_right_group_door_main"/>
+        <parent link="window_group_right_group_root"/>
+        <origin xyz="0 0 0" rpy="0 -0 0"/>
+        <linkTransform xyz="0 0.2 -0.1" rpy="1.57080000375 -0 3.14159265359"/>
+        <limit lower="3.40282346639e+38" upper="-3.40282346639e+38" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" integral="0" friction="0" frictionLoss="0" armature="0"/>
+    </joint>
+    <joint name="joint292_20_19" type="fixed">
+        <child link="window_group_right_group_frame_top_main"/>
+        <parent link="window_group_right_group_root"/>
+        <origin xyz="0 0 0" rpy="0 -0 0"/>
+        <linkTransform xyz="0 0.20145 0.5125" rpy="0 -0 0"/>
+        <limit lower="3.40282346639e+38" upper="-3.40282346639e+38" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" integral="0" friction="0" frictionLoss="0" armature="0"/>
+    </joint>
+    <joint name="joint293_21_20" type="fixed">
+        <child link="window_group_right_group_frame_bot_main"/>
+        <parent link="window_group_right_group_root"/>
+        <origin xyz="0 0 0" rpy="0 -0 0"/>
+        <linkTransform xyz="0 0.20145 -0.7125" rpy="0 -0 0"/>
+        <limit lower="3.40282346639e+38" upper="-3.40282346639e+38" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" integral="0" friction="0" frictionLoss="0" armature="0"/>
+    </joint>
+    <joint name="joint294_22_21" type="fixed">
+        <child link="window_group_right_group_frame_right_main"/>
+        <parent link="window_group_right_group_root"/>
+        <origin xyz="0 0 0" rpy="0 -0 0"/>
+        <linkTransform xyz="0.9125 0.20145 -0.1" rpy="0 -0 0"/>
+        <limit lower="3.40282346639e+38" upper="-3.40282346639e+38" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" integral="0" friction="0" frictionLoss="0" armature="0"/>
+    </joint>
+    <joint name="joint295_23_22" type="fixed">
+        <child link="window_group_right_group_frame_left_main"/>
+        <parent link="window_group_right_group_root"/>
+        <origin xyz="0 0 0" rpy="0 -0 0"/>
+        <linkTransform xyz="-0.9125 0.20145 -0.1" rpy="0 -0 0"/>
+        <limit lower="3.40282346639e+38" upper="-3.40282346639e+38" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" integral="0" friction="0" frictionLoss="0" armature="0"/>
+    </joint>
+</robot>

@@ -1,0 +1,16 @@
+<environmentDefinition>
+    <elements>
+        <heightField name="Landscape" xyz="-31 -32 1" rot="-0.5 -0.5 -0.5 -0.5" file="/heightfields/Landscape_HeightField.png" scale="1 1 1" maxHeight="26.48" minHeight="0">
+            <rigidMaterial name="DefaultRigidMaterial" staticFriction="0.5" dynamicFriction="0.5" restitution="0.1"/>
+        </heightField>
+        <heightField name="Landscape2" xyz="-5.244 -2.417 4.5" rot="-0.5 -0.5 -0.5 -0.5" file="/heightfields/Landscape2_HeightField.png" scale="1 1 1" maxHeight="14.75" minHeight="0">
+            <rigidMaterial name="DefaultRigidMaterial" staticFriction="0.5" dynamicFriction="0.5" restitution="0.1"/>
+        </heightField>
+        <actor name="VlabSphereActor" xyz="2.568 22.19 13.69" rot="-0 0 -0 1" isStatic="false" file="/VlabSphereActor/VlabSphereActor.vsim"/>
+        <heightField name="Landscape3" xyz="-29.7 31 0" rot="-0.5 -0.5 -0.5 -0.5" file="/heightfields/Landscape3_HeightField.png" scale="0.5 1 1" maxHeight="14.75" minHeight="0">
+            <rigidMaterial name="DefaultRigidMaterial" staticFriction="0.5" dynamicFriction="0.5" restitution="0.1"/>
+        </heightField>
+        <actor name="Finger" xyz="-14.82 -9.517 11.87" rot="1 0 -0 1.217e-08" isStatic="true" file="/Finger/Finger.vsim"/>
+        <actor name="Finger2" xyz="-14.82 -10.11 11.87" rot="0.866 -4.363e-09 -0.5 7.557e-09" isStatic="true" file="/Finger2/Finger2.vsim"/>
+    </elements>
+</environmentDefinition>

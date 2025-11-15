@@ -1,0 +1,42 @@
+<robot name="dummy_camera">
+    <!--Materials-->
+    <rigidMaterial name="DefaultRigidMaterial" staticFriction="0.5" dynamicFriction="0.5" restitution="0.1"/>
+    <!--Links-->
+    <robotProperties maxDepenetrationVelocity="10"/>
+    <link name="VlabArticulation">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="800"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <rigidMaterialRef name="DefaultRigidMaterial"/>
+        <miscellaneous contactOffset="0.005" restOffset="0"/>
+    </link>
+    <link name="VlabArticulation1">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="800"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <rigidMaterialRef name="DefaultRigidMaterial"/>
+        <miscellaneous contactOffset="0.005" restOffset="0"/>
+    </link>
+    <joint name="VlabArticulation_to_VlabArticulation1" type="fixed">
+        <child link="VlabArticulation1"/>
+        <parent link="VlabArticulation"/>
+        <origin xyz="0 -0 0" rpy="-0 -0 -0"/>
+        <linkTransform xyz="0 -0 0" rpy="-0 -0 -0"/>
+        <limit lower="1" upper="-1" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" friction="0" armature="0"/>
+    </joint>
+
+    <depthCamera>
+        <camera name="VlabDepthCamera" type="depth" farClip="3" fovX="1.58824961931" fovY="1.15191730632" resX="64" resY="40"/>
+    </depthCamera>
+    <depthCameraInstance>
+        <cameraInstance name="VlabDepthCamera_instance" camera="VlabDepthCamera" link="VlabArticulation" xyz="0 0 0" rpy="1.0472 0 0">
+        </cameraInstance>
+    </depthCameraInstance>
+</robot>

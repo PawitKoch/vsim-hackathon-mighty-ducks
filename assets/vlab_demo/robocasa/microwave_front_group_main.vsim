@@ -1,0 +1,312 @@
+<robot name="microwave_front_group_main" version="0">
+    <!--Materials-->
+    <!--Links-->
+    <robotProperties maxDepenetrationVelocity="10"/>
+    <link name="microwave_front_group_main">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual name="microwave_front_group_g0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <mesh filename="/home/vsim_remote/Documents/robocasa/robocasa/models/assets/fixtures/microwaves/gray/visuals/model_0.obj" scale="0.735294117647 1.03092783505 0.735294117647"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="microwave_front_group_g1">
+            <origin xyz="0 0.270103092784 0.00367647058824" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.735294117647 0.0103092783505 0.419117647059"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="microwave_front_group_g2">
+            <origin xyz="0 0.0690721649485 -0.208088235294" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.735294117647 0.412371134021 0.00735294117647"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="microwave_front_group_g3">
+            <origin xyz="0 0.0690721649485 0.213235294118" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.735294117647 0.412371134021 0.00735294117647"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="microwave_front_group_g4">
+            <origin xyz="-0.367647058824 0.0690721649485 0.00367647058824" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.00735294117647 0.412371134021 0.419117647059"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="microwave_front_group_g5">
+            <origin xyz="0.367647058824 0.0690721649485 0.00367647058824" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.00735294117647 0.412371134021 0.419117647059"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="microwave_front_group_g6">
+            <origin xyz="0.288970588235 -0.179381443299 0.165441176471" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.148529411765 0.0845360824742 0.0955882352941"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="microwave_front_group_g7">
+            <origin xyz="0.288970588235 -0.179381443299 -0.176470588235" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.148529411765 0.0845360824742 0.0588235294118"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="microwave_front_group_g8">
+            <origin xyz="0.345588235294 -0.179381443299 -0.0147058823529" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.0367647058824 0.0845360824742 0.264705882353"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="microwave_front_group_g9">
+            <origin xyz="0.272058823529 -0.179381443299 -0.0147058823529" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.110294117647 0.0443298969072 0.264705882353"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="microwave_front_group_start_button">
+            <origin xyz="0.301470588235 -0.179381443299 -0.0955882352941" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.0441176470588 0.0445360824742 0.0367647058824"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="microwave_front_group_stop_button">
+            <origin xyz="0.246323529412 -0.179381443299 -0.0955882352941" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.0441176470588 0.0445360824742 0.0367647058824"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="microwave_front_group_tray">
+            <origin xyz="-0.0661764705882 0.0721649484536 -0.207352941176" rpy="0 -1.57079632679 0"/>
+            <geometry>
+                <cylinder length="0.00735294117647" radius="0.167791085506"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="microwave_front_group_g13">
+            <origin xyz="0 -0.0979381443299 -0.209558823529" rpy="-0.6 -0 0"/>
+            <geometry>
+                <box size="0.661764705882 0.0164948453608 0.00294117647059"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="microwave_front_group_g14">
+            <origin xyz="0 0.234020618557 -0.209558823529" rpy="0.6 -0 0"/>
+            <geometry>
+                <box size="0.661764705882 0.0185567010309 0.00294117647059"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <collision name="microwave_front_group_g1">
+            <origin xyz="0 0.270103092784 0.00367647058824" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.735294117647 0.0103092783505 0.419117647059"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="microwave_front_group_g2">
+            <origin xyz="0 0.0690721649485 -0.208088235294" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.735294117647 0.412371134021 0.00735294117647"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="microwave_front_group_g3">
+            <origin xyz="0 0.0690721649485 0.213235294118" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.735294117647 0.412371134021 0.00735294117647"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="microwave_front_group_g4">
+            <origin xyz="-0.367647058824 0.0690721649485 0.00367647058824" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.00735294117647 0.412371134021 0.419117647059"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="microwave_front_group_g5">
+            <origin xyz="0.367647058824 0.0690721649485 0.00367647058824" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.00735294117647 0.412371134021 0.419117647059"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="microwave_front_group_g6">
+            <origin xyz="0.288970588235 -0.179381443299 0.165441176471" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.148529411765 0.0845360824742 0.0955882352941"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="microwave_front_group_g7">
+            <origin xyz="0.288970588235 -0.179381443299 -0.176470588235" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.148529411765 0.0845360824742 0.0588235294118"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="microwave_front_group_g8">
+            <origin xyz="0.345588235294 -0.179381443299 -0.0147058823529" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.0367647058824 0.0845360824742 0.264705882353"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="microwave_front_group_g9">
+            <origin xyz="0.272058823529 -0.179381443299 -0.0147058823529" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.110294117647 0.0443298969072 0.264705882353"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="microwave_front_group_start_button">
+            <origin xyz="0.301470588235 -0.179381443299 -0.0955882352941" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.0441176470588 0.0445360824742 0.0367647058824"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="microwave_front_group_stop_button">
+            <origin xyz="0.246323529412 -0.179381443299 -0.0955882352941" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.0441176470588 0.0445360824742 0.0367647058824"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="microwave_front_group_tray">
+            <origin xyz="-0.0661764705882 0.0721649484536 -0.207352941176" rpy="0 -1.57079632679 0"/>
+            <geometry>
+                <cylinder length="0.00735294117647" radius="0.167791085506"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="microwave_front_group_door">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual name="microwave_front_group_g15">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <mesh filename="/home/vsim_remote/Documents/robocasa/robocasa/models/assets/fixtures/microwaves/gray/visuals/door_0.obj" scale="0.735294117647 1.03092783505 0.735294117647"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="microwave_front_group_g16">
+            <origin xyz="-0.0492647058824 -0.179381443299 0.00367647058824" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.516176470588 0.0845360824742 0.404411764706"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="microwave_front_group_g17">
+            <origin xyz="0.186764705882 -0.226804123711 0.132352941176" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.0338235294118 0.0412371134021 0.0308823529412"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="microwave_front_group_g18">
+            <origin xyz="0.186764705882 -0.226804123711 -0.169117647059" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.0338235294118 0.0412371134021 0.0308823529412"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="microwave_front_group_door_handle">
+            <origin xyz="0.186764705882 -0.255670103093 -0.0147058823529" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.0338235294118 0.0329896907216 0.308823529412"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="microwave_front_group_g20">
+            <origin xyz="0.170955882353 -0.170103092784 -0.0161764705882" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.0794117647059 0.0618556701031 0.272058823529"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="microwave_front_group_g21">
+            <origin xyz="-0.319852941176 -0.170103092784 -0.0161764705882" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.0441176470588 0.0618556701031 0.272058823529"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="microwave_front_group_g22">
+            <origin xyz="-0.0830882352941 -0.170103092784 -0.136029411765" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.430882352941 0.0618556701031 0.0294117647059"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="microwave_front_group_g23">
+            <origin xyz="-0.0830882352941 -0.170103092784 0.0827205882353" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.430882352941 0.0618556701031 0.0691176470588"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <collision name="microwave_front_group_g16">
+            <origin xyz="-0.0492647058824 -0.179381443299 0.00367647058824" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.516176470588 0.0845360824742 0.404411764706"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="microwave_front_group_g17">
+            <origin xyz="0.186764705882 -0.226804123711 0.132352941176" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.0338235294118 0.0412371134021 0.0308823529412"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="microwave_front_group_g18">
+            <origin xyz="0.186764705882 -0.226804123711 -0.169117647059" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.0338235294118 0.0412371134021 0.0308823529412"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="microwave_front_group_door_handle">
+            <origin xyz="0.186764705882 -0.255670103093 -0.0147058823529" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.0338235294118 0.0329896907216 0.308823529412"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+    </link>
+    <joint name="microwave_front_group_microjoint" type="revolute">
+        <child link="microwave_front_group_door"/>
+        <parent link="microwave_front_group_main"/>
+        <origin xyz="-0.346323529412 -0.183505154639 0" rpy="0 -0 0"/>
+        <linkTransform xyz="0 0 0" rpy="0 -0 0"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-1.57" upper="0" effort="1.79769313486e+308" velocity="30"/>
+        <dynamics damping="2" stiffness="0" integral="0" friction="0" frictionLoss="2" armature="0.01"/>
+    </joint>
+</robot>

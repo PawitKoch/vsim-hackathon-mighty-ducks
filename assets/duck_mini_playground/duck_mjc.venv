@@ -1,0 +1,5 @@
+<environmentDefinition name="duck_env">
+    <elements>
+        <actor name="duck" xyz="0 0 0.195994675159" rot="0 0 0 1" isStatic="false" mergeFixedJoints="true" enableSelfCollisions="true" file="duck_mjc.vsim"/>
+    </elements>
+</environmentDefinition>

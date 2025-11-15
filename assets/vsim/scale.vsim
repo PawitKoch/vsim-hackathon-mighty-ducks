@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<robot name="scale">
+
+    <link name="torso">
+        <inertial>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <mass value="-1"/>
+            <density value="5"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <box size="2 2 0.1"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <link name="aux_1">
+        <inertial>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <mass value="-1"/>
+            <density value="5"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <collision>
+            <origin xyz="0 0 0" rot="0 0 0 1"/>
+            <geometry>
+                <box size="2 2 2"/>
+            </geometry>
+        </collision>
+    </link>
+  
+    <joint name="hip_1" type="fixed">
+        <child link="aux_1"/>
+        <parent link="torso"/>
+        <origin xyz="0 0 2" rot="0 0 0 1"/>
+        <linkTransform xyz="0 0 2.1" rot="0 0 0 1"/>
+    </joint>
+
+    <forceSensor>
+        <sensor name="scale_sensor" link="aux_1" offset="0 0 0" flags="contact "/>
+    </forceSensor>
+  
+</robot>

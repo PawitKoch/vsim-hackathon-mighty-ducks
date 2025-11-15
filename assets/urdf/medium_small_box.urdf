@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<robot name="medium_small_box">
+
+    <link name="box">
+    <visual>
+      <geometry>
+        <box size=".065 .065 .065"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <box size=".065 .065 .065"/>
+      </geometry>
+    </collision>
+  </link>
+  
+</robot>

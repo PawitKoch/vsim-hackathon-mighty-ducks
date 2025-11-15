@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<robot name="filter_test">
+
+    <link name="box1">
+    <visual>
+      <geometry>
+        <box size="1 1 1"/>
+      </geometry>
+      <material name="box1_mat">
+        <color rgba="0.9 0.6 0.2 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="1 1 1"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1"/>
+    </inertial>
+  </link>
+
+  <link name="box2">
+    <visual>
+      <geometry>
+        <box size="1 1 1"/>
+      </geometry>
+      <material name="box2_mat">
+        <color rgba="0.3 0.5 0.7 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+          <box size="1 1 1"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1"/>
+    </inertial>
+  </link>
+
+  <link name="box3">
+    <visual>
+      <geometry>
+        <box size="1 1 1"/>
+      </geometry>
+      <origin xyz="0 0 0"/>
+      <material name="box3_mat">
+        <color rgba="0.1 0.1 0.3 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="1 1 1"/>
+      </geometry>
+      <origin xyz="0 0 0"/>
+    </collision>
+    <inertial>
+      <mass value="1"/>
+      <origin xyz="0 0 0"/>
+    </inertial>
+  </link>
+
+  <joint name="box1_to_box2" type="prismatic">
+    <axis xyz="1 0 0"/>
+    <origin xyz="0 0 0"/>
+    <parent link="box1"/>
+    <child link="box2"/>
+    <limit effort="1000.0" lower="-4" upper="4" velocity="100"/>
+  </joint>
+
+  <joint name="box2_to_box3" type="prismatic">
+    <axis xyz="1 0 0"/>
+    <origin xyz="0 0 0"/>
+    <parent link="box2"/>
+    <child link="box3"/>
+    <limit effort="1000.0" lower="-4" upper="4" velocity="100"/>
+  </joint>
+
+</robot>

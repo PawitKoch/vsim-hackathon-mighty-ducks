@@ -1,0 +1,109 @@
+<robot name="coffee_machine_main_group_main" version="0">
+    <!--Materials-->
+    <!--Links-->
+    <robotProperties maxDepenetrationVelocity="10"/>
+    <link name="coffee_machine_main_group_main">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual name="coffee_machine_main_group_g0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <mesh filename="/home/vsim_remote/Documents/robocasa/robocasa/models/assets/fixtures/coffee_machines/nespresso/visuals/model_0.obj" scale="0.423992221835 0.423992221835 0.423992221835"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="coffee_machine_main_group_g1">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <mesh filename="/home/vsim_remote/Documents/robocasa/robocasa/models/assets/fixtures/coffee_machines/nespresso/visuals/model_1.obj" scale="0.423992221835 0.423992221835 0.423992221835"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="coffee_machine_main_group_g2">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <mesh filename="/home/vsim_remote/Documents/robocasa/robocasa/models/assets/fixtures/coffee_machines/nespresso/visuals/model_2.obj" scale="0.423992221835 0.423992221835 0.423992221835"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="coffee_machine_main_group_g3">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <mesh filename="/home/vsim_remote/Documents/robocasa/robocasa/models/assets/fixtures/coffee_machines/nespresso/visuals/model_3.obj" scale="0.423992221835 0.423992221835 0.423992221835"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="coffee_machine_main_group_g4">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <mesh filename="/home/vsim_remote/Documents/robocasa/robocasa/models/assets/fixtures/coffee_machines/nespresso/visuals/model_4.obj" scale="0.423992221835 0.423992221835 0.423992221835"/>
+                <settings planeNormalTolerance="0.949999988079" inflation="0" minThickness="9.99999974738e-05" maxVerts="32" mapResolution="0"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="coffee_machine_main_group_g5">
+            <origin xyz="0 0.0466391444019 -0.0127197666551" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.0932782888037 0.330713933031 0.296794555285"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="coffee_machine_main_group_g6">
+            <origin xyz="0 -0.0886143743636 0.0932782888037" rpy="0 -1.57079632679 0"/>
+            <geometry>
+                <cylinder length="0.118717822114" radius="0.069534724381"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="coffee_machine_main_group_g7">
+            <origin xyz="0 -0.165780958738 -0.0898863510291" rpy="0 -1.57079632679 0"/>
+            <geometry>
+                <cylinder length="0.0271355021975" radius="0.04621515218"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="coffee_machine_main_group_start_button">
+            <origin xyz="0 -0.0881903821417 0.157725106523" rpy="0 -1.57079632679 0"/>
+            <geometry>
+                <cylinder length="0.00423992221835" radius="0.0317994166376"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <collision name="coffee_machine_main_group_g5">
+            <origin xyz="0 0.0466391444019 -0.0127197666551" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.0932782888037 0.330713933031 0.296794555285"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="coffee_machine_main_group_g6">
+            <origin xyz="0 -0.0886143743636 0.0932782888037" rpy="0 -1.57079632679 0"/>
+            <geometry>
+                <cylinder length="0.118717822114" radius="0.069534724381"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="coffee_machine_main_group_g7">
+            <origin xyz="0 -0.165780958738 -0.0898863510291" rpy="0 -1.57079632679 0"/>
+            <geometry>
+                <cylinder length="0.0271355021975" radius="0.04621515218"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="coffee_machine_main_group_start_button">
+            <origin xyz="0 -0.0881903821417 0.157725106523" rpy="0 -1.57079632679 0"/>
+            <geometry>
+                <cylinder length="0.00423992221835" radius="0.0317994166376"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+    </link>
+</robot>

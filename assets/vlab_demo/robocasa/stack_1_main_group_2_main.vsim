@@ -1,0 +1,435 @@
+<robot name="stack_1_main_group_2_main" version="0">
+    <!--Materials-->
+    <!--Links-->
+    <robotProperties maxDepenetrationVelocity="10"/>
+    <link name="stack_1_main_group_2_main">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual name="stack_1_main_group_2_top">
+            <origin xyz="0 0.015 0.09" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.5 0.57 0.03"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="stack_1_main_group_2_bottom">
+            <origin xyz="0 0.015 -0.09" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.5 0.57 0.03"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="stack_1_main_group_2_back">
+            <origin xyz="0 0.285 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.44 0.03 0.15"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="stack_1_main_group_2_right">
+            <origin xyz="0.235 0.015 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.03 0.57 0.15"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="stack_1_main_group_2_left">
+            <origin xyz="-0.235 0.015 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.03 0.57 0.15"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="stack_1_main_group_2_top_visual">
+            <origin xyz="0 0.015 0.09" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.5 0.57 0.03"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="stack_1_main_group_2_bottom_visual">
+            <origin xyz="0 0.015 -0.09" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.5 0.57 0.03"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="stack_1_main_group_2_back_visual">
+            <origin xyz="0 0.285 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.44 0.03 0.15"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="stack_1_main_group_2_right_visual">
+            <origin xyz="0.235 0.015 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.03 0.57 0.15"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="stack_1_main_group_2_left_visual">
+            <origin xyz="-0.235 0.015 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.03 0.57 0.15"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <collision name="stack_1_main_group_2_top">
+            <origin xyz="0 0.015 0.09" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.5 0.57 0.03"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="stack_1_main_group_2_bottom">
+            <origin xyz="0 0.015 -0.09" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.5 0.57 0.03"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="stack_1_main_group_2_back">
+            <origin xyz="0 0.285 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.44 0.03 0.15"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="stack_1_main_group_2_right">
+            <origin xyz="0.235 0.015 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.03 0.57 0.15"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="stack_1_main_group_2_left">
+            <origin xyz="-0.235 0.015 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.03 0.57 0.15"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="stack_1_main_group_2_inner_box">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual name="stack_1_main_group_2_inner_bottom">
+            <origin xyz="0 0 -0.059" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.438 0.54 0.03"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="stack_1_main_group_2_inner_back">
+            <origin xyz="0 0.255 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.378 0.03 0.088"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="stack_1_main_group_2_inner_right">
+            <origin xyz="0.204 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.03 0.54 0.088"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="stack_1_main_group_2_inner_left">
+            <origin xyz="-0.204 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.03 0.54 0.088"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="stack_1_main_group_2_inner_bottom_visual">
+            <origin xyz="0 0 -0.059" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.438 0.54 0.03"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="stack_1_main_group_2_inner_back_visual">
+            <origin xyz="0 0.255 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.378 0.03 0.088"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="stack_1_main_group_2_inner_right_visual">
+            <origin xyz="0.204 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.03 0.54 0.088"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="stack_1_main_group_2_inner_left_visual">
+            <origin xyz="-0.204 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.03 0.54 0.088"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <collision name="stack_1_main_group_2_inner_bottom">
+            <origin xyz="0 0 -0.059" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.438 0.54 0.03"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="stack_1_main_group_2_inner_back">
+            <origin xyz="0 0.255 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.378 0.03 0.088"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="stack_1_main_group_2_inner_right">
+            <origin xyz="0.204 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.03 0.54 0.088"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="stack_1_main_group_2_inner_left">
+            <origin xyz="-0.204 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.03 0.54 0.088"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="stack_1_main_group_2_door_main">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual name="stack_1_main_group_2_door_door">
+            <origin xyz="0 0.005 0" rpy="1.5708 -0 0"/>
+            <geometry>
+                <box size="0.337 0.047 0.01"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="stack_1_main_group_2_door_door_visual">
+            <origin xyz="0 0.005 0" rpy="1.5708 -0 0"/>
+            <geometry>
+                <box size="0.337 0.047 0.01"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <collision name="stack_1_main_group_2_door_door">
+            <origin xyz="0 0.005 0" rpy="1.5708 -0 0"/>
+            <geometry>
+                <box size="0.337 0.047 0.01"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="stack_1_main_group_2_door_trims">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual name="stack_1_main_group_2_door_trim_top">
+            <origin xyz="0 -0.0025 0.0635" rpy="1.5708 -0 0"/>
+            <geometry>
+                <box size="0.337 0.08 0.02"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="stack_1_main_group_2_door_trim_bottom">
+            <origin xyz="0 -0.0025 -0.0635" rpy="1.5708 -0 0"/>
+            <geometry>
+                <box size="0.337 0.08 0.02"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="stack_1_main_group_2_door_trim_left">
+            <origin xyz="-0.2085 -0.0025 0" rpy="1.5708 -0 0"/>
+            <geometry>
+                <box size="0.08 0.207 0.02"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="stack_1_main_group_2_door_trim_right">
+            <origin xyz="0.2085 -0.0025 0" rpy="1.5708 -0 0"/>
+            <geometry>
+                <box size="0.08 0.207 0.02"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="stack_1_main_group_2_door_trim_top_visual">
+            <origin xyz="0 -0.0025 0.0635" rpy="1.5708 -0 0"/>
+            <geometry>
+                <box size="0.337 0.08 0.02"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="stack_1_main_group_2_door_trim_bottom_visual">
+            <origin xyz="0 -0.0025 -0.0635" rpy="1.5708 -0 0"/>
+            <geometry>
+                <box size="0.337 0.08 0.02"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="stack_1_main_group_2_door_trim_left_visual">
+            <origin xyz="-0.2085 -0.0025 0" rpy="1.5708 -0 0"/>
+            <geometry>
+                <box size="0.08 0.207 0.02"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="stack_1_main_group_2_door_trim_right_visual">
+            <origin xyz="0.2085 -0.0025 0" rpy="1.5708 -0 0"/>
+            <geometry>
+                <box size="0.08 0.207 0.02"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <collision name="stack_1_main_group_2_door_trim_top">
+            <origin xyz="0 -0.0025 0.0635" rpy="1.5708 -0 0"/>
+            <geometry>
+                <box size="0.337 0.08 0.02"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="stack_1_main_group_2_door_trim_bottom">
+            <origin xyz="0 -0.0025 -0.0635" rpy="1.5708 -0 0"/>
+            <geometry>
+                <box size="0.337 0.08 0.02"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="stack_1_main_group_2_door_trim_left">
+            <origin xyz="-0.2085 -0.0025 0" rpy="1.5708 -0 0"/>
+            <geometry>
+                <box size="0.08 0.207 0.02"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="stack_1_main_group_2_door_trim_right">
+            <origin xyz="0.2085 -0.0025 0" rpy="1.5708 -0 0"/>
+            <geometry>
+                <box size="0.08 0.207 0.02"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="stack_1_main_group_2_door_handle_main">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual name="stack_1_main_group_2_door_handle_handle">
+            <origin xyz="0 -0.05 0" rpy="0 3.67320510331e-06 0"/>
+            <geometry>
+                <cylinder length="0.127" radius="0.013"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="stack_1_main_group_2_door_handle_handle_connector_top">
+            <origin xyz="0.0381 -0.025 0" rpy="1.57079632679 -0 -1.57079632679"/>
+            <geometry>
+                <cylinder length="0.05" radius="0.008"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="stack_1_main_group_2_door_handle_handle_connector_bottom">
+            <origin xyz="-0.0381 -0.025 0" rpy="1.57079632679 -0 -1.57079632679"/>
+            <geometry>
+                <cylinder length="0.05" radius="0.008"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="stack_1_main_group_2_door_handle_handle_visual">
+            <origin xyz="0 -0.05 0" rpy="0 3.67320510331e-06 0"/>
+            <geometry>
+                <cylinder length="0.127" radius="0.013"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="stack_1_main_group_2_door_handle_handle_connector_top_visual">
+            <origin xyz="0.0381 -0.025 0" rpy="1.57079632679 -0 -1.57079632679"/>
+            <geometry>
+                <cylinder length="0.05" radius="0.008"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="stack_1_main_group_2_door_handle_handle_connector_bottom_visual">
+            <origin xyz="-0.0381 -0.025 0" rpy="1.57079632679 -0 -1.57079632679"/>
+            <geometry>
+                <cylinder length="0.05" radius="0.008"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <collision name="stack_1_main_group_2_door_handle_handle">
+            <origin xyz="0 -0.05 0" rpy="0 3.67320510331e-06 0"/>
+            <geometry>
+                <cylinder length="0.127" radius="0.013"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="stack_1_main_group_2_door_handle_handle_connector_top">
+            <origin xyz="0.0381 -0.025 0" rpy="1.57079632679 -0 -1.57079632679"/>
+            <geometry>
+                <cylinder length="0.05" radius="0.008"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="stack_1_main_group_2_door_handle_handle_connector_bottom">
+            <origin xyz="-0.0381 -0.025 0" rpy="1.57079632679 -0 -1.57079632679"/>
+            <geometry>
+                <cylinder length="0.05" radius="0.008"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+    </link>
+    <joint name="stack_1_main_group_2_slidejoint" type="prismatic">
+        <child link="stack_1_main_group_2_inner_box"/>
+        <parent link="stack_1_main_group_2_main"/>
+        <origin xyz="0 -0.3 0" rpy="0 -0 0"/>
+        <linkTransform xyz="0 0 0" rpy="0 -0 0"/>
+        <axis xyz="0 1 0"/>
+        <limit lower="-0.6" upper="0" effort="1.79769313486e+308" velocity="30"/>
+        <dynamics damping="10" stiffness="0" integral="0" friction="0" frictionLoss="0" armature="0"/>
+    </joint>
+    <joint name="joint193_3_1" type="fixed">
+        <child link="stack_1_main_group_2_door_trims"/>
+        <parent link="stack_1_main_group_2_door_main"/>
+        <origin xyz="0 0 0" rpy="0 -0 0"/>
+        <linkTransform xyz="0 0 0" rpy="0 -0 0"/>
+        <limit lower="3.40282346639e+38" upper="-3.40282346639e+38" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" integral="0" friction="0" frictionLoss="0" armature="0"/>
+    </joint>
+    <joint name="joint194_4_2" type="fixed">
+        <child link="stack_1_main_group_2_door_handle_main"/>
+        <parent link="stack_1_main_group_2_door_main"/>
+        <origin xyz="0 0 0" rpy="0 -0 0"/>
+        <linkTransform xyz="0 0 0" rpy="0 -0 0"/>
+        <limit lower="3.40282346639e+38" upper="-3.40282346639e+38" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" integral="0" friction="0" frictionLoss="0" armature="0"/>
+    </joint>
+    <joint name="joint195_2_3" type="fixed">
+        <child link="stack_1_main_group_2_door_main"/>
+        <parent link="stack_1_main_group_2_inner_box"/>
+        <origin xyz="0 0 0" rpy="0 -0 0"/>
+        <linkTransform xyz="0 -0.285 0" rpy="0 -0 0"/>
+        <limit lower="3.40282346639e+38" upper="-3.40282346639e+38" effort="0" velocity="30"/>
+        <dynamics damping="0" stiffness="0" integral="0" friction="0" frictionLoss="0" armature="0"/>
+    </joint>
+</robot>

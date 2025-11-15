@@ -1,0 +1,107 @@
+envs:
+  _target_: envs.so100_parking.SO100Parking
+  num_envs: 256 
+  device: cuda:0
+  venv_file: assets/SO100/parking/parking.venv
+  max_episode_length: 360 
+  frame_skip: 4
+  debug: false
+  dof_pos_home: [0.014999999664723873, 2.567199945449829, -0.661899983882904, -2.0441999435424805, -1.5746999979019165] 
+  robot_root_pos: [0, 0, 0.25]
+  car_pose_initial: [0,0,0,0, 0.0, -0.378, 0.265]
+  obstacle1_pose_initial: [0,0,0,0, -0.04, -0.5, 0.265]
+  obstacle2_pose_initial: [0,0,0,0, 0.04, -0.5, 0.265]
+  approach_quat: [0.1012, -0.0012, 0.0073, 0.9948]
+  done_pose: [0.0007, 0.9948, 0.1011, 0.0110, 0.000, -0.326, 0.263]
+  rgb_cameras: ["wrist_cam"]
+  use_segmentation_for_inference: false
+  num_segmentation_objs: 4 # Target box, 2 obstacels as 1, + grippers 1 each
+  max_delta_deg: [1.0, 2.0, 2.0, 2.0, 0.01]
+
+sac:
+  network:
+    lr_encoder: 0.0003
+    # image_shift_pad: 4
+
+    vision_networks:
+      wrist_cam:
+        latent_dim: 128
+        cnn:
+          features: [16, 32, 64, 128] # reduced
+          kernels: [3, 3, 3, 3]
+          strides: [2, 2, 2, 2]
+          paddings: [0, 0, 0, 0]
+
+    obs_latent_dim: 128
+    mlp_critic:
+      units: [256, 256]
+      layer_norm: True
+      weight_init: orthogonal
+      ensemble: 4
+    mlp_actor:
+      units: [256, 256]
+      layer_norm: False
+      weight_init: orthogonal
+    log_std_bounds: [-5, 2] # rlpd default [-20, 2]
+
+  config:
+    name: SO100Parking
+    # score_to_win: 15
+
+    # Adjustable params
+    reward_shaper:
+      scale_value: 10 # crucial, sensitive value, see Haarnoja 2018
+    num_gradient_steps: 2 # can be varied between 1 - 16 depending on the task and weight initialization method
+    # https://arxiv.org/abs/2211.11092: no upper bound for a good batch size when using layernorm
+    # A large batch size is beneficial up till a batch of 2048
+    # for this case. There is a performance trade-off.
+    # Scale the lr by the sqrt of the batch size multiple.
+    minibatch_size: 2048 # we can increase the batch for non-vision policies
+    num_warmup_epochs: 0
+    not_all_envs_are_synchronized: False
+
+    # Replay buffers
+    replay_buffer_ring:
+      num_epochs: 10
+    replay_buffer_prio:
+      capacity: 50000
+      prio: high
+      reward_limit_0: -1.0
+      update_limit: True
+      swap_equal: True
+    demonstration_ring_buffer:
+      max_num_demos: 256
+      trajectory_min_reward: 0.1
+      # ratio: 0.5
+    write_replay_buffer_stats: True
+
+    # Task-specific stats
+    max_epochs: 1000
+    num_epochs_reward_tracking: 1
+    update_stats_freq: 1
+    network_stats_freq: -1 # 10 # epochs
+
+    # Fixed params - these should not even be parameters
+    normalize_input: False # TODO: implement
+    gamma: 0.99
+    init_alpha: 1
+    min_alpha: 0
+    # rlpd default 3e-4 for a batch size of 256 --> scale lr by sqrt of batch size ratio
+    alpha_lr: 0.000424
+    actor_lr: 0.000424
+    critic_lr: 0.000424
+    critic_tau: 0.005 # 0.001...0.01 is ideal in Haarnoja 2018 - Ant-v1 task
+
+    read_rgb_camera: True
+
+agent:
+  _target_: vlearn.rl_algos.sac.sac_agent.SacAgent
+  params: ${sac}
+  device: ${envs.device}
+  envs: ${envs}
+  writer_dir: runs/SO100Parking
+  mode: train
+  ckpt: null
+  ckpt_mode: train
+  profile: False
+  demo_path: envs/utils/so100/runs/demonstrations/SO100Parking/demos.h5

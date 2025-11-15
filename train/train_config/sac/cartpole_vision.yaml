@@ -1,0 +1,66 @@
+network:
+  lr_encoder: 0.0003
+  image_shift_pad: -1
+
+  vision_networks:
+    front_cam:
+      latent_dim: 32
+      cnn:
+        ## RLPD CNN reduced
+        features: [16, 32, 64]
+        kernels: [7, 3, 3]
+        strides: [4, 2, 2]
+        paddings: [0, 0, 0]
+
+  obs_latent_dim: 32
+
+  mlp_critic:
+    units: [128, 128]
+    layer_norm: True
+    weight_init: orthogonal
+    ensemble: 4
+
+  mlp_actor:
+    units: [128, 128]
+    layer_norm: False
+    weight_init: orthogonal
+
+  log_std_bounds: [-5, 2] # rlpd default [-20, 2]
+
+config:
+  score_to_win: 249
+
+  # Adjustable params
+  reward_shaper:
+    scale_value: 10 # crucial, sensitive value, see Haarnoja 2018
+  num_gradient_steps: 16
+  minibatch_size: 256
+  num_warmup_epochs: 0
+  not_all_envs_are_synchronized: True
+
+  # Replay buffers
+  replay_buffer_simple:
+    capacity: 12800
+  replay_buffer_prio:
+    capacity: 6400
+    prio: low
+    reward_limit_0: 2.0
+    update_limit: True
+    swap_equal: True
+
+  # Task-specific stats
+  max_epochs: 1000
+  max_episode_length_recording: 10
+  num_epochs_reward_tracking: 10
+  update_stats_freq: 1
+  network_stats_freq: -1 # 10 # epochs
+
+  # Fixed params
+  normalize_input: False
+  gamma: 0.99
+  init_alpha: 1
+  min_alpha: 0
+  alpha_lr: 0.0003
+  actor_lr: 0.0003
+  critic_lr: 0.0003
+  critic_tau: 0.005 # 0.001...0.01 is ideal in Haarnoja 2018 - Ant-v1 task

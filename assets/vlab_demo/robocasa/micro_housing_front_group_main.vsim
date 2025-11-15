@@ -1,0 +1,118 @@
+<robot name="micro_housing_front_group_main" version="0">
+    <!--Materials-->
+    <!--Links-->
+    <robotProperties maxDepenetrationVelocity="10"/>
+    <link name="micro_housing_front_group_main">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual name="micro_housing_front_group_top">
+            <origin xyz="0 -0.055 0.244669117647" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.8 0.49 0.0606617647059"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="micro_housing_front_group_top_visual">
+            <origin xyz="0 -0.055 0.244669117647" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.8 0.49 0.0606617647059"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="micro_housing_front_group_bottom">
+            <origin xyz="0 -0.055 -0.244669117647" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.8 0.49 0.0606617647059"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="micro_housing_front_group_bottom_visual">
+            <origin xyz="0 -0.055 -0.244669117647" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.8 0.49 0.0606617647059"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="micro_housing_front_group_back">
+            <origin xyz="0 0.245 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.8 0.11 0.55"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="micro_housing_front_group_back_visual">
+            <origin xyz="0 0.245 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.8 0.11 0.55"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="micro_housing_front_group_left">
+            <origin xyz="-0.3875 -0.055 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.025 0.49 0.428676470588"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="micro_housing_front_group_left_visual">
+            <origin xyz="-0.3875 -0.055 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.025 0.49 0.428676470588"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="micro_housing_front_group_right">
+            <origin xyz="0.3875 -0.055 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.025 0.49 0.428676470588"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="micro_housing_front_group_right_visual">
+            <origin xyz="0.3875 -0.055 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.025 0.49 0.428676470588"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <collision name="micro_housing_front_group_top">
+            <origin xyz="0 -0.055 0.244669117647" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.8 0.49 0.0606617647059"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="micro_housing_front_group_bottom">
+            <origin xyz="0 -0.055 -0.244669117647" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.8 0.49 0.0606617647059"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="micro_housing_front_group_back">
+            <origin xyz="0 0.245 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.8 0.11 0.55"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="micro_housing_front_group_left">
+            <origin xyz="-0.3875 -0.055 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.025 0.49 0.428676470588"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+        <collision name="micro_housing_front_group_right">
+            <origin xyz="0.3875 -0.055 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.025 0.49 0.428676470588"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+    </link>
+</robot>

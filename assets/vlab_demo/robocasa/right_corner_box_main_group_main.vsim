@@ -1,0 +1,34 @@
+<robot name="right_corner_box_main_group_main" version="0">
+    <!--Materials-->
+    <!--Links-->
+    <robotProperties maxDepenetrationVelocity="10"/>
+    <link name="right_corner_box_main_group_main">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <mass value="-1"/>
+            <density value="-1"/>
+            <inertia ixx="-1" iyy="-1" izz="-1" ixy="-1" ixz="-1" iyz="-1"/>
+        </inertial>
+        <visual name="right_corner_box_main_group_g0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.3 0.6 0.84"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <visual name="right_corner_box_main_group_g0_vis">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.3 0.6 0.84"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </visual>
+        <collision name="right_corner_box_main_group_g0">
+            <origin xyz="0 0 0" rpy="0 -0 0"/>
+            <geometry>
+                <box size="0.3 0.6 0.84"/>
+                <queryProperties useQueries="false"/>
+            </geometry>
+        </collision>
+    </link>
+</robot>

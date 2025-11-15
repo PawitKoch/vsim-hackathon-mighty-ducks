@@ -1,0 +1,39 @@
+<environment name="EnvironmentRoot" version="0">
+    <elements>
+        <renderingContext name="RenderingContext">
+            <skybox positiveX="package://claw/daylight_box_right.png" negativeX="package://claw/daylight_box_left.png" positiveY="package://claw/daylight_box_top.png" negativeY="package://claw/daylight_box_bottom.png" positiveZ="package://claw/daylight_box_back.png" negativeZ="package://claw/daylight_box_front.png"/>
+        </renderingContext>
+        <light name="PointLight_def" type="pointLight" color="1 1 1 0.5" castShadow="true" ambient="0" constant_atten="1" linear_atten="0" quadratic_atten="0"/>
+        <lightInstance name="PointLight" light="PointLight_def" link="" xyz="0.145440727472 0.217232823372 -0.183826863766" rpy="0 -0 0"/>
+        <light name="PointLight 2_def" type="pointLight" color="1 1 1 0.5" castShadow="true" ambient="0" constant_atten="1" linear_atten="0" quadratic_atten="0"/>
+        <lightInstance name="PointLight 2" light="PointLight 2_def" link="" xyz="0.145440727472 0.217232823372 0.273639440536" rpy="0 -0 0"/>
+        <plane name="GroundPlane" xyz="0 -0.0187397263944 0" rot="0 0 0.707106769085 0.707106769085" file="" scale="1 1 1">
+            <rigidMaterial name="" staticFriction="0.5" dynamicFriction="0.5" restitution="0.10000000149"/>
+            <material name="">
+                <texture filename="package://claw/vsim_tile.png"/>
+                <color rgba="1 1 1 1"/>
+                <luminescence value="0"/>
+                <specularExponent value="40"/>
+                <specularIntensity value="0.25"/>
+            </material>
+        </plane>
+        <assembly name="AssemblyRoot" xyz="0 0.104417659342 0" rot="1 0 0 -4.37113882867e-08" file="package://claw/claw.vasm"/>
+        <actor name="ModelRoot" xyz="0 0.0321097038686 0.000295035541058" rot="-0.707106769085 0 0 0.707106769085" file="package://claw/small_box.vsim"/>
+        <actor name="ModelRoot 2" xyz="0 0.00541101396084 0" rot="-0.707106769085 0 0 0.707106769085" file="package://claw/small_box.vsim"/>
+        <rgbCamera name="RGBCamera_def" type="pinhole" postFilter="anti_aliasing ambient_occlusion" farClip="100" fovX="1.3089969158172607" fovY="1.3089969158172607" resX="1080" resY="1080"/>
+        <cameraInstance name="RGBCamera" camera="RGBCamera_def" xyz="0.197727784514 0.0329374670982 -0.00236573815346" rpy="-3.14159265359 1.56662505021 -3.14159265359">
+            <LightInstance>
+                <instance name="PointLight"/>
+                <instance name="PointLight 2"/>
+            </LightInstance>
+        </cameraInstance>
+        <vlab:customElement>
+            <name>JointMonkey</name>
+            <type>JointMonkey</type>
+            <parent>.</parent>
+            <owner>.</owner>
+            <articulation>NodePath("../AssemblyRoot/finger/root/vertical")</articulation>
+        </vlab:customElement>
+    </elements>
+    <settings simulationFrequency="120" numSolverIterations="64"/>
+</environment>
