@@ -239,6 +239,7 @@ class DuckEnv(EnvironmentGpu):
         self.dof_pos_high_sim = []
         self.dof_dict = {}
         self.active_dof_dict = {}
+        self.head_neck_dof_dict = {}
 
         i = 0
         for dofdef in self.arti_def.get_joint_dof_defs():
@@ -248,11 +249,14 @@ class DuckEnv(EnvironmentGpu):
 
             if "backlash" not in dofdef.name and "head" not in dofdef.name and "neck" not in dofdef.name:
                 self.active_dof_dict[dofdef.name] = i
+            if dofdef.name == "head_pitch":
+                self.head_neck_dof_dict[dofdef.name] = i
 
             i += 1
 
         # active dof ids for index select
         self.active_dof_ids = torch.tensor(list(self.active_dof_dict.values()), dtype=torch.int, device=self.device)
+        self.head_neck_dof_ids = torch.tensor(list(self.head_neck_dof_dict.values()), dtype=torch.int, device=self.device)
         print("dof_dict: ", self.dof_dict)
         print("active_dof_dict: ", self.active_dof_dict)
         print("active_dof_ids: ", self.active_dof_ids)
@@ -748,6 +752,8 @@ class DuckEnv(EnvironmentGpu):
         self.set_dof_pos_buf[:, self.active_dof_ids] = torch.where(self.reset_buf.view(-1, 1),
                                                                    noise + self.home_pos_active.view(1, -1),
                                                                    self.set_dof_pos_buf[:, self.active_dof_ids])
+        self.set_dof_pos_buf[:, self.head_neck_dof_ids] = -45 / 180.0 * torch.pi  # head down
+        self.set_pid_buf[:, self.head_neck_dof_ids] = -45 / 180.0 * torch.pi  # head down
 
         # # randomize dof vel
         # noise = torch.randn_like(self.set_dof_vel_buf[:, self.active_dof_ids]) * 0.5  # max vel = 5.24
@@ -966,12 +972,13 @@ class DuckEnv(EnvironmentGpu):
         ########################################
         # Simple L1 loss between commanded and actual velocities
         w_lin_vel_tracking = 15.0  # Strong weight for linear velocity tracking (increased)
-        w_ang_vel_tracking = 5.0   # Weight for angular velocity tracking
+        w_ang_vel_tracking = 0.0   # Weight for angular velocity tracking
         w_alive = 20.0             # Stay upright bonus
         w_joint_pos = -8.0         # Imitation learning component (reduced to allow more exploration)
-        w_foot_alternating = 5.0   # NEW - Reward for alternating foot contact (gait pattern)
-        w_both_feet_penalty = -10.0  # NEW - Penalize having both feet on ground simultaneously
+        w_foot_alternating = 2.0   # NEW - Reward for alternating foot contact (gait pattern)
+        w_both_feet_penalty = -2.0  # NEW - Penalize having both feet on ground simultaneously
         w_joint_velocity = -0.001  # NEW - Small penalty to encourage joint movement
+        w_contact = 3.0            # Reward for matching reference foot contacts
         
         # L1 loss for linear velocity (x-axis, backwards motion)
         lin_vel_error = torch.abs(root_lin_vel[:, 0] - self.vel_xy_cmd[:, 0])
@@ -1002,6 +1009,10 @@ class DuckEnv(EnvironmentGpu):
         joint_vel_norm = torch.linalg.vector_norm(dof_vel[:, self.active_dof_ids], dim=1)
         joint_velocity_rew = w_joint_velocity * (1.0 / (joint_vel_norm + 1e-3))  # Inverse - penalize low movement
         
+        # FOOT CONTACT - reward matching reference trajectory contacts
+        contact_rew = w_contact * ((self.feet_ref[:, 0] == self.left_foot_contact).float() + 
+                                   (self.feet_ref[:, 1] == self.right_foot_contact).float())
+        
         ## TERMINATION ##
         lim = 40.0
         roll_error_deg = torch.abs(self.root_rpy[:, 0]) * 180.0 / torch.pi
@@ -1012,7 +1023,7 @@ class DuckEnv(EnvironmentGpu):
         
         ## ASSEMBLE REWARDS ##
         self.rew_buf[:] = (alive + lin_vel_tracking + backward_bonus + ang_vel_tracking + joint_pos_rew + 
-                          both_feet_penalty + foot_alternating_rew + joint_velocity_rew)
+                          both_feet_penalty + joint_velocity_rew + contact_rew)
         
         ########################################
         # COMMENTED OUT: PREVIOUS COMPLEX REWARD
