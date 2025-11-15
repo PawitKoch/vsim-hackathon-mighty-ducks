@@ -1,3 +1,3 @@
 #!/bin/sh
 
-python rl_games_play.py duck_ppo.yml policies/duck_v10/duck_ppo.pth 0
+python rl_games_play.py duck_ppo.yml runs/duck_ppo_15-11-22-15/nn/duck_ppo.pth 0
