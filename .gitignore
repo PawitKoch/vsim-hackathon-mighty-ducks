@@ -7,3 +7,7 @@ LICENSE
 *.h5
 *.onnx
 so100-deployment/
+cache/
+*.pyc
+*/runs/*
+*.lock

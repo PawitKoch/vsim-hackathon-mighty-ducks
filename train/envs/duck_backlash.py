@@ -278,7 +278,7 @@ class DuckEnv(EnvironmentGpu):
 
         # Load reference gait
         current_dir = os.path.dirname(os.path.abspath(__file__))
-        with open(os.path.join(current_dir, "data/all_episodes.json"), 'r') as file:
+        with open(os.path.join(current_dir, "data/all_episodes_pawit.json"), 'r') as file:
             gait_data = json.load(file)
 
         id_map = build_id_map(gait_data, self.active_dof_dict)
@@ -960,43 +960,53 @@ class DuckEnv(EnvironmentGpu):
         ## START OF REWARDS ##
         # HACKATHON TODO
         ####################################################################################################
-        w_lin_vel_rew = 2.0
-        w_lin_vel_pen = -5.0
-        w_ang_vel_rew = 6.0
-        w_ang_vel_pen = -0.0005
-        w_acc_pen = -0.002
-        w_vel_pen = -0.04
-        w_action_pen = -1.0
-        w_alive = 15.0
-        w_joint_pos = -15.0
+        w_lin_vel_rew = 3.0  # Increased - backwards walking is the main goal
+        w_lin_vel_pen = -8.0  # Increased - stronger penalty for sideways drift
+        w_ang_vel_rew = 4.0  # Slightly reduced since turning less critical for backwards
+        w_ang_vel_pen = -0.001  # Increased - backwards walking requires more stability
+        w_acc_pen = -0.003  # Increased - smoother motion for backwards stability
+        w_vel_pen = -0.05  # Increased - discourage jerky movements
+        w_action_pen = -1.5  # Increased - smoother actions are critical for backwards walking
+        w_alive = 20.0  # Increased - staying upright is harder when going backwards
+        w_joint_pos = -20.0  # Increased - closer tracking needed for backwards gait
         w_joint_vel = -1.0e-3
-        w_contact = 2.0
+        w_contact = 3.0  # Increased - proper foot contact timing is crucial for backwards walking
         w_foot_height = 1.0
+        w_backward_bonus = 2.0  # NEW - extra reward for actually moving backwards
 
         # LINEAR VELOCITY TRACKING
-        lin_vel_tol_m = 0.05
-        lin_vel_tol_p = 0.5
+        # Note: for backwards walking, velocities will be negative
+        lin_vel_tol_m = 0.03  # Tighter tolerance for backwards - it's harder to control
+        lin_vel_tol_p = 0.4  # Adjusted for backwards motion
         lin_vel_target = self.vel_xy_cmd[:, 0]
         error = torch.abs(root_lin_vel[:, 0] - lin_vel_target)
         lin_vel_rew = w_lin_vel_rew - w_lin_vel_rew / lin_vel_tol_m * error
-        # less steep slope for higher velocity to incentivize movement
-        lin_vel_rew = torch.where(root_lin_vel[:, 0] > lin_vel_target,
+        # For backwards walking, we want to penalize going too fast (less stable)
+        # and reward staying close to target
+        lin_vel_rew = torch.where(root_lin_vel[:, 0] < lin_vel_target,  # going more backwards than target
                                   w_lin_vel_rew - w_lin_vel_rew / lin_vel_tol_p * error,
                                   lin_vel_rew)
+        
+        # BACKWARD MOTION BONUS - reward for actually moving backwards
+        backward_bonus = w_backward_bonus * torch.clamp(-root_lin_vel[:, 0] / 0.15, 0.0, 1.0)
 
         # LINEAR VELOCITY PENALTY
         lin_vel_pen = w_lin_vel_pen * torch.abs(root_lin_vel[:, 1])
 
         # ANGULAR VELOCITY TRACKING
-        ang_vel_tol = 0.1
+        ang_vel_tol = 0.12  # Slightly looser for backwards walking
         error = torch.abs(root_ang_vel[:, 2] - self.yaw_rate_cmd[:, 0])
         ang_vel_rew = w_ang_vel_rew - w_ang_vel_rew / ang_vel_tol * error
 
         # MOTION PENALTIES
-        ang_vel_pen = w_ang_vel_pen * torch.linalg.vector_norm(root_ang_vel[:, 0:2], dim=1)
+        # Penalize roll/pitch more heavily for backwards walking (stability critical)
+        ang_vel_pen = w_ang_vel_pen * (torch.linalg.vector_norm(root_ang_vel[:, 0:2], dim=1) ** 2)
         acc_pen = w_acc_pen * torch.linalg.vector_norm(dof_acc, dim=1)
         vel_pen = w_vel_pen * torch.linalg.vector_norm(dof_vel, dim=1)
         action_pen = w_action_pen * torch.linalg.vector_norm(self.action_hist[:, -1, :] - self.action_hist[:, -2, :], dim=1)
+        
+        # Additional penalty for large action changes (squared for stronger effect)
+        action_smoothness_pen = -0.5 * (torch.linalg.vector_norm(self.action_hist[:, -1, :] - self.action_hist[:, -2, :], dim=1) ** 2)
 
         # FOOT HEIGHT
         # foot_1_height = torch.where(left_foot_contact, 0.0, self.get_foot_1_transform_buf[:, 6])
@@ -1017,17 +1027,21 @@ class DuckEnv(EnvironmentGpu):
         contact_pen = -w_contact * ((last_left_foot_contact != self.left_foot_contact).float() + (last_right_foot_contact != self.right_foot_contact).float())
 
         ## TERMINATION ##
-        lim = 35.0
+        lim = 40.0  # Slightly more lenient - backwards walking is inherently less stable
         roll_error_deg = torch.abs(self.root_rpy[:, 0]) * 180.0 / torch.pi
         pitch_error_deg = torch.abs(self.root_rpy[:, 1]) * 180.0 / torch.pi
 
+        # More lenient height threshold for backwards walking
         self.term_buf[:] = (roll_error_deg > lim) | (
-            pitch_error_deg > lim) | (self.get_root_transform_buf[:, 6] < 0.1)
+            pitch_error_deg > lim) | (self.get_root_transform_buf[:, 6] < 0.08)
 
         alive = w_alive * (~self.term_buf).float()
 
         ## ASSEMBLE REWARDS (ADDED OFFSET SO REWARDS LEAVE NEGATIVE DOMAIN)##
-        self.rew_buf[:] = alive + lin_vel_rew + lin_vel_pen + joint_pos_rew + contact_rew + contact_pen + acc_pen + vel_pen + action_pen + ang_vel_pen + ang_vel_rew + 50
+        self.rew_buf[:] = (alive + lin_vel_rew + backward_bonus + lin_vel_pen + 
+                          joint_pos_rew + contact_rew + contact_pen + 
+                          acc_pen + vel_pen + action_pen + action_smoothness_pen + 
+                          ang_vel_pen + ang_vel_rew + 50)
         ####################################################################################################
         ## END OF REWARDS ##
         ####################################################################################################

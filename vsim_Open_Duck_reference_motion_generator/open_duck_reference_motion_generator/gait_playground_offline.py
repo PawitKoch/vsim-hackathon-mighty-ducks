@@ -12,7 +12,7 @@ class GaitParameters:
         script_path = os.path.dirname(os.path.abspath(__file__))
         if duck == "open_duck_mini":
             self.robot = 'open_duck_mini'
-            self.robot_urdf = "open_duck_mini.urdf"
+            self.robot_urdf = "open_duck_https://github.com/PawitKoch/vsim-hackathon-mighty-ducks.gitmini.urdf"
             self.asset_path = os.path.join(script_path, "../open_duck_reference_motion_generator/robots/open_duck_mini/")
         elif duck == "open_duck_mini_v2":
             self.robot = 'open_duck_mini_v2'
@@ -129,8 +129,8 @@ class GaitParameters:
 def do_sample():
     # # Latin Hypercube Sampling: dx and dtheta parameter ranges
     # Generating a lot of samples is quite slow, so start with a low number
-    n_samples = 2
-    linear_velocity_x_range = (0.0, 0.15)
+    n_samples = 20
+    linear_velocity_x_range = (-0.15, 0.0)  # Negative values for backwards walking
     angular_velocity_z_range = (-0.5, 0.5)
     
     # Create LHS sampler for 2 parameters
