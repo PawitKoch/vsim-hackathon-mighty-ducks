@@ -12,7 +12,7 @@ class GaitParameters:
         script_path = os.path.dirname(os.path.abspath(__file__))
         if duck == "open_duck_mini":
             self.robot = 'open_duck_mini'
-            self.robot_urdf = "open_duck_https://github.com/PawitKoch/vsim-hackathon-mighty-ducks.gitmini.urdf"
+            self.robot_urdf = "open_duck_mini.urdf"
             self.asset_path = os.path.join(script_path, "../open_duck_reference_motion_generator/robots/open_duck_mini/")
         elif duck == "open_duck_mini_v2":
             self.robot = 'open_duck_mini_v2'
