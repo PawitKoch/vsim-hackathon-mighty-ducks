@@ -965,14 +965,22 @@ class DuckEnv(EnvironmentGpu):
         # SIMPLE L1 LOSS APPROACH (FIRST PRINCIPLES)
         ########################################
         # Simple L1 loss between commanded and actual velocities
-        w_lin_vel_tracking = 10.0  # Strong weight for linear velocity tracking
+        w_lin_vel_tracking = 15.0  # Strong weight for linear velocity tracking (increased)
         w_ang_vel_tracking = 5.0   # Weight for angular velocity tracking
         w_alive = 20.0             # Stay upright bonus
-        w_joint_pos = -10.0        # Imitation learning component
+        w_joint_pos = -8.0         # Imitation learning component (reduced to allow more exploration)
+        w_foot_alternating = 5.0   # NEW - Reward for alternating foot contact (gait pattern)
+        w_both_feet_penalty = -10.0  # NEW - Penalize having both feet on ground simultaneously
+        w_joint_velocity = -0.001  # NEW - Small penalty to encourage joint movement
         
         # L1 loss for linear velocity (x-axis, backwards motion)
         lin_vel_error = torch.abs(root_lin_vel[:, 0] - self.vel_xy_cmd[:, 0])
         lin_vel_tracking = -w_lin_vel_tracking * lin_vel_error
+        
+        # Backward motion bonus - additional reward for actually moving backwards (not just matching target)
+        # This provides a shaped reward that scales with how much backwards motion you achieve
+        w_backward_bonus = 3.0
+        backward_bonus = w_backward_bonus * torch.clamp(-root_lin_vel[:, 0] / 0.15, 0.0, 1.0)
         
         # L1 loss for angular velocity (yaw rate)
         ang_vel_error = torch.abs(root_ang_vel[:, 2] - self.yaw_rate_cmd[:, 0])
@@ -980,6 +988,19 @@ class DuckEnv(EnvironmentGpu):
         
         # Joint position imitation (helps with learning proper gait)
         joint_pos_rew = w_joint_pos * torch.linalg.vector_norm(self.q_ref - self.get_dof_pos_buf[:, self.active_dof_ids], dim=1)
+        
+        # NEW: Penalize both feet on ground (encourage alternating gait)
+        both_feet_on_ground = (self.left_foot_contact & self.right_foot_contact).float()
+        both_feet_penalty = w_both_feet_penalty * both_feet_on_ground
+        
+        # NEW: Reward alternating foot contact pattern (like reference trajectory)
+        foot_alternating = torch.abs((self.left_foot_contact.float() - self.right_foot_contact.float()))
+        foot_alternating_rew = w_foot_alternating * foot_alternating
+        
+        # NEW: Small penalty on joint velocity norm to discourage staying still
+        # Note: we want SOME joint movement, so we penalize low velocities
+        joint_vel_norm = torch.linalg.vector_norm(dof_vel[:, self.active_dof_ids], dim=1)
+        joint_velocity_rew = w_joint_velocity * (1.0 / (joint_vel_norm + 1e-3))  # Inverse - penalize low movement
         
         ## TERMINATION ##
         lim = 40.0
@@ -990,7 +1011,8 @@ class DuckEnv(EnvironmentGpu):
         alive = w_alive * (~self.term_buf).float()
         
         ## ASSEMBLE REWARDS ##
-        self.rew_buf[:] = alive + lin_vel_tracking + ang_vel_tracking + joint_pos_rew
+        self.rew_buf[:] = (alive + lin_vel_tracking + backward_bonus + ang_vel_tracking + joint_pos_rew + 
+                          both_feet_penalty + foot_alternating_rew + joint_velocity_rew)
         
         ########################################
         # COMMENTED OUT: PREVIOUS COMPLEX REWARD
