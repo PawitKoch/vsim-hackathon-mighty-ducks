@@ -163,7 +163,7 @@ if __name__ == "__main__":
     obs, info = envs.reset()
 
     if not use_control_policy:
-        envs.vel_xy_cmd[:, 0] = torch.tensor([0.0] * 3 + [0.15] * 3)
+        envs.vel_xy_cmd[:, 0] = torch.tensor([0.0] * 3 + [-0.15] * 3)
         envs.yaw_rate_cmd[:, 0] = torch.tensor([-0.3, 0.0, 0.3] * 2)
 
     def get_obs(obs):
@@ -221,17 +221,17 @@ if __name__ == "__main__":
         # print("yaw_rate_cmd", envs.yaw_rate_cmd[0])
         # print("vel_xy_cmd", envs.vel_xy_cmd[0, 0])
 
-        if not recording_done and envs.total_num_envs == 1:
-            obs_all = torch.cat((obs_all, obs["obs"].clone().cpu()), dim=0)
-            t_rec.append(t_sim)
+        # if not recording_done and envs.total_num_envs == 1:
+        #     obs_all = torch.cat((obs_all, obs["obs"].clone().cpu()), dim=0)
+        #     t_rec.append(t_sim)
 
-            if t_sim > t_end:
-                import sys
-                sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)), "../deploy"))
-                from duck_sim2real import save_observations
-                # obs_all[:, 8:18] += envs.home_pos_active.view(1, -1).cpu().view(1, -1)
-                save_observations(obs_all, t_rec)
-                recording_done = True
+        #     if t_sim > t_end:
+        #         import sys
+        #         sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)), "../deploy"))
+        #         from duck_sim2real import save_observations
+        #         # obs_all[:, 8:18] += envs.home_pos_active.view(1, -1).cpu().view(1, -1)
+        #         save_observations(obs_all, t_rec)
+        #         recording_done = True
 
         if idx >= envs.max_episode_length:
             render.set_paused(True)

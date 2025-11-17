@@ -239,6 +239,7 @@ class DuckEnv(EnvironmentGpu):
         self.dof_pos_high_sim = []
         self.dof_dict = {}
         self.active_dof_dict = {}
+        self.head_neck_dof_dict = {}
 
         i = 0
         for dofdef in self.arti_def.get_joint_dof_defs():
@@ -248,11 +249,14 @@ class DuckEnv(EnvironmentGpu):
 
             if "backlash" not in dofdef.name and "head" not in dofdef.name and "neck" not in dofdef.name:
                 self.active_dof_dict[dofdef.name] = i
+            if dofdef.name == "head_pitch":
+                self.head_neck_dof_dict[dofdef.name] = i
 
             i += 1
 
         # active dof ids for index select
         self.active_dof_ids = torch.tensor(list(self.active_dof_dict.values()), dtype=torch.int, device=self.device)
+        self.head_neck_dof_ids = torch.tensor(list(self.head_neck_dof_dict.values()), dtype=torch.int, device=self.device)
         print("dof_dict: ", self.dof_dict)
         print("active_dof_dict: ", self.active_dof_dict)
         print("active_dof_ids: ", self.active_dof_ids)
@@ -278,7 +282,7 @@ class DuckEnv(EnvironmentGpu):
 
         # Load reference gait
         current_dir = os.path.dirname(os.path.abspath(__file__))
-        with open(os.path.join(current_dir, "data/all_episodes.json"), 'r') as file:
+        with open(os.path.join(current_dir, "data/all_episodes_pawit.json"), 'r') as file:
             gait_data = json.load(file)
 
         id_map = build_id_map(gait_data, self.active_dof_dict)
@@ -748,6 +752,8 @@ class DuckEnv(EnvironmentGpu):
         self.set_dof_pos_buf[:, self.active_dof_ids] = torch.where(self.reset_buf.view(-1, 1),
                                                                    noise + self.home_pos_active.view(1, -1),
                                                                    self.set_dof_pos_buf[:, self.active_dof_ids])
+        self.set_dof_pos_buf[:, self.head_neck_dof_ids] = -45 / 180.0 * torch.pi  # head down
+        self.set_pid_buf[:, self.head_neck_dof_ids] = -45 / 180.0 * torch.pi  # head down
 
         # # randomize dof vel
         # noise = torch.randn_like(self.set_dof_vel_buf[:, self.active_dof_ids]) * 0.5  # max vel = 5.24
@@ -960,74 +966,150 @@ class DuckEnv(EnvironmentGpu):
         ## START OF REWARDS ##
         # HACKATHON TODO
         ####################################################################################################
-        w_lin_vel_rew = 2.0
-        w_lin_vel_pen = -5.0
-        w_ang_vel_rew = 6.0
-        w_ang_vel_pen = -0.0005
-        w_acc_pen = -0.002
-        w_vel_pen = -0.04
-        w_action_pen = -1.0
-        w_alive = 15.0
-        w_joint_pos = -15.0
-        w_joint_vel = -1.0e-3
-        w_contact = 2.0
-        w_foot_height = 1.0
-
-        # LINEAR VELOCITY TRACKING
-        lin_vel_tol_m = 0.05
-        lin_vel_tol_p = 0.5
-        lin_vel_target = self.vel_xy_cmd[:, 0]
-        error = torch.abs(root_lin_vel[:, 0] - lin_vel_target)
-        lin_vel_rew = w_lin_vel_rew - w_lin_vel_rew / lin_vel_tol_m * error
-        # less steep slope for higher velocity to incentivize movement
-        lin_vel_rew = torch.where(root_lin_vel[:, 0] > lin_vel_target,
-                                  w_lin_vel_rew - w_lin_vel_rew / lin_vel_tol_p * error,
-                                  lin_vel_rew)
-
-        # LINEAR VELOCITY PENALTY
-        lin_vel_pen = w_lin_vel_pen * torch.abs(root_lin_vel[:, 1])
-
-        # ANGULAR VELOCITY TRACKING
-        ang_vel_tol = 0.1
-        error = torch.abs(root_ang_vel[:, 2] - self.yaw_rate_cmd[:, 0])
-        ang_vel_rew = w_ang_vel_rew - w_ang_vel_rew / ang_vel_tol * error
-
-        # MOTION PENALTIES
-        ang_vel_pen = w_ang_vel_pen * torch.linalg.vector_norm(root_ang_vel[:, 0:2], dim=1)
-        acc_pen = w_acc_pen * torch.linalg.vector_norm(dof_acc, dim=1)
-        vel_pen = w_vel_pen * torch.linalg.vector_norm(dof_vel, dim=1)
-        action_pen = w_action_pen * torch.linalg.vector_norm(self.action_hist[:, -1, :] - self.action_hist[:, -2, :], dim=1)
-
-        # FOOT HEIGHT
-        # foot_1_height = torch.where(left_foot_contact, 0.0, self.get_foot_1_transform_buf[:, 6])
-        # foot_2_height = torch.where(right_foot_contact, 0.0, self.get_foot_2_transform_buf[:, 6])
-        # foot_height_rew = w_foot_height * (foot_1_height + foot_2_height)
-
-        ## IMITTATION REWARDS ##
-        # JOINT POSITION
-        joint_pos_rew = w_joint_pos * (torch.linalg.vector_norm(self.q_ref - self.get_dof_pos_buf[:, self.active_dof_ids], dim=1))
-
-        # JOINT VELOCITY
-        # joint_vel_rew = w_joint_vel * torch.linalg.vector_norm(self.dq_ref - dof_vel[:, self.active_dof_ids], dim=1)
-
-        # FOOT CONTACT
-        contact_rew = w_contact * ((self.feet_ref[:, 0] == self.left_foot_contact).float() + (self.feet_ref[:, 1] == self.right_foot_contact).float())
-
-        # penalize for contact change
-        contact_pen = -w_contact * ((last_left_foot_contact != self.left_foot_contact).float() + (last_right_foot_contact != self.right_foot_contact).float())
-
+        
+        ########################################
+        # SIMPLE L1 LOSS APPROACH (FIRST PRINCIPLES)
+        ########################################
+        # Simple L1 loss between commanded and actual velocities
+        w_lin_vel_tracking = 15.0  # Strong weight for linear velocity tracking (increased)
+        w_ang_vel_tracking = 0.0   # Weight for angular velocity tracking
+        w_alive = 20.0             # Stay upright bonus
+        w_joint_pos = -8.0         # Imitation learning component (reduced to allow more exploration)
+        w_foot_alternating = 2.0   # NEW - Reward for alternating foot contact (gait pattern)
+        w_both_feet_penalty = -2.0  # NEW - Penalize having both feet on ground simultaneously
+        w_joint_velocity = -0.001  # NEW - Small penalty to encourage joint movement
+        w_contact = 3.0            # Reward for matching reference foot contacts
+        
+        # L1 loss for linear velocity (x-axis, backwards motion)
+        lin_vel_error = torch.abs(root_lin_vel[:, 0] - self.vel_xy_cmd[:, 0])
+        lin_vel_tracking = -w_lin_vel_tracking * lin_vel_error
+        
+        # Backward motion bonus - additional reward for actually moving backwards (not just matching target)
+        # This provides a shaped reward that scales with how much backwards motion you achieve
+        w_backward_bonus = 3.0
+        backward_bonus = w_backward_bonus * torch.clamp(-root_lin_vel[:, 0] / 0.15, 0.0, 1.0)
+        
+        # L1 loss for angular velocity (yaw rate)
+        ang_vel_error = torch.abs(root_ang_vel[:, 2] - self.yaw_rate_cmd[:, 0])
+        ang_vel_tracking = -w_ang_vel_tracking * ang_vel_error
+        
+        # Joint position imitation (helps with learning proper gait)
+        joint_pos_rew = w_joint_pos * torch.linalg.vector_norm(self.q_ref - self.get_dof_pos_buf[:, self.active_dof_ids], dim=1)
+        
+        # NEW: Penalize both feet on ground (encourage alternating gait)
+        both_feet_on_ground = (self.left_foot_contact & self.right_foot_contact).float()
+        both_feet_penalty = w_both_feet_penalty * both_feet_on_ground
+        
+        # NEW: Reward alternating foot contact pattern (like reference trajectory)
+        foot_alternating = torch.abs((self.left_foot_contact.float() - self.right_foot_contact.float()))
+        foot_alternating_rew = w_foot_alternating * foot_alternating
+        
+        # NEW: Small penalty on joint velocity norm to discourage staying still
+        # Note: we want SOME joint movement, so we penalize low velocities
+        joint_vel_norm = torch.linalg.vector_norm(dof_vel[:, self.active_dof_ids], dim=1)
+        joint_velocity_rew = w_joint_velocity * (1.0 / (joint_vel_norm + 1e-3))  # Inverse - penalize low movement
+        
+        # FOOT CONTACT - reward matching reference trajectory contacts
+        contact_rew = w_contact * ((self.feet_ref[:, 0] == self.left_foot_contact).float() + 
+                                   (self.feet_ref[:, 1] == self.right_foot_contact).float())
+        
         ## TERMINATION ##
-        lim = 35.0
+        lim = 40.0
         roll_error_deg = torch.abs(self.root_rpy[:, 0]) * 180.0 / torch.pi
         pitch_error_deg = torch.abs(self.root_rpy[:, 1]) * 180.0 / torch.pi
-
-        self.term_buf[:] = (roll_error_deg > lim) | (
-            pitch_error_deg > lim) | (self.get_root_transform_buf[:, 6] < 0.1)
-
+        self.term_buf[:] = (roll_error_deg > lim) | (pitch_error_deg > lim) | (self.get_root_transform_buf[:, 6] < 0.08)
+        
         alive = w_alive * (~self.term_buf).float()
+        
+        ## ASSEMBLE REWARDS ##
+        self.rew_buf[:] = (alive + lin_vel_tracking + backward_bonus + ang_vel_tracking + joint_pos_rew + 
+                          both_feet_penalty + joint_velocity_rew + contact_rew)
+        
+        ########################################
+        # COMMENTED OUT: PREVIOUS COMPLEX REWARD
+        ########################################
+        # w_lin_vel_rew = 3.0  # Increased - backwards walking is the main goal
+        # w_lin_vel_pen = -8.0  # Increased - stronger penalty for sideways drift
+        # w_ang_vel_rew = 4.0  # Slightly reduced since turning less critical for backwards
+        # w_ang_vel_pen = -0.001  # Increased - backwards walking requires more stability
+        # w_acc_pen = -0.003  # Increased - smoother motion for backwards stability
+        # w_vel_pen = -0.05  # Increased - discourage jerky movements
+        # w_action_pen = -1.5  # Increased - smoother actions are critical for backwards walking
+        # w_alive = 20.0  # Increased - staying upright is harder when going backwards
+        # w_joint_pos = -20.0  # Increased - closer tracking needed for backwards gait
+        # w_joint_vel = -1.0e-3
+        # w_contact = 3.0  # Increased - proper foot contact timing is crucial for backwards walking
+        # w_foot_height = 1.0
+        # w_backward_bonus = 2.0  # NEW - extra reward for actually moving backwards
 
-        ## ASSEMBLE REWARDS (ADDED OFFSET SO REWARDS LEAVE NEGATIVE DOMAIN)##
-        self.rew_buf[:] = alive + lin_vel_rew + lin_vel_pen + joint_pos_rew + contact_rew + contact_pen + acc_pen + vel_pen + action_pen + ang_vel_pen + ang_vel_rew + 50
+        # # LINEAR VELOCITY TRACKING
+        # # Note: for backwards walking, velocities will be negative
+        # lin_vel_tol_m = 0.03  # Tighter tolerance for backwards - it's harder to control
+        # lin_vel_tol_p = 0.4  # Adjusted for backwards motion
+        # lin_vel_target = self.vel_xy_cmd[:, 0]
+        # error = torch.abs(root_lin_vel[:, 0] - lin_vel_target)
+        # lin_vel_rew = w_lin_vel_rew - w_lin_vel_rew / lin_vel_tol_m * error
+        # # For backwards walking, we want to penalize going too fast (less stable)
+        # # and reward staying close to target
+        # lin_vel_rew = torch.where(root_lin_vel[:, 0] < lin_vel_target,  # going more backwards than target
+        #                           w_lin_vel_rew - w_lin_vel_rew / lin_vel_tol_p * error,
+        #                           lin_vel_rew)
+        
+        # # BACKWARD MOTION BONUS - reward for actually moving backwards
+        # backward_bonus = w_backward_bonus * torch.clamp(-root_lin_vel[:, 0] / 0.15, 0.0, 1.0)
+
+        # # LINEAR VELOCITY PENALTY
+        # lin_vel_pen = w_lin_vel_pen * torch.abs(root_lin_vel[:, 1])
+
+        # # ANGULAR VELOCITY TRACKING
+        # ang_vel_tol = 0.12  # Slightly looser for backwards walking
+        # error = torch.abs(root_ang_vel[:, 2] - self.yaw_rate_cmd[:, 0])
+        # ang_vel_rew = w_ang_vel_rew - w_ang_vel_rew / ang_vel_tol * error
+
+        # # MOTION PENALTIES
+        # # Penalize roll/pitch more heavily for backwards walking (stability critical)
+        # ang_vel_pen = w_ang_vel_pen * (torch.linalg.vector_norm(root_ang_vel[:, 0:2], dim=1) ** 2)
+        # acc_pen = w_acc_pen * torch.linalg.vector_norm(dof_acc, dim=1)
+        # vel_pen = w_vel_pen * torch.linalg.vector_norm(dof_vel, dim=1)
+        # action_pen = w_action_pen * torch.linalg.vector_norm(self.action_hist[:, -1, :] - self.action_hist[:, -2, :], dim=1)
+        
+        # # Additional penalty for large action changes (squared for stronger effect)
+        # action_smoothness_pen = -0.5 * (torch.linalg.vector_norm(self.action_hist[:, -1, :] - self.action_hist[:, -2, :], dim=1) ** 2)
+
+        # # FOOT HEIGHT
+        # # foot_1_height = torch.where(left_foot_contact, 0.0, self.get_foot_1_transform_buf[:, 6])
+        # # foot_2_height = torch.where(right_foot_contact, 0.0, self.get_foot_2_transform_buf[:, 6])
+        # # foot_height_rew = w_foot_height * (foot_1_height + foot_2_height)
+
+        # ## IMITTATION REWARDS ##
+        # # JOINT POSITION
+        # joint_pos_rew = w_joint_pos * (torch.linalg.vector_norm(self.q_ref - self.get_dof_pos_buf[:, self.active_dof_ids], dim=1))
+
+        # # JOINT VELOCITY
+        # # joint_vel_rew = w_joint_vel * torch.linalg.vector_norm(self.dq_ref - dof_vel[:, self.active_dof_ids], dim=1)
+
+        # # FOOT CONTACT
+        # contact_rew = w_contact * ((self.feet_ref[:, 0] == self.left_foot_contact).float() + (self.feet_ref[:, 1] == self.right_foot_contact).float())
+
+        # # penalize for contact change
+        # contact_pen = -w_contact * ((last_left_foot_contact != self.left_foot_contact).float() + (last_right_foot_contact != self.right_foot_contact).float())
+
+        # ## TERMINATION ##
+        # lim = 40.0  # Slightly more lenient - backwards walking is inherently less stable
+        # roll_error_deg = torch.abs(self.root_rpy[:, 0]) * 180.0 / torch.pi
+        # pitch_error_deg = torch.abs(self.root_rpy[:, 1]) * 180.0 / torch.pi
+
+        # # More lenient height threshold for backwards walking
+        # self.term_buf[:] = (roll_error_deg > lim) | (
+        #     pitch_error_deg > lim) | (self.get_root_transform_buf[:, 6] < 0.08)
+
+        # alive = w_alive * (~self.term_buf).float()
+
+        # ## ASSEMBLE REWARDS (ADDED OFFSET SO REWARDS LEAVE NEGATIVE DOMAIN)##
+        # self.rew_buf[:] = (alive + lin_vel_rew + backward_bonus + lin_vel_pen + 
+        #                   joint_pos_rew + contact_rew + contact_pen + 
+        #                   acc_pen + vel_pen + action_pen + action_smoothness_pen + 
+        #                   ang_vel_pen + ang_vel_rew + 50)
         ####################################################################################################
         ## END OF REWARDS ##
         ####################################################################################################
